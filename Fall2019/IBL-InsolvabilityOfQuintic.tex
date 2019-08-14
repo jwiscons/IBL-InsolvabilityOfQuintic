@@ -73,6 +73,8 @@
 \newtheorem{activity}[theorem]{Activity}
 \newtheorem{intuitivedef}[theorem]{Intuitive Definition}
 
+\newtheorem*{hint*}{Hint}
+
 \newsavebox{\savepar}
 \newenvironment{textbox}{\noindent\begin{lrbox}{\savepar}\begin{minipage}[c]{.98\textwidth}}{\end{minipage}\end{lrbox}\fcolorbox{black}{white}{\usebox{\savepar}}}
 
@@ -123,6 +125,8 @@ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisc
 \tableofcontents
 
 \include{SolvingPolynomialEquations}
+\appendix
+\include{Hints}
 
 
 \end{document}
