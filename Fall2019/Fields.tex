@@ -6,6 +6,120 @@
 In Chapter~\ref{chapter:PolyEquations}, we explored problems about finding and expressing roots of polynomials, finally arriving at the goal of the course: proving that there are quintic polynomials that are \emph{not} solvable by radicals. This chapter serves two main purposes. First, as we look at roots of polynomials and how they can be expressed, it will be convenient to have a common world (i.e.~number system) in which they live. For us, this will be the complex numbers, denoted $\mathbb{C}$, which will be reviewed below. Our work with complex numbers will also supply the necessary language to properly talk about $n^{\text{th}}$-roots. Second, we are still in need of a proper definition of what it means for a polynomial to be ``solvable by radicals''; this is where the chapter will finish. But the middle of the chapter is perhaps the most interesting. There, on the way to defining ``solvable by radicals'', we will be led to abstract the structure of $\mathbb{C}$ (and of $\mathbb{Q}$ and $\mathbb{R}$), arriving at the definition of a \emph{field}. 
 
 \begin{section}{Complex Numbers}
+As mentioned above, we want to work in a world that contains all of the roots of all of the polynomials that we will be studying. Considering the roots of polynomials such as $x^2 +1$, $x^2-2$, $x^2-3$, etc., we see that we need to include numbers like $\sqrt{-1}$, $\sqrt{2}$, $\sqrt{3}$, etc., so although there are smaller worlds one could choose, we will opt for the world containing both $\sqrt{-1}$ and $\mathbb{R}$, namely $\mathbb{C}$.
+
+But before we proceed, note that $\sqrt{-1}$ is not really well defined. There are \emph{two} solutions to $x^2 +1$, so when we write $\sqrt{-1}$, we are all agreeing that we mean the same one. 
+
+\begin{definition}
+Let $i$ (or alternatively $\sqrt{-1}$) denote one particular solution to $x^2 +1$. 
+\end{definition}
+
+The key point of the previous definition is that $i^2 = -1$. Using $i$ and $\mathbb{R}$, we now build the complex numbers.
+
+\begin{definition}
+The \textbf{complex numbers}, denoted  $\mathbb{C}$, is the set $\{a + bi\mid a,b \in \mathbb{R}\}$. If $z\in \mathbb{C}$ and $z$ can be written as $z=a+bi$, then $a$ is called the \textbf{real part} of $z$ and $b$ is called the \textbf{imaginary part} of $z$.
+\end{definition}
+
+Note that every complex number $z=a+bi$ is uniquely determined by two numbers: the real and imaginary parts $a$ and $b$. As such, we often graph complex numbers in the coordinate plane with the $x$-axis denoting the real part and the $y$-axis denoting the imaginary part.
+
+\begin{example}
+We graph $-2 + 2i$ and  $1 - 3i$ below.
+\begin{center}
+\begin{tikzpicture}[line width = .9,scale = .7]
+\draw[<->] (-4,0) -- (4,0) node [below] {\small \textsc{Real}};
+\draw[<->] (0,-4) -- (0,4) node [left] {\small \textsc{Imag.}};
+\foreach \i in {1,2,3} {
+\draw (-\i,-0.1) -- (-\i,0.1);
+\draw (\i,-0.1) -- (\i,0.1);
+\node[anchor = 90] at (-\i,0) {\small $\i$};
+\node[anchor = 90] at (\i,0) {\small $\i$};
+\draw (-0.1,-\i) -- (0.1,-\i);
+\draw (-0.1,\i) -- (0.1,\i);
+\node[anchor = 0] at (0,-\i) {\small $\i$};
+\node[anchor = 0] at (0,\i) {\small $\i$};
+}
+\node (w) at (-2,2) {};
+\fill (w) circle (.1);
+\node[anchor = -10] at (w) {\small $-2 + 2i$};
+\node (z) at (1,-3) {};
+\fill (z) circle (.1);
+\node[anchor = 170] at (z) {\small $1 - 3i$};
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+We also define some operations on complex numbers.
+
+\begin{definition}
+Consider the complex numbers $a+bi$ and $c+di$. We define the following operations.
+\begin{description}
+\item [Addition:] $(a+bi) + (c+di) := (a+b) + (c+d)i$
+\item [Multiplication:] $(a+bi) \cdot (c+di) := (ac-bd) + (ad+bc)i$
+\item [Complex Conjugation:] $\overline{a+bi} := a-bi$
+\end{description}
+\end{definition}
+
+Notice that in the definition of complex multiplication we are just using the normal distributative law (or FOIL if you like) together with the fact that $i^2 = -1$.
+
+\begin{problem}
+Thinking of a complex number $z$ as a point in the plane, describe \emph{geometrically} what happens when $(c+di)$ is added to $z$. Also, describe \emph{geometrically}  how to find $\overline{z}$ from $z$.
+\end{problem}
+
+When we plot points, there are different coordinate systems we could use. It turns out that the rectangular coordinates are good for adding complex numbers, but polar coordinates are better for multiplication. This lead to the following definition.
+
+\begin{definition}
+Let $z=a+bi$. 
+\begin{enumerate}
+\item The \textbf{modulus} of $z$, denoted $|z|$, is the radius of the point $(a,b)$ when written in polar coordinates. Thus, $|z| = \sqrt{a^2 + b^2}$. 
+\item The \textbf{argument} of $z$, denoted $\Arg(z)$, is the angle of the point $(a,b)$ when written in polar coordinates. Thus, $\Arg(z)$ is the angle \emph{in the appropriate quadrant} whose tangent is $\frac{b}{a}$. The argument of  $0$ is undefined.
+\end{enumerate}
+\end{definition}
+
+\begin{example}
+We have that $|-2 + 2i| = \sqrt{(-2)^2+2^2} = 2\sqrt{2}$ and $\Arg(-2 + 2i) = \frac{3\pi}{4}$. But be careful, $\arctan(-1) = \frac{\pi}{4}$; you must pay attention to which quadrant the number is in.
+\begin{center}
+\begin{tikzpicture}[line width = .9,scale = .7]
+\small
+\draw[<->] (-4,0) -- (4,0) node [below] { \textsc{Real}};
+\draw[<->] (0,-3) -- (0,3) node [left] { \textsc{Imag.}};
+\foreach \i in {1,2,3} {
+\draw (-\i,-0.1) -- (-\i,0.1);
+\draw (\i,-0.1) -- (\i,0.1);
+\node[anchor = 90] at (-\i,0) { $\i$};
+\node[anchor = 90] at (\i,0) { $\i$};
+}
+\foreach \i in {1,2} {
+\draw (-0.1,-\i) -- (0.1,-\i);
+\draw (-0.1,\i) -- (0.1,\i);
+\node[anchor = 0] at (0,-\i) { $\i$};
+\node[anchor = 0] at (0,\i) { $\i$};
+}
+\node (w) at (-2,2) {};
+\fill (w) circle (.1);
+\node[anchor = -10] at (w) { $-2 + 2i$};
+
+\draw [dashed] (0,0) -- (w.center);
+\draw [blue,domain=0:135,->] plot ({1.2*cos(\x)}, {1.2*sin(\x)});
+\node[blue] at (1.25,1.25) {$\frac{3\pi}{4}$};
+
+\draw [red,decorate,decoration={brace,amplitude=10pt},xshift=-4pt,yshift=0pt]
+(0,0) -- (w.center);
+\node[red] at (-2.2,0.6) {$2\sqrt{2}$}; 
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+\begin{problem}
+Write each of the following complex numbers in the form $a+bi$, and then find a decimal approximation of the modulus and argument.
+\begin{enumerate}
+\item $u= \frac{1}{1+i}$
+\item $w = \frac{(2-i)(1+2i)}{2+3i}$
+\item $z$ is the complex number with $|z| = 3$ and $\Arg(z) = \frac{4\pi}{3}$
+\end{enumerate}
+\end{problem}
+
+
+theorems next (and reread previous work)
 
 
 \end{section}
@@ -13,7 +127,7 @@ In Chapter~\ref{chapter:PolyEquations}, we explored problems about finding and e
 
 
 
-Next stop complex numbers and hamiltonians
+Don't forget hamiltonians
 
 
 

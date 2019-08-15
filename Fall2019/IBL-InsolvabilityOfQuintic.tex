@@ -10,6 +10,7 @@
 \usepackage[table]{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{arrows,automata,positioning}
+\usetikzlibrary{decorations.pathreplacing}
 \usepackage{rotating}
 \usepackage[notextcomp]{kpfonts} 
 \usepackage{graphicx}
@@ -80,11 +81,7 @@
 \newsavebox{\savepar}
 \newenvironment{textbox}{\noindent\begin{lrbox}{\savepar}\begin{minipage}[c]{.98\textwidth}}{\end{minipage}\end{lrbox}\fcolorbox{black}{white}{\usebox{\savepar}}}
 
-\newcommand{\dom}{\operatorname{Dom}}
-\newcommand{\codom}{\operatorname{Codom}}
-\newcommand{\range}{\operatorname{Rng}}
-\newcommand{\Spin}{\operatorname{Spin}}
-\newcommand{\lcm}{\operatorname{lcm}}
+\DeclareMathOperator{\Arg}{Arg}
 
 \renewcommand\thesubfigure{(\alph{subfigure})}
 
