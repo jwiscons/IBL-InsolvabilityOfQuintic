@@ -14,13 +14,13 @@ But before we proceed, note that $\sqrt{-1}$ is not really well defined. There a
 Let $i$ (or alternatively $\sqrt{-1}$) denote one particular solution to $x^2 +1$. 
 \end{definition}
 
-The key point of the previous definition is that $i^2 = -1$. Using $i$ and $\mathbb{R}$, we now build the complex numbers.
+Of course, the previous definition implies that $i^2 = -1$. Using $i$ and $\mathbb{R}$, we now build the complex numbers.
 
 \begin{definition}
-The \textbf{complex numbers}, denoted  $\mathbb{C}$, is the set $\{a + bi\mid a,b \in \mathbb{R}\}$. If $z\in \mathbb{C}$ and $z$ can be written as $z=a+bi$, then $a$ is called the \textbf{real part} of $z$ and $b$ is called the \textbf{imaginary part} of $z$.
+The \textbf{complex numbers}, denoted  $\mathbb{C}$, is the set $\{a + bi\mid a,b \in \mathbb{R}\}$. If $z\in \mathbb{C}$ and $z$ is written as $z=a+bi$, then $a$ is called the \textbf{real part} of $z$ and $b$ is called the \textbf{imaginary part} of $z$.
 \end{definition}
 
-Note that every complex number $z=a+bi$ is uniquely determined by two numbers: the real and imaginary parts $a$ and $b$. As such, we often graph complex numbers in the coordinate plane with the $x$-axis denoting the real part and the $y$-axis denoting the imaginary part.
+Note that every complex number $z=a+bi$ is uniquely determined by two numbers: the real and imaginary parts $a$ and $b$. As such, we often graph complex numbers in the coordinate plane with the $x$-axis denoting the real part and the $y$-axis denoting the imaginary part. This will be called the \textbf{complex plane}.
 
 \begin{example}
 We graph $-2 + 2i$ and  $1 - 3i$ below.
@@ -59,19 +59,19 @@ Consider the complex numbers $a+bi$ and $c+di$. We define the following operatio
 \end{description}
 \end{definition}
 
-Notice that in the definition of complex multiplication we are just using the normal distributative law (or FOIL if you like) together with the fact that $i^2 = -1$.
+Notice that in the definition of complex multiplication we are just using the normal distributive law (or FOIL if you like) together with the fact that $i^2 = -1$.
 
 \begin{problem}
-Thinking of a complex number $z$ as a point in the plane, describe \emph{geometrically} what happens when $(c+di)$ is added to $z$. Also, describe \emph{geometrically}  how to find $\overline{z}$ from $z$.
+Thinking of a complex number $z$ as a point in the complex plane, describe \emph{geometrically} what happens when $(c+di)$ is added to $z$. Also, describe \emph{geometrically}  how to find $\overline{z}$ from $z$.
 \end{problem}
 
-When we plot points, there are different coordinate systems we could use. It turns out that the rectangular coordinates are good for adding complex numbers, but polar coordinates are better for multiplication. This lead to the following definition.
+When we plot points, there are different coordinate systems we could use. It turns out that  rectangular coordinates are good for adding complex numbers, but polar coordinates are better for multiplication. This lead to the following definition.
 
 \begin{definition}
 Let $z=a+bi$. 
 \begin{enumerate}
 \item The \textbf{modulus} of $z$, denoted $|z|$, is the radius of the point $(a,b)$ when written in polar coordinates. Thus, $|z| = \sqrt{a^2 + b^2}$. 
-\item The \textbf{argument} of $z$, denoted $\Arg(z)$, is the angle of the point $(a,b)$ when written in polar coordinates. Thus, $\Arg(z)$ is the angle \emph{in the appropriate quadrant} whose tangent is $\frac{b}{a}$. The argument of  $0$ is undefined.
+\item The \textbf{argument} of $z$, denoted $\Arg(z)$, is the angle of the point $(a,b)$ when written in polar coordinates. Thus, $\Arg(z)$ is the angle $\theta$ \emph{in the appropriate quadrant} such that $0\le \theta<2\pi$ and $\tan \theta = \frac{b}{a}$. The argument of  $0$ is undefined.
 \end{enumerate}
 \end{definition}
 
@@ -109,17 +109,62 @@ We have that $|-2 + 2i| = \sqrt{(-2)^2+2^2} = 2\sqrt{2}$ and $\Arg(-2 + 2i) = \f
 \end{center}
 \end{example}
 
-\begin{problem}
-Write each of the following complex numbers in the form $a+bi$, and then find a decimal approximation of the modulus and argument.
+\begin{problem}\label{prob.ComplexCheckin}
+For each of the following complex numbers,
+\begin{itemize}
+\item write it in the form $a+bi$ (if it is not already),
+\item plot it in the complex plane,
+\item find the modulus and argument (if not exact, then a decimal approximation is okay).
+\end{itemize}
+\begin{multicols}{2}
 \begin{enumerate}
-\item $u= \frac{1}{1+i}$
+\item $u = -1-i$
+\item $v= \frac{1}{1+i}$
 \item $w = \frac{(2-i)(1+2i)}{2+3i}$
-\item $z$ is the complex number with $|z| = 3$ and $\Arg(z) = \frac{4\pi}{3}$
+\item $z\in \mathbb{C}$ with $|z| = 3$ and $\Arg(z) = \frac{4\pi}{3}$
 \end{enumerate}
+\end{multicols}
 \end{problem}
 
+Given a complex number in the form $a+ib$, we know how to find the modulus and argument (by just using the definition). The next theorem highlights how to go in the reverse direction.
+ 
+\begin{theorem}\label{thm.PolarToRectangular}
+Let $z\in \mathbb{C}$. Then $|z| = r$ and $\Arg(z) = \theta$ if and only if $z = r\cos\theta + ir\sin\theta$ with $0\le \theta <2\pi$.
+\end{theorem}
 
-theorems next (and reread previous work)
+\begin{theorem}\label{thm.MultiplyComplex}
+If $z_1 = r_1\cos\theta_1 + ir_1\sin\theta_1$ and $z_2=r_2\cos\theta_2 + ir_2\sin\theta_2$, then \[z_1z_2 = r_1r_2\cos(\theta_1+\theta_2) + ir_1r_2\sin(\theta_1+\theta_2).\]
+\end{theorem}
+
+The previous theorem shows that multiplying two complex numbers is rather easy when they are in ``polar form''. It yields two nice corollaries.
+
+\begin{corollary}
+If $z_1,z_2\in \mathbb{C}$, then $|z_1z_2| = |z_1||z_2|$ and $\Arg(z_1z_2) = \Arg(z_1)+\Arg(z_2)$.
+\end{corollary}
+
+\begin{corollary}[De Moivre's formula]\label{cor.DeMoivre}
+For each positive $n\in \mathbb{Z}$, \[\left(r\cos(\theta) + ir\sin(\theta)\right)^n = r^n\cos(n\theta) + ir^n\sin(n\theta).\]
+\end{corollary}
+
+We now arrive at an \emph{extremely important} definition.
+
+\begin{definition}
+For each positive $n\in \mathbb{Z}$, define \[\zeta_n := \cos\left(\frac{2\pi}{n}\right) + i\sin\left(\frac{2\pi}{n}\right).\]
+Thus, $\zeta_n$ (read as ``zeta n'') is the unique  number with magnitude $1$ and argument $\frac{2\pi}{n}$.
+\end{definition}
+
+\begin{problem}
+Plot each of the following in the same complex plane: $\zeta_2$, $\zeta_3$, $\zeta_4$, $\zeta_5$.
+\end{problem}
+
+\begin{problem}
+Plot each of the following in the same complex plane: $\zeta_6$, $(\zeta_6)^2$, $(\zeta_6)^3$, $(\zeta_6)^4$, $(\zeta_6)^5$, $(\zeta_6)^6$.
+\end{problem}
+
+\begin{problem}
+Write $\overline{\zeta_8}$ as a power of $\zeta_8$. Conjecture a formula that expresses $\overline{(\zeta_n)^k}$ as a power of $\zeta_n$, but with no bar on top.
+\end{problem}
+
 
 
 \end{section}
@@ -127,7 +172,7 @@ theorems next (and reread previous work)
 
 
 
-Don't forget hamiltonians
+% Don't forget hamiltonians
 
 
 
