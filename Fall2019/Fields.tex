@@ -17,7 +17,7 @@ Let $i$ (or alternatively $\sqrt{-1}$) denote one particular solution to $x^2 +1
 Of course, the previous definition implies that $i^2 = -1$. Using $i$ and $\mathbb{R}$, we now build the complex numbers.
 
 \begin{definition}
-The \textbf{complex numbers}, denoted  $\mathbb{C}$, is the set $\{a + bi\mid a,b \in \mathbb{R}\}$. If $z\in \mathbb{C}$ and $z$ is written as $z=a+bi$, then $a$ is called the \textbf{real part} of $z$ and $b$ is called the \textbf{imaginary part} of $z$.
+The \textbf{complex numbers} is the set $\mathbb{C} := \{a + bi\mid a,b \in \mathbb{R}\}$. If $z=a+bi$, then $a$ is called the \textbf{real part} of $z$ and $b$ is called the \textbf{imaginary part} of $z$.
 \end{definition}
 
 Note that every complex number $z=a+bi$ is uniquely determined by two numbers: the real and imaginary parts $a$ and $b$. As such, we often graph complex numbers in the coordinate plane with the $x$-axis denoting the real part and the $y$-axis denoting the imaginary part. This will be called the \textbf{complex plane}.
@@ -51,15 +51,24 @@ We graph $-2 + 2i$ and  $1 - 3i$ below.
 We also define some operations on complex numbers.
 
 \begin{definition}
-Consider the complex numbers $a+bi$ and $c+di$. We define the following operations.
-\begin{description}
-\item [Addition:] $(a+bi) + (c+di) := (a+b) + (c+d)i$
-\item [Multiplication:] $(a+bi) \cdot (c+di) := (ac-bd) + (ad+bc)i$
-\item [Complex Conjugation:] $\overline{a+bi} := a-bi$
-\end{description}
+We define the following operations on elements of $\mathbb{C}$. 
+\begin{itemize}
+\item \textbf{Addition:} $(a+bi) + (c+di) := (a+b) + (c+d)i$
+\item \textbf{Multiplication:} $(a+bi) \cdot (c+di) := (ac-bd) + (ad+bc)i$
+\item \textbf{Complex Conjugation:} $\overline{a+bi} := a-bi$
+\end{itemize}
 \end{definition}
 
-Notice that in the definition of complex multiplication we are just using the normal distributive law (or FOIL if you like) together with the fact that $i^2 = -1$.
+Notice that in the definition of complex multiplication we are just using the normal distributive law (or FOIL if you like) together with the fact that $i^2 = -1$. Many of the familiar algebraic properties of $\mathbb{R}$ also hold for $\mathbb{C}$, which we will take as a fact.
+
+\begin{fact}\label{fact.ComplexLaws} The following are true for $\mathbb{C}$.
+\begin{itemize}
+\item \textbf{Addition Laws:} Addition is associative and commutative. There is a unique additive identity, namely $0 = 0 + 0i$, and every number has a unique additive inverse, denoted $-(a+bi)$.
+\item \textbf{Multiplication Laws:} Multiplication is associative and commutative. There is a unique multiplicative identity, namely $1 = 1 + 0i$, and every nonzero number has a unique multiplicative inverse, denote $(a+bi)^{-1}$ or $\frac{1}{a+bi}$.
+\item \textbf{Distributivity Laws:} For all $a,b,c \in \mathbb{C}$, $a(b+c) = ab+ac$ and $(b+c)a = ba+ca$.
+\item \textbf{Conjugation Laws:} For all $a,b \in \mathbb{C}$, $\overline{a+b} = \overline{a} + \overline{b}$ and $\overline{ab} = \overline{a}\overline{b}$.
+\end{itemize}
+\end{fact}
 
 \begin{problem}
 Thinking of a complex number $z$ as a point in the complex plane, describe \emph{geometrically} what happens when $(c+di)$ is added to $z$. Also, describe \emph{geometrically}  how to find $\overline{z}$ from $z$.
@@ -126,17 +135,21 @@ For each of the following complex numbers,
 \end{multicols}
 \end{problem}
 
-Given a complex number in the form $a+ib$, we know how to find the modulus and argument (by just using the definition). The next theorem highlights how to go in the reverse direction.
+\begin{theorem}
+Let $z\in \mathbb{C}$. If $z\neq 0$, then $z^{-1} = \frac{\overline{z}}{|z|}$.
+\end{theorem}
+
+The next theorem shows how to find an expression for a complex number given its modulus and argument.
  
 \begin{theorem}\label{thm.PolarToRectangular}
 Let $z\in \mathbb{C}$. Then $|z| = r$ and $\Arg(z) = \theta$ if and only if $z = r\cos\theta + ir\sin\theta$ with $0\le \theta <2\pi$.
 \end{theorem}
 
+We now derive some properties of multiplication. The first is quite useful and illustrates how multiplication is rather easy to deal with when numbers are in ``polar form''.
+
 \begin{theorem}\label{thm.MultiplyComplex}
 If $z_1 = r_1\cos\theta_1 + ir_1\sin\theta_1$ and $z_2=r_2\cos\theta_2 + ir_2\sin\theta_2$, then \[z_1z_2 = r_1r_2\cos(\theta_1+\theta_2) + ir_1r_2\sin(\theta_1+\theta_2).\]
 \end{theorem}
-
-The previous theorem shows that multiplying two complex numbers is rather easy when they are in ``polar form''. It yields two nice corollaries.
 
 \begin{corollary}
 If $z_1,z_2\in \mathbb{C}$, then $|z_1z_2| = |z_1||z_2|$ and $\Arg(z_1z_2) = \Arg(z_1)+\Arg(z_2)$.
@@ -162,13 +175,67 @@ Plot each of the following in the same complex plane: $\zeta_6$, $(\zeta_6)^2$, 
 \end{problem}
 
 \begin{problem}
-Write $\overline{\zeta_8}$ as a power of $\zeta_8$. Conjecture a formula that expresses $\overline{(\zeta_n)^k}$ as a power of $\zeta_n$, but with no bar on top.
+Write $\overline{\zeta_8}$ as a power of $\zeta_8$. Conjecture and prove a formula that expresses $\overline{(\zeta_n)^k}$ as a power of $\zeta_n$, but with no bar on top.
+\end{problem}
+
+We now turn our attention back to solving polynomial equations, focusing on those of the form $x^n - a$.
+
+\begin{definition}
+Let $a\in \mathbb{C}$. A number $z\in \mathbb{C}$ is called an \textbf{$n^\text{th}$ root of $a$} if $z^n = a$. In other words, the  $n^\text{th}$ roots of $a$ are the roots of the polynomial $x^n-a$. The  $n^\text{th}$ roots of $1$ are also called \textbf{$n^\text{th}$ roots of unity}.
+\end{definition}
+
+\begin{problem}
+Find one $4^\text{th}$ root of each of the following: $\zeta_3$ and $-1 + i\sqrt{3}$.
+\end{problem}
+
+\begin{theorem}
+For each non-negative $k\in \mathbb{Z}$, $(\zeta_n)^k$ is an $n^\text{th}$ root of $1$.
+\end{theorem}
+
+\begin{lemma}\label{lem.nthRoot1IsPowerOfZeta}
+If $z$ is an $n^\text{th}$ root of $1$, then $z = (\zeta_n)^k$ for some non-negative $k\in \mathbb{Z}$.
+\end{lemma}
+
+\begin{lemma}
+For each non-negative $k\in \mathbb{Z}$, $(\zeta_n)^k = (\zeta_n)^m$ for some $0\le m \le n-1$.
+\end{lemma}
+
+\begin{theorem}\label{thm.nthRoots1}
+The set \[\{1, \zeta_n, (\zeta_n)^2, \ldots, (\zeta_n)^{n-1}\}\] is the set of \emph{all} $n^\text{th}$ roots of unity. Thus, there are $n$ distinct $n^\text{th}$ roots of unity. 
+\end{theorem}
+
+\begin{lemma}
+Let $a\in \mathbb{C}$ be nonzero, and let $b$ be any one particular $n^\text{th}$ root of $a$. Then $z$ is an $n^\text{th}$ root of $a$ if and only if $\frac{z}{b}$ is an $n^\text{th}$ root of $1$.
+\end{lemma}
+
+\begin{theorem}\label{thm.nthRoots}
+Let $a\in \mathbb{C}$ be nonzero, and let $b$ be any one particular $n^\text{th}$ root of $a$. The set \[\{b, b\zeta_n, b(\zeta_n)^2, \ldots, b(\zeta_n)^{n-1}\}\] is the set of \emph{all} $n^\text{th}$ roots of $a$. Thus, there are $n$ distinct $n^\text{th}$ roots of $a$. 
+\end{theorem}
+
+\begin{problem}
+Find \emph{all} $4^\text{th}$ roots of each of the following: $\zeta_3$ and $-1 + i\sqrt{3}$.
 \end{problem}
 
 
+We conclude this section with a couple of general results about roots of polynomials.
 
+\begin{theorem}\label{thm.RootsRealCoeff}
+Suppose that $p(x) = a_nx^n + a_{n-1}x^{n-1} +\cdots+a_2x^2+a_1x+a_0$ with all $a_i\in \mathbb{R}$. If $z$ is a root of $p(x)$, then $\overline{z}$ is also a root of $p(x)$.
+\end{theorem}
+
+In words, the previous theorem says that if a polynomial has coefficients in $\mathbb{R}$, then the set of roots is ``closed under complex conjugation.'' We end with an extremely important theorem, which will be quite useful for us. However, since its proof is not our main goal (and since it requires sophisticated techniques), we will take it as fact.
+
+\begin{fact}[Fundamental Theorem of Algebra]
+If $p(x)$ is a non-constant polynomial with all coefficients in $\mathbb{C}$, then $p(x)$ has a root in $\mathbb{C}$.
+\end{fact}
+
+In fact, we will see that this implies that \emph{all} roots of such a $p(x)$ lie in $\mathbb{C}$, so in our of study polynomials (often with all coefficients even in $\mathbb{Q}$), $\mathbb{C}$ serves as a uniform world in which we can study the roots.
 \end{section}
 
+\begin{section}{An aside: the Quaternions}
+
+
+\end{section}
 
 
 

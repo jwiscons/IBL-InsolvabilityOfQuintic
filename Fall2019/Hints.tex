@@ -1,22 +1,39 @@
 % !TEX root = IBL-InsolvabilityOfQuintic.tex
-\chapter{Hints}
+\chapter{Hints\\ {\large Some possible (but not the only!) ways to get started.}}
 \label{chapter:Hints}
 \thispagestyle{empty}
 
-\begin{hint*}[Theorem~\ref{thm:MonicQuadratic}]\label{hint:thm:MonicQuadratic}
+
+
+\begin{hint*}[Theorem~\ref{thm.MonicQuadratic}]
 You are solving $x^2+bx+c = 0$. Try ``completing the square'' first; then solve for $x$.
 \end{hint*}
 
-\begin{hint*}[Problem~\ref{prob.ComplexCheckin}]\label{hint:prob.ComplexCheckin}
+\begin{hint*}[Problem~\ref{prob.ComplexCheckin}]
 Multiplying a fraction by the complex conjugate of the denominator can be an effective way to simplify an expression.
 \end{hint*}
 
-\begin{hint*}[Theorem~\ref{thm.PolarToRectangular}]\label{hint:thm.PolarToRectangular}
+\begin{hint*}[Theorem~\ref{thm.PolarToRectangular}]
 Think back to changing from polar to rectangular coordinates (or parametrizing circles or solving triangles).
 \end{hint*}
 
-\begin{hint*}[Theorem~\ref{thm.MultiplyComplex}]\label{hint:thm.MultiplyComplex}
+\begin{hint*}[Theorem~\ref{thm.MultiplyComplex}]
 Try using Theorem~\ref{thm.PolarToRectangular} $+$ trigonometric identities. 
 \end{hint*}
+
+\begin{hint*}[Lemma~\ref{lem.nthRoot1IsPowerOfZeta}]
+You are working with powers (hence multiplication) so try writing $z$ in the form $z = r\cos\theta + ir\sin\theta$. Now, what does $z^n = 1$ imply about $r$ and $\theta$?
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.nthRoots1}]
+You may want to view this as the following ``if and only if'' statement: $z$ is an $n^\text{th}$ root of $1$ $\iff$ $z = (\zeta_n)^k$ for some $0\le k\le n-1$. Now make use of the previous lemma and theorems you proved. Don't forget to explain why each of $1, \zeta_n, (\zeta_n)^2, \ldots, (\zeta_n)^{n-1}$ are all different.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.RootsRealCoeff}]
+Suppose that $z$ is a root of $p(x)$. Then $p(z) = 0$, so  $a_nz^n + a_{n-1}z^{n-1} +\cdots+a_2z^2+a_1z+a_0 = 0$. This last equation is is just comparing two complex numbers---try taking the conjugate of both sides. Fact~\ref{fact.ComplexLaws} is helpful.
+\end{hint*}
+
+
+
 
 
