@@ -82,9 +82,9 @@ Use the internet and/or library to determine if there is a quartic formula, i.e.
 \begin{section}{The main question(s)}
 We now turn our attention to finding the roots of polynomials of degree five and higher. Well, what do you think: is there a quintic formula? Actually, there are two questions here: (1) what do we mean by ``formula'' (e.g.~what symbols/functions can we use), and (2) whatever we mean by formula, is there one that works for \emph{all} quintic polynomials?
 
-You investigated two particular quintics in Problem~\ref{prob.IntroFindZeros}---what did you find? Did you find exact expressions for the roots? If so, \emph{how} were the roots expressed; that is, what symbols/functions were needed to write out the roots? Feel free to look up \href{https://en.wikipedia.org/wiki/Quintic_function}{quintic functions on Wikipedia}.
+You investigated two particular quintics in Problem~\ref{prob.IntroFindZeros}---what did you find? Did you find exact expressions for the roots? If so, \emph{how} were the roots expressed; that is, what symbols/functions were needed to write out the roots? 
 
-Let's first try to tackle the ``what do we mean by formula'' question. You should be guided by your previous responses to the problems of the form ``describe a number system, as small as possible, that is capable of expressing the roots of\ldots'' This leads to the following intuitive definition, that we will work to sharpen later.
+Let's first try to tackle the ``what do we mean by formula'' question. Guided by the quadratic and cubic formulas, let's agree that we are looking for a formula that expresses the roots of an arbitrary quintic polynomial, in terms of the coefficients of the polynomial, using just rational numbers together with the operations of addition, subtraction, multiplication, division, and the extraction of roots (square roots, cube roots,\ldots). This leads to the following intuitive definition, that we will work to sharpen later.
 
 \begin{intuitivedef}
 A polynomial (with coefficients in $\mathbb{Q}$) is said to be \textbf{solvable by radicals} if every root of the polynomial can be expressed using rational numbers together with the operations of addition, subtraction, multiplication, division, and $\sqrt[n]{\phantom{x}}$ for any positive integer $n$.
@@ -98,15 +98,26 @@ Find the roots of $p(x) = x^4 - 2x^2 -1$, and explain why $p(x)$ is solvable by 
 Every quadratic and cubic polynomial is solvable by radicals.
 \end{theorem}
 
-Our goal is to prove the following theorem, in a rather elegant, Galois-ian way. 
+Now, our main question is as follows.
+
+\begin{mainquestion} 
+Does there exist a ``quintic formula'' that expresses the roots of an arbitrary quintic polynomial, in terms of the coefficients of the polynomial, using just rational numbers together with the operations of addition, subtraction, multiplication, division, and the extraction of roots?
+\end{mainquestion}
+
+Well, if the answer is yes, then it must be that every quintic polynomial is solvable by radicals. \textit{Spoiler Alert!}  Our goal (for the rest of the book!) is to prove the following theorem, in a rather elegant way. 
 
 \begin{maintheorem}
 Not every quintic polynomial is solvable by radicals.
 \end{maintheorem}
 
+\begin{maincorollary}
+There is \emph{no} ``quintic formula'' that expresses the roots of an arbitrary quintic polynomial,  in terms of the coefficients of the polynomial, using just rational numbers together with the operations of addition, subtraction, multiplication, division, and the extraction of roots.
+\end{maincorollary}
+
 \begin{center}
 Boom!
 \end{center}
+
 \end{section}
 
 
