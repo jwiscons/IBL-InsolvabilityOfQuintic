@@ -5,6 +5,11 @@
 
 In Chapter~\ref{chapter:PolyEquations}, we explored problems about finding and expressing roots of polynomials, finally arriving at the goal of the course: proving that there are quintic polynomials that are \emph{not} solvable by radicals. This chapter serves two main purposes. First, as we look at roots of polynomials and how they can be expressed, it will be convenient to have a common world (i.e.~number system) in which they live. For us, this will be the complex numbers, denoted $\mathbb{C}$, which will be reviewed below. Our work with complex numbers will also supply the necessary language to properly talk about $n^{\text{th}}$-roots. Second, we are still in need of a proper definition of what it means for a polynomial to be ``solvable by radicals''; this is where the chapter will finish. But the middle of the chapter is perhaps the most interesting. There, on the way to defining ``solvable by radicals'', we will be led to abstract the structure of $\mathbb{C}$ (and of $\mathbb{Q}$ and $\mathbb{R}$), arriving at the definition of a \emph{field}. 
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \begin{section}{Complex Numbers}
 As mentioned above, we want to work in a world that contains all of the roots of all of the polynomials that we will be studying. Considering the roots of polynomials such as $x^2 +1$, $x^2-2$, $x^2-3$, etc., we see that we need to include numbers like $\sqrt{-1}$, $\sqrt{2}$, $\sqrt{3}$, etc., so although there are smaller worlds one could choose, we will opt for the world containing both $\sqrt{-1}$ and $\mathbb{R}$, namely $\mathbb{C}$.
 
@@ -15,6 +20,11 @@ Let $i$ (or alternatively $\sqrt{-1}$) denote one particular solution to $x^2 +1
 \end{definition}
 
 Of course, the previous definition implies that $i^2 = -1$. Using $i$ and $\mathbb{R}$, we now build the complex numbers.
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Definition and first principles}
 
 \begin{definition}
 The \textbf{complex numbers} is the set $\mathbb{C} := \{a + bi\mid a,b \in \mathbb{R}\}$. If $z=a+bi$, then $a$ is called the \textbf{real part} of $z$ and $b$ is called the \textbf{imaginary part} of $z$.
@@ -136,7 +146,7 @@ For each of the following complex numbers,
 \end{problem}
 
 \begin{theorem}
-Let $z\in \mathbb{C}$. If $z\neq 0$, then $z^{-1} = \displaystyle\frac{\overline{z}}{|z|}$.
+Let $z\in \mathbb{C}$. If $z\neq 0$, then $z^{-1} = \displaystyle\frac{\overline{z}}{|z|^2}$.
 \end{theorem}
 
 The next theorem shows how to find an expression for a complex number given its modulus and argument.
@@ -159,6 +169,10 @@ If $z_1,z_2\in \mathbb{C}$, then $|z_1z_2| = |z_1||z_2|$ and $\Arg(z_1z_2) = \Ar
 For each positive $n\in \mathbb{Z}$, \[\left(r\cos(\theta) + ir\sin(\theta)\right)^n = r^n\cos(n\theta) + ir^n\sin(n\theta).\]
 \end{corollary}
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Roots of unity}
 We now arrive at an \emph{extremely important} definition.
 
 \begin{definition}
@@ -216,7 +230,10 @@ Let $a\in \mathbb{C}$ be nonzero, and let $b$ be any one particular $n^\text{th}
 Find \emph{all} $4^\text{th}$ roots of each of the following: $\zeta_3$ and $-1 + i\sqrt{3}$.
 \end{problem}
 
-
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Roots of polynomials over  $\mathbb{R}$ and  $\mathbb{C}$}
 We conclude this section with a couple of general results about roots of polynomials.
 
 \begin{theorem}\label{thm.RootsRealCoeff}
@@ -225,15 +242,87 @@ Suppose that $p(x) = a_nx^n + a_{n-1}x^{n-1} +\cdots+a_2x^2+a_1x+a_0$ with all $
 
 In words, the previous theorem says that if a polynomial has coefficients in $\mathbb{R}$, then the set of roots is ``closed under complex conjugation.'' We end with an extremely important theorem, which will be quite useful for us. However, since its proof is not our main goal (and since it requires sophisticated techniques), we will take it as fact.
 
-\begin{fact}[Fundamental Theorem of Algebra]
+\begin{fact}[Fundamental Theorem of Algebra]\label{fact.FTA}
 If $p(x)$ is a non-constant polynomial with all coefficients in $\mathbb{C}$, then $p(x)$ has a root in $\mathbb{C}$.
 \end{fact}
 
 In fact, we will see that this implies that \emph{all} roots of such a $p(x)$ lie in $\mathbb{C}$, so in our of study polynomials (often with all coefficients even in $\mathbb{Q}$), $\mathbb{C}$ serves as a uniform world in which we can study the roots.
 \end{section}
 
-\begin{section}{An aside: the Quaternions}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{section}{An aside: the quaternions}
+Our construction of the complex numbers creates a structure that contains the real numbers and possesses some nice properties not enjoyed by the real numbers, e.g.~every non-constant polynomial with complex coefficients has a complex root.  This raises the question: could we further extend the complex numbers to an even larger structure?
 
+Concisely, we built the complex numbers as the set $\mathbb{C} = \mathbb{R} + \mathbb{R}i$ together with the operations of addition and multiplication, which were defined in a natural way from the key identity that $i^2 = -1$. Here, we briefly explore what happens if we build a larger structure in a similar way: $\mathbb{H} = \mathbb{C} + \mathbb{C}j$ where, again, $j^2 = -1$. 
+
+Following this path, we formally arrive at $\mathbb{H} = \mathbb{C} + \mathbb{C}j= (\mathbb{R} + \mathbb{R}i) + (\mathbb{R} + \mathbb{R}i)j$, and any definition we give for multiplication of two elements of $\mathbb{H}$ must first define how to multiply $i$ and $j$ (or rather, what properties $ij$ should have). If we set $k=ij$, it turns out that a good route to follow is to decide that $k$ also has the property that it squares to 1, i.e.~$k^2 = -1$. There is another important choice one is ``forced'' to make, namely that $ji = -k$.
+
+\begin{definition}
+The \textbf{quaternions} are the elements of $\mathbb{H} := \{a + bi+ cj + dk\mid a,b,c,d \in \mathbb{R}\}$, where $i^2 = j^2 = k^2= -1$. We also define the following operations on elements of $\mathbb{H}$.
+\begin{itemize}
+\item \textbf{Addition:} $(a_1 + b_1i+ c_1j + d_1k) + (a_2 + b_2i+ c_2j + d_2k) := (a_1+a_2) + (b_1+b_2)i+ (c_1+c_2)j + (d_1+d_2)k$
+\item \textbf{Multiplication:} use the usual distributive laws together with the identities:
+\[\begin{array}{lll}
+ij = k, &jk = i, &ki = j,\\
+ji = -k, &kj = -i, &ik = -j.
+\end{array}\]
+\item \textbf{Conjugation:} $\overline{a + bi+ cj + dk} := a - bi -cj - dk$
+\end{itemize}
+\end{definition}
+
+Indeed, $\mathbb{H}$ extends the complex numbers, and we have the following containments: $\mathbb{Q}\subset\mathbb{R}\subset\mathbb{C}\subset\mathbb{H}$. It turns out that $\mathbb{H}$ satisfies nearly all of the common algebraic properties of $\mathbb{R}$ and $\mathbb{C}$, with one notable exception, which is highlighted in bold below.
+
+\begin{fact}\label{fact.QuaternionLaws} The following are true for $\mathbb{H}$.
+\begin{itemize}
+\item \textbf{Addition Laws:} Addition is associative and commutative. There is a unique additive identity, namely $0 = 0 + 0i+0j+0k$, and every number has a unique additive inverse.
+\item \textbf{Multiplication Laws:} Multiplication is associative but \textbf{noncommutative}. There is a unique multiplicative identity, namely $1 = 1 + 0i+0j+0k$, and every nonzero number has a unique multiplicative inverse.
+\item \textbf{Distributivity Laws:} For all $a,b,c \in \mathbb{H}$, $a(b+c) = ab+ac$ and $(b+c)a = ba+ca$.
+\item \textbf{Conjugation Laws:} For all $a,b \in \mathbb{H}$, $\overline{a+b} = \overline{a} + \overline{b}$ and $\overline{ab} = \overline{a}\overline{b}$.
+\end{itemize}
+\end{fact}
+
+We can also define the modulus of a quaternion, analogous to how we defined it for a complex number.
+
+\begin{definition}
+The \textbf{modulus} of $h=a + bi+ cj + dk$ , denoted $|h|$, is $|h| = \sqrt{a^2 + b^2+c^2+d^2}$. 
+\end{definition}
+
+\begin{problem}\label{prob.QuaternionCheckin}
+Write each of the following quaternions in the form $a+bi+cj+dk$, and find its modulus.
+\begin{multicols}{2}
+\begin{enumerate}
+\item $h = (2i+4k)(7-3j+k)$
+\item $k^{-1}$
+\item $w = (i+j)^{-1}$
+\end{enumerate}
+\end{multicols}
+\end{problem}
+
+\begin{theorem}
+Let $h\in \mathbb{H}$. If $h\neq 0$, then $h^{-1} = \displaystyle\frac{\overline{h}}{|h|^2}$.
+\end{theorem}
+
+And as in the complex numbers, the modulus function is multiplicative---we will take this as fact.
+
+\begin{fact}
+If $h_1,h_2\in \mathbb{H}$, then $|h_1h_2| = |h_1||h_2|$.
+\end{fact}
+
+We conclude this section by looking at multiplication of quaternions a little closer. As we do, we return to the mathematical notion of a \emph{group}. Please feel free to look over old notes or other books to review the basics. As mentioned in the introduction, our main reference for groups will be  \href{https://github.com/dcernst/IBL-AbstractAlgebra/blob/master/Spring2018/IBL-AbstractAlgebra.pdf}{An Inquiry-Based Approach to Abstract Algebra}.
+
+\begin{problem}
+Let $G$ be the subset of $\mathbb{H}$ defined as $G:=\{\pm1,\pm i,\pm j,\pm k\}$. Show that $G$, together with the operation of quaternion multiplication, is a nonabelian group. If you have encountered this group before, what name (or symbol) did you know it by?
+\end{problem}
+
+\begin{problem}
+Let $S$ be the subset of $\mathbb{H}$ consisting of all quaternions with modulus equal to $1$, i.e.~$S:=\{h\in \mathbb{H}\mid |h| = 1\}$. Show that $S$, together with the operation of quaternion multiplication, is an infinite, nonabelian group.
+\end{problem}
+
+It turns out that the group $S$ from the previous problem is isomorphic to the group $\operatorname{SU}(2)$ (one the the so-called special unitary groups), which is quite important in theoretical physics. If you want to learn more, you can start on \href{https://en.wikipedia.org/wiki/Special_unitary_group#The_group_SU(2)}{Wikipedia}.
 
 \end{section}
 
