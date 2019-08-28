@@ -7,15 +7,15 @@ The story begins. Can you count all of the times in your career that you've had 
 People have been investigating how to solve polynomial equations for about 4000 years. Let's get started.
 
 \begin{problem}\label{prob.IntroFindZeros}
-Determine the roots (i.e.\ zeros) of each of the following. Try to use tools you've accumulated over the years, but you can also use a computer program (e.g. \href{https://www.wolframalpha.com}{WolframAlpha}) if you need. For each problem, make a note about \emph{how} you found the roots. Try for exact answers, but you can approximate if needed.
+Determine the roots (i.e.~zeros) of each of the following. Try to use tools you've accumulated over the years, but you may well need a computer program (e.g. \href{https://www.wolframalpha.com}{WolframAlpha}) for some of them. For each problem, make a note about \emph{how} you found the roots. Try for exact answers, but you can approximate if needed.
 \begin{multicols}{2}
 \begin{enumerate}
 \item $p(x) = x^2 - 5x + 6$
 \item $q(x) = (x-3)^2 - 2$
 \item $r(x) = x^2 + x + 1$
 \item $s(x) = x^3-3x-2$ %rational root theorem
-\item $f(x) = x^4 - 1$
-\item $g(x) = x^4 - 5x^2 + 6$
+\item $f(x) = x^3 - 5$
+\item $g(x) = x^4 - 1$
 \item $a(x) = x^5 - 1$
 \item $b(x) = x^5 +5 x^4-5$
 \end{enumerate}
@@ -47,7 +47,7 @@ The roots of $p(x) = x^2 + bx + c$ are \[\frac{-b\pm\sqrt{b^2 - 4c}}{2}.\]
 \end{theorem}
 
 \begin{problem}
-Describe a number system, as small as possible, that is capable of expressing the roots of \emph{any} quadratic polynomial.
+Describe a number system, as small as possible, that is capable of expressing the roots of \emph{any} quadratic polynomial whose \emph{coefficients are all rational numbers}.
 \end{problem}
 
 Well, that takes care of quadratic polynomials. What about finding the roots of cubic polynomials? Well, it turns out that there is indeed a cubic formula, though it's decidedly more complicated than the quadratic formula. 
@@ -60,7 +60,7 @@ where $\alpha = \sqrt[3]{-\frac{q}{2} + \sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}$ an
 \end{fact}
 
 \begin{problem}
-Describe a number system, as small as possible, that is capable of expressing the roots of \emph{any} cubic polynomial.
+Describe a number system, as small as possible, that is capable of expressing the roots of \emph{any} cubic polynomial of the form $x^3 + px + q$ where $p,q\in \mathbb{Q}$.
 \end{problem}
 
 \begin{problem}
@@ -87,11 +87,11 @@ You investigated two particular quintics in Problem~\ref{prob.IntroFindZeros}---
 Let's first try to tackle the ``what do we mean by formula'' question. Guided by the quadratic and cubic formulas, let's agree that we are looking for a formula that expresses the roots of an arbitrary quintic polynomial, in terms of the coefficients of the polynomial, using just rational numbers together with the operations of addition, subtraction, multiplication, division, and the extraction of roots (square roots, cube roots,\ldots). This leads to the following intuitive definition, that we will work to sharpen later.
 
 \begin{intuitivedef}
-A polynomial (with coefficients in $\mathbb{Q}$) is said to be \textbf{solvable by radicals} if every root of the polynomial can be expressed using rational numbers together with the operations of addition, subtraction, multiplication, division, and $\sqrt[n]{\phantom{x}}$ for any positive integer $n$.
+A polynomial is said to be \textbf{solvable by radicals} if every root of the polynomial can be expressed, in terms of the coefficients of the polynomial, using rational numbers together with the operations of addition, subtraction, multiplication, division, and $\sqrt[n]{\phantom{x}}$ for any positive integer $n$.
 \end{intuitivedef}
 
 \begin{problem}
-Find the roots of $p(x) = x^4 - 2x^2 -1$, and explain why $p(x)$ is solvable by radicals.
+Find the roots of $p(x) = x^4 - 2x^2 -1$. Explain why $p(x)$ is solvable by radicals.
 \end{problem}
 
 \begin{problem}
