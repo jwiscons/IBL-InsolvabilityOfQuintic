@@ -37,6 +37,19 @@ Suppose that $z$ is a root of $p(x)$. Then $p(z) = 0$, so  $a_nz^n + a_{n-1}z^{n
 You are trying to find $(a+b\sqrt{5})^{-1} = \frac{1}{a+b\sqrt{5}}$. Try multiplying top and bottom by the conjugate: $a-b\sqrt{5}$.
 \end{hint*}
 
+\begin{hint*}[Theorem~\ref{thm.BasicFieldProps}]
+For the first part, notice that $x\cdot0 = x(0+0)$. For the third part, remember that the definition of a field ensures that $F$ has at least two elements, so there is some $a\in F$ with $a\neq 0$. Now, what happens if $0=1$?
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.SubfieldRoot2PlusI}]
+Try to work by contradiction. If $T_3$ is a subfield, then, in particular, it is closed under multiplication, so it must be that $\alpha^2\in T_3$. What does this imply?
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.ZpField}]
+The crux is to show that every nonzero element has a multiplicative inverse when $n$ is prime. Let $a\in (Z_n)^*$. You need to find some integer $b$ such that $ab=1$ modulo $p$. Now, since $a\in (Z_n)^*$ and  $n$ is prime, $\gcd(a,p) = 1$. By Bezout's Lemma, there exist $m,n\in \mathbb{Z}$ such that $1 = ma+np$. What happens when you consider the equation $1 = ma+np$ modulo $p$?
+\end{hint*}
+
+
 
 
 
