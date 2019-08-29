@@ -495,6 +495,21 @@ Let $F$ be a field.
 \end{enumerate}
 \end{theorem}
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Another example}
+We now return to the conjecture you made in Problem~\ref{prob.ConjectureZn}. Combining the next theorem with Theorem~\ref{thm.BasicFieldProps}, we see that $\mathbb{Z}_n$ has no hope to be a field unless $n$ is prime.
+
+\begin{theorem}
+Let $n$ be a positive integer. If $n$ is not prime, then there exist $a,b\in (\mathbb{Z}_n)^*$ such that $ab=0$.
+\end{theorem}
+
+And now we completely answer the question. As you explore the next theorem, you can use properties of modular arithmetic that you know from before. For example, you can take for granted that addition and multiplication are both associative and commutative. The crux is in showing that every nonzero element has a multiplicative inverse when $n$ is prime, and for this, Bezout's Lemma can be helpful. Bezout's Lemma states that there exist $m,n\in \mathbb{Z}$ such that $\gcd(a, b) = ma +nb$.
+
+\begin{theorem}\label{thm.ZpField}
+Let $n$ be a positive integer. Then $\mathbb{Z}_n$ is a field if and only if $n$ is prime.
+\end{theorem}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
@@ -539,22 +554,12 @@ Let $\alpha = \sqrt{2} + i$, and define $T_3=\{a+b\alpha\mid a,b\in \mathbb{Q}\}
 Make a conjecture as to when the set $\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ is a subfield of $\mathbb{C}$ and when it is not. That is, try to fill in the blank: ``$\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ is a subfield of $\mathbb{C}$ provided \fillInBlank{something about $\alpha$}.'' What evidence do you have to support this?
 \end{problem}
 
-
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\subsection{A final example}
-We now return to the conjecture you made in Problem~\ref{prob.ConjectureZn}. Combining the next theorem with Theorem~\ref{thm.BasicFieldProps}, we see that $\mathbb{Z}_n$ has no hope to be a field unless $n$ is prime.
+\subsection{Generating subfields}
 
-\begin{theorem}
-Let $n$ be a positive integer. If $n$ is not prime, then there exist $a,b\in (\mathbb{Z}_n)^*$ such that $ab=0$.
-\end{theorem}
 
-And now we completely answer the question. As you explore the next theorem, you can use properties of modular arithmetic that you know from before. For example, you can take for granted that addition and multiplication are both associative and commutative. The crux is in showing that every nonzero element has a multiplicative inverse when $n$ is prime, and for this, Bezout's Lemma can be helpful. Bezout's Lemma states that there exist $m,n\in \mathbb{Z}$ such that $\gcd(a, b) = ma +nb$.
-
-\begin{theorem}\label{thm.ZpField}
-Let $n$ be a positive integer. Then $\mathbb{Z}_n$ is a field if and only if $n$ is prime.
-\end{theorem}
 
 \end{section}
 
