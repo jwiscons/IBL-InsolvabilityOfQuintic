@@ -331,7 +331,7 @@ It turns out that the group $S$ from the previous problem is isomorphic to the g
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \begin{section}{Abstract fields}
-Notice that $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$ satisfy many common algebraic properties with respect to addition and multiplication. Of course, $\mathbb{H}$ does too, though it lacks commutativity of multiplication. When objects have common properties, it can be extremely valuable to abstract the those properties and study them once and for all (as opposed to trying to prove things about each individual structure). This is where we are headed, but first we highlight some related structures (again with algebraic properties similar to $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$) that help to connect this work to our main goal of expressing roots of polynomials.
+Notice that $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$ satisfy many common algebraic properties with respect to addition and multiplication. Of course, $\mathbb{H}$ does too, though it lacks commutativity of multiplication. When objects have common properties, it can be extremely valuable to abstract  those properties and study them once and for all (as opposed to trying to prove things about each individual structure). This is where we are headed, but first we highlight some related structures (again with algebraic properties similar to $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$) that help to connect this work to our main goal of expressing roots of polynomials.
 
 \begin{problem}
 Let $p(x) = x^2+3x+1$. Find the roots of $p(x)$, and show that each root can be written in the form $a+b\sqrt{5}$ with $a,b\in \mathbb{Q}$.
@@ -342,7 +342,7 @@ Let $S=\{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$.
 \begin{enumerate}
 \item Show that $S$ is closed under addition; that is, show that for all $x,y\in S$, $x+y\in S$.
 \item Show that $S$ is closed under multiplication; that is, show that for all $x,y\in S$, $xy\in S$.
-\item Use that $S\subset \mathbb{R}$ to explain why addition and multiplication of elements of $S$ are both associative and commutative and why multiplication distributes over addition.
+\item Use that $S\subset \mathbb{R}$ to explain why both addition and multiplication of elements of $S$ are associative and commutative and why multiplication distributes over addition.
 \end{enumerate}
 \end{problem}
 
@@ -360,9 +360,9 @@ We now abstract the common properties of $\mathbb{Q}$, $\mathbb{R}$, and $\mathb
 \begin{definition}
 A \textbf{field} is a structure $(F,+,\cdot)$ consisting of a set $F$, containing at least two elements, together with two binary operations $+$ and $\cdot$ (which we call \emph{addition} and \emph{multiplication}) such that for some elements $0,1\in F$ the following axioms hold.
 \begin{itemize}
-\item \textbf{Addition Laws:} Addition is both associative and commutative; the element $0$ is an additive identity; every  $x\in F$ has an additive inverse with respect to $0$, denoted $-x$.
-\item \textbf{Multiplication Laws:} Multiplication is both associative and commutative; the element $1$ is a multiplicative identity;  every $x\in F\setminus\{0\}$ has a multiplicative inverse with respect to $1$, denoted $x^{-1}$.
-\item \textbf{Distributivity Laws:} For all $x,y,z \in \mathbb{F}$, $x(y+z) = xy+xz$ and $(y+z)x = yx+zx$.
+\item \textbf{Addition Axioms:} Addition is associative and commutative; the element $0$ is an additive identity; every  $x\in F$ has an additive inverse with respect to $0$, denoted $-x$.
+\item \textbf{Multiplication Axioms:} Multiplication is associative and commutative; the element $1$ is a multiplicative identity;  every $x\in F\setminus\{0\}$ has a multiplicative inverse with respect to $1$, denoted $x^{-1}$.
+\item \textbf{Distributivity Axioms:} For all $x,y,z \in \mathbb{F}$, $x(y+z) = xy+xz$ and $(y+z)x = yx+zx$.
 \end{itemize}
 \end{definition}
 
@@ -381,7 +381,7 @@ Now, as with any new definition, we look for examples and basic properties.
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Some examples and non-examples}
 
-It is not hard to verify that $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, and $S$ from Problem~\ref{prob.QAdjoinRoot5Closure} are all fields (with their usual definitions of addition and multiplication. Let's search for more examples and non-examples.
+It is not hard to verify that $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$, and $S$ from Problem~\ref{prob.QAdjoinRoot5Closure} are all fields (with their usual definitions of addition and multiplication). Let's search for more examples and non-examples.
 
 \begin{problem}
 Explain why $\mathbb{Z}$ is not a field.
@@ -390,7 +390,7 @@ Explain why $\mathbb{Z}$ is not a field.
 \begin{problem}\label{prob.FieldExampleTable}
 Determine if each of the following is a field. If it is a field, identify an additive and multiplicative identity; if it is not a field, explain why not.
 \begin{enumerate}
-\item $(F,+,\cdot)$ with $+$ and $\cdot$ defined as follows:
+\item $(F,+,\cdot)$ where $F=\{a,b,c\}$ and $+$ and $\cdot$ are defined as follows:
 \begin{center}
 \begin{tabu}{c|[2pt]c|c|c}
 $+$ & $a$ & $b$ & $c$ \\ \tabucline[2pt]{-}
@@ -406,7 +406,7 @@ $b$ & $b$ & $a$ & $c$ \\ \hline
 $c$ & $c$ & $c$ & $c$
 \end{tabu}
 \end{center}
-\item $(F,+,\cdot)$ with $+$ and $\cdot$ defined as follows:
+\item $(F,+,\cdot)$ where $F=\{0,1,2,3\}$ and $+$ and $\cdot$ are defined as follows:
 \begin{center}
 \begin{tabu}{c|[2pt]c|c|c|c}
 $+$ & $0$ & $1$ & $2$ & $3$ \\ \tabucline[2pt]{-}
@@ -425,7 +425,7 @@ $3$ & $0$ & $3$ & $2$ & $1$
 \end{tabu}
 \end{center}
 
-\item $(F,+,\cdot)$ with $+$ and $\cdot$ defined as follows:
+\item $(F,+,\cdot)$ where $F=\{0,1,2,3\}$ and $+$ and $\cdot$ are defined as follows:
 \begin{center}
 \begin{tabu}{c|[2pt]c|c|c|c}
 $+$ & $0$ & $1$ & $2$ & $3$ \\ \tabucline[2pt]{-}
@@ -447,7 +447,7 @@ $3$ & $0$ & $3$ & $1$ & $2$
 \end{problem}
 
 \begin{problem}
-Look back at Problem~\ref{prob.FieldExampleTable}. For each structure that is a field, determine which familiar group each of $(F,+)$ and $(F^*,\cdot)$ is isomorphic to.
+Look back at Problem~\ref{prob.FieldExampleTable}. For those that are fields, determine which familiar group each of $(F,+)$ and $(F^*,\cdot)$ is isomorphic to.
 \end{problem}
 
 To find more examples of fields, Problem~\ref{prob.FieldExampleTable} hints at the fact we may want to look back to modular arithmetic. Following \href{https://github.com/dcernst/IBL-AbstractAlgebra}{An Inquiry-Based Approach to Abstract Algebra}, we define the structures $(\mathbb{Z}_n,+_n,\cdot_n)$ as follows.
@@ -474,7 +474,9 @@ Make a conjecture as to when $\mathbb{Z}_n$ is a field and when it is not. That 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Basic properties}
 
-Let's now explore some basic properties of fields that follow from the definition. We list some of these as facts since they follow directly from the fact that $(F,+)$ and $(F^*,\cdot)$ are both groups together with basic group theory. From now on, when we write ``let $F$ be a field,'' we tacitly mean ``let $(F,+,\cdot)$ be a field.''
+Let's now explore some basic properties of fields that follow from the definition. We list some of these as facts since they follow directly from basic group theory, since $(F,+)$ and $(F^*,\cdot)$ are both groups. 
+
+From now on, when we write ``let $F$ be a field,'' we tacitly mean ``let $(F,+,\cdot)$ be a field.''
 
 \begin{fact}
 Let $F$ be a field. 
@@ -505,7 +507,11 @@ We now return to the conjecture you made in Problem~\ref{prob.ConjectureZn}. Com
 Let $n$ be a positive integer. If $n$ is not prime, then there exist $a,b\in (\mathbb{Z}_n)^*$ such that $ab=0$.
 \end{theorem}
 
-And now we completely answer the question. As you explore the next theorem, you can use properties of modular arithmetic that you know from before. For example, you can take for granted that addition and multiplication are both associative and commutative. The crux is in showing that every nonzero element has a multiplicative inverse when $n$ is prime, and for this, Bezout's Lemma can be helpful. Bezout's Lemma states that there exist $m,n\in \mathbb{Z}$ such that $\gcd(a, b) = ma +nb$.
+And now we completely answer the question. As you explore the next theorem, you can use properties of modular arithmetic that you know from before. For example, you can take for granted that addition and multiplication are both associative and commutative. The crux is in showing that every nonzero element has a multiplicative inverse when $n$ is prime. There are many ways to approach this; one way uses \href{https://en.wikipedia.org/wiki/Bezout\%27s_identity}{B\'ezout's lemma} from basic number theory. Even if you don't use it now, it's a  useful fact to remember.
+
+\begin{fact}[B\'ezout's lemma]
+If $a,b\in \mathbb{Z}$, then there exist $k,l\in \mathbb{Z}$ such that $ka+lb = \gcd(a,b)$.
+\end{fact}
 
 \begin{theorem}\label{thm.ZpField}
 Let $n$ be a positive integer. Then $\mathbb{Z}_n$ is a field if and only if $n$ is prime.
@@ -516,7 +522,7 @@ Let $n$ be a positive integer. Then $\mathbb{Z}_n$ is a field if and only if $n$
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Subfields}
 
-Just as with groups, the notion of a subfield is extremely important. Analyzing the subfields of a field $F$ can often yield a better understanding of the whole field $F$, and vice versa. Also, of immediate use, it will allow us to generate many more examples of fields.
+Just as with groups and subgroups, the notion of a subfield is extremely important. Analyzing the subfields of a field $F$ can often yield a better understanding of the whole field $F$, and vice versa. Also, this will allow us to generate  more examples of fields.
 
 \begin{definition}
 Let $(E,+,\cdot)$ be a field, and let $F$ be a subset of $E$. Then $F$ is a \textbf{subfield} of $E$ if $F$ is a field in its own right with respect to operations $+$ and $\cdot$ \emph{inherited from $E$}. When $F$ is a subfield of $E$, $E$ is called an \textbf{extension field} of $F$.
@@ -534,25 +540,22 @@ Let $E$ be a field, and let $F\subseteq E$. Then $F$ is a subfield of $E$ if and
 \end{enumerate}
 \end{theorem}
 
-The second item in the above theorem is stating that $F$ is closed under the addition and multiplication of $E$. The last two items could be read as $F$ being closed additive and multiplicative inverses.
+The second item in the above theorem is stating that $F$ is closed under the addition and multiplication inherited from $E$. The last two items could be read as $F$ being closed additive and multiplicative inverses.
 
-We now consider potential subfields of $\mathbb{C}$.
-
-\begin{problem}
-Let $T_1=\{a+bi\mid a,b\in \mathbb{Q}\}$. Show that $T_1$ is a subfield of $\mathbb{C}$.
-\end{problem}
-
-\begin{problem}
-Let $T_2=\{a+bi\mid a,b\in \mathbb{Z}\}$. Show that $T_2$ is not subfield of $\mathbb{C}$.
-\end{problem}
+It is easy to check that $\mathbb{Q}$ and $\mathbb{R}$ are both subfields of $\mathbb{C}$; $S$ from Problem~\ref{prob.QAdjoinRoot5Closure} is also a subfield of $\mathbb{C}$ (and of $\mathbb{R}$). Let's look for more that are similar to $S$.
 
 \begin{problem}\label{prob.SubfieldRoot2PlusI}
-Let $\alpha = \sqrt{2} + i$, and define $T_3=\{a+b\alpha\mid a,b\in \mathbb{Q}\}$. Show that $T_3$ is not subfield of $\mathbb{C}$.
+Determine which of the following are subfields of $\mathbb{C}$.
+\begin{enumerate}
+\item $T_1=\{a+bi\mid a,b\in \mathbb{Q}\}$
+\item $T_2=\{a+bi\mid a,b\in \mathbb{Z}\}$
+\item $T_3=\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ where  $\alpha = \sqrt{2} + i$
+\end{enumerate}
 \end{problem}
 
-\begin{problem}
-Make a conjecture as to when the set $\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ is a subfield of $\mathbb{C}$ and when it is not. That is, try to fill in the blank: ``$\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ is a subfield of $\mathbb{C}$ provided \fillInBlank{something about $\alpha$}.'' What evidence do you have to support this?
-\end{problem}
+%\begin{problem}
+%Make a conjecture as to when the set $\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ is a subfield of $\mathbb{C}$ and when it is not. That is, try to fill in the blank: ``$\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ is a subfield of $\mathbb{C}$ provided \fillInBlank{something about $\alpha$}.'' What evidence do you have to support this?
+%\end{problem}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
