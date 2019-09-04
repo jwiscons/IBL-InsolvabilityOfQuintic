@@ -21,9 +21,18 @@ Think back to changing from polar to rectangular coordinates (or parametrizing c
 Try using Theorem~\ref{thm.PolarToRectangular} $+$ trigonometric identities. 
 \end{hint*}
 
-\begin{hint*}[Lemma~\ref{lem.nthRoot1IsPowerOfZeta}]
-You are working with powers (hence multiplication) so try writing $z$ in the form $z = r\cos\theta + ir\sin\theta$. Now, what does $z^n = 1$ imply about $r$ and $\theta$?
+\begin{hint*}[Problem~\ref{prob.nthRoots}]
+You want to find a $z$ such that $z^4 = \zeta_3$. You are working with powers (hence multiplication), so try writing $z$ in the form $z = r\cos\theta + ir\sin\theta$. Now you can use Corollary~\ref{cor.DeMoivre} to simply $z^4$ and compare it with $\zeta_3$. What can you deduce about $r$ and $\theta$?
 \end{hint*}
+
+\begin{hint*}[Lemma~\ref{lem.nthRoot1IsPowerOfZeta}]
+Similar to Problem~\ref{prob.nthRoots}, try writing $z$ in the form $z = r\cos\theta + ir\sin\theta$. Now, what does $z^n = 1$ imply about $r$ and $\theta$?
+\end{hint*}
+
+\begin{hint*}[Lemma~\ref{lem.ReducePowerOfZeta}]
+It may be helpful to draw some pictures first. Try plotting $\zeta_8$, $(\zeta_8)^2$, $(\zeta_8)^3$, \ldots, $(\zeta_8)^8$, $(\zeta_8)^{14}$, $(\zeta_8)^{85}$. Now, you know by a previous problem that $(\zeta_n)^n = 1$, so also $(\zeta_n)^{2n} = 1$ and so on. Try (using the division algorithm) to write $k = qn +r$ for some $q,r\in \mathbb{Z}$ with $0\le r \le n-1$, and plug that into $(\zeta_n)^{k}$
+\end{hint*}
+
 
 \begin{hint*}[Theorem~\ref{thm.nthRoots1}]
 You may want to view this as the following ``if and only if'' statement: $z$ is an $n^\text{th}$ root of $1$ $\iff$ $z = (\zeta_n)^k$ for some $0\le k\le n-1$. Now make use of the previous lemma and theorems you proved. Don't forget to explain why each of $1, \zeta_n, (\zeta_n)^2, \ldots, (\zeta_n)^{n-1}$ are all different.

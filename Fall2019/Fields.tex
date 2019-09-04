@@ -162,7 +162,7 @@ If $z_1 = r_1\cos\theta_1 + ir_1\sin\theta_1$ and $z_2=r_2\cos\theta_2 + ir_2\si
 \end{theorem}
 
 \begin{corollary}
-If $z_1,z_2\in \mathbb{C}$, then $|z_1z_2| = |z_1||z_2|$ and $\Arg(z_1z_2) = \Arg(z_1)+\Arg(z_2)$.
+If $z_1,z_2\in \mathbb{C}$, then $|z_1z_2|$ is equal to $|z_1||z_2|$ and $\Arg(z_1z_2)$ is equivalent to $\Arg(z_1)+\Arg(z_2)$ modulo $2\pi$.
 \end{corollary}
 
 \begin{corollary}[De Moivre's formula]\label{cor.DeMoivre}
@@ -198,7 +198,7 @@ We now turn our attention back to solving polynomial equations, focusing on thos
 Let $a\in \mathbb{C}$. A number $z\in \mathbb{C}$ is called an \textbf{$n^\text{th}$ root of $a$} if $z^n = a$. In other words, the  $n^\text{th}$ roots of $a$ are the roots of the polynomial $x^n-a$. The  $n^\text{th}$ roots of $1$ are also called \textbf{$n^\text{th}$ roots of unity}.
 \end{definition}
 
-\begin{problem}
+\begin{problem}\label{prob.nthRoots}
 Find a $4^\text{th}$ root of each of the following: $\zeta_3$ and $-1 + i\sqrt{3}$.
 \end{problem}
 
@@ -210,7 +210,7 @@ For each non-negative $k\in \mathbb{Z}$, $(\zeta_n)^k$ is an $n^\text{th}$ root 
 If $z$ is an $n^\text{th}$ root of $1$, then $z = (\zeta_n)^k$ for some non-negative $k\in \mathbb{Z}$.
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma}\label{lem.ReducePowerOfZeta}
 For each non-negative $k\in \mathbb{Z}$, $(\zeta_n)^k = (\zeta_n)^m$ for some $0\le m \le n-1$.
 \end{lemma}
 
