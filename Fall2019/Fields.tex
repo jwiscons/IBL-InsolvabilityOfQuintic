@@ -636,6 +636,36 @@ Let $F,L$ be subfields of $E$, and let $r_1,r_2,\ldots,r_n \in E$. Then $F(r_1,r
 Show that $\mathbb{Q}\left(3-\sqrt{2},5+i\right) = \mathbb{Q}\left(\sqrt{2},i\right)$.
 \end{problem}
 
+\begin{problem}
+Complete the diagram below to illustrate how each of the following sets intersect and where each element is located. Each set that is a field should be drawn in blue; each set that is not a field should be drawn in red. Elements should be illustrated by a dot and then labeled by the name of the element. Some have already been done.
+\[\mathbb{C},\mathbb{R},\mathbb{Q}, \mathbb{Z}, 0, 1, \sqrt{2}, i, i\sqrt{2}, \sqrt{2}+i, \mathbb{Q}\left(\sqrt{2}\right), \mathbb{Q}(i), \mathbb{Q}\left(i\sqrt{2}\right) \mathbb{Q}\left(\sqrt{2},i\right), \{a+bi\mid a,b\in \mathbb{Z}\}\]
+\begin{center}
+\begin{tikzpicture}[line width = 1,yscale = .7]
+\draw[domain = 0:360,blue,samples = 100] plot ({5*cos(\x)},{4*sin(\x)});
+\begin{scope}[shift={(-1,-0)}]
+\draw[domain = 0:360,blue,samples = 100,rotate = 45] plot ({3.5*cos(\x)},{2.5*sin(\x)});
+\end{scope}
+\begin{scope}[shift={(0.5,-1.75)}]
+\draw[domain = 0:360,blue,samples = 100,rotate = 10] plot ({3*cos(\x)},{1.7*sin(\x)});
+\end{scope}
+\begin{scope}[shift={(-0.6,-1.4)}]
+\draw[domain = 0:360,red,samples = 100,rotate = 35] plot ({1.5*cos(\x)},{0.5*sin(\x)});
+\end{scope}
+\node[blue] at (3,2.5) {$\mathbb{C}$};
+\node[blue] at (0.5,2) {$\mathbb{R}$};
+\node[blue] at (2.7,-1.2) {$\mathbb{Q}(i)$};
+\node[red] at (0.1,-0.9) {$\mathbb{Z}$};
+\node[red] (root2) at (-2.5,-0.9) {$\sqrt{2}$};
+\fill[red,anchor = 45,yscale = 10/7] (-2.8,-.9) circle (0.07);
+\end{tikzpicture}
+\end{center}
+\end{problem}
+
+\begin{problem}
+Conjecture where $\mathbb{Q}\left(\sqrt{2}+i\right)$ would be in the previous diagram.
+\end{problem}
+
+
 \end{section}
 
 
