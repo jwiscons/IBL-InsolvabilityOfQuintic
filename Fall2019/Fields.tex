@@ -425,7 +425,7 @@ $3$ & $0$ & $3$ & $2$ & $1$
 \end{tabu}
 \end{center}
 
-\item $(F,+,\cdot)$ where $F=\{0,1,2,3\}$ and $+$ and $\cdot$ are defined as follows:
+\item\label{prob.FieldExampleTable.F4} $(F,+,\cdot)$ where $F=\{0,1,2,3\}$ and $+$ and $\cdot$ are defined as follows:
 \begin{center}
 \begin{tabu}{c|[2pt]c|c|c|c}
 $+$ & $0$ & $1$ & $2$ & $3$ \\ \tabucline[2pt]{-}
@@ -461,6 +461,8 @@ Let $n$ be a positive integer. The the structure $(\mathbb{Z}_n,+_n,\cdot_n)$ co
 We often refer to the entire structure $(\mathbb{Z}_n,+_n,\cdot_n)$ as simply $\mathbb{Z}_n$. Also, when the context is clear, we may write $+$ and $\cdot$ in place of $+_n$ and $\cdot_n$.
 \end{definition}
 
+So, in $\mathbb{Z}_5$, we write equations like $3+6 = 4$, since $3+6 = 9$ and $9$ is congruent to $4$ when working modulo $5$. If needed, we can highlight that we are working modulo $5$ by writing  $3+6 \equiv_5 4$. And with respect to multiplication in $\mathbb{Z}_5$, we have equations like $2\cdot3 = 1$, which implies that $3$ is a multiplicative inverse of $2$ (and vice versa) in $\mathbb{Z}_5$.
+
 \begin{problem}
 Show that $\mathbb{Z}_5$ is a field but $\mathbb{Z}_6$ is not.
 \end{problem}
@@ -474,7 +476,7 @@ Make a conjecture as to when $\mathbb{Z}_n$ is a field and when it is not. That 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Basic properties}
 
-Let's now explore some basic properties of fields that follow from the definition. We list some of these as facts since they follow directly from basic group theory, since $(F,+)$ and $(F^*,\cdot)$ are both groups. 
+Let's now explore some basic properties of fields that follow from the definition. We list some of these as facts since they follow directly from basic group theory, remembering that, as observed above, $(F,+)$ and $(F^*,\cdot)$ are both groups. 
 
 From now on, when we write ``let $F$ be a field,'' we tacitly mean ``let $(F,+,\cdot)$ be a field.''
 
@@ -525,10 +527,10 @@ Let $n$ be a positive integer. Then $\mathbb{Z}_n$ is a field if and only if $n$
 Just as with groups and subgroups, the notion of a subfield is extremely important. Analyzing the subfields of a field $F$ can often yield a better understanding of the whole field $F$, and vice versa. Also, this will allow us to generate  more examples of fields.
 
 \begin{definition}
-Let $(E,+,\cdot)$ be a field, and let $F$ be a subset of $E$. Then $F$ is a \textbf{subfield} of $E$ if $F$ is a field in its own right with respect to operations $+$ and $\cdot$ \emph{inherited from $E$}. When $F$ is a subfield of $E$, $E$ is called an \textbf{extension field} of $F$.
+Let $(E,+,\cdot)$ be a field, and let $F$ be a subset of $E$. Then $F$ is a \textbf{subfield} of $E$ if $F$ is a field in its own right with respect to operations $+$ and $\cdot$ \emph{inherited from $E$}. When $F$ is a subfield of $E$, we call $E$  an \textbf{extension field} of $F$.
 \end{definition}
 
-To check that a subset $F$ of a field $E$ is a subfield, it turns out that $F$ will automatically satisfy many of the field axioms, leaving only a handful of things to check.
+When checking if a subset of a field is a subfield, it turns out that the subset will automatically satisfy many of the field axioms, leaving only a handful of things to verify.
 
 \begin{theorem}
 Let $E$ be a field, and let $F\subseteq E$. Then $F$ is a subfield of $E$ if and only if 
@@ -540,29 +542,99 @@ Let $E$ be a field, and let $F\subseteq E$. Then $F$ is a subfield of $E$ if and
 \end{enumerate}
 \end{theorem}
 
-The second item in the above theorem is stating that $F$ is closed under the addition and multiplication inherited from $E$. The last two items could be read as $F$ being closed additive and multiplicative inverses.
+The second item in the above theorem is stating that $F$ is closed under the addition and multiplication inherited from $E$. The last two items could be read as $F$ being closed under additive and multiplicative inverses.
 
-It is easy to check that $\mathbb{Q}$ and $\mathbb{R}$ are both subfields of $\mathbb{C}$; $S$ from Problem~\ref{prob.QAdjoinRoot5Closure} is also a subfield of $\mathbb{C}$ (and of $\mathbb{R}$). Let's look for more that are similar to $S$.
+\begin{theorem}\label{thm.SubfieldContains01}
+If $F$ is a subfield of $E$, then $F$ contains the additive and multiplicative identities of $E$ (namely $0$ and $1$).
+\end{theorem}
+
+It is not difficult to check that $\mathbb{Q}$ and $\mathbb{R}$ are both subfields of $\mathbb{C}$; $S$ from Problem~\ref{prob.QAdjoinRoot5Closure} is also a subfield of $\mathbb{C}$ (and of $\mathbb{R}$). Let's look for more that are similar to $S$.
 
 \begin{problem}\label{prob.SubfieldRoot2PlusI}
 Determine which of the following are subfields of $\mathbb{C}$.
 \begin{enumerate}
-\item $T_1=\{a+bi\mid a,b\in \mathbb{Q}\}$
+\item\label{prob.SubfieldRoot2PlusI.QAdjoinI} $T_1=\{a+bi\mid a,b\in \mathbb{Q}\}$
 \item $T_2=\{a+bi\mid a,b\in \mathbb{Z}\}$
-\item $T_3=\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ where  $\alpha = \sqrt{2} + i$
+\item\label{prob.SubfieldRoot2PlusI.QAdjoinRoot2PlusI} $T_3=\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ where  $\alpha = \sqrt{2} + i$
 \end{enumerate}
 \end{problem}
 
-%\begin{problem}
-%Make a conjecture as to when the set $\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ is a subfield of $\mathbb{C}$ and when it is not. That is, try to fill in the blank: ``$\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ is a subfield of $\mathbb{C}$ provided \fillInBlank{something about $\alpha$}.'' What evidence do you have to support this?
-%\end{problem}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Generating subfields}
+Paralleling the theory of groups, we now investigate how to generate subfields from subsets of elements. We first need a \emph{definition} of ``the subfield generated by a set of elements'';  it is essentially the same as for all algebraic structures: take the intersection of all subfields containing the subset.
+
+\begin{theorem}
+Suppose $S$ is a subset of a field $E$. Let $K$ be the intersection of all subfields of $E$ that contain $S$; that is \[K:=\bigcap\{F\mid \text{$F$ is a subfield of $E$}\}.\]
+Then 
+\begin{enumerate}
+\item $K$ is a subfield of $E$ that contains $S$, and
+\item if $F$ is any subfield of $E$ that contains $S$, then $F$ also contains in $K$.
+\end{enumerate}
+\end{theorem}
+
+In words, the previous theorem says that $K$ is the ``smallest'' subfield of $E$ containing $S$, so  $K$ is the correct candidate for the subfield generated by $S$.
+
+\begin{definition}
+Suppose $S$ is a subset of a field $E$. The \textbf{subfield of $E$ generated by $S$}, denoted $\langle S \rangle_{\textsc{field}}$, is defined to be the intersection of all subfields of $E$ that contain $S$.
+\end{definition}
+
+In symbols, $S \subseteq \langle S \rangle_{\textsc{field}} \subseteq E$, and if $F$ is any subfield of $E$, then $S\subseteq F\implies \langle S \rangle_{\textsc{field}} \subseteq F$.
+
+\begin{example}\label{exam.GenerateField}
+Let's explore  $\langle 1 \rangle_{\textsc{field}}$ in the field $\mathbb{C}$. By definition,  $\langle 1 \rangle_{\textsc{field}}$ is the intersection of all subfields of $\mathbb{C}$ that contain $1$. 
+
+Let $F$ be an arbitrary subfield of $\mathbb{C}$ containing $1$. By Theorem~\ref{thm.SubfieldContains01}, every subfield of $\mathbb{C}$ contains $0$ and $1$, so $F$ must  contain $0$ (in addition to $1$). Further, $F$ must contain $1+1$, $1+1+1$, etc., because $F$ is closed under addition. So, by induction,  $F$ contains the positive integers and $0$. Then, since $F$ is closed under additive inverses, $F$ also contains the additive inverse of each positive integer, so in total, we now see that $F$ contains $\mathbb{Z}$. Continuing on, $F$ is closed under multiplicative inverses, so $F$ also contains the multiplicative inverse of every nonzero integer. Thus, $\mathbb{Q} \subseteq F$. 
+
+Since $F$ was an \emph{arbitrary} subfield of $\mathbb{C}$ containing $1$, everything we said above  is true for \emph{every} subfield of $\mathbb{C}$ containing $1$; thus it is also true for the intersection of them. Hence $\mathbb{Q} \subseteq \langle 1 \rangle_{\textsc{field}}$. Now we have $\{1\} \subset \mathbb{Q} \subseteq \langle 1 \rangle_{\textsc{field}}$, so as $\mathbb{Q}$ is a subfield and $\langle 1 \rangle_{\textsc{field}}$ is the \emph{smallest} subfield containing $1$, it must be that $\mathbb{Q} = \langle 1 \rangle_{\textsc{field}}$.
+\end{example}
 
 
+\begin{theorem}
+If $S\subseteq \mathbb{C}$, then  $\mathbb{Q} \subseteq \langle S \rangle_{\textsc{field}}$.
+\end{theorem}
+
+\begin{problem}
+The field defined in Problem~\ref{prob.FieldExampleTable}\ref{prob.FieldExampleTable.F4} is sometimes denoted $\mathbb{F}_4$. Determine $\langle 1 \rangle_{\textsc{field}}$ in the field $\mathbb{F}_4$.
+\end{problem}
+
+Most of the time, we will want to generate fields by adding some elements to an existing field, and we have special notation for this.
+
+\begin{notation}
+Let $F$ be a subfield of $E$, and let $r_1,r_2,\ldots,r_n \in E$. The subfield of $E$ generated by $F\cup \{r_1,r_2,\ldots,r_n\}$ is denoted $F(r_1,r_2,\ldots,r_n)$. In other words, \[F(r_1,r_2,\ldots,r_n) := \langle F\cup \{r_1,r_2,\ldots,r_n\} \rangle_{\textsc{field}}.\]
+\end{notation}
+
+We read $F(r_1,r_2,\ldots,r_n)$  as ``$F$ adjoin $r_1,r_2,\ldots,r_n$''; it is the smallest subfield containing $F$ and $r_1,r_2,\ldots,r_n$.
+
+In the following problems, we are working with subfields of $\mathbb{C}$, even if we don't say it explicitly.
+
+\begin{problem}\label{prob.QAdjoinI}
+In Problem~\ref{prob.SubfieldRoot2PlusI}\ref{prob.SubfieldRoot2PlusI.QAdjoinI}, we saw that $\{a+bi\mid a,b\in \mathbb{Q}\}$ is a subfield of $\mathbb{C}$. 
+Show that $\mathbb{Q}(i) = \{a+bi\mid a,b\in \mathbb{Q}\}$. 
+\end{problem}
+
+\begin{problem}
+Show that $\mathbb{R}(i) =\mathbb{C}$. 
+\end{problem}
+
+\begin{problem}
+We saw previously that $\{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$ is a subfield of $\mathbb{C}$. Find some $z\in \mathbb{C}$, such that $\mathbb{Q}(z) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$, and prove that your choice for $z$ works. Do you think there is only one choice for $z$ or might others work?
+\end{problem}
+
+\begin{problem}\label{prob.QAdjoinRoot2PlusI}
+Let $\alpha = \sqrt{2} + i$. Show  $\{a+b\alpha\mid a,b\in \mathbb{Q}\} \subset \mathbb{Q}(\alpha)$, but $\{a+b\alpha\mid a,b\in \mathbb{Q}\} \neq \mathbb{Q}(\alpha)$. 
+\end{problem}
+
+
+\begin{theorem}
+Let $F,L$ be subfields of $E$, and let $r_1,r_2,\ldots,r_n \in E$. Then $F(r_1,r_2,\ldots,r_n) \subseteq L$ if and only if $F\subseteq L$ and $r_1,r_2,\ldots,r_n\in L$.
+\end{theorem}
+
+\begin{problem}\label{prob.QAdjoinRoot27Root7}
+Show that $\mathbb{Q}\left(3-\sqrt{2},5+i\right) = \mathbb{Q}\left(\sqrt{2},i\right)$.
+\end{problem}
 
 \end{section}
 
