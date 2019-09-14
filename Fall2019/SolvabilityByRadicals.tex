@@ -11,26 +11,28 @@ Our overarching goal, as laid out in Chapter~\ref{chapter:PolyEquations}, is to 
 % SECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\begin{section}{Definition}
-%Remember, when we talk about extracting roots, we must be careful to avoid ambiguous (not well-defined) notation. For this reason, we will adopt the point of view of Definition~\ref{def.nthRoot}, so $z$ being an $n^\text{th}$ root of $a$ means that $z^n = a$, as opposed to  $z = \sqrt[n]{a}$. However, we do still occasionally use the root symbol when there is no ambiguity. For example, $\sqrt[3]{5}$ and $\sqrt{-1}$ are well-defined: the first is the one and only \emph{real} solution to $x^3=5$ (although there are two other solutions in $\mathbb{C}$), and the second is $i$ (which we made a choice about long ago). However,  $\sqrt[4]{-1 + i\sqrt{3}}$ is \emph{not} well-defined, as there are $4$ equally good choices.
+\begin{section}{Radical extensions}
 
-Our definition of solvability by radicals, needs to capture the possibility that we may need ``iterated roots'' to express a number. For example, consider \[a = \sqrt{2} + \sqrt[3]{-1 + \sqrt{2}}.\]
-To see that $a$ can be expressed using addition, subtraction, multiplication, division, and the extraction of roots, we first note that the number $b = -1 + \sqrt{2}$ can be built using addition and a square root. We then arrive at $a$ by taking a cube root of $b$ and adding $\sqrt{2}$.
+The notion of ``solvable by radicals'' is about how we may express the roots of a polynomial. We start by formalizing the notion that ``a number can be expressed in terms of other numbers using just the operations of addition, subtraction, multiplication, division, and the extraction of roots.'' In the next section, we apply this to roots of polynomials.
 
-Let's begin to formalize this by introducing fields. Our observations above imply that $a$ can be built using field operations from $\sqrt[3]{b}$ and $\sqrt{2}$, and $b$ in turn can be built using field operations from $\sqrt{2}$. Thus, $a \in \mathbb{Q}\left(\sqrt[3]{b},\sqrt{2}\right)$ where $b \in \mathbb{Q}\left(\sqrt{2}\right)$. The lattice looks like this, where $a$ ends up in the largest field and $b$ lives in the middle field.
+ 
+Now, when we define what it means for a number to be built using the various operations listed above, we need to capture the possibility that we may need ``iterated roots'' to express a number. For example, consider \[\alpha = \sqrt{2} + \sqrt[3]{-1 + \sqrt{2}}.\]
+To see that $\alpha$ can be expressed using addition, subtraction, multiplication, division, and the extraction of roots, we first note that the number $\beta = -1 + \sqrt{2}$ can be built using addition and a square root; we then arrive at $\alpha$ by taking a cube root of $\beta$ and adding $\sqrt{2}$.
+
+Let's begin to formalize this by introducing fields. Our observations above imply that $\alpha$ can be built using field operations from $\sqrt[3]{\beta}$ and $\sqrt{2}$, and $\beta$ in turn can be built using field operations from $\sqrt{2}$. Thus, $\alpha \in \mathbb{Q}\left(\sqrt{2},\sqrt[3]{\beta}\right)$ and $\beta \in \mathbb{Q}\left(\sqrt{2}\right)$. The lattice looks like this.
 \begin{center}
 \begin{tikzpicture}[line width = 1, scale = 1.5]
-\node (F2) at (0,2) {$\mathbb{Q}\left(\sqrt{2},\sqrt[3]{b}\right)$};
-\node (F1) at (0,1) {$\mathbb{Q}\left(\sqrt{2}\right)$};
-\node (Q) at (0,0) {$\,\mathbb{Q}$};
+\node (F2) at (0,2) {$\mathbb{Q}\left(\sqrt{2},\sqrt[3]{\beta}\right)$}; \node [left =0.1 of F2] {$\alpha\in$};
+\node (F1) at (0,1) {$\mathbb{Q}\left(\sqrt{2}\right)$}; \node [left =0.1 of F1] {$\beta\in$};
+\node (Q) at (0,0) {$\mathbb{Q}$};
 \draw (Q) -- (F1);\draw (F1) -- (F2);
 \end{tikzpicture}
 \end{center}
 
-We are close to the definition, but first, a word of caution. When we talk about extracting roots, we must be careful to avoid ambiguous (not well-defined) notation. For this reason, we will adopt the point of view of Definition~\ref{def.nthRoot}, so $z$ being an $n^\text{th}$ root of $a$ means that $z^n = a$, as opposed to  $z = \sqrt[n]{a}$. That said, we do still occasionally use the root symbol when there is no ambiguity. For example, $\sqrt[3]{5}$ and $\sqrt{-1}$ are well-defined: the first is the one and only \emph{real} solution to $x^3=5$ (although there are two other solutions in $\mathbb{C}$), and the second is $i$ (which we made a choice about long ago). However,  $\sqrt[4]{-1 + i\sqrt{3}}$ is \emph{not} well-defined, as there are $4$ equally good choices.
+Now, when we talk about extracting roots, we must be careful to avoid ambiguous (not well-defined) notation. For this reason, we usually adopt the point of view of Definition~\ref{def.nthRoot} where $z$ being an $n^\text{th}$ root of $a$ means that $z^n = a$ (as opposed to  $z = \sqrt[n]{a}$). That said, we do still occasionally use the root symbol when there is no ambiguity. For example, $\sqrt[3]{5}$ and $\sqrt{-1}$ are well-defined: the first is the one and only \emph{real} solution to $x^3=5$, and the second is $i$ (which we made a choice about long ago). However,  $\sqrt[4]{-1 + i\sqrt{3}}$ is \emph{not} well-defined, as there are $4$ equally good choices.
 
 \begin{definition}
-Let $F$ be a field. We say  $E$ is a \textbf{radical extension} of $F$ if there exist nonzero elements $r_1,r_2,\ldots,r_m\in E$ and positive integers $n_1,n_2\ldots,n_m$ such that $E = F(r_1,r_2,\ldots,r_m)$, and 
+We say $K$ is a \textbf{radical extension} of a field $F$ if there exist nonzero elements $r_1,r_2,\ldots,r_m\in K$ and positive integers $n_1,n_2\ldots,n_m$ such that $K = F(r_1,r_2,\ldots,r_m)$, and 
 \begin{align*}
  r_1^{n_1} &\in F,\\
  r_2^{n_2} &\in F(r_1),\\
@@ -39,15 +41,89 @@ Let $F$ be a field. We say  $E$ is a \textbf{radical extension} of $F$ if there 
  r_k^{n_k} &\in F(r_1,\ldots,r_{k-1}).
 \end{align*}
 \end{definition}
-Notice that the final condition of the definition expresses that each $r_i$ is an $n_i^\text{th}$-root of some element in $F(r_1,\ldots,r_{i-1})$. 
+The definition expresses that each $r_i$ is an $n_i^\text{th}$-root of some element in $F(r_1,\ldots,r_{i-1})$, so $K$ may be thought of as being built by iteratively adding in $n^\text{th}$-roots of elements. The picture is something like this:
+\begin{center}
+\begin{tikzpicture}[line width = 1, scale = 1.5]
+\node (F5) at (0,5) {$K = F(r_1,r_2,\ldots,r_m)$};
+\node (F4) at (0,4) {$F(r_1,r_2,\ldots,r_{m-1})$};\node [left =0.1 of F4] {$ r_m^{n_m}\in$};
+\node (F3) at (0,3) {$\rvdots$};
+\node (F2) at (0,2) {$F(r_1,r_2)$};\node [left =0.1 of F2] {$ r_3^{n_3}\in$};
+\node (F1) at (0,1) {$F(r_1)$}; \node [left =0.1 of F1] {$r_2^{n_2}\in$};
+\node (Q) at (0,0) {$F$}; \node [left =0.1 of Q] {$ r_1^{n_1}\in$};
+\draw (Q) -- (F1);
+\foreach \x\y in {1/2,2/3,3/4,4/5} {\draw (F\x) -- (F\y);}
+\end{tikzpicture}
+\end{center}
 
-When $a = \sqrt{2} + \sqrt[3]{-1 + \sqrt{2}}$, our work above shows  $a$ is contained in  $E= \mathbb{Q}\left(\sqrt{2},\sqrt[3]{-1 + \sqrt{2}}\right)$ and $E$ is a radical extension of $\mathbb{Q}$, since we may take $r_1 = \sqrt{2}$ and $r_2 = \sqrt[3]{-1 + \sqrt{2}}$ (with $n_1 = 2$ and $n_2 = 3$).
+\begin{problem}
+Let $K= \mathbb{Q}\left(\sqrt{2},\sqrt[3]{-1 + \sqrt{2}}\right)$. Carefully explain why $K$ is a radical extension of $\mathbb{Q}$. What are you using for $r_1,n_1$ and $r_2, n_2$ when applying the definition?
+\end{problem}
+
+\begin{problem}
+Show that  $\mathbb{Q}\left(\sqrt{3},\zeta_5,\sqrt[4]{1 - \sqrt{3}}\right)$ is a radical extension of $\mathbb{Q}$.
+\end{problem}
+
+\begin{problem}
+Show that $\mathbb{C}$ is a radical extension of $\mathbb{R}$.
+\end{problem}
+\end{section}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{section}{Solvability by radicals: the definition}
+Making precise what it means to express a number using addition, subtraction, multiplication, division, and the extraction of roots was the crux of defining solvability by radicals. However, we are aiming to define what it means to express the roots of a polynomial \emph{in terms of the coefficients} using these operations. Let's establish some notation that allows us to highlight where the coefficients of a polynomial live.
+
+\begin{definition}
+Let $F$ be a field. Then $F[x]$ is the set of all polynomials whose coefficients lie in $F$. This is read ``$F$ adjoin $x$.''%In symbols, \[F[x] = \left\{p(x) \mid \text{$\exists n\in \mathbb{Z}_{\ge 0}$, $\exists a_0,\ldots,a_n \in F$ such that $p(x) = a_nx^n + \cdots + a_1x + a_0$}\right\}.\]
+\end{definition}
+
+For example, consider $a(x) = x^3 -ix^2 -0.5$. Then  $a(x) \notin \mathbb{Q}[x]$, because $i\notin \mathbb{Q}$; however, $a(x)\in\mathbb{C}[x]$ (and, in fact, $a(x)\in\mathbb{Q}\left(i\right)[x]$).
+\begin{problem}
+Give examples of polynomials $a(x)$, $b(x)$, and $c(x)$ such that 
+\begin{enumerate}
+\item $a(x) \in \mathbb{Q}[x]$, 
+\item $b(x) \in \mathbb{R}[x]$ but $b(x) \notin \mathbb{Q}[x]$, and 
+\item $c(x) \in \mathbb{C}[x]$ but $c(x) \notin \mathbb{R}[x]$.
+\end{enumerate}
+\end{problem}
+We now, finally, write down one of our  main definitions.
+
+\begin{definition}
+Let $F$ be a field, and let $p(x)\in F[x]$. We say that $p(x)$ is \textbf{solvable by radicals} over $F$ if all of the roots of $p(x)$ are contained in some radical extension of $F$.
+\end{definition}
+
+\begin{problem}
+Let $p(x) = x^4 - x^2 -2$. Show that all roots of $p(x)$ lie in $\mathbb{Q}\left(\sqrt{2},i\right)$, and use this to explain why $p(x)$ is solvable by radicals over $\mathbb{Q}$.
+\end{problem}
+
+\begin{problem}
+Let $p(x) = x^2+3x+1$. Show that all roots of $p(x)$ lie in $\mathbb{Q}\left(\sqrt{5}\right)$, and use this to explain why $p(x)$ is solvable by radicals over $\mathbb{Q}$.
+\end{problem}
+
+\begin{problem}
+Let $p(x) = x^3 - 2$. Use Theorem~\ref{thm.nthRoots} to write out all complex roots of $p(x)$, and then show that $p(x)$ is solvable by radicals over $\mathbb{Q}$.
+\end{problem}
+
+\begin{theorem}
+For each positive $n\in \mathbb{Z}$,   $ x^n - 1$ is solvable by radicals over $\mathbb{Q}$.
+\end{theorem}
+
+\begin{theorem}\label{thm.SolvableByRadicalsNontrivialRootsOf1}
+For each positive $n\in \mathbb{Z}$,   $x^{n-1} + x^{n-2} + \cdots + x^2 + x + 1$ is solvable by radicals over $\mathbb{Q}$.
+\end{theorem}
+
+\begin{theorem}
+Every quadratic polynomial $p(x)\in \mathbb{Q}[x]$ is solvable by radicals over $\mathbb{Q}$.
+\end{theorem}
+
+\begin{problem}\label{prob.SolvableByRadicalsHard}
+Let $p(x) = x^6 - 3x^3 - 1$. Show that $p(x)$ is solvable by radicals over $\mathbb{Q}$.
+\end{problem}
 
 
-%\begin{problem}
-%Show that $\mathbb{Q}\left(\sqrt{2},\sqrt[3]{-1 + \sqrt{2}}\right)$
-%\end{problem}
-%
 %\begin{problem}
 %Let $p(x) = x^4+3x^2+1$.  Find the four roots of $p(x)$ and explain how each root can be built using addition, subtraction, multiplication, division, and roots (and all rational numbers) 
 %\end{problem}
