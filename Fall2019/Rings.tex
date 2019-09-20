@@ -1,0 +1,26 @@
+% !TEX root = IBL-InsolvabilityOfQuintic.tex
+\chapter{Rings}
+\label{chapter:Rings}
+\thispagestyle{empty}
+
+In Chapter~\ref{chapter:SolvabilityByRadicals}, we finally were able to write down a formal definition of what is means for a polynomial to be solvable by radicals. We also proved that many polynomials are solvable by radicals. But, what we really want to do is show that there exists a polynomial that is \emph{not} solvable by radicals. So how do we do that? Clearly, we need to take a must closer look at polynomials. 
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{section}{Abstract rings}
+As we investigate polynomials, it will be usual to harness (and abstract) the algebraic properties that they possesses. For example, if we add to polynomials in $\mathbb{Q}[x]$, we obtain a polynomial that is again in $\mathbb{Q}[x]$, and similarly for multiplication. And, as a matter of fact, the operations of polynomial addition and multiplication have many familiar properties: they are both associative and commutative, and the distributive property holds. In fact, $\mathbb{Q}[x]$ is rather close to being a field, but there is one import thing that is missing: multiplicative inverses. Abstracting the structure that is present, we arrive at the definition of a ring.
+
+\begin{definition}
+A \textbf{ring} is a structure $(R,+,\cdot)$ consisting of a set $R$ together with two binary operations $+$ and $\cdot$ (which we call \emph{addition} and \emph{multiplication}) such that for some elements $0\in F$ the following axioms hold.
+\begin{itemize}
+\item \textbf{Addition Axioms:} Addition is associative and commutative; the element $0$ is an additive identity; every  $x\in F$ has an additive inverse with respect to $0$, denoted $-x$.
+\item \textbf{Multiplication Axioms:} Multiplication is associative and commutative.
+\item \textbf{Distributivity Axioms:} For all $x,y,z \in \mathbb{F}$, $x(y+z) = xy+xz$ and $(y+z)x = yx+zx$.
+\end{itemize}
+\end{definition}
+
+\end{section}
