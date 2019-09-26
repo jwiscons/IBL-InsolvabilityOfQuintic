@@ -115,19 +115,17 @@ Let $R$ be a ring.
 Let's explore one further property that fields possess but is not listed above: for all $x$ and $y$ in a field, if $xy = 0$, then $x=0$ or $y=0$. 
 
 \begin{definition}
-Let $R$ be a ring. An element $a\in R$ is called a \textbf{zero divisor} if $a$ is nonzero and there exists another nonzero $b\in R$ such that $ab=0$. A ring is called an  \textbf{integral domain} if it is a commutative ring with unity containing at least two elements but \emph{no zero divisors}.
+Let $R$ be a ring. An element $a\in R$ is called a \textbf{zero divisor} if $a$ is nonzero and there exists a nonzero $b\in R$ such that $ab=0$. A ring is called an  \textbf{integral domain} if it is a commutative ring with unity containing at least two elements but \emph{no zero divisors}.
 \end{definition}
 
 As remarked above, fields do not have zero divisors, so every field is indeed an integral domain. However, the prototypical integral domain (which explains the choice of name) is $\mathbb{Z}$. Let's look for others.
 
 \begin{problem}
 For each of the following rings, determine if there are zero divisors, and if so, find them all. Is the ring an integral domain?
-\begin{multicols}{3}
+\begin{multicols}{2}
 \begin{enumerate}
 \item $\mathbb{Z}_{5}$
 \item $\mathbb{Z}_{10}$
-\item $\mathbb{N}$
-\item $\mathbb{Z}$
 \item $\mathbb{H}$
 \item $\mathbb{R}[x]$
 \end{enumerate}
@@ -186,7 +184,7 @@ Complete the following Venn Diagram by adding in shapes for each of the followin
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Units}
 
-Let's briefly explore the elements in a ring that do have a multiplicative inverse.
+Unless $R$ is actually a division ring, not all elements of $R$ will have a multiplicative inverse. Let's explore those elements that \emph{do} have an inverse.
 
 \begin{definition}
 Let $R$ be a ring with unity containing at least two elements. Then, $u\in R$ is called a \textbf{unit} if $u$ has a multiplicative inverse. The set of all units in $R$ is denoted $U(R)$.
@@ -197,8 +195,8 @@ Let $R$ be a ring with unity containing at least two elements. Then, $u\in R$ is
 For each of the following rings, find all of the units, i.e.~determine $U(R)$.
 \begin{multicols}{2}
 \begin{enumerate}
-\item $\mathbb{Z}_{5}$
 \item $\mathbb{Z}$
+\item $\mathbb{Z}_{5}$
 \item $\mathbb{R}$
 \item $\mathbb{R}[x]$
 \end{enumerate}
@@ -213,9 +211,13 @@ Consider the ring $\mathbb{Z}_{20}$. Find all units of $\mathbb{Z}_{20}$ and als
 Let $n$ be a positive integer. Make a conjecture about $U(\mathbb{Z}_n)$ by filling in the blank:  $U(\mathbb{Z}_n) = \{a\in \mathbb{Z}_n\mid\text{ \fillInBlank{fill in the blank} }\}$. What evidence do you have?
 \end{problem}
 
-\begin{theorem}
+\begin{theorem}\label{thm.UnitIsNotZeroDivisor}
 Let $R$ be a ring with unity containing at least two elements. If $u\in R$ is a unit, then $u$ is \emph{not} a zero divisor.
 \end{theorem}
+
+\begin{problem}
+Either prove or disprove the \emph{converse} of Theorem~\ref{thm.UnitIsNotZeroDivisor}.
+\end{problem}
 
 \begin{theorem}\label{thm.UnitsFormGroup}
 Let $R$ be a ring with unity containing at least two elements. Then $(U(R),\cdot)$ is a group.
@@ -252,6 +254,8 @@ Provide examples of matrices satisfying each of the following conditions.
 Verify that $M_{2}(\mathbb{Z})$ is closed under matrix multiplication.
 \end{problem}
 
+The next fact shows that $M_{n}(R)$ is a ring with unity (for each positive $n$). Afterward, we will explore some of the other ring properties we discussed above.
+
 \begin{fact} Let $R$ be any ring. The following are true for $M_{n}(R)$.
 \begin{itemize}
 \item \textbf{Addition Laws:} Addition is associative and commutative. There is a unique additive identity, namely the matrix with all entries equal to $0$, and every matrix $A$ has a unique additive inverse, denoted $-A$.
@@ -259,8 +263,6 @@ Verify that $M_{2}(\mathbb{Z})$ is closed under matrix multiplication.
 \item \textbf{Distributivity Laws:} For all $A,B,C \in M_{n}(R)$, $A(B+C) = AB+AC$ and $(B+C)A = BA + CA$.
 \end{itemize}
 \end{fact}
-
-The previous fact shows that $M_{n}(R)$ is indeed a ring with unity. Let's explore some of the other ring properties we discussed above.
 
 \begin{problem}
 Is $M_{2}(\mathbb{R})$ commutative? Prove your answer.
