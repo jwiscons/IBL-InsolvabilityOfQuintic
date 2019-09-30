@@ -82,6 +82,29 @@ First find the roots of $z^2 - 3z - 1$. Then, for each of those roots, use Theor
 Try a proof by contradiction. Assume that $u$ is a unit and that $u$ is a zero divisor. Now, what does the definition of being a zero divisor tell you about $u$?
 \end{hint*}
 
+\begin{hint*}[Theorem~\ref{thm.DegreePolySum}]
+To get started, let $n = \deg p(x)$ and $m = \deg q(x)$, and then write $p(x) = a_0 + a_1x + \cdots + a_nx^n$ with $a_n\neq 0$ and $q(x) = b_0 + b_1x + \cdots + b_mx^m$ with $b_m\neq 0$. You want to understand the degree of $p(x) + q(x)$, so you need to determine the largest power of $x$ in the sum $p(x) + q(x)$.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.DegreePolyProduct}]
+As with the previous theorem, let $n = \deg p(x)$ and $m = \deg q(x)$, and then write $p(x) = a_0 + a_1x + \cdots + a_nx^n$ with $a_n\neq 0$ and $q(x) = b_0 + b_1x + \cdots + b_mx^m$ with $b_m\neq 0$. You need to determine the largest power of $x$ in the product $p(x)q(x)$. What do you think is the largest power of $x$ in the product $p(x)q(x)$? What is its coefficient, and how do you know it's not zero?
+\end{hint*}
+
+\begin{hint*}[Corollary~\ref{cor.PolysOverIntegralDomains}]
+There are several things to verify to ensure that $D[x]$ is an integral domain, but we've talked about most of them already. The main thing that remains is to prove that $D[x]$ has no zero divisors---try a proof by contradiction. This is a corollary of Theorem~\ref{thm.DegreePolyProduct}, which means that it should be ``not too hard'' to prove using Theorem~\ref{thm.DegreePolyProduct}. 
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.DivisionAlgorithm}]
+One approach is to polish up and fill in the gaps of the outline presented in the notes right before the statement of Theorem~\ref{thm.DivisionAlgorithm}. A related, but slightly different, approach is to try using induction on the degree of $a(x)$.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.RootImpliesLinearFactorOfPoly}]
+Try  using the division algorithm to write $a(x) = (x-c)q(x) + r(x)$ for some $q(x),r(x)\in F[x]$ with $\deg r(x) < \deg (x-c)$ or $r(x) = 0$. Now show that $r(x)$ must be the zero polynomial.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.HalfOfGCDProof}]
+Follow the definitions. Since $c(x)\in I$, it can be written a particular way. Then write down what it means for $h(x)$ to divide both $a(x)$ and $b(x)$. Combine.
+\end{hint*}
 
 
 

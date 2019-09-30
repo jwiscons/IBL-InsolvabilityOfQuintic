@@ -291,12 +291,201 @@ Show that $\begin{bmatrix} i & 3\\ 0& i\end{bmatrix}\in\operatorname{GL}_{2}(\ma
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \begin{section}{Polynomial rings}
 
-%Let's introduce some important terminology for working with polynomials.
-%
-%\begin{definition}
-%Let $F$ be a field, and let $p(x) = a_0 + a_1x + \cdots + a_nx^n$ be in $F[x]$ with $a_n \neq 0$. Then $n$ is called the \textbf{degree} of $p(x)$, denoted $\deg(p(x))$. In words, $\deg(p(x))$ is the highest power of $x$ in $p(x)$ with a nonzero coefficient. The degree of the zero polynomial is undefined.
-%\end{definition}
+We now dive a little deeper into our study of polynomials. Let's start with some important terminology.
 
+\begin{definition}
+Let $R$ be a ring, and let  $p(x)\in R[x]$ be a \emph{nonzero} polynomial. If $p(x) = a_0 + a_1x + \cdots + a_nx^n$ with $a_n \neq 0$, then $n$ is called the \textbf{degree} of $p(x)$, denoted $\deg p(x)$. In words, $\deg p(x)$ is the highest power of $x$ in $p(x)$ with a nonzero coefficient. The degree of the zero polynomial is undefined.
+\end{definition}
+
+\begin{problem}
+Determine the degree of each of the following polynomials.
+\begin{enumerate}
+\item $q(x) = 4x^5 + 2x^2 + 5 -8x^2 +2x^5$ in the ring $\mathbb{Z}[x]$
+\item $r(x) = 4x^5 + 2x^2 + 5 -14x^2 +2x^5$ in the ring $\mathbb{Z}_6[x]$
+\item $p(t) = (3t^2-\sqrt{2})(-1 + 2t -t^3)$ in the ring $\mathbb{R}[t]$
+\item $s(x) = (5-i)^8 - (5-s)^8$ in the ring $\mathbb{C}[s]$
+\end{enumerate}
+\end{problem}
+
+The degree function is incredibly useful when working with polynomials---let's prove a couple of properties about it. 
+
+\begin{theorem}\label{thm.DegreePolySum}
+Let $R$ be a ring. If $p(x)$ and $q(x)$ are nonzero polynomials $R[x]$, then $\deg(p(x) + q(x)) \le \max(\deg p(x),\deg q(x))$ unless $q(x) = -p(x)$.
+\end{theorem}
+
+\begin{problem}
+Give an example of polynomials $p(x),q(x)\in \mathbb{Q}[x]$ such that $\deg(p(x)+q(x)) < \max(\deg p(x),\deg q(x))$.
+\end{problem}
+
+\begin{theorem}\label{thm.DegreePolyProduct}
+Let $D$ be an integral domain. If $p(x)$ and $q(x)$ are nonzero polynomials $D[x]$, then $\deg(p(x)q(x)) = \deg p(x) + \deg q(x)$, and in particular, $\deg(p(x)q(x))$ is defined.
+\end{theorem}
+
+\begin{problem}
+Give an example of nonzero polynomials $p(x),q(x)\in \mathbb{Z}_{10}[x]$ such that $\deg(p(x)q(x)) \neq \deg p(x) + \deg q(x)$. Why does this not contradict Theorem~\ref{thm.DegreePolyProduct}.
+\end{problem}
+
+\begin{corollary}\label{cor.PolysOverIntegralDomains}
+If $D$ is an integral domain, then $D[x]$ is an integral domain.
+\end{corollary}
+
+Let's summarize our investigation of polynomials thus far. We want to understand the structure of $F[x]$, specifically when $F$ is a field. The first thing we noticed was that $F[x]$ is not a field, as many elements do not have multiplicative inverses. However, $F[x]$ is a commutative ring with unity, and as we just saw, even more is true: $F[x]$ is an integral domain, so the Cancellation Property holds (Theorem~\ref{thm.IntegralDomainCancel}). For the rest of this section, we'll explore additional properties of $F[x]$.
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Division algorithm}
+
+\begin{definition}
+Let $F$ be a field, and let $a(x),b(x)\in F[x]$. We say that $b(x)$ \textbf{divides} $a(x)$ (or $b(x)$ is a \textbf{divisor} of $a(x)$) if there exists some $q(x)\in F[x]$ such that $a(x) = b(x)q(x)$.
+\end{definition}
+
+\begin{problem}
+Consider the polynomial $p(x) = x^2 - 1$ in $\mathbb{Q}[x]$.
+\begin{enumerate}
+\item Does $x+1$ divide $p(x)$ in $\mathbb{Q}[x]$? Why or why not?
+\item Does $p(x)$ divide $x+1$ in $\mathbb{Q}[x]$? Why or why not?
+\item Does $3$ divide $p(x)$ in $\mathbb{Q}[x]$? Why or why not?
+\end{enumerate}
+\end{problem}
+
+As is familiar, we will often treat polynomials as functions, and plug values into them. The next theorem should seem familiar.
+
+\begin{theorem}\label{thm.LinearFactorOfPolyImpliesRoot}
+Let $a(x)\in F[x]$ for $F$ a field. If $c\in F$ and $(x-c)$ divides $a(x)$, then $a(c) = 0$.
+\end{theorem}
+
+\begin{problem}
+Consider the polynomials $a(x) = x^4+x^3-8x +5$  and $b(x) = x^2 -3$ in $\mathbb{Q}[x]$. Use polynomial long division to show that $b(x)$ does not divide $a(x)$. What is the quotient and what is the remainder? 
+\end{problem}
+
+The ``division algorithm'' formalizes what results from long division. And, it turns out that it is true for polynomials over any field (not just $\mathbb{Q}$). The next lemma prepares for the proof of the division algorithm. 
+
+\begin{lemma}
+Let $F$ be a field, and let $a(x),b(x)\in F[x]$ with $\deg a(x)\ge \deg b(x)$. Assume that $a(x) = a_0 + a_1x + \cdots + a_nx^n$ with $a_n\neq 0$ and $b(x) = b_0 + b_1x + \cdots + b_mx^m$ with $b_m\neq 0$. Set $a_1(x) =  a(x) - b(x)a_nb_m^{-1}x^{n-m}$. Then $\deg a_1(x) < \deg a(x)$, and $b(x)$ divides $a(x) - a_1(x)$.
+\end{lemma}
+
+Suppose we are trying to divide $b(x)$ into $a(x)$. How do we find the quotient and the remainder? Well, if the degree of $a(x)$ is smaller than the degree of $b(x)$ there is nothing to do (and if $a(x) = 0$, there is also nothing to do). Otherwise, we can use the previous lemma to produce a polynomial $a_1(x)$ such that $\deg a_1(x) < \deg a(x)$ and $b(x)$ divides $a(x) - a_1(x)$, or in other words, $a(x) - a_1(x) = b(x)q_1(x)$ for some $q_1(x)$. Now, suppose we repeat the process and divide $b(x)$ into the resulting $a_1(x)$ to produce $a_2(x)$ and $q_2(x)$. Continuing in this fashion, we produce $a_2, q_2, a_3,q_3 \ldots, a_k,q_k$, stopping once the degree of $a_k(x)$ becomes smaller than the degree of $b(x)$ (or $a_k(x)=0$). In total, we get something like the following.
+
+\begin{align*}
+a(x) - a_1(x) & = b(x)q_1(x)\\
+a_1(x) - a_2(x) & = b(x)q_2(x)\\
+a_2(x) - a_3(x) & = b(x)q_3(x)\\
+& \;\;\vdots\\ 
+a_{k-1}(x) - a_{k}(x) & = b(x)q_k(x)
+\end{align*}
+Adding the above equations together and moving things around, we arrive at  \[a(x) = b(x)\left(q_1(x) + q_2(x) + q_3(x) +\cdots + q_k(x)\right) + a_k(x)\]
+with the degree of $a_k(x)$ being less than the degree of $b(x)$. Thus, $a_k(x)$  is the remainder and $q_1(x) +\cdots + q_k(x)$ the quotient. This is the rough idea behind the division algorithm.
+
+\begin{theorem}[Division algorithm for {$F[x]$}]\label{thm.DivisionAlgorithm}
+Let $F$ be a field, and let $a(x),b(x)\in F[x]$ with $b(x) \neq 0$. Then there exist $q(x),r(x)\in F[x]$ such that 
+\[a(x) = b(x)q(x) + r(x)\]
+with $\deg r(x) < \deg b(x)$ or $r(x) = 0$.
+\end{theorem}
+
+The division algorithm is the theoretical analogue of long division. If you want to divide concrete polynomials, use long division, but if you want to prove something about divisibility for arbitrary polynomials, use the division algorithm. It is often used to prove a polynomial $b(x)$ actually divides another polynomial $a(x)$. The strategy is to apply the division algorithm to produce the equation $a(x) = b(x)q(x) + r(x)$ (with $\deg r(x) < \deg b(x)$ or $r(x) = 0$) and then use this to show that, in fact, $r(x)=0$, which implies that $a(x) = b(x)q(x)$ as desired. Let's try using this approach to prove the converse of Theorem~\ref{thm.LinearFactorOfPolyImpliesRoot}.
+
+\begin{theorem}\label{thm.RootImpliesLinearFactorOfPoly}
+Let $p(x)\in F[x]$ for $F$ a field. If $c\in F$ and $p(c) = 0$, then $(x-c)$ divides $p(x)$.
+\end{theorem}
+
+\begin{problem}
+Consider the polynomial  $p(x) = x^2+x+3$ in $\mathbb{Z}_5[x]$. Compute $p(c)$ for each $c\in \mathbb{Z}_5$, and use the results to determine which polynomials of the form $(x-c)$ divide $p(x)$. Factor $p(x)$ into a product of degree $1$ polynomials in $\mathbb{Z}_5[x]$, if possible.
+\end{problem}
+
+\begin{problem}
+Consider the polynomial  $p(x) = x^2+x+1$ in $\mathbb{Z}_5[x]$. Explain why $p(x)$ cannot be factored into a product of degree $1$ polynomials in $\mathbb{Z}_5[x]$.
+\end{problem}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Greatest common divisors}
+
+The fact that there is a division algorithm for $F[x]$ (Theorem~\ref{thm.DivisionAlgorithm}) is a rather special property for a ring to possess, and it has several important consequences. The first one we'll explore is the existence of a ``greatest common divisor'' for two polynomials, and our first order of business is to try to decide on a reasonable definition of this.
+ 
+\begin{problem}
+What are the common divisors of $6$ and $-9$ in $\mathbb{Z}$? Which one is the greatest common divisor?
+\end{problem}
+
+\begin{problem}\label{prob.GCDExlore}
+Consider the polynomials $a(x) = 2x^2-2$ and $b(x) = 2x^2+2x-4$ in $\mathbb{Q}[x]$.
+\begin{enumerate}
+\item Show that $x-1$ is a common divisor of $a(x)$ and $b(x)$ by finding  $q(x),s(x)\in \mathbb{Q}[x]$ such that $a(x) = (x-1)q(x)$ and $b(x) = (x-1)s(x)$.
+\item Show that $-2(x-1)$ is a common divisor of $a(x)$ and $b(x)$ by finding  $q(x),s(x)\in \mathbb{Q}[x]$  such that $a(x) = -2(x-1)q(x)$ and $b(x) = -2(x-1)s(x)$.
+\item Show that $100(x-1)$ is a common divisor of $a(x)$ and $b(x)$ by finding  $q(x),s(x)\in \mathbb{Q}[x]$ such that $a(x) = 100(x-1)q(x)$ and $b(x) = 100(x-1)s(x)$.
+\end{enumerate}
+Which one, if any, would be a good choice as the ``greatest common divisor''?
+\end{problem}
+
+The previous problem highlights that there are several (actually, infinitely many) choices for the ``greatest common divisor'' of two polynomials. Our choice for which one we call the greatest common divisor is, in some sense, the simplest one.
+
+\begin{definition}
+A polynomial $p(x)$ of degree $n$ is called \textbf{monic} if the coefficient of $x^n$ (i.e.~the leading coefficient) is $1$.
+\end{definition}
+
+For example, $7-2x+x^2$ is monic, since the coefficient of $x^2$ is $1$. However, neither $7-2x+3x^2$ nor $7-2x-x^2$ are monic.
+
+\begin{definition}
+Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. A polynomial $d(x)\in F[x]$ is called a \textbf{greatest common divisor} of $a(x)$ and $b(x)$ if
+\begin{enumerate}
+\item $d(x)$ is monic,
+\item $d(x)$ divides both $a(x)$ and $b(x)$,
+\item if $h(x)$ divides both $a(x)$ and $b(x)$, then $h(x)$ divides $d(x)$.
+\end{enumerate}
+\end{definition}
+
+We don't yet know that greatest common divisors exist, but let's start by showing that if they exist, there is only one.
+
+\begin{lemma}\label{lem.GCDUnique}
+Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. If $d_1(x)$ and $d_2(x)$ are  greatest common divisors of $a(x)$ and $b(x)$, then $d_1(x)=d_2(x)$.
+\end{lemma}
+
+As you may suspect, $x-1$ is in fact the greatest common divisor of the polynomials $a(x)$ and $b(x)$ in Problem~\ref{prob.GCDExlore}, though we will not prove this. 
+The important point is that a greatest common divisor always exists (and there is only one by Lemma~\ref{lem.GCDUnique}). The proof of this result is tightly tied to analyzing certain combinations of the polynomials $a(x)$ and $b(x)$. Let's explore this a bit.
+
+\begin{theorem}\label{thm.HalfOfGCDProof}
+Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in F[x]\}.\]
+If $h(x)$ divides both $a(x)$ and $b(x)$, then $h(x)$ divides every $c(x)\in I$.
+\end{theorem}
+
+The existence and uniqueness of greatest common divisors in $F[x]$ is presented in the following fact.
+
+\begin{fact}\label{fact.GCD}
+Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. There exists a unique greatest common divisor of $a(x)$ and $b(x)$, and if $d(x)$ is the greatest common divisor, then \[d(x) = f(x)a(x) + g(x)b(x),\]
+for some $f(x),g(x)\in F[x]$.
+\end{fact}
+
+The proof of this fact is interesting, but let's content ourselves to just outline it. Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in F[x]\},\]
+and let $m$ be the smallest degree of all nonzero polynomials in $I$  (which exists by the Well-Ordering Property of the natural numbers). Choosing any polynomial of degree $m$ in $I$, we can divide out the leading coefficient to get a \emph{monic} polynomial $d(x)$, which we can show is still in $I$. The polynomial $d(x)$ will be the greatest common divisor.
+
+To see that $d(x)$ divides $a(x)$, we use Theorem~\ref{thm.DivisionAlgorithm} (the division algorithm) to write $a(x) = d(x)q(x) + r(x)$ for $q(x),r(x)\in F[x]$ with $\deg r(x) < \deg d(x)$ or $r(x) = 0$. Towards a contradiction, assume $r(x) \neq 0$. Now, $d(x)\in I$, so for some $f_d(x),g_d(x)\in F[x]$
+\begin{align*}
+r(x) & = a(x) - d(x)q(x)\\
+& = a(x) - [f_d(x)a(x) + g_d(x)b(x)]q(x)\\
+& = [1-f_d(x)q(x)]a(x) + [-g_d(x)q(x)]b(x)\\
+&\in I.
+\end{align*}
+Since $\deg r(x) < \deg d(x)$, this contradicts the fact that $d(x)$ had the smallest possible degree of all polynomials in $I$; thus, $d(x)$ divides $a(x)$. A similar argument shows that $d(x)$ also divides $b(x)$, so $d(x)$ is a monic, common divisor of $a(x)$ and $b(x)$. And, Theorem~\ref{thm.HalfOfGCDProof} shows that $d(x)$ is a greatest common divisor. But then, it is the unique greatest common divisor by Lemma~\ref{lem.GCDUnique}.
+
+Using Fact~\ref{fact.GCD}, we can rewrite the set $I$ is a very nice way.
+
+\begin{corollary}
+Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in F[x]\}.\]
+If $d(x)$ is the greatest common divisor of $a(x)$ and $b(x)$, then $I = \{p(x)d(x)\mid p(x)\in F[x]\}$.
+\end{corollary}
+
+With similar ideas as in the proof of Fact~\ref{fact.GCD}, one can prove the following fact that characterizes the greatest common divisor several different ways.
+
+\begin{fact}
+Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in F[x]\}.\]
+For any polynomial $d(x)\in F[x]$, the following are equivalent:
+\begin{enumerate}
+\item $d(x)$ is the greatest common divisor of $a(x)$ and $b(x)$;
+\item $d(x)$ is a monic common divisor of $a(x)$ and $b(x)$ and $d(x) \in I$;
+\item $d(x)$ is a monic and $I = \{p(x)d(x)\mid p(x)\in F[x]\}$.
+\end{enumerate}
+\end{fact}
 
 
 \end{section}
