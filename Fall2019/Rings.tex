@@ -10,7 +10,7 @@ Our overarching goal, laid out in Chapter~\ref{chapter:PolyEquations}, is to sho
 % SECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\begin{section}{Abstract rings}
+\section{Abstract rings}
 As we investigate polynomials, it will be useful to harness (and abstract) the algebraic properties that they possesses. For example, if we add two polynomials in $\mathbb{Q}[x]$, we obtain a polynomial that is again in $\mathbb{Q}[x]$, and similarly for multiplication. Let's explore the structure of $F[x]$ in general (where $F$ is any field). 
 
 \begin{definition}
@@ -73,7 +73,7 @@ A \textbf{division ring} is a ring with unity such that every nonzero element ha
 Fill in each box of the table below with \textbf{Y}es or \textbf{N}o. Assume that  $+$ and $\cdot$ are defined ``as usual'' for each set.\footnote{$2\mathbb{Z}$ denotes the even integers. The operations are usual integer addition and multiplication.}
 \begin{flushleft}
 \tabulinesep = 2mm
-\begin{tabu}  {X[1.3,c,m]|[2pt]X[.8,c,m]|X[c,m]|X[c,m]|X[c,m]|X[.8,c,m]}
+\begin{tabu}  {X[1.25,c,m]|[2pt]X[.8,c,m]|X[c,m]|X[c,m]|X[c,m]|X[.8,c,m]}
  & ring & commutative ring & ring with unity & division ring & field \\ \tabucline[2pt]{-}
 $\mathbb{Z}$ &&&&& \\  \hline 
 $2\mathbb{Z}$  &&&&& \\ \hline 
@@ -144,7 +144,7 @@ What properties of integral domains did you use in your proof of Theorem~\ref{th
 
 Let's pause to collect and organize all of our new definitions.
 
-\begin{problem}\label{prob.DiagramSubfieldsRoot2andi}
+\begin{problem}
 Complete the following Venn Diagram by adding in shapes for each of the following terms. Try to provide examples that live in each of the gaps, but we have not encountered enough examples (in these notes) to cover all gaps yet.
 \begin{multicols}{3}
 \begin{itemize}
@@ -222,7 +222,6 @@ Either prove or disprove the \emph{converse} of Theorem~\ref{thm.UnitIsNotZeroDi
 \begin{theorem}\label{thm.UnitsFormGroup}
 Let $R$ be a ring with unity containing at least two elements. Then $(U(R),\cdot)$ is a group.
 \end{theorem}
-\end{section}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -230,7 +229,7 @@ Let $R$ be a ring with unity containing at least two elements. Then $(U(R),\cdot
 % SECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\begin{section}{An aside: matrix rings}
+\section{An aside: matrix rings}
 
 Matrix rings are really the prototypical ring with unity. Although you may have only seen matrices with real entries, it turns out that we can do matrix arithmetic with other types of entries, e.g.~entries from $\mathbb{C}$ or $\mathbb{Z}$. In fact, the usual matrix addition and multiplication makes sense when the entries come from any ring.
 
@@ -281,7 +280,6 @@ Let $R$ be a ring and $n$ a positive integer. The \textbf{general linear group} 
 \begin{problem}
 Show that $\begin{bmatrix} i & 3\\ 0& i\end{bmatrix}\in\operatorname{GL}_{2}(\mathbb{C})$ by finding a multiplicative inverse for it. Also, find two different matrices in $M_{2}(\mathbb{C})$ that are \emph{not} in  $\operatorname{GL}_{2}(\mathbb{C})$.
 \end{problem}
-\end{section}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -289,7 +287,7 @@ Show that $\begin{bmatrix} i & 3\\ 0& i\end{bmatrix}\in\operatorname{GL}_{2}(\ma
 % SECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\begin{section}{Polynomial rings}
+\section{Polynomial rings}
 
 We now dive a little deeper into our study of polynomials. Let's start with some important terminology.
 
@@ -310,7 +308,7 @@ Determine the degree of each of the following polynomials.
 The degree function is incredibly useful when working with polynomials---let's prove a couple of properties about it. 
 
 \begin{theorem}\label{thm.DegreePolySum}
-Let $R$ be a ring. If $p(x)$ and $q(x)$ are nonzero polynomials $R[x]$, then $\deg(p(x) + q(x)) \le \max(\deg p(x),\deg q(x))$ unless $q(x) = -p(x)$.
+Let $R$ be a ring. If $p(x)$ and $q(x)$ are nonzero polynomials $R[x]$, then $\deg(p(x) + q(x)) \le \max(\deg p(x),\deg q(x))$ or  $\deg(p(x) + q(x))$ is undefined.
 \end{theorem}
 
 \begin{problem}
@@ -322,7 +320,7 @@ Let $D$ be an integral domain. If $p(x)$ and $q(x)$ are nonzero polynomials $D[x
 \end{theorem}
 
 \begin{problem}
-Give an example of nonzero polynomials $p(x),q(x)\in \mathbb{Z}_{10}[x]$ such that $\deg(p(x)q(x)) \neq \deg p(x) + \deg q(x)$. Why does this not contradict Theorem~\ref{thm.DegreePolyProduct}.
+Give an example of nonzero polynomials $p(x),q(x)\in \mathbb{Z}_{10}[x]$ such that $\deg(p(x)q(x)) \neq \deg p(x) + \deg q(x)$. Why does this not contradict Theorem~\ref{thm.DegreePolyProduct}?
 \end{problem}
 
 \begin{corollary}\label{cor.PolysOverIntegralDomains}
@@ -337,7 +335,7 @@ Let's summarize our investigation of polynomials thus far. We want to understand
 \subsection{Division algorithm}
 
 \begin{definition}
-Let $F$ be a field, and let $a(x),b(x)\in F[x]$. We say that $b(x)$ \textbf{divides} $a(x)$ (or $b(x)$ is a \textbf{divisor} of $a(x)$) if there exists some $q(x)\in F[x]$ such that $a(x) = b(x)q(x)$.
+Let $R$ be a ring, and let $a,b\in R$. We say that $b$ \textbf{divides} $a$ (or $b$ is a \textbf{divisor} of $a$) if there exists some $q\in R$ such that $a = bq$.
 \end{definition}
 
 \begin{problem}
@@ -349,10 +347,10 @@ Consider the polynomial $p(x) = x^2 - 1$ in $\mathbb{Q}[x]$.
 \end{enumerate}
 \end{problem}
 
-As is familiar, we will often treat polynomials as functions, and plug values into them. The next theorem should seem familiar.
+We will often treat polynomials as functions and plug values into them. The next theorem should may seem familiar.
 
 \begin{theorem}\label{thm.LinearFactorOfPolyImpliesRoot}
-Let $a(x)\in F[x]$ for $F$ a field. If $c\in F$ and $(x-c)$ divides $a(x)$, then $a(c) = 0$.
+Let $p(x)\in R[x]$ with $R$ a ring. If $c\in R$ and $(x-c)$ divides $p(x)$, then $p(c) = 0$.
 \end{theorem}
 
 \begin{problem}
@@ -383,7 +381,7 @@ Let $F$ be a field, and let $a(x),b(x)\in F[x]$ with $b(x) \neq 0$. Then there e
 with $\deg r(x) < \deg b(x)$ or $r(x) = 0$.
 \end{theorem}
 
-The division algorithm is the theoretical analogue of long division. If you want to divide concrete polynomials, use long division, but if you want to prove something about divisibility for arbitrary polynomials, use the division algorithm. It is often used to prove a polynomial $b(x)$ actually divides another polynomial $a(x)$. The strategy is to apply the division algorithm to produce the equation $a(x) = b(x)q(x) + r(x)$ (with $\deg r(x) < \deg b(x)$ or $r(x) = 0$) and then use this to show that, in fact, $r(x)=0$, which implies that $a(x) = b(x)q(x)$ as desired. Let's try using this approach to prove the converse of Theorem~\ref{thm.LinearFactorOfPolyImpliesRoot}.
+The division algorithm is the theoretical analogue of long division. If you want to divide concrete polynomials, use long division, but if you want to prove something about divisibility for arbitrary polynomials, use the division algorithm. It is often used to prove a polynomial $b(x)$ actually divides another polynomial $a(x)$. The strategy is to apply the division algorithm to produce the equation $a(x) = b(x)q(x) + r(x)$ (with $\deg r(x) < \deg b(x)$ or $r(x) = 0$) and then use this to show that, in fact, $r(x)=0$,  implying that $a(x) = b(x)q(x)$ as desired. Let's try using this approach to prove the converse of Theorem~\ref{thm.LinearFactorOfPolyImpliesRoot}.
 
 \begin{theorem}\label{thm.RootImpliesLinearFactorOfPoly}
 Let $p(x)\in F[x]$ for $F$ a field. If $c\in F$ and $p(c) = 0$, then $(x-c)$ divides $p(x)$.
@@ -444,6 +442,16 @@ Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. If $d_1
 As you may suspect, $x-1$ is in fact the greatest common divisor of the polynomials $a(x)$ and $b(x)$ in Problem~\ref{prob.GCDExlore}, though we will not prove this. 
 The important point is that a greatest common divisor always exists (and there is only one by Lemma~\ref{lem.GCDUnique}). The proof of this result is tightly tied to analyzing certain combinations of the polynomials $a(x)$ and $b(x)$. Let's explore this a bit.
 
+\begin{problem}
+Consider the polynomials $a(x) = 2x^2-2$ and $b(x) = 2x^2+2x-4$ in $\mathbb{Q}[x]$.  Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in \mathbb{Q}[x]\}.\]
+\begin{enumerate}
+\item Write down 5 different polynomials that exist in the set $I$. 
+\item Show that $x-1$ divides an arbitrary polynomial in $I$.
+\end{enumerate}
+\end{problem}
+
+The idea behind the second part of the previous problem can be used to prove the following general result about sets like $I$.
+
 \begin{theorem}\label{thm.HalfOfGCDProof}
 Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in F[x]\}.\]
 If $h(x)$ divides both $a(x)$ and $b(x)$, then $h(x)$ divides every $c(x)\in I$.
@@ -487,5 +495,6 @@ For any polynomial $d(x)\in F[x]$, the following are equivalent:
 \end{enumerate}
 \end{fact}
 
+% GCD over larger fields: start with problem about Q and C
 
-\end{section}
+

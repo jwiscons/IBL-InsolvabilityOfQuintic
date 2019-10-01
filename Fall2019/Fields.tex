@@ -11,7 +11,7 @@ In Chapter~\ref{chapter:PolyEquations}, we explored problems about finding and e
 % SECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\begin{section}{Complex Numbers}
+\section{Complex Numbers}
 As mentioned above, we want to work in a world that contains all of the roots of all of the polynomials that we will be studying. Considering the roots of polynomials such as $x^2 +1$, $x^2-2$, $x^2-3$, etc., we see that we need to include numbers like $\sqrt{-1}$, $\sqrt{2}$, $\sqrt{3}$, etc., so although there are smaller worlds one could choose, we will opt for the world containing both $\sqrt{-1}$ and $\mathbb{R}$, namely $\mathbb{C}$.
 
 But before we proceed, note that $\sqrt{-1}$ is not really well defined. There are \emph{two} solutions to $x^2 +1$, so when we write $\sqrt{-1}$, we are all agreeing that we mean the same one. 
@@ -248,14 +248,13 @@ If $p(x)$ is a non-constant polynomial with all coefficients in $\mathbb{C}$, th
 \end{fact}
 
 In fact, we will see that this implies that \emph{all} roots of such a $p(x)$ lie in $\mathbb{C}$, so in our of study polynomials (often with all coefficients even in $\mathbb{Q}$), $\mathbb{C}$ serves as a uniform world in which we can study the roots.
-\end{section}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\begin{section}{An aside: the quaternions}
+\section{An aside: the quaternions}
 Our construction of the complex numbers creates a structure that contains the real numbers and possesses some nice properties not enjoyed by the real numbers, e.g.~every non-constant polynomial with complex coefficients has a complex root.  This raises the question: could we further extend the complex numbers to an even larger structure?
 
 Concisely, we built the complex numbers as the set $\mathbb{C} = \mathbb{R} + \mathbb{R}i$ together with the operations of addition and multiplication, which were defined in a natural way from the key identity that $i^2 = -1$. Here, we briefly explore what happens if we build a larger structure in a similar way: $\mathbb{H} = \mathbb{C} + \mathbb{C}j$ where, again, $j^2 = -1$. 
@@ -324,14 +323,13 @@ Let $S$ be the subset of $\mathbb{H}$ consisting of all quaternions with modulus
 \end{problem}
 
 It turns out that the group $S$ from the previous problem is isomorphic to the group $\operatorname{SU}(2)$ (one the the so-called special unitary groups), which is quite important in theoretical physics. If you want to learn more, you can start on \href{https://en.wikipedia.org/wiki/Special_unitary_group#The_group_SU(2)}{Wikipedia}.
-\end{section}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\begin{section}{Abstract fields}
+\section{Abstract fields}
 Notice that $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$ satisfy many common algebraic properties with respect to addition and multiplication. Of course, $\mathbb{H}$ does too, though it lacks commutativity of multiplication. When objects have common properties, it can be extremely valuable to abstract  those properties and study them once and for all (as opposed to trying to prove things about each individual structure). This is where we are headed, but first we highlight some related structures (again with algebraic properties similar to $\mathbb{Q}$, $\mathbb{R}$, and $\mathbb{C}$) that help to connect this work to our main goal of expressing roots of polynomials.
 
 \begin{problem}
@@ -519,14 +517,13 @@ If $a,b\in \mathbb{Z}$, then there exist $k,l\in \mathbb{Z}$ such that $ka+lb = 
 \begin{theorem}\label{thm.ZpField}
 Let $n$ be a positive integer. Then $\mathbb{Z}_n$ is a field if and only if $n$ is prime.
 \end{theorem}
-\end{section}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\begin{section}{Subfields and extension fields}
+\section{Subfields and extension fields}
 
 Just as with groups and subgroups, the notion of a subfield is extremely important. Analyzing the subfields of a field $F$ can often yield a better understanding of the whole field $F$, and vice versa. Also, this will allow us to generate  more examples of fields.
 
@@ -707,8 +704,4 @@ $\mathbb{C}$, $\mathbb{R}$, $\mathbb{Q}$, $\mathbb{Q}\left(\sqrt{2}\right)$, $\m
 Draw the portion of the subfield lattice of $\mathbb{C}$ that contains the following fields:
 $\mathbb{C}$, $\mathbb{Q}$, $\mathbb{Q}(\zeta_4)$, $\mathbb{Q}(\zeta_8)$, and $\mathbb{Q}(\zeta_{16})$.
 \end{problem}
-\end{section}
-
-
-
 
