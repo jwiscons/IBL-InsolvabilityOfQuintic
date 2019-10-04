@@ -241,7 +241,7 @@ Let $R$ be a ring and $n$ a positive integer. Then $M_{n}(R)$ denotes the set of
 Provide examples of matrices satisfying each of the following conditions.
 \begin{multicols}{2}
 \begin{enumerate}
-\item $A\in M_{3}(\mathbb{C})$ but $A\notin M_{2}(\mathbb{R})$
+\item $A\in M_{3}(\mathbb{C})$ but $A\notin M_{3}(\mathbb{R})$
 \item $B\in M_{2}(\mathbb{H})$ but $B\notin M_{2}(\mathbb{C})$
 \item $C\in M_{2}\left(\mathbb{Q}\left(\sqrt{5}\right)\right)$ but $C\notin M_{2}(\mathbb{Q})$
 \item $D\in M_{2}\left(\mathbb{R}[x]\right)$ but $D\notin M_{2}(\mathbb{R})$
@@ -442,15 +442,15 @@ Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. If $d_1
 As you may suspect, $x-1$ is in fact the greatest common divisor of the polynomials $a(x)$ and $b(x)$ in Problem~\ref{prob.GCDExlore}, though we will not prove this. 
 The important point is that a greatest common divisor always exists (and there is only one by Lemma~\ref{lem.GCDUnique}). The proof of this result is tightly tied to analyzing certain combinations of the polynomials $a(x)$ and $b(x)$. Let's explore this a bit.
 
-\begin{problem}
+\begin{problem}\label{prob.GCDIdeal}
 Consider the polynomials $a(x) = 2x^2-2$ and $b(x) = 2x^2+2x-4$ in $\mathbb{Q}[x]$.  Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in \mathbb{Q}[x]\}.\]
 \begin{enumerate}
-\item Write down 5 different polynomials that exist in the set $I$. 
+\item Write down 5 different polynomials that are in the set $I$. 
 \item Show that $x-1$ divides an arbitrary polynomial in $I$.
 \end{enumerate}
 \end{problem}
 
-The idea behind the second part of the previous problem can be used to prove the following general result about sets like $I$.
+The idea behind the second part of Problem~\ref{prob.GCDIdeal} can be used to prove the following general result about sets like $I$.
 
 \begin{theorem}\label{thm.HalfOfGCDProof}
 Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in F[x]\}.\]
@@ -464,17 +464,18 @@ Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. There e
 for some $f(x),g(x)\in F[x]$.
 \end{fact}
 
-The proof of this fact is interesting, but let's content ourselves to just outline it. Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in F[x]\},\]
-and let $m$ be the smallest degree of all nonzero polynomials in $I$  (which exists by the Well-Ordering Property of the natural numbers). Choosing any polynomial of degree $m$ in $I$, we can divide out the leading coefficient to get a \emph{monic} polynomial $d(x)$, which we can show is still in $I$. The polynomial $d(x)$ will be the greatest common divisor.
+The proof of this fact is interesting, but let's content ourselves to just outline it. The approach is fairly straight forward. Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in F[x]\}.\]  Theorem~\ref{thm.HalfOfGCDProof} tells us that every common divisor of $a(x)$ and $b(x)$ is a divisor of every polynomial in $I$. Thus, if $I$ contains a monic, common divisor of $a(x)$ and $b(x)$, it must be the greatest common divisor. So, we look for a common divisor of $a(x)$ and $b(x)$ in $I$. And to do this, the key idea is to choose a polynomial of smallest degree in $I$.
 
-To see that $d(x)$ divides $a(x)$, we use Theorem~\ref{thm.DivisionAlgorithm} (the division algorithm) to write $a(x) = d(x)q(x) + r(x)$ for $q(x),r(x)\in F[x]$ with $\deg r(x) < \deg d(x)$ or $r(x) = 0$. Towards a contradiction, assume $r(x) \neq 0$. Now, $d(x)\in I$, so for some $f_d(x),g_d(x)\in F[x]$
+Let $m$ be the smallest degree of all nonzero polynomials in $I$  (which exists by the Well-Ordering Property of the natural numbers). Choosing any polynomial of degree $m$ in $I$, we can divide out the leading coefficient to get a \emph{monic} polynomial $d(x)$, which we can show is still in $I$. The polynomial $d(x)$ will be the greatest common divisor.
+
+To see that $d(x)$ divides $a(x)$, we use Theorem~\ref{thm.DivisionAlgorithm} (the division algorithm) to write $a(x) = d(x)q(x) + r(x)$ for $q(x),r(x)\in F[x]$ with $\deg r(x) < \deg d(x)$ or $r(x) = 0$. Towards a contradiction, assume $r(x) \neq 0$. Now, since $d(x)\in I$, there exist $f_d(x),g_d(x)\in F[x]$ such that
 \begin{align*}
 r(x) & = a(x) - d(x)q(x)\\
 & = a(x) - [f_d(x)a(x) + g_d(x)b(x)]q(x)\\
 & = [1-f_d(x)q(x)]a(x) + [-g_d(x)q(x)]b(x)\\
 &\in I.
 \end{align*}
-Since $\deg r(x) < \deg d(x)$, this contradicts the fact that $d(x)$ had the smallest possible degree of all polynomials in $I$; thus, $d(x)$ divides $a(x)$. A similar argument shows that $d(x)$ also divides $b(x)$, so $d(x)$ is a monic, common divisor of $a(x)$ and $b(x)$. And, Theorem~\ref{thm.HalfOfGCDProof} shows that $d(x)$ is a greatest common divisor. But then, it is the unique greatest common divisor by Lemma~\ref{lem.GCDUnique}.
+Since $\deg r(x) < \deg d(x)$, this contradicts the fact that $d(x)$ had the smallest possible degree of all polynomials in $I$. Thus, $r(x) = 0$, and $d(x)$ divides $a(x)$. A similar argument shows that $d(x)$ also divides $b(x)$, so $d(x)$ is a monic, common divisor of $a(x)$ and $b(x)$. And, Theorem~\ref{thm.HalfOfGCDProof} shows that $d(x)$ is a greatest common divisor. But then, it is the unique greatest common divisor by Lemma~\ref{lem.GCDUnique}.
 
 Using Fact~\ref{fact.GCD}, we can rewrite the set $I$ is a very nice way.
 
@@ -494,6 +495,90 @@ For any polynomial $d(x)\in F[x]$, the following are equivalent:
 \item $d(x)$ is a monic and $I = \{p(x)d(x)\mid p(x)\in F[x]\}$.
 \end{enumerate}
 \end{fact}
+
+So, how do we compute the greatest common divisor of two polynomials? First think about how you would compute the greatest common divisor of $168$ and $180$. Really, think about it\ldots Many people will factor both  $168$ and $180$ into primes and then multiply the prime factors they have in common. This works for integers, and in fact, it will also work for polynomials once we develop the notion of a ``prime polynomial.'' However, there is another approach, which in general is way more efficient: the Euclidean Algorithm. We will not develop it here, but you are encouraged to look it up (perhaps starting on \href{https://en.wikipedia.org/wiki/Polynomial_greatest_common_divisor}{Wikipedia}).
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Irreducible polynomials}
+We now develop the analogous notion of a prime number for polynomials, which will be that or \emph{irreducibility}. This will be very important for us. The concept of irreducibility makes sense quite generally, so we start by defining it for any integral domain. Recall that every field is an integral domain, and by Corollary~\ref{cor.PolysOverIntegralDomains}, $F[x]$ is also an integral domain when $F$ is a field. 
+
+To motivate the definition, think about how prime integers are defined: $p\in \mathbb{Z}$ is prime if (1) $p>1$ and (2) $p=ab$ implies that $a=\pm 1$ or $b=\pm1$. Since the  units of $\mathbb{Z}$ are precisely $\pm1$, the second condition could be rewritten as ``$p=ab$ implies that $a$ or $b$ is a unit.'' Also, since we don't  want $1$ (or $-1$) to be considered prime, the first condition is mostly captured by ensuring that ``$p$ is not zero and not a unit.'' 
+
+\begin{definition}\label{def.reducible}
+Let $D$ be an integral domain. An element $p\in D$ is \textbf{irreducible} if 
+\begin{itemize}
+\item $p\neq 0$ and $p\notin U(D)$, and
+\item for all $a,b\in D$, $p = ab$ implies $a\in U(D)$ or $b\in U(D)$.
+\end{itemize} 
+The element $p$ is \textbf{reducible} if it is not irreducible; that is if $p=0$, $p\in U(D)$, or there exist $a,b\in D$ such that $p = ab$ and $a,b\notin U(D)$. 
+\end{definition}
+
+\begin{problem}
+Use Definition~\ref{def.reducible} to show that $\mathbb{R}$ has no irreducible elements.
+\end{problem}
+
+\begin{problem}
+What are the irreducible elements in $\mathbb{Z}$?
+\end{problem}
+
+In order to investigate irreducibility in an integral domain $D$, we need to know the units $D$. Our overarching theme is to better understand polynomials, so let's 
+start there. 
+
+\begin{theorem}\label{thm.UnitsFAdjoinx}
+Let $F$ be a field. Then $p(x)$ is a unit in $F(x)$ if and only if $\deg p(x) = 0$. 
+\end{theorem}
+
+Let's try to rewrite our definition of irreducibility/reducibility in a more useable form for polynomials.
+\begin{theorem}
+Let $F$ be a field. Then $p(x)$ is reducible if and only if $\deg p(x) > 0$ and there exist polynomials $a(x),b(x) \in F[x]$ such that $p(x) = a(x)b(x)$ and $\deg a(x) <\deg p(x)$ and $\deg b(x) <\deg p(x)$.
+\end{theorem}
+
+\begin{problem}
+Determine if $p(x)$ is reducible or irreducible in the given ring. If it's reducible, write down a factorization.
+\begin{multicols}{2}
+\begin{enumerate}
+\item $p(x) = x^2+1$ in $\mathbb{C}[x]$
+\item $p(x) = x^2+1$ in $\mathbb{Q}[x]$
+\item $p(x) = x^2+1$ in $\mathbb{Z}_2[x]$
+\item $p(x) = x^2+1$ in $\mathbb{Z}_3[x]$
+\end{enumerate}
+\end{multicols}
+\end{problem}
+
+Let's catalog a couple of general irreducibility/reducibility results for polynomials of small degree.
+
+\begin{theorem}
+Let $F$ be a field. If $\deg p(x) = 1$, then $p(x)$ is irreducible.
+\end{theorem}
+
+\begin{theorem}\label{thm.ReducibilityTestDegree2or3}
+Let $F$ be a field. If $\deg p(x) = 2,3$, then $p(x)$ is reducible if and only if $p(x)$ has a root in $F$.
+\end{theorem}
+
+\begin{problem}
+Determine if $p(x)$ is reducible or irreducible in the given ring. If it's reducible, write down a factorization.
+\begin{enumerate}
+\item $p(x) = x^3-2$ in $\mathbb{Q}[x]$
+\item $p(x) = x^3-2$ in $\mathbb{Z}_5[x]$
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Determine if each of the following polynomials are reducible or irreducible in the given ring.
+\begin{multicols}{2}
+\begin{enumerate}
+\item $p(x) = x^3-8$ in $\mathbb{Q}[x]$
+\item $p(x) = x^3-8$ in $\mathbb{Z}_5[x]$
+\item $r(x) = x^4-8x^2+15$ in $\mathbb{Q}$
+\item $r(x) = x^4-8x^2+15$ in $\mathbb{Z}_5[x]$
+\end{enumerate}
+\end{multicols}
+\end{problem}
+
+
+
 
 % GCD over larger fields: start with problem about Q and C
 
