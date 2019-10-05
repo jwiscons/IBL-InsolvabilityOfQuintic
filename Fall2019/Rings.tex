@@ -288,8 +288,8 @@ Show that $\begin{bmatrix} i & 3\\ 0& i\end{bmatrix}\in\operatorname{GL}_{2}(\ma
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Polynomial rings}
-
-We now dive a little deeper into our study of polynomials. Let's start with some important terminology.
+Our study of rings was motivated by our desire to learn more about polynomials, and we now dive a little deeper into the theory of polynomial rings. Ultimately, we will focus on polynomials rings $F[x]$ where $F$ is a field. In this section, we will see that $F[x]$ behaves in many ways like the integers $\mathbb{Z}$: $F[x]$ is an integral domain, there is a division algorithm for $F[x]$, there exists a greatest common divisor for polynomials, and there is a notion of primes and prime factorizations. 
+Let's start with some important terminology.
 
 \begin{definition}
 Let $R$ be a ring, and let  $p(x)\in R[x]$ be a \emph{nonzero} polynomial. If $p(x) = a_0 + a_1x + \cdots + a_nx^n$ with $a_n \neq 0$, then $n$ is called the \textbf{degree} of $p(x)$, denoted $\deg p(x)$. In words, $\deg p(x)$ is the highest power of $x$ in $p(x)$ with a nonzero coefficient. The degree of the zero polynomial is undefined.
@@ -327,13 +327,12 @@ Give an example of nonzero polynomials $p(x),q(x)\in \mathbb{Z}_{10}[x]$ such th
 If $D$ is an integral domain, then $D[x]$ is an integral domain.
 \end{corollary}
 
-Let's summarize our investigation of polynomials thus far. We want to understand the structure of $F[x]$, specifically when $F$ is a field. The first thing we noticed was that $F[x]$ is not a field, as many elements do not have multiplicative inverses. However, $F[x]$ is a commutative ring with unity, and as we just saw, even more is true: $F[x]$ is an integral domain, so the Cancellation Property holds (Theorem~\ref{thm.IntegralDomainCancel}). For the rest of this section, we'll explore additional properties of $F[x]$.
-
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Division algorithm}
-
+Here we explore what it means for one polynomial to divide another as well as the idea of a quotient and remainder for division. These should be familiar from previous classes for $\mathbb{R}[x]$, but here we see that they generalize to arbitrary $F[x]$ for $F$ a field.
+ 
 \begin{definition}
 Let $R$ be a ring, and let $a,b\in R$. We say that $b$ \textbf{divides} $a$ (or $b$ is a \textbf{divisor} of $a$) if there exists some $q\in R$ such that $a = bq$.
 \end{definition}
@@ -347,17 +346,17 @@ Consider the polynomial $p(x) = x^2 - 1$ in $\mathbb{Q}[x]$.
 \end{enumerate}
 \end{problem}
 
-We will often treat polynomials as functions and plug values into them. The next theorem should may seem familiar.
-
 \begin{theorem}\label{thm.LinearFactorOfPolyImpliesRoot}
 Let $p(x)\in R[x]$ with $R$ a ring. If $c\in R$ and $(x-c)$ divides $p(x)$, then $p(c) = 0$.
 \end{theorem}
 
+Even if $b(x)$ does not divide $a(x)$, it can still be useful to perform the division to obtain a quotient and remainder.
+
 \begin{problem}
-Consider the polynomials $a(x) = x^4+x^3-8x +5$  and $b(x) = x^2 -3$ in $\mathbb{Q}[x]$. Use polynomial long division to show that $b(x)$ does not divide $a(x)$. What is the quotient and what is the remainder? 
+Consider the polynomials $a(x) = x^4+x^3-8x +5$  and $b(x) = x^2 -3$ in $\mathbb{Q}[x]$. Use polynomial long division to show that $b(x)$ does not divide $a(x)$. What is the quotient and what is the remainder? Write $a(x)$ as $a(x) = b(x)q(x) + r(x)$ for some $q(x),r(x)\in \mathbb{Q}[x]$ with $\deg r(x) < \deg b(x)$.
 \end{problem}
 
-The ``division algorithm'' formalizes what results from long division. And, it turns out that it is true for polynomials over any field (not just $\mathbb{Q}$). The next lemma prepares for the proof of the division algorithm. 
+The ``division algorithm'' (Theorem~\ref{thm.DivisionAlgorithm}) formalizes what results from long division. And, it turns out that it is true for polynomials over any field (not just $\mathbb{Q}$). The next lemma prepares for the proof of the division algorithm. 
 
 \begin{lemma}
 Let $F$ be a field, and let $a(x),b(x)\in F[x]$ with $\deg a(x)\ge \deg b(x)$. Assume that $a(x) = a_0 + a_1x + \cdots + a_nx^n$ with $a_n\neq 0$ and $b(x) = b_0 + b_1x + \cdots + b_mx^m$ with $b_m\neq 0$. Set $a_1(x) =  a(x) - b(x)a_nb_m^{-1}x^{n-m}$. Then $\deg a_1(x) < \deg a(x)$, and $b(x)$ divides $a(x) - a_1(x)$.
@@ -433,14 +432,14 @@ Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. A polyn
 \end{enumerate}
 \end{definition}
 
-We don't yet know that greatest common divisors exist, but let's start by showing that if they exist, there is only one.
+Thus, in Problem~\ref{prob.GCDExlore},  the greatest common divisor of the polynomials $a(x)$ and $b(x)$ is $x-1$.
+That said, we don't yet know that a greatest common divisor always exists, but let's start by showing that if one exists, there is only one.
 
 \begin{lemma}\label{lem.GCDUnique}
 Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. If $d_1(x)$ and $d_2(x)$ are  greatest common divisors of $a(x)$ and $b(x)$, then $d_1(x)=d_2(x)$.
 \end{lemma}
 
-As you may suspect, $x-1$ is in fact the greatest common divisor of the polynomials $a(x)$ and $b(x)$ in Problem~\ref{prob.GCDExlore}, though we will not prove this. 
-The important point is that a greatest common divisor always exists (and there is only one by Lemma~\ref{lem.GCDUnique}). The proof of this result is tightly tied to analyzing certain combinations of the polynomials $a(x)$ and $b(x)$. Let's explore this a bit.
+We now work towards the existence of a greatest common divisor for arbitrary polynomials in $F[x]$ (for arbitrary fields). The proof of this result is tightly tied to analyzing certain combinations of the polynomials $a(x)$ and $b(x)$. Let's explore this a bit.
 
 \begin{problem}\label{prob.GCDIdeal}
 Consider the polynomials $a(x) = 2x^2-2$ and $b(x) = 2x^2+2x-4$ in $\mathbb{Q}[x]$.  Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in \mathbb{Q}[x]\}.\]
@@ -484,25 +483,25 @@ Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. Define 
 If $d(x)$ is the greatest common divisor of $a(x)$ and $b(x)$, then $I = \{p(x)d(x)\mid p(x)\in F[x]\}$.
 \end{corollary}
 
-With similar ideas as in the proof of Fact~\ref{fact.GCD}, one can prove the following fact that characterizes the greatest common divisor several different ways.
+With similar ideas as in the proof of Fact~\ref{fact.GCD}, one can prove the following fact that characterizes the greatest common divisor in several different ways.
 
 \begin{fact}
 Let $F$ be a field, and let $a(x), b(x)\in F[x]$ be nonzero polynomials. Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in F[x]\}.\]
 For any polynomial $d(x)\in F[x]$, the following are equivalent:
 \begin{enumerate}
 \item $d(x)$ is the greatest common divisor of $a(x)$ and $b(x)$;
-\item $d(x)$ is a monic common divisor of $a(x)$ and $b(x)$ and $d(x) \in I$;
-\item $d(x)$ is a monic and $I = \{p(x)d(x)\mid p(x)\in F[x]\}$.
+\item $d(x)$ is a monic common divisor of $a(x)$ and $b(x)$, and $d(x) \in I$;
+\item $d(x)$ is a monic, and $I = \{p(x)d(x)\mid p(x)\in F[x]\}$.
 \end{enumerate}
 \end{fact}
 
-So, how do we compute the greatest common divisor of two polynomials? First think about how you would compute the greatest common divisor of $168$ and $180$. Really, think about it\ldots Many people will factor both  $168$ and $180$ into primes and then multiply the prime factors they have in common. This works for integers, and in fact, it will also work for polynomials once we develop the notion of a ``prime polynomial.'' However, there is another approach, which in general is way more efficient: the Euclidean Algorithm. We will not develop it here, but you are encouraged to look it up (perhaps starting on \href{https://en.wikipedia.org/wiki/Polynomial_greatest_common_divisor}{Wikipedia}).
+So, you may be wondering: how do we compute the greatest common divisor of two polynomials? First think about how you would compute the greatest common divisor of $168$ and $180$. Really, think about it\ldots Many people will factor both  $168$ and $180$ into primes and then multiply the prime factors they have in common. This works for integers, and in fact, it will also work for polynomials once we develop the notion of a ``prime polynomial.'' However, there is another approach, which in general is way more efficient: the Euclidean Algorithm. We will not develop it here, but you are encouraged to look it up (perhaps starting on \href{https://en.wikipedia.org/wiki/Polynomial_greatest_common_divisor}{Wikipedia}).
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Irreducible polynomials}
-We now develop the analogous notion of a prime number for polynomials, which will be that or \emph{irreducibility}. This will be very important for us. The concept of irreducibility makes sense quite generally, so we start by defining it for any integral domain. Recall that every field is an integral domain, and by Corollary~\ref{cor.PolysOverIntegralDomains}, $F[x]$ is also an integral domain when $F$ is a field. 
+We now develop the analogous notion of a prime number for polynomials, which will be \emph{irreducibility}.  The concept of irreducibility makes sense quite generally, so we start by defining it for any integral domain. Recall that, by Corollary~\ref{cor.PolysOverIntegralDomains}, $F[x]$ is always an integral domain when $F$ is a field. 
 
 To motivate the definition, think about how prime integers are defined: $p\in \mathbb{Z}$ is prime if (1) $p>1$ and (2) $p=ab$ implies that $a=\pm 1$ or $b=\pm1$. Since the  units of $\mathbb{Z}$ are precisely $\pm1$, the second condition could be rewritten as ``$p=ab$ implies that $a$ or $b$ is a unit.'' Also, since we don't  want $1$ (or $-1$) to be considered prime, the first condition is mostly captured by ensuring that ``$p$ is not zero and not a unit.'' 
 
@@ -516,23 +515,23 @@ The element $p$ is \textbf{reducible} if it is not irreducible; that is if $p=0$
 \end{definition}
 
 \begin{problem}
-Use Definition~\ref{def.reducible} to show that $\mathbb{R}$ has no irreducible elements.
+Use Definition~\ref{def.reducible} to show that a field has no irreducible elements.
 \end{problem}
 
 \begin{problem}
 What are the irreducible elements in $\mathbb{Z}$?
 \end{problem}
 
-In order to investigate irreducibility in an integral domain $D$, we need to know the units $D$. Our overarching theme is to better understand polynomials, so let's 
+In order to investigate irreducibility in an integral domain $D$, we need to know its units. Our overarching goal is to better understand polynomials, so let's 
 start there. 
 
 \begin{theorem}\label{thm.UnitsFAdjoinx}
 Let $F$ be a field. Then $p(x)$ is a unit in $F(x)$ if and only if $\deg p(x) = 0$. 
 \end{theorem}
 
-Let's try to rewrite our definition of irreducibility/reducibility in a more useable form for polynomials.
+Let's  rewrite our definition of reducibility in a more useable form for polynomials.
 \begin{theorem}
-Let $F$ be a field. Then $p(x)$ is reducible if and only if $\deg p(x) > 0$ and there exist polynomials $a(x),b(x) \in F[x]$ such that $p(x) = a(x)b(x)$ and $\deg a(x) <\deg p(x)$ and $\deg b(x) <\deg p(x)$.
+Let $F$ be a field, and let $p(x)$ be a nonzero polynomial in $F[x]$. Then $p(x)$ is reducible if and only if $\deg p(x) > 0$ and there exist polynomials $a(x),b(x) \in F[x]$ such that $p(x) = a(x)b(x)$ with $\deg a(x) <\deg p(x)$ and $\deg b(x) <\deg p(x)$.
 \end{theorem}
 
 \begin{problem}
@@ -559,10 +558,12 @@ Let $F$ be a field. If $\deg p(x) = 2,3$, then $p(x)$ is reducible if and only i
 
 \begin{problem}
 Determine if $p(x)$ is reducible or irreducible in the given ring. If it's reducible, write down a factorization.
+\begin{multicols}{2}
 \begin{enumerate}
 \item $p(x) = x^3-2$ in $\mathbb{Q}[x]$
 \item $p(x) = x^3-2$ in $\mathbb{Z}_5[x]$
 \end{enumerate}
+\end{multicols}
 \end{problem}
 
 \begin{problem}
@@ -577,9 +578,43 @@ Determine if each of the following polynomials are reducible or irreducible in t
 \end{multicols}
 \end{problem}
 
+To solidify the analogy between irreducible elements and primes, let's prove a factorization theorem.
 
+\begin{theorem}\label{thm.FactorIrreducibles}
+If $F$ is a field, then any polynomial of positive degree in $F[x]$ can be written as a product of polynomials that are irreducible in $F[x]$.
+\end{theorem}
 
+As you know, in the integers every number greater than or equal to $2$ can be factored into a product of primes in a way that is \emph{unique up to reordering the factors}. There is a similar uniqueness result for polynomials: any polynomial of positive degree in $F[x]$ can be written as a product of irreducible polynomials in a way that is unique up to reordering the factors and multiplying each factor by a unit.
 
-% GCD over larger fields: start with problem about Q and C
+\begin{problem}
+Let $p(x) = 6 x^4 - 7 x^3 + 15 x^2 - 21 x - 9$. Then 
+\begin{itemize}
+\item $p(x) = (2x-3)(3x+1)(x^2+3)$ and 
+\item $p(x) = (x+\frac{1}{3})(2x^2+6)(3x-\frac{9}{2})$
+\end{itemize}
+ are two different factorizations of $p(x)$ into irreducible in $\mathbb{Q}[x]$. Explain why the factorizations are the ``same'' up to reordering the factors and multiplying each factor by a unit.
+\end{problem}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Subrings and ideals}
+We now return to general ring theory. As with groups and fields, the notion of a subring is fundamental. 
+
+\begin{definition}
+Let $(R,+,\cdot)$ be a ring, and let $S$ be a subset of $R$. Then $S$ is a \textbf{subring} of $R$ if $S$ is a ring in its own right with respect to operations $+$ and $\cdot$ \emph{inherited from $R$}.
+\end{definition}
+
+\begin{theorem}
+Let $R$ be a ring, and let $S\subseteq R$. Then $S$ is a subring of $R$ if and only if 
+\begin{enumerate}
+\item $F$ contains at least $2$ elements;
+\item for all $x,y\in F$, $x+y\in F$ and  $xy\in F$;
+\item for all $x\in F$, $-x\in F$; and 
+\item for all $x\in F^*$, $x^{-1}\in F$.
+\end{enumerate}
+\end{theorem}
 
 
