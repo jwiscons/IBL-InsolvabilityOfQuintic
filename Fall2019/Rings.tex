@@ -501,7 +501,7 @@ So, you may be wondering: how do we compute the greatest common divisor of two p
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Irreducible polynomials}
-We now develop the analogous notion of a prime number for polynomials, which will be \emph{irreducibility}.  The concept of irreducibility makes sense quite generally, so we start by defining it for any integral domain. Recall that, by Corollary~\ref{cor.PolysOverIntegralDomains}, $F[x]$ is always an integral domain when $F$ is a field. 
+We now develop the analogous notion of a prime number for polynomials, which will be an \emph{irreducible} polynomial.  The concept of irreducibility makes sense quite generally, so we start by defining it for any integral domain. Recall that, by Corollary~\ref{cor.PolysOverIntegralDomains}, $F[x]$ is always an integral domain when $F$ is a field. 
 
 To motivate the definition, think about how prime integers are defined: $p\in \mathbb{Z}$ is prime if (1) $p>1$ and (2) $p=ab$ implies that $a=\pm 1$ or $b=\pm1$. Since the  units of $\mathbb{Z}$ are precisely $\pm1$, the second condition could be rewritten as ``$p=ab$ implies that $a$ or $b$ is a unit.'' Also, since we don't  want $1$ (or $-1$) to be considered prime, the first condition is mostly captured by ensuring that ``$p$ is not zero and not a unit.'' 
 
@@ -592,7 +592,7 @@ Let $p(x) = 6 x^4 - 7 x^3 + 15 x^2 - 21 x - 9$. Then the following are two diffe
 \item $p(x) = (2x-3)(3x+1)(x^2+3)$, and
 \item $p(x) = (x+\frac{1}{3})(2x^2+6)(3x-\frac{9}{2})$.
 \end{itemize}
- Explain why the factorizations are the ``same'' up to reordering the factors and multiplying each factor by a unit.
+ Explain why the factorizations are the same after possibly reordering the factors and multiplying each factor by a unit.
 \end{problem}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -600,12 +600,14 @@ Let $p(x) = 6 x^4 - 7 x^3 + 15 x^2 - 21 x - 9$. Then the following are two diffe
 % SECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\section{Subrings and ideals}
+\section{Subrings}
 We now return to general ring theory. As with groups and fields, the notion of a subring is fundamental. 
 
 \begin{definition}
 Let $(R,+,\cdot)$ be a ring, and let $S$ be a subset of $R$. Then $S$ is a \textbf{subring} of $R$ if $S$ is a ring in its own right with respect to operations $+$ and $\cdot$ \emph{inherited from $R$}.
 \end{definition}
+
+As with fields, many of the properties of the ring $R$ automatically pass to a subset $S$ (e.g.~associativity), leaving only a handful of the ring axioms to actually be verified.
 
 \begin{theorem}
 Let $R$ be a ring, and let $S\subseteq R$. Then $S$ is a subring of $R$ if and only if 
@@ -615,5 +617,137 @@ Let $R$ be a ring, and let $S\subseteq R$. Then $S$ is a subring of $R$ if and o
 \item for all $x\in S$, $-x\in S$.
 \end{enumerate}
 \end{theorem}
+
+\begin{problem}
+Determine if each of the following subsets of $\mathbb{Q}[x]$ are actually subrings.
+\begin{enumerate}
+\item $A = \{p(x) \mid p(x) = c \text{ for some $c\in \mathbb{Q}$}\}$ (i.e. the set of constant polynomials)
+\item $B = \{p(x)\mid p(x) = 0 \text{ or } \deg p(x) \le 1\}$ (i.e. the set of linear polynomials)
+\item $\mathbb{Z}[x]$
+\item $I = \{f(x)x^2 + g(x)(1+x^5)\mid f(x),g(x)\in \mathbb{Q}[x]\}$
+\end{enumerate} 
+\end{problem}
+
+\begin{problem}
+Explain why $\mathbb{Z}_5$ is \emph{not} a subring of $\mathbb{Z}$.
+\end{problem}
+
+Examples of subrings of $\mathbb{C}$ include $\mathbb{R}$, $\mathbb{Q}$, $\mathbb{Z}$, and $\mathbb{Q}(i)$. These examples can, in turn, be used to create subrings of polynomial rings and matrix rings .
+
+\begin{theorem}
+If $S$ is a subring of $R$, then
+\begin{enumerate}
+\item $S[x]$ is a subring of $R[x]$, and 
+\item $M_n(S)$ is a subring of $M_n(R)$.
+\end{enumerate}
+\end{theorem}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Ideals and quotients}
+We now turn our attention to a special class of subrings known as \emph{ideals}. The motivation for studying ideals of a ring is the same as for studying normal subgroups of a group: they give rise to quotients.
+
+Let's explore the extra properties that a subring might need to ensure that the set of cosets can be given the structure of a ring. To start out, let's just assume that  $I$ is an \emph{additive subgroup} of the ring $R$. Since $(R,+)$ is abelian, $I$ is automatically a normal subgroup of $(R,+)$.  Now, let's consider the set of cosets of $I$ in $R$, which we write as $R/I$. Recall that $R/I = \{a + I\mid a\in R\}$ where $a+I = \{a+y\mid y\in I\}$. Here are a few properties about $R/I$ from group theory.
+
+\begin{fact}\label{fact.AdditiveSubgroupRingQuotientProperties}
+Let $I$ be an additive subgroup of a ring $R$. Then for all $a,b\in R$
+\begin{enumerate}
+\item $a + I = b+I$ if and only if $a-b\in I$ if and only if $a \in b + I$; and
+\item either $(a + I )\cap (b+I )= \emptyset$ or $a + I = b + I$.
+\end{enumerate}
+\end{fact}
+
+The goal is to understand when $R/I$ can be given the structure of a ring. To do this, we need to decide how to add and multiply cosets. We would like to define $(a + I) + (b + I) = (a+b) + I$ and $(a + I)(b + I) = ab + I$, but the worry is that these operations are not well-defined. That is, the coset $a + I$ goes by many names (since $a+I = a'+I$ for every $a' \in a+I$), so we have to make sure that our definitions for the operations do not depend on which names we use for the cosets. 
+
+Now, as mentioned before, $I$ is a \emph{normal} subgroup of $(R,+)$, so we know that coset addition is well-defined. Let's see what we need for multiplication. 
+Fix two arbitrary cosets $a + I$ and $b+I$. Then, for all $x,y\in I$, $a + I = (a+x)+I$ and $b+I = (b+y)+I$.
+Thus, in order for coset multiplication to be well-defined, we need to ensure that \[ab + I = (a+x)(b+y)+I \text{ for all $a,b\in R$ and all $x,y\in I$}.\]
+After distributing, this becomes $ab + I = ab + ay + xb + xy +I$, which simplifies to $I = ay + xb + xy +I$. By Fact~\ref{fact.AdditiveSubgroupRingQuotientProperties}, we see that what we really need to ensure is that 
+\[ay + xb + xy\in I \text{ for all $a,b\in R$ and all $x,y\in I$}.\] 
+In particular, this has to be true when $a=b=0$, which implies that $xy\in I$ for all $x,y\in I$, so $I$ needs to be closed under multiplication, hence a subring. So, let's assume that $I$ is a subring. Then, since $xy \in I$,  $ay + xb + xy\in I$ reduces to $ay + xb\in I$. So, assuming that $I$ is a subring, our previous condition becomes
+\[ay + xb\in I \text{ for all $a,b\in R$ and all $x,y\in I$}.\] 
+Now, if $a$ is arbitrary and $b=0$, then we see that $ay \in I$ for all $a\in R$ and $y\in I$. Similarly, we find that $xb \in I$ for all $b\in R$ and $x\in I$. These are new properties. In words, $I$ must be closed under (left and right) multiplication by elements from $R$. 
+
+In conclusion, if $I$ is a subring that is closed under multiplication by elements from $R$ then the above addition and multiplication for $R/I$ is well-defined, making $R/I$ a ring. The converse is also true. As such, we give these special subrings a special name.
+
+\begin{theorem}
+Let $R$ be a ring, and let $I\subseteq R$. Then $I$ is an \textbf{ideal} of $R$ if  
+\begin{enumerate}
+\item $I$ is a subring; and 
+\item for all $r\in R$ and all $a\in I$, both $ra\in I$ and $ar\in I$.
+\end{enumerate}
+\end{theorem}
+
+Let's also summarize our work above as a fact.
+
+\begin{fact}
+Let $R$ be a ring and let $I$ be an ideal of $R$.  Then $R/I$ is a ring under the binary operations defined as follows. For all $a,b\in R$, 
+\begin{itemize}
+\item $(a+I)+(b+I)  =  (a+b)+I$;
+\item $(a+I)(b+I)  = (ab)+I.$
+\end{itemize}
+
+\end{fact}
+
+\begin{problem} For each subset of the given ring, determine if the subset is an ideal, a subring, or neither.
+\begin{flushleft}
+\tabulinesep = 2mm
+\begin{tabu}  {X[2,r,m]|[2pt]X[c,m]|X[c,m]|X[c,m]}
+ & ideal & subring & neither  \\ \tabucline[2pt]{-}
+$\mathbb{Z}\subset \mathbb{Q}$ &&& \\  \hline 
+$2\mathbb{Z}\subset \mathbb{Z}$  &&& \\ \hline 
+$\{\text{odd integers}\}\subset \mathbb{Z}$  &&& \\ \hline 
+$\{0,3,6,9,12\}\subset \mathbb{Z}_{12}$  &&& \\ \hline 
+$\{p(x)\mid p(0)=0\}\subset \mathbb{Q}[x]$  &&& \\ \hline 
+$\{\text{constant polynomials}\}\subset \mathbb{Q}[x]$  &&& \\ \hline 
+\end{tabu}
+\end{flushleft}
+\end{problem}
+
+\begin{problem}
+Let $I = \{(x^2+1)p(x)\mid p(x) \in \mathbb{Q}[x]\}$. 
+\begin{enumerate}
+\item Show that $I$ is an ideal of $\mathbb{Q}[x]$.
+\item Write out $5$ elements of $I$, each with a different degree.
+\item Explain why $I$ has polynomials of every degree larger than or equal to $2$.
+\item Let $a(x) = x^4+3x+5$. Write out $5$ elements of the coset $a(x) + I$.
+\item Find some $b(x)$ in $a(x) + I$ such that $\deg b(x) = 1$.
+\item Explain why $(x + I)^2 = -1 + I$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Let $I = \{(x^2+1)p(x)\mid p(x) \in \mathbb{Q}[x]\}$. Show that every coset $a(x) + I\in\mathbb{Q}[x]/I$ can be represented as $a(x) + I = r(x) + I$ for some $r(x) \in \mathbb{Q}[x]$ where  $\deg r(x) < 2$ or $r(x) = 0$.
+\end{problem}
+
+\begin{theorem}
+Let $I$ be an ideal of a ring $R$.
+\begin{enumerate}
+\item If $R$ is a commutative ring, then $R/I$ is commutative ring.
+\item If $R$ is a ring with unity, then $R/I$ is a ring with unity.
+\end{enumerate}
+\end{theorem}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%\subsection{Generating ideals}
+%
+%\begin{theorem}
+%If $I$ and $J$ are ideals of the ring $R$, then $I\cap J$ is an ideal of $R$.
+%\end{theorem}
+%\begin{definition}
+%Let $A$ be any subset of $R$. Let $(A)$ denote the smallest ideal of $R$ containing $A$, called the \textbf{ideal generated by $A$}. If $A$ consists of a single element, say $A=\{a\}$, then $(a):=(\{a\})$ is called a \textbf{principal ideal}.
+%\end{definition}
+
+
+
+
+
+
+
 
 
