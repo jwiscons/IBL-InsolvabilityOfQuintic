@@ -126,6 +126,22 @@ For the base case, you want to show that $\varphi(1)$ is true. Assume that $p(x)
 Next, assume that $\varphi(k)$ is true for all $1\le k \le n$. We need to show that $\varphi(n+1)$ is true. Assume that $p(x)\in F[x]$ has degree $n+1$. There are two cases to consider: $p(x)$ is irreducible or $p(x)$ is reducible. Keep going\ldots
 \end{hint*}
 
+\begin{hint*}[Theorem~\ref{thm.CommutativityPassestoQuotients}]
+Using Fact~\ref{fact.QuotientRing}, you know that $R/I$ is ring. So, for the first part, assume $R$ is commutative, and use this to show $R/I$ is commutative. The starting point is to choose two arbitrary elements of $R/I$, which would be something like $a+I$ and $b+I$ for $a,b\in R$. Now show that $(a+I)(b+I) = (b+I)(a+I)$ using the definition of multiplication in Fact~\ref{fact.QuotientRing}. 
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.IdealContainingUnitsEqualsR}]
+By definition of an ideal, $I \subseteq R$, so what we really need to show is that $R \subseteq I$. Remember that $I$ is closed under multiplication by elements of $R$. So, if $a\in I$, then $ra\in R$. Try to first show that $1\in R$. 
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.ShowIdealIsPrincipalQx}]
+Use Theorem~\ref{thm.TwoGeneratedIsPrincipalFx}. Theorem~\ref{thm.IdealContainingUnitsEqualsR} may also be helpful.
+\end{hint*}
+
+
+
+
+
 
 
 

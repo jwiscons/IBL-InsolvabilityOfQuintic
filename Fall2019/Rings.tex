@@ -650,7 +650,24 @@ If $S$ is a subring of $R$, then
 \section{Ideals and quotients}
 We now turn our attention to a special class of subrings known as \emph{ideals}. The motivation for studying ideals of a ring is the same as for studying normal subgroups of a group: they give rise to quotients.
 
-Let's explore the extra properties that a subring might need to ensure that the set of cosets can be given the structure of a ring. To start out, let's just assume that  $I$ is an \emph{additive subgroup} of the ring $R$. Since $(R,+)$ is abelian, $I$ is automatically a normal subgroup of $(R,+)$.  Now, let's consider the set of cosets of $I$ in $R$, which we write as $R/I$. Recall that $R/I = \{a + I\mid a\in R\}$ where $a+I = \{a+y\mid y\in I\}$. Here are a few properties about $R/I$ from group theory.
+Let's explore the extra properties that a subring might need to ensure that the set of cosets can be given the structure of a ring. To start out, let's just assume that  $I$ is an \emph{additive subgroup} of the ring $R$. Since $(R,+)$ is abelian, $I$ is automatically a normal subgroup of $(R,+)$.  
+
+Now, let's consider the set of cosets of $I$ in $R$, which we write as $R/I$. Recall that $R/I = \{a + I\mid a\in R\}$ where $a+I = \{a+y\mid y\in I\}$. Remember, that the set of cosets will partition $R$. One way to picture this is given below---it's followed by a couple of important properties about $R/I$ from group theory.
+
+\begin{center}
+\begin{tikzpicture}[line width = 1,scale = 1.2]
+\footnotesize
+\draw[dashed, black!70] (0,0.75) -- (5,0.75);
+\draw[dashed, black!70] (0,1.5) -- (5,1.5);
+\draw[dashed, black!70] (0,2.25) -- (5,2.25);
+\node[black] at (0.65,0.75/2) {$I$};
+\node[black] at (0.65,{0.75+0.75/2}) {${a_1 + I}$};
+\node[black] at (0.65,{1.5+0.75/2}) {${a_2 + I}$};
+\node[black] at (0.65,{3}) {$\vdots$};
+\node[anchor = west] at (5,3.5) {$R$};
+\draw (0,0)--(5,0)--(5,3.5)--(0,3.5)--cycle;
+\end{tikzpicture}
+\end{center}
 
 \begin{fact}\label{fact.AdditiveSubgroupRingQuotientProperties}
 Let $I$ be an additive subgroup of a ring $R$. Then for all $a,b\in R$
@@ -665,7 +682,44 @@ The goal is to understand when $R/I$ can be given the structure of a ring. To do
 Now, as mentioned before, $I$ is a \emph{normal} subgroup of $(R,+)$, so we know that coset addition is well-defined. Let's see what we need for multiplication. 
 Fix two arbitrary cosets $a + I$ and $b+I$. Then, for all $x,y\in I$, $a + I = (a+x)+I$ and $b+I = (b+y)+I$.
 Thus, in order for coset multiplication to be well-defined, we need to ensure that \[ab + I = (a+x)(b+y)+I \text{ for all $a,b\in R$ and all $x,y\in I$}.\]
-After distributing, this becomes $ab + I = ab + ay + xb + xy +I$, which simplifies to $I = ay + xb + xy +I$. By Fact~\ref{fact.AdditiveSubgroupRingQuotientProperties}, we see that what we really need to ensure is that 
+The desired picture is as follows.
+\begin{center}
+\begin{tikzpicture}[line width = 1, scale = 1.2]
+\footnotesize
+\draw[dashed, black!70] (0,0.75) -- (6,0.75);
+\draw[dashed, black!70] (0,1.5) -- (6,1.5);
+\draw[dashed, black!70] (0,2.25) -- (6,2.25);
+\draw[dashed, black!70] (0,3) -- (6,3);
+\draw[dashed, black!70] (0,3.75) -- (6,3.75);
+\node[black] at (0.65,0.75/2) {$I$};
+\node[black] at (0.65,{0.75+0.75/2}) {${a + I}$};
+\node[black] at (0.65,{1.5+0.75/2}) {${b + I}$};
+%\node[black!70] at (0.5,{2.25+0.75/2}) {\footnotesize$g_3N$};
+\node[black] at (0.65,{3+0.75/2}) {${(ab)+I}$};
+\node[black!70,anchor = -10] at (2,{0.75+0.75/2}) {$a$};\fill[blue!70] (2,{0.75+0.75/2}) circle (2pt);
+\node[black!70,anchor = -20] at (2.2,{1.5+0.75/2}) {$b$};\fill[blue!70] (2.2,{1.5+0.75/2}) circle (2pt);
+\node[black!70,anchor = -5] at (4.5,{0.75+0.75/2}) {$a+x$};\fill[red!70] (4.5,{0.75+0.75/2}) circle (2pt);
+\node[black!70,anchor = -10] at (4.4,{1.5+0.75/2}) {$b+x$};\fill[red!70] (4.4,{1.5+0.75/2}) circle (2pt);
+\node[black!70,anchor = -15] at (2.6,{3+0.75/2})  {$ab$};\fill[blue!70] (2.6,{3+0.75/2}) circle (2pt);
+\node[black!70,anchor = -5] at (5.1,{3+0.75/2})  {$(a+x)(b+x)$};\fill[red!70] (5.1,{3+0.75/2}) circle (2pt);
+\draw[black, line width = 1.2] (2.2,{0.75+0.75/2}) .. controls (3,{0.75+0.75/2} ) and (3,{1.5+0.75/2} ).. (2.75,{2.25+0.75/2});
+\draw[black, line width = 1.2] (2.4,{1.5+0.75/2}) .. controls (2.7,{1.5+0.75/2} ).. (2.75,{2.25+0.75/2});
+\draw[black, line width = 1.2,->] (2.75,{2.25+0.75/2}) -- (2.6,{3+0.75/2-0.1});
+\draw[black,line width = 1.2] (4.7,{0.75+0.75/2}) .. controls (5.5,{0.75+0.75/2} ) and (5.5,{1.5+0.75/2} ).. (5.25,{2.25+0.75/2});
+\draw[black,line width = 1.2] (4.6,{1.5+0.75/2}) .. controls (5,{1.5+0.75/2} ).. (5.25,{2.25+0.75/2});
+\draw[black, line width = 1.2,->] (5.25,{2.25+0.75/2}) -- (5.1,{3+0.75/2-0.1});
+
+\draw[black, line width = 1.2] (-0.1,{0.75+0.65}) -- (-0.2,{0.75+0.65}) -- (-0.2,{0.75+0.1})-- (-0.1,{0.75+0.1});
+\draw[black, line width = 1.2] (-0.1,{1.5+0.65}) -- (-0.2,{1.5+0.65}) -- (-0.2,{1.5+0.1})-- (-0.1,{1.5+0.1});
+\draw[black, line width = 1.2] (-0.2,{0.75+0.75/2}) -- (-0.65,{1.12+0.75/2});
+\draw[black, line width = 1.2] (-0.2,{1.5+0.75/2}) -- (-0.65,{1.12+0.75/2});
+\draw[black, line width = 1.2,->] (-0.65,{1.12+0.75/2}) .. controls (-1.8,{1.65+0.75/2-0.1}) and  (-1.8,{2.75+0.75/2-0.1}) .. (-0.2,{3+0.75/2-0.1});
+\node[black!70] at (0.65,{4.5}) {$\vdots$};
+\node[anchor = west] at (6,5) {$R$};
+\draw (0,0)--(6,0)--(6,5)--(0,5)--cycle;
+\end{tikzpicture}
+\end{center} 
+After distributing, we have $ab + I = ab + ay + xb + xy +I$, which simplifies to $I = ay + xb + xy +I$. By Fact~\ref{fact.AdditiveSubgroupRingQuotientProperties}, we see that what we really need to ensure is that 
 \[ay + xb + xy\in I \text{ for all $a,b\in R$ and all $x,y\in I$}.\] 
 In particular, this has to be true when $a=b=0$, which implies that $xy\in I$ for all $x,y\in I$, so $I$ needs to be closed under multiplication, hence a subring. So, let's assume that $I$ is a subring. Then, since $xy \in I$,  $ay + xb + xy\in I$ reduces to $ay + xb\in I$. So, assuming that $I$ is a subring, our previous condition becomes
 \[ay + xb\in I \text{ for all $a,b\in R$ and all $x,y\in I$}.\] 
@@ -681,20 +735,19 @@ Let $R$ be a ring, and let $I\subseteq R$. Then $I$ is an \textbf{ideal} of $R$ 
 \end{enumerate}
 \end{definition}
 
-Let's also summarize our work above as a fact.
+Let's also summarize our work above about defining operations on the quotient $R/I$.
 
-\begin{fact}
+\begin{fact}\label{fact.QuotientRing}
 Let $R$ be a ring and let $I$ be an ideal of $R$.  Then $R/I$ is a ring under the binary operations defined as follows. For all $a,b\in R$, 
 \begin{itemize}
 \item $(a+I)+(b+I)  =  (a+b)+I$;
 \item $(a+I)(b+I)  = (ab)+I.$
 \end{itemize}
-
 \end{fact}
 
 \begin{problem} For each subset of the given ring, determine if the subset is an ideal, a subring, or neither.
 \begin{flushleft}
-\tabulinesep = 2mm
+\tabulinesep = 1.8mm
 \begin{tabu}  {X[2,r,m]|[2pt]X[c,m]|X[c,m]|X[c,m]}
  & ideal & subring & neither  \\ \tabucline[2pt]{-}
 $\mathbb{Z}\subset \mathbb{Q}$ &&& \\  \hline 
@@ -712,10 +765,10 @@ Let $I = \{(x^2+1)p(x)\mid p(x) \in \mathbb{Q}[x]\}$.
 \begin{enumerate}
 \item Show that $I$ is an ideal of $\mathbb{Q}[x]$.
 \item Write out $5$ elements of $I$, each with a different degree.
-\item Explain why $I$ has polynomials of every degree larger than or equal to $2$.
+\item Explain why $I$ contains polynomials of every degree larger than or equal to $2$.
 \item Let $a(x) = x^4+3x+5$. Write out $5$ elements of the coset $a(x) + I$.
-\item Find some $b(x)$ in $a(x) + I$ such that $\deg b(x) = 1$.
-\item Explain why $(x + I)^2 = -1 + I$.
+\item Find some $b(x)$ in the coset $a(x) + I$ such that $\deg b(x) = 1$.
+\item Explain why $(x + I)^2 = -1 + I$ in the ring $R/I$.
 \end{enumerate}
 \end{problem}
 
@@ -723,7 +776,7 @@ Let $I = \{(x^2+1)p(x)\mid p(x) \in \mathbb{Q}[x]\}$.
 Let $I = \{(x^2+1)p(x)\mid p(x) \in \mathbb{Q}[x]\}$. Show that every coset $a(x) + I\in\mathbb{Q}[x]/I$ can be represented as $a(x) + I = r(x) + I$ for some $r(x) \in \mathbb{Q}[x]$ where  $\deg r(x) < 2$ or $r(x) = 0$.
 \end{problem}
 
-\begin{theorem}
+\begin{theorem}\label{thm.CommutativityPassestoQuotients}
 Let $I$ be an ideal of a ring $R$.
 \begin{enumerate}
 \item If $R$ is a commutative ring, then $R/I$ is commutative ring.
@@ -731,20 +784,142 @@ Let $I$ be an ideal of a ring $R$.
 \end{enumerate}
 \end{theorem}
 
+\begin{problem}
+Let $I = \{3q \mid q\in \mathbb{Q}\}$.
+\begin{enumerate}
+\item Show that $I$ is an ideal of $\mathbb{Q}$.
+\item Show that $1\in I$, and use this to explain why $I =  \mathbb{Q}$.
+\end{enumerate}
+\end{problem}
+
+Let's record some observations from the previous problem.
+
+\begin{theorem}\label{thm.IdealContainingUnitsEqualsR}
+Let $R$ be a commutative ring, and let $a\in R$. The set $I = \{ar\mid r\in R\}$ is an ideal of $R$.
+\end{theorem}
+
+In the previous theorem, the set $\{ar\mid r\in R\}$ should be thought of as the set of all multiples of $a$, and it is often denoted $aR$ (as in $2\mathbb{Z}$).
+
+\begin{theorem}\label{thm.IdealContainingUnitsEqualsR}
+Assume $R$ is a ring with unity. Let $I$ be an ideal of $R$. If $I$ contains a unit of $R$, then $I = R$.
+\end{theorem}
+
+\begin{theorem}
+Let $R$ be a ring. Then $\{0\}$ and $R$ are ideals of $R$.
+\end{theorem}
+
+\begin{theorem}
+Assume $R$ is a commutative ring with unity and $1\neq 0$. Then $R$ is a field if and only if the only ideals of $R$ are $\{0\}$ and $R$.
+\end{theorem}
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-%\subsection{Generating ideals}
-%
-%\begin{theorem}
-%If $I$ and $J$ are ideals of the ring $R$, then $I\cap J$ is an ideal of $R$.
-%\end{theorem}
-%\begin{definition}
-%Let $A$ be any subset of $R$. Let $(A)$ denote the smallest ideal of $R$ containing $A$, called the \textbf{ideal generated by $A$}. If $A$ consists of a single element, say $A=\{a\}$, then $(a):=(\{a\})$ is called a \textbf{principal ideal}.
-%\end{definition}
+\subsection{Generating ideals}
 
+As with groups and fields, we will want to generate sub-objects from subsets. Generating ideals will be more useful for us that subrings, so we will only focus on ideals. Regarding notation, it is common to use $(A)$ for the ideal generated by $A$ instead of $\langle A \rangle$, and we will follow that convention. We begin with intersections.
 
+\begin{theorem}
+If $I$ and $J$ are ideals of a ring $R$, then $I\cap J$ is an ideal of $R$.
+\end{theorem}
 
+This can be generalized to arbitrary intersections. 
+
+\begin{theorem}
+If $\mathcal{C}$ is any collection of ideals of a ring $R$, then the intersection of all ideals from $\mathcal{C}$ is again an ideal of $R$.
+\end{theorem}
+
+Now, if $A$ is any subset of $R$, we can let $\mathcal{C}$ be the collection of all ideals containing $A$, to see that the intersection of all ideals containing $A$ is an ideal, and it must be the smallest ideal containing $A$. This leads to the following definition. 
+
+\begin{definition}
+Suppose $A$ is a subset of a ring $R$. The \textbf{ideal of $R$ generated by $A$}, denoted $(A)$, is defined to be the intersection of all ideals containing $A$.   An ideal generated by one element is a \textbf{principal ideal}. If $A = \{a_1,\ldots a_k\}$, we often write $(a_1,\ldots a_k)$ in place of $(A)$.
+\end{definition}
+
+\begin{problem}
+Consider the ring $\mathbb{Z}$. 
+\begin{enumerate}
+\item Recall that $2\mathbb{Z}$ is an ideal of $\mathbb{Z}$. Now use the definition of $(2)$ to explain why $(2) \subseteq 2\mathbb{Z}$.
+\item Use  that $(2)$ is an ideal containing $2$ to explain why $2\mathbb{Z}\subseteq (2)$. Conclude that $(2) = 2\mathbb{Z}$.
+\item Use  that $(6,10)$ is an ideal containing $6$ and $10$, to write down 5 elements of $(6,10)$. 
+\item Use the definition of $(6,10)$ to explain why $(6,10)\subseteq (2)$.
+\item Use B\'ezout's lemma (Fact~\ref{Fact.Bezout}) to show that $(2) \subseteq (6,10)$. Conclude that $(6,10) = (2)$.
+\item For arbitrary $m,n\in \mathbb{Z}$, do you think $(m,n) = (a)$ for some $a\in \mathbb{Z}$? Why or why not?
+\end{enumerate}
+\end{problem}
+
+Let's work to abstract some of what we discovered in this problem.
+
+\begin{theorem}\label{thm.PrincipalIdeals}
+If $R$ is a commutative ring with unity, then $(a)=\{ar\mid r\in R\}$.
+\end{theorem}
+
+Theorem~\ref{thm.PrincipalIdeals} says that $(a)$ is precisely the set of all multiples of $a$. Or, in other words, $(a)$ is the set of all elements that are divisible by $a$. In particular, $(n) = n\mathbb{Z}$ in the ring $\mathbb{Z}$. But what about $(m,n)$?
+
+\begin{theorem}
+If $m,n\in \mathbb{Z}$ are nonzero, then $(m,n) = (d)$ where $d = \gcd(m,n)$.
+\end{theorem}
+
+In words, an ideal of $\mathbb{Z}$ that is generated by two elements can actually be generated by a single element. But more is true. The method for constructing the greatest common divisor for two elements can be easily adapted to show that \emph{any} ideal of $\mathbb{Z}$ can be generated by a single element, which yields the following fact.
+
+\begin{fact}
+If $I$ is any ideal of $\mathbb{Z}$, then $I$ is a principle ideal. Moreover, if $I$ is not the zero ideal, then $I = (d)$ if and only if $d$ has the smallest possible absolute value among all nonzero elements of $I$.
+\end{fact}
+
+In fact, we can obtain  similar results in any ring with a suitable division algorithm, which is what we used to show the existence of a greatest common divisor. Importantly for us, this applies to polynomial rings over fields. Let's prove the result for ideals generated by two elements and leave the general case as a fact.
+
+\begin{theorem}\label{thm.TwoGeneratedIsPrincipalFx}
+Let $F$ be a field. If $a(x),b(x)\in F[x]$ are nonzero, then $(a(x),b(x)) = (d(x))$ where $d(x) = \gcd(a(x),b(x))$.
+\end{theorem}
+
+\begin{fact}\label{fact.FxPID}
+Let $F$ be a field. If $I$ is any ideal of $F[x]$, then $I$ is a principle ideal. Moreover, if $I$ is not the zero ideal, then $I = (d(x))$ if and only if $d(x)$ has the smallest possible degree among all nonzero elements of $I$.
+\end{fact}
+
+\begin{problem}\label{prob.ShowIdealIsPrincipalQx}
+Consider $a(x) = -x^2 -3x + 10$, $b(x) = 2x^2 + 8x - 10$, and $c(x) = x^3 - 2$ in $\mathbb{Q}[x]$.
+\begin{enumerate}
+\item Find a $d(x) \in \mathbb{Q}[x]$ such that $(a(x),b(x)) = (d(x))$. Is $(a(x),b(x)) = \mathbb{Q}[x]$? Explain.
+\item Find a $d'(x) \in \mathbb{Q}[x]$ such that $(a(x),c(x)) = (d'(x))$. Is $(a(x),c(x)) = \mathbb{Q}[x]$? Explain.
+\end{enumerate}
+\end{problem}
+
+We saw that $\mathbb{Z}$ and $F[x]$ have a special property: every ideal is a principal ideal. This does not happen in every ring, as we'll see, so rings with this property get a special name.
+
+\begin{definition}
+An integral domain is called a \textbf{principal ideal domain (PID)} if every ideal is a principal ideal.
+\end{definition}
+
+Thus, $\mathbb{Z}$ and $F[x]$ (for $F$ a field) are examples of PIDs. Let's show that $\mathbb{Z}[x]$ is not.
+
+\begin{problem}
+Consider the set $I:= \left\{2f(x) + xg(x)\mid f(x),g(x) \in \mathbb{Z}[x]\right\}$ in the ring $\mathbb{Z}[x]$. The set $I$ is an ideal of $\mathbb{Z}[x]$; you do \emph{not} need to prove this. Let's show that $I$ is not principal. Towards a contradiction, assume that $I = (d(x))$ for some $d(x)\in \mathbb{Z}[x]$.
+\begin{enumerate}
+\item Use the fact that $2\in I = (d(x))$ to show that $d(x)$ is a constant polynomial and, moreover, that $d(x) = \pm 1,\pm2$. 
+\item Explain why every polynomial in $I$ has a constant term that is even, and use this to show that in fact $d(x) = \pm2$.
+\item Now, we also know that $x\in I = (d(x))$. Why is this a contradiction?
+\end{enumerate}
+\end{problem}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Homomorphisms}
+When studying groups, we compared them using homomorphisms (and isomorphisms). We'll do the same for rings.
+
+\begin{definition}
+Let $R$ and $S$ be rings. A map $\phi:R\to S$ is called a \textbf{ring homomorphism} if the following are true for all $a,b\in R$:
+\begin{enumerate}
+\item $\phi(a+b)=\phi(a)+\phi(b)$;
+\item $\phi(ab)=\phi(a)\phi(b)$.
+\end{enumerate}
+If $\phi$ is a bijection, then $\phi$ is called an \textbf{isomorphism}, in which case, we say that $R$ and $S$ are \textbf{isomorphic rings} and write $R\cong S$.
+\end{definition}
+
+\begin{definition}
+The \textbf{kernel} of a ring homomorphism $\phi:R\to S$ is defined to be $\ker(\phi)=\{a\in R\mid \phi(a)=0\}$. 
+\end{definition}
 
 
 
