@@ -913,7 +913,7 @@ Consider the set $I:= \left\{2f(x) + xg(x)\mid f(x),g(x) \in \mathbb{Z}[x]\right
 Let's return to $\mathbb{Z}$, and put together what we have learned about its ideals. First, by Fact~\ref{fact.ZPID}, every ideal of $\mathbb{Z}$ is a principal ideal, so every ideal of $\mathbb{Z}$ is of the form $(n)$ for some $n\in \mathbb{Z}$. Moreover, Theorem~\ref{thm.PrincipalIdeals} tell us that $(n)$ is just the set of all multiple of $n$, so $(n) = n\mathbb{Z}$. Thus, we know all of the ideals of $\mathbb{Z}$, and we know that they have a nice form. But how do they fit together? Let's explore this.
 
 \begin{theorem}\label{thm.IdealContainment}
-Let $m,n \in \mathbb{Z}$. Then $(m) \subseteq (n)$ if and only if $n$ divides $m$.
+Let $R$ be a commutative ring with unity, and let $a,b \in R$. Then $(a) \subseteq (b)$ if and only if $b$ divides $a$.
 \end{theorem}
 
 This theorem can be used to quickly draw portions of the lattice of ideals of $\mathbb{Z}$. For example, suppose we want to draw all of the ideals that contain the ideal $(45)$. Every ideal is principal; suppose $(n)$ is an ideal containing $(45)$. By Theorem~\ref{thm.IdealContainment}, $n$ must divide $45$. So, looking at all divisors of $45$ (and noticing that $(-n) = (n)$), we get the following lattice. 
@@ -944,6 +944,35 @@ An ideal $M$ of a ring $R$ is called a \textbf{maximal ideal} if $M\neq R$ and t
 \begin{theorem}
 An ideal $I$ of $\mathbb{Z}$ is maximal if and only if $I=(p)$ for some prime $p\in \mathbb{Z}$.
 \end{theorem}
+
+Since $F[x]$ (for $F$ a field) is also PID, it's relatively easy to study the ideals of $F[x]$ too. As with $\mathbb{Z}$, every ideal is a principal ideal, and we can use Theorem~\ref{thm.IdealContainment} to see how they fit together. There is one preliminary result that will help us avoid redundancies.
+
+\begin{theorem}\label{thm.DifferByUnitSameIdeal}
+Let $R$ be a commutative ring with unity. If $a \in R$ and $u\in U(R)$, then $(a) = (ua)$.
+\end{theorem}
+
+Now, suppose we want to find all of the ideals of $\mathbb{Q}[x]$ that contain the ideal $(x^2+5x+6)$. As before, Theorem~\ref{thm.IdealContainment} tells us that we should look at divisors of $x^2+5x+6$ in $\mathbb{Q}[x]$. Noting that $x^2+5x+6 =  (x+2)(x+3)$, we get the following. 
+\begin{center}
+\begin{tikzpicture}[line width = 1, scale = 1.5]
+\node (F1F2) at (0,-1)  {$\mathbb{Q}[x]$};
+\node (F1) at (-1,-2) {$(x+2)$};
+\node (F2) at (1,-2) {$(x+3)$};
+\node (F1capF2) at (0,-3) {$(x^2+5x+6)$};
+\draw (F1F2) -- (F1);\draw (F1F2) -- (F2);
+\draw (F1capF2) -- (F1);\draw (F1capF2) -- (F2);
+\end{tikzpicture}
+\end{center}
+
+
+\begin{problem}
+Draw the the lattice of ideals of $\mathbb{Q}[x]$ that contain the ideal $(x^4 +x^2)$.
+\end{problem}
+
+\begin{theorem}
+An ideal $I$ of $\mathbb{F}[x]$ is maximal if and only if $I=(p(x))$ for some irreducible polynomial $p(x)\in \mathbb{F}[x]$.
+\end{theorem}
+
+
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
