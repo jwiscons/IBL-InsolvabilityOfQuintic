@@ -4,6 +4,28 @@
 \thispagestyle{empty}
 
 
+Our goal remains: to show that there exist polynomials that are \emph{not} solvable by radicals over $\mathbb{Q}$. In Chapter~\ref{chapter:SolvabilityByRadicals}, we finally succeeded in properly formulating the notion of solvability by radicals, which we did in the language of field extensions. Additionally, we were able to catalog many polynomials that we are certain are solvable by radicals. Then, in Chapter~\ref{chapter:Rings}, we took a much closer look a polynomials, ultimately building a significant amount of language and theory to analyze polynomial rings over fields. The conclusion of the chapter hinted at the tight connection between polynomial rings and field extensions where we saw that $\mathbb{Q}[x]/(x^2+1) \cong \mathbb{Q}(i)$. In this chapter, we will clarify this connection and exploit it to significantly deepen our understanding of extension fields of the form $\mathbb{Q}(\alpha)$ where $\alpha$ is a root of some polynomial in $\mathbb{Q}[x]$. 
 
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Algebraic elements}
 
+Recall that a polynomial in $F[x]$ is solvable by radicals over $F$ if all of the roots of the polynomial lie in some radical extension of $F$. Our focus is on roots of polynomials, and the next definition gives us some language to highlight this.
+
+\begin{definition}
+Let $F$ be a subfield of $E$. An element $\alpha\in E$ is \textbf{algebraic} over $F$ if $p(\alpha) = 0$ for some nonzero $p(x)\in F[x]$. If $\alpha$ is not algebraic over  $F$, then it is said to be \textbf{transendental} over $F$ .
+\end{definition}
+
+To show an element $\alpha$ is algebraic over $F$, we need only produce a polynomial \emph{with coefficients in $F$} for which $\alpha$ is a root. For example, the complex number $\sqrt{2}$ is algebraic over $\mathbb{Q}$ because $\sqrt{2}$ is a root of $p(x) = x^2 - 2$ and $p(x) \in \mathbb{Q}[x]$. Also, $\pi$ is algebraic over $\mathbb{R}$ because $\pi$ is a root of $q(x) = x-\pi$ and $q(x) \in \mathbb{R}[x]$. However, it is \emph{much} harder to show that $\pi$ is \emph{not} algebraic over $\mathbb{Q}$ (so  $\pi$ is transcendental over $\mathbb{Q}$). Incidentally, a set-theoretic argument easily shows that almost all elements of $\mathbb{C}$ are transcendental over $\mathbb{Q}$, but never the less, we will focus on algebraic elements.
+
+\begin{problem}
+Show that each of the following are algebraic over $\mathbb{Q}$: $11$, $\sqrt[3]{11}$, $\zeta_{11}$, and $i$.
+\end{problem}
+
+%\begin{problem}
+%Recall that $\mathbb{Q}\left(\sqrt{5}\right)$ can be written as $\mathbb{Q}\left(\sqrt{5}\right) = \left\{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\right\}$. Show that $\phi:\mathbb{Q}\left(\sqrt{5}\right) \rightarrow \mathbb{Q}\left(\sqrt{5}\right)$ defined by $\phi(a+b\sqrt{5}) = a-b\sqrt{5}$ is an isomorphism.
+%\end{problem}
