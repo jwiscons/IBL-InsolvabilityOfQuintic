@@ -811,7 +811,7 @@ Let $R$ be a ring. Then $\{0\}$ and $R$ are ideals of $R$.
 \end{theorem}
 
 \begin{theorem}\label{thm.CharacterizeFieldWithIdeals}
-Assume $R$ is a commutative ring with unity and $1\neq 0$. Then $R$ is a field if and only if the only ideals of $R$ are $\{0\}$ and $R$.
+Assume $R$ is a commutative ring with $1\neq 0$. Then $R$ is a field if and only if the only ideals of $R$ are $\{0\}$ and $R$.
 \end{theorem}
 
 \begin{theorem}\label{thm.CommutativityPassestoQuotients}
@@ -980,7 +980,7 @@ An ideal $I$ of $\mathbb{F}[x]$ is maximal if and only if $I=(p(x))$ for some ir
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Homomorphisms}
-When studying groups, we compared them using homomorphisms (and isomorphisms). We'll do the same for rings.
+As with groups, we use homomorphisms (and isomorphisms) to compare rings and fields.
 
 \begin{definition}
 Let $R$ and $S$ be rings. A map $\phi:R\to S$ is called a \textbf{ring homomorphism} if the following are true for all $a,b\in R$:
@@ -991,7 +991,7 @@ Let $R$ and $S$ be rings. A map $\phi:R\to S$ is called a \textbf{ring homomorph
 If $\phi$ is a bijection, then $\phi$ is called an \textbf{isomorphism}, in which case, we say that $R$ and $S$ are \textbf{isomorphic rings} and write $R\cong S$.
 \end{definition}
 
-\begin{problem}
+\begin{problem}\label{prob.HomomorphismCheckin}
 Determine which of the following are ring homomorphisms. Explain.
 \begin{enumerate}
 \item $\phi: \mathbb{Z} \rightarrow 3\mathbb{Z}$ defined by $\phi(n) = 3n$
@@ -1000,55 +1000,163 @@ Determine which of the following are ring homomorphisms. Explain.
 \item $f: \mathbb{Z}_3 \rightarrow \mathbb{Z}_3$ defined by $f(a) = a^3$
 \item $g:  \mathbb{C}\rightarrow D_2\left(\mathbb{R}\right)$ defined by $\displaystyle g(a+bi) = \begin{bmatrix}a & 0 \\ 0 & b\end{bmatrix}$, where 
 $\displaystyle D_2(\mathbb{R})=\left\{\begin{bmatrix}x & 0\\ 0 & y\end{bmatrix}\mid x,y\in \mathbb{R}\right\}$
-\item $h: \mathbb{Q}[x] \rightarrow \mathbb{C}$ defined by $h(p(x)) = p(0)$
+\item\label{prob.HomomorphismCheckin.EvaluatePoly} $h: \mathbb{Q}[x] \rightarrow \mathbb{C}$ defined by $h(p(x)) = p(0)$
 \end{enumerate}
 \end{problem}
 
 \begin{problem}
-Recall that $\mathbb{Q}\left(\sqrt{5}\right)$ can be written as $\mathbb{Q}\left(\sqrt{5}\right) = \left\{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\right\}$. Show that $\phi:\mathbb{Q}\left(\sqrt{5}\right) \rightarrow \mathbb{Q}\left(\sqrt{5}\right)$ defined by $\phi(a+b\sqrt{5}) = a-b\sqrt{5}$ is an isomorphism.
+Which of the homomorphisms in Problem~\ref{prob.HomomorphismCheckin} were isomorphisms?
 \end{problem}
+
+In Problem~\ref{prob.HomomorphismCheckin}\ref{prob.HomomorphismCheckin.EvaluatePoly}, we saw that ``evaluating at zero'' was a homomorphism from $\mathbb{Q}[x]$ to  $\mathbb{C}$. At its core, this fact simply rests on how we add and multiply polynomials and does not require us to evaluate specifically at zero. For example, if $f(x),g(x)\in R[x]$ (for a ring $R$) and $c\in R$, then writing out $f(x)=a_0+\cdots+a_mx^m$ and $g(x)=b_0+\cdots+b_mx^m$ (with some $a_i$ and $b_j$ possible zero), we can show that $(f+g)(c) = f(c) + g(c)$. The analogous statement holds for multiplication too. We'll add in the details in the next theorem to see that ``evaluating at $c$'' is a homomorphism (whether or not $c = 0$).
+
+\begin{theorem}[Evaluation homomorphism]\label{thm.EvalHom}
+Let $R$ be a ring, and let $c\in R$. Define a function $\mathcal{E}_c:R[x] \rightarrow R$ by the rule $\mathcal{E}_c(p(x)) = p(c)$. Then $\mathcal{E}_c$ is a homomorphism.
+\end{theorem}
+
+
+\begin{theorem}[Composition of homomorphisms]
+Let $\phi:R_1\to R_2$ and $\psi:R_2\to R_3$ be ring homomorphisms. Then $\psi\circ\phi:R_1 \to R_3$ is also a ring homomorphism.
+\end{theorem}
+
+There are two  important sets attached to homomorphisms: the kernel and the image.
 
 \begin{definition}
 Let $\phi:R\to S$ be a ring homomorphism. 
 \begin{itemize}
-\item The \textbf{kernel} of $\phi$, denote $\ker(\phi)$, is defined to be $\ker(\phi)=\{a\in R\mid \phi(a)=0\}$. 
+\item The \textbf{kernel} of $\phi$, denote $\ker \phi$, is defined to be $\ker \phi=\{a\in R\mid \phi(a)=0\}$. 
 \item The \textbf{image} of $\phi$, denoted  $\phi(R)$, is defined to be $\phi(R)=\{b\in S\mid b=\phi(a) \text{ for some $a\in R$}\}$.
 \end{itemize}
 \end{definition}
 
 \begin{problem}
-Determine the kernel and image of each homomophism.
+Determine the kernel and image of each homomorphism.
 \begin{enumerate}
 \item $\alpha: \mathbb{Q}[x] \rightarrow \mathbb{C}$ defined by $\alpha(p(x)) = p(0)$
 \item $\beta: \mathbb{Z} \rightarrow \mathbb{Z}_5$ defined by $\beta(n) = n \text{ (mod $5$)}$
 \end{enumerate}
 \end{problem}
 
-As with groups the kernel and image of a homomorphism has special properties. 
+\begin{problem}\label{prob.NaturalProjection}
+Let $I$ be an ideal of a ring $R$. Define a function $\pi:R \rightarrow R/I$ by $\pi(r) = r+I$.
+\begin{enumerate}
+\item Show that $\pi$ is a homomorphism. %(The map $\pi$ is often called the \textit{natural projection} of $R$ onto $R/I$.)
+\item What is the kernel of $\pi$?
+\item What is the image of $\pi$?
+\end{enumerate}
+\end{problem}
+
+As with groups, the kernel and image of a homomorphism have special properties and can be used to detect if a function is injective (one-to-one) or surjective (onto).
 
 \begin{theorem}
 Let $\phi:R\to S$ be a ring homomorphism. Then $\ker(\phi)$ is an ideal of $R$, and $\phi(R)$ is a subring of $S$.
 \end{theorem}
 
+\begin{theorem}\label{thm.HomInjectiveSurjective}
+Let $\phi:R\to S$ be a ring homomorphism. Then
+\begin{enumerate}
+\item $\phi$ is injective if and only if $\ker \phi = \{0\}$, and 
+\item $\phi$ is surjective if and only if $\phi(R) = S$.
+\end{enumerate}
+\end{theorem}
+
+\begin{problem}\label{prob.EvalAtI}
+By Theorem~\ref{thm.EvalHom}, the ``evaluation at $i$'' function from $\mathbb{C}[x]$ to  $\mathbb{C}$ is a homomorphism.  We can restrict the domain to $\mathbb{Q}[x]$ to obtain a homomorphism from $\mathcal{E}_{i}:\mathbb{Q}[x]\rightarrow\mathbb{C}$ defined by $\mathcal{E}_{i}(p(x)) = p(i)$, where $i$ denotes the usual complex number.
+\begin{enumerate}
+\item Show that $x^2+1$ is in $\ker \mathcal{E}_{i}$.
+\item Use the fact that $\ker \mathcal{E}_{i}$ is an ideal together with previous results about $\mathbb{Q}[x]$ to conclude that $\ker \mathcal{E}_{i} = (m(x))$ for some $m(x)\in \mathbb{Q}[x]$.
+\item Use the fact that $x^2+1$ is irreducible in $\mathbb{Q}[x]$, to show that $m(x) = a(x^2+1)$ for some nonzero constant $a\in \mathbb{Q}$.
+\item Explain why $\ker \mathcal{E}_{i} = (x^2 + 1)$ (where $(x^2 + 1)$ is the ideal generated by $x^2 + 1$).
+\item Explain why the image of $\mathcal{E}_{i}$ is contained in $\mathbb{Q}(i)$.
+\end{enumerate}
+\end{problem}
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\subsection{Isomorphism theorems}
+\subsection{First Isomorphism Theorem}
 
-We have several isomorphism theorems for rings that mirror, exactly, what happed for groups. The proofs are essentially the same as before, so we will just state them as facts.
+The proof of the First Isomorphism Theorem for rings is essentially the same as for groups. Suppose we have a ring homomorphism $\phi:R\to S$. In order for $\phi$ to be an isomorphism, it must also be one-to-one and onto, but it may very well not be. However, with some slight adjustments, we can modify it to be both one-to-one and onto.
 
-\begin{fact}[First Isomorphism Theorem for Rings]
-If $\phi:R\to S$ is a ring homomorphism, then  $R/\ker(\phi)\cong \phi(R)$.
-\end{fact}
+First, to make $\phi$ surjective, we change the codomain from $S$ to $\phi(R)$. Technically, we have a different function now, but we will still call it $\phi$. Anyway, $\phi:R\to \phi(R)$ is now a surjective homomorphism (by the definition of the image). But how do we make it one-to-one? By Theorem~\ref{thm.HomInjectiveSurjective}, we need  the kernel to be trivial. To accomplish, we work with the quotient ring $R/ \ker \phi$. In this way, we  collapse all elements in the kernel to a single element (namely the  coset $\ker \phi$) that maps to $0$. Setting $K:= \ker \phi$, the picture is something like this.
+
+\begin{center}
+\begin{tikzpicture}[line width = 1, scale = 1.2]
+\footnotesize
+\draw[blue!25, line width = 5] (0,0)--(5,0)--(5,3)--(0,3)--cycle;
+\foreach \i in {1,2,3} {
+\draw[dashed, black!70] (0,\i*0.75) -- (5,\i*0.75);
+\draw[black, line width = 1.2] (5.1,{(\i-1)*0.75+0.65}) -- (5.2,{(\i-1)*0.75+0.65}) -- (5.2,{(\i-1)*0.75+0.1})-- (5.1,{(\i-1)*0.75+0.1});
+\draw[black, line width = 1.2,->] (5.2,{(\i-1)*0.75+0.75/2}) -- (8.9,{(\i-1)*0.75+0.75/2});
+}
+\node at (7,{3*0.75+0.45}) {$\vdots$};
+\node[anchor = north] at (7,{0.75/2}) {$\phi$};
+\node[black] at (0.75,0.75/2) {${ K}$};
+\node[black] at (0.75,{0.75+0.75/2}) {${a + K}$};
+\node[black] at (0.75,{1.5+0.75/2}) {${b+ K}$};
+\node[black] at (0.75,{2.35+0.75/2}) {$\vdots$};
+\node[anchor = west] at (5,3) {$R$};
+\draw (0,0)--(5,0)--(5,3)--(0,3)--cycle;
+\draw[black, line width = 1.2] (5.1,{0.75+0.65}) -- (5.2,{0.75+0.65}) -- (5.2,{0.75+0.1})-- (5.1,{0.75+0.1});
+\begin{scope}[shift = {(9,0)}]
+\draw[blue!25, line width = 5] (0,0)--(1.5,0)--(1.5,3)--(0,3)--cycle;
+%\foreach \i in {1,2,...,5} {\draw[dashed, black!70] (0,\i*0.75) -- (1.5,\i*0.75);}
+\foreach \i in {1,2,3} {\fill[black!70] (0.5,{(\i-1)*0.75+0.75/2}) circle (2pt);}
+\node[anchor = west] at (0.5,{0.75/2}) {$0$};
+\node[anchor = west] at (0.5,{0.75+0.75/2}) {$\phi(a)$};
+\node[anchor = west] at (0.5,{2*0.75+0.75/2}) {$\phi(b)$};
+\node[black] at (0.75,{3*0.75+.45}) {$\vdots$};
+%\node[black] at (0.75,{5*0.75+0.75}) {$\boldsymbol\vdots$};
+\node[anchor = west] at (1.5,4) {$S$};
+\node[blue!80!black,anchor = west] at (1.5,3) {$\phi(R)$};
+\draw (0,0)--(1.5,0)--(1.5,4)--(0,4)--cycle;
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{theorem}[First Isomorphism Theorem for Rings]\label{thm.FirstIsoRings}
+If $\phi:R\to S$ is a ring homomorphism, then  $R/\ker \phi\cong \phi(R)$.
+\end{theorem}
 
 \begin{problem}
-The map $\phi: \mathbb{Q}[x] \rightarrow \mathbb{C}$ defined by $\phi(p(x)) = p(i)$. 
+Use the First Isomorphism Theorem (together with previous work) to prove each of the following. 
 \begin{enumerate}
-\item Show that $\ker(\phi) = (x^2+1)$ (where $(x^2+1)$ is the ideal generated by $x^2+1$ in $\mathbb{Q}[x]$).
-\item Show that $\phi(R) = \mathbb{Q}(i)$.
-\item Conclude that $ \mathbb{Q}[x]/(x^2+1) = \mathbb{Q}(i)$.
+\item $\mathbb{Q}[x]/(x) \cong \mathbb{Q}$ (where $(x)$ is the ideal generated by $x$)
+\item $\mathbb{Z}/5\mathbb{Z} \cong \mathbb{Z}_5$
 \end{enumerate}
 \end{problem}
+
+We now work towards a very nice and useable criterion to determine when a quotient ring is actually a field. Our approach will rely on Theorem~\ref{thm.CharacterizeFieldWithIdeals}, so we need to be able determine the relationship between ideals of $R$ and ideals of the quotient $R/I$. We will investigate this via homomorphisms, which we can then apply to $R/I$ using Problem~\ref{prob.NaturalProjection}.
+
+\begin{theorem}\label{thm.Image}
+Let $\phi:R\to S$ be a ring homomorphism. If $I$ is an ideal of $R$, then $\phi(I) := \{\phi(a)\in S\mid a\in I\}$ (called the \textbf{image} of $I$) is an ideal of $S$.
+\end{theorem}
+
+\begin{theorem}\label{thm.InverseImage}
+Let $\phi:R\to S$ be a surjective ring homomorphism. If $J$ is an ideal of $S$, then $\phi^{-1}(J) := \{a\in R\mid\phi(a) \in J\}$ (called the \textbf{inverse image} of $J$) is an ideal of $R$ and, moreover,  $\ker\phi \subseteq \phi^{-1}(J)$.
+\end{theorem}
+
+Combining Theorems~\ref{thm.Image} and~\ref{thm.InverseImage} with Theorem~\ref{thm.CharacterizeFieldWithIdeals} yields the following result.
+
+\begin{theorem}
+Let $R$ be a commutative ring with $1\neq0$. Suppose $\phi:R\to S$ is a surjective ring homomorphism. Then $\ker\phi$ is maximal ideal of $R$ if and only if $S$ is field.
+\end{theorem}
+
+In light of Problem~\ref{prob.NaturalProjection}, our desired criterion for when a quotient ring is  a field is a relatively quick consequence of the previous result. 
+
+\begin{theorem}\label{thm.QuotientIsField}
+Let $R$ be a commutative ring with $1\neq0$. Then $I$ is maximal ideal of $R$ if and only if $R/I$ is field.
+\end{theorem}
+
+\begin{problem}
+Let's revisit Problem~\ref{prob.EvalAtI}.
+\begin{enumerate}
+\item Explain why $\mathbb{Q}[x]/(x^2+1)$ is a field.
+\item Show that $\mathbb{Q}[x]/(x^2+1) \cong \mathbb{Q}(i)$.
+\end{enumerate}
+\end{problem}
+
+Let's end this section (as well as this decidedly long chapter!) by mentioning that there is an analog of Theorem~\ref{thm.QuotientIsField} characterizing when $R/I$ is an integral domain. The condition is that $I$ is a so-called \textit{prime} ideal. The result is tangential to our story, so we'll leave it for another time (see \href{https://en.wikipedia.org/wiki/Prime_ideal#Connection_to_maximality}{Wikipedia} or most any other book on abstract algebra).
 
 
 
