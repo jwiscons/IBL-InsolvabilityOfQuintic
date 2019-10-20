@@ -159,8 +159,13 @@ Try using Theorem~\ref{thm.PrincipalIdeals}.
 Assume $\phi:R\to S$ is a ring homomorphism. We need to define a suitable homomorphism from $R/\ker\phi$ to  $\phi(R)$, and then check that it is bijective. Let's let $K:= \ker\phi$. Try defining $\hat{\phi}:R/K\to\phi(R)$ via $\hat{\phi}(a+K) = \phi(a)$. A very important point, is that we don't actually know that $\hat{\phi}$ is a well-defined function. We know that a coset $a+K$ might be equal to $a'+K$, so we'd better make sure that if $a+K=a'+K$ then $\hat{\phi}(a+K) = \hat{\phi}(a'+K)$. Do that first. Then, verify that $\hat{\phi}$ is a homomorphism that is also surjective and injective. For injectivity, it may be useful to use Theorem~\ref{thm.HomInjectiveSurjective} and instead show that $\ker \hat{\phi} = \{0+K\}$.
 \end{hint*}
 
+\begin{hint*}[Problem~\ref{prob.Sqrt2PlusIIsAlgebraic}]
+Notice that $\alpha^2 = 4 + 2\sqrt{2}i -1$, so $\alpha^2 -3 = 2\sqrt{2}i$. What happens if you square both sides?
+\end{hint*}
 
-
+\begin{hint*}[Lemma~\ref{lem.MinimalPolyIsIrreducible}]
+Towards a contradiction, assume that $m(x)$ is reducible. By Theorem~\ref{thm.ReduciblePolynomials}, $m(x) = a(x)b(x)$ for some $a(x),b(x)\in F[x]$ with $\deg a(x)$ and $\deg b(x)$ both smaller than $\deg m(x)$. Now, $m(x)\in I$, so $0 = m(\alpha) = a(\alpha)b(\alpha)$. Explain why this implies that $a(x)$ or $b(x)$ is in $I$. But $I = (m(x))$, so by Theorem~\ref{thm.PrincipalIdeals}, $m(x)$ divides $a(x)$ or $b(x)$. What's the contradiction?
+\end{hint*}
 
 
 

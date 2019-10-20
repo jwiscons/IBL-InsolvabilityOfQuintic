@@ -1,5 +1,5 @@
 % !TEX root = IBL-InsolvabilityOfQuintic.tex
-\chapter{Algebraic Extension Fields}
+\chapter{Algebraic extension fields}
 \label{chapter:AlgebraicExtensions}
 \thispagestyle{empty}
 
@@ -17,14 +17,44 @@ Our goal remains: to show that there exist polynomials that are \emph{not} solva
 Recall that a polynomial in $F[x]$ is solvable by radicals over $F$ if all of the roots of the polynomial lie in some radical extension of $F$. Our focus is on roots of polynomials, and the next definition gives us some language to highlight this.
 
 \begin{definition}
-Let $F$ be a subfield of $E$. An element $\alpha\in E$ is \textbf{algebraic} over $F$ if $p(\alpha) = 0$ for some nonzero $p(x)\in F[x]$. If $\alpha$ is not algebraic over  $F$, then it is said to be \textbf{transendental} over $F$ .
+Let $F$ be a subfield of $E$. An element $\alpha\in E$ is \textbf{algebraic} over $F$ if $p(\alpha) = 0$ for some nonzero $p(x)\in F[x]$. If $\alpha$ is not algebraic over  $F$, then it is said to be \textbf{transendental} over $F$. 
 \end{definition}
 
-To show an element $\alpha$ is algebraic over $F$, we need only produce a polynomial \emph{with coefficients in $F$} for which $\alpha$ is a root. For example, the complex number $\sqrt{2}$ is algebraic over $\mathbb{Q}$ because $\sqrt{2}$ is a root of $p(x) = x^2 - 2$ and $p(x) \in \mathbb{Q}[x]$. Also, $\pi$ is algebraic over $\mathbb{R}$ because $\pi$ is a root of $q(x) = x-\pi$ and $q(x) \in \mathbb{R}[x]$. However, it is \emph{much} harder to show that $\pi$ is \emph{not} algebraic over $\mathbb{Q}$ (so  $\pi$ is transcendental over $\mathbb{Q}$). Incidentally, a set-theoretic argument easily shows that almost all elements of $\mathbb{C}$ are transcendental over $\mathbb{Q}$, but never the less, we will focus on algebraic elements.
+To show an element $\alpha$ is algebraic over $F$, we need only produce a polynomial \emph{with coefficients in $F$} for which $\alpha$ is a root. For example, the complex number $\sqrt{2}$ is algebraic over $\mathbb{Q}$ because $\sqrt{2}$ is a root of $p(x) = x^2 - 2$ and $p(x) \in \mathbb{Q}[x]$. Also, $\pi$ is algebraic over $\mathbb{R}$ because $\pi$ is a root of $q(x) = x-\pi$ and $q(x) \in \mathbb{R}[x]$. However, it is \emph{much} harder to show that $\pi$ is \emph{not} algebraic over $\mathbb{Q}$ (so  $\pi$ is transcendental over $\mathbb{Q}$). Incidentally, a set-theoretic argument  shows that almost all elements of $\mathbb{C}$ are transcendental over $\mathbb{Q}$; nevertheless, we will focus on algebraic elements.
 
 \begin{problem}
 Show that each of the following are algebraic over $\mathbb{Q}$: $11$, $\sqrt[3]{11}$, $\zeta_{11}$, and $i$.
 \end{problem}
+
+\begin{problem}
+Suppose that $\gamma \in \mathbb{C}$ and $\gamma^5 = 2\gamma^2 -7$. Explain why $\gamma$ is algebraic over $\mathbb{Q}$.
+\end{problem}
+
+\begin{problem}\label{prob.Sqrt2PlusIIsAlgebraic}
+Let $\alpha = \sqrt{2} + i$. Show that $\alpha$ is algebraic over $\mathbb{Q}$.
+\end{problem}
+
+Now, an algebraic element over $F$ is a root of \emph{some} nonzero polynomial over $F$, but such an element will be a root of lots of polynomials. For example, since $\sqrt{2}$ is a root of $p(x) = x^2 - 2$, we find that for \emph{every} $q(x)\in \mathbb{Q}[x]$, $\sqrt{2}$ is a root of $q(x)p(x)$ because $q(\sqrt{2})p(\sqrt{2}) =  q(\sqrt{2})p(0) =0$. The polynomial $x^2 - 2$ is special because it is a polynomial \emph{of smallest degree} for which $\sqrt{2}$ is a root. In order to formalize this observation, we need to weave together several results from the last chapter. 
+
+Let $F$ be a subfield of $E$, and suppose that $\alpha\in E$ is algebraic over $F$. Then $\alpha$ is the root of some nonzero $p(x)\in F[x]$.  Let's look at the set of all polynomials for which $\alpha$ is a root: $I = \{p(x)\in F[x]\mid p(\alpha) = 0\}$. By Theorem~\ref{thm.EvalHom}, ``evaluation at $\alpha$'' gives rise to a homomorphism $\mathcal{E}_\alpha: F[x] \to E[x]$, and notice that $I$ is precisely the kernel of $\mathcal{E}_\alpha$. Thus, by Theorem~\ref{thm.KernelIsIdealImageIsSubring}, $I$ is an ideal of $F[x]$, and since $F[x]$ is a PID, it must be that $I = (m(x))$ for some $m(x) \in F[x]$. 
+
+Now, $m(x)$ is nonzero since $I$ contains some nonzero polynomial, and this also implies that $m(x)$ is not a constant polynomial since the only constant polynomial that has roots is the zero polynomial. Moreover, if $m(x)$ is not monic, we can make it monic by multiplying by the inverse of the leading coefficient and the result will still generate $I$ by Theorem~\ref{thm.DifferByUnitSameIdeal}. So, we may assume that $I = (m(x))$ with $m(x)$ nonconstant and monic. 
+
+Also, notice that by Theorem~\ref{thm.PrincipalIdeals}, $m(x)$ divides every polynomial in $I$. So if $I = (n(x))$ for some other monic polynomial $n(x)$, then $m(x)$ and $n(x)$ would divide each other. In other words, $m(x) = a(x)n(x) = a(x)b(x)m(x)$ for some polynomials $a(x),b(x)\in F[x]$. Considering the degree of both sides of $m(x) = a(x)b(x)m(x)$, we see that $a(x)$ and $b(x)$ must be constant polynomials. But since $m(x) = a(x)n(x)$ with $m(x)$ and $n(x)$ both monic, the only conclusion is that $a(x) = 1$, so $m(x) = n(x)$. 
+
+In summary, $I= \{p(x)\in F[x]\mid p(\alpha) = 0\}$ is an ideal, and there is a unique nonconstant monic polynomial $m(x)$ that generates $I$. In fact, more is true. 
+
+\begin{lemma}\label{lem.MinimalPolyIsIrreducible}
+Let $F$ be a subfield of $E$, and suppose that $\alpha\in E$ is algebraic over $F$. Let $I = \{p(x)\in F[x]\mid p(\alpha) = 0\}$, and suppose that $I = (m(x))$ for some nonconstant $m(x) \in F[x]$. Then $m(x)$ is irreducible.
+\end{lemma}
+
+Combining Lemma~\ref{lem.MinimalPolyIsIrreducible} with our previous discussion, we arrive at the following fact.
+
+\begin{fact}\label{fact.ExistsMinimalPoly}
+Let $F$ be a subfield of $E$, and suppose that $\alpha\in E$ is algebraic over $F$. Then there is a unique irreducible monic polynomial $m(x) \in F[x]$ such that $m(r) = 0$. Moreover, if $p(x) \in F[x]$ and $p(\alpha) = 0$, then $m(x)$ divides $p(x)$.
+\end{fact}
+
+
 
 %\begin{problem}
 %Recall that $\mathbb{Q}\left(\sqrt{5}\right)$ can be written as $\mathbb{Q}\left(\sqrt{5}\right) = \left\{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\right\}$. Show that $\phi:\mathbb{Q}\left(\sqrt{5}\right) \rightarrow \mathbb{Q}\left(\sqrt{5}\right)$ defined by $\phi(a+b\sqrt{5}) = a-b\sqrt{5}$ is an isomorphism.
