@@ -159,6 +159,15 @@ Try using Theorem~\ref{thm.PrincipalIdeals}.
 Assume $\phi:R\to S$ is a ring homomorphism. We need to define a suitable homomorphism from $R/\ker\phi$ to  $\phi(R)$, and then check that it is bijective. Let's let $K:= \ker\phi$. Try defining $\hat{\phi}:R/K\to\phi(R)$ via $\hat{\phi}(a+K) = \phi(a)$. A very important point, is that we don't actually know that $\hat{\phi}$ is a well-defined function. We know that a coset $a+K$ might be equal to $a'+K$, so we'd better make sure that if $a+K=a'+K$ then $\hat{\phi}(a+K) = \hat{\phi}(a'+K)$. Do that first. Then, verify that $\hat{\phi}$ is a homomorphism that is also surjective and injective. For injectivity, it may be useful to use Theorem~\ref{thm.HomInjectiveSurjective} and instead show that $\ker \hat{\phi} = \{0+K\}$.
 \end{hint*}
 
+\begin{hint*}[Theorem~\ref{thm.Image}]
+We want to show that $\phi(I)$ is an ideal of $S$. Elements of $\phi(I)$ look like $\phi(a)$ for some $a\in I$. To show that $\phi(I)$ is a subring of $S$, let  $\phi(a_1), \phi(a_2) \in \phi(I)$ for some $a_1,a_2\in I$. Now explain why $\phi(a_1)+\phi(a_2)$, $\phi(a_1)\phi(a_2)$, and $-\phi(a_1)$ are all in $\phi(I)$. You also should say why  $\phi(I)$ is nonempty. Finally, you also need to show that for all $s\in S$, $s\phi(a_1)$ is in $\phi(I)$. Remember that $\phi$ maps \emph{onto} $S$, so $s = \phi(r)$ for some $r\in R$. Now keep going.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.InverseImage}]
+We want to show that $\phi^{-1}(J)$ is an ideal of $R$. Let $a_1,a_2\in \phi^{-1}(J)$. This means that $\phi(a_1),\phi(a_2)\in J$. To show that $a_1+a_2$, $a_1a_2$, and $-a_1$ are in $\phi^{-1}(J)$, you just need to show that $\phi(a_1)+\phi(a_2)$, $\phi(a_1)\phi(a_2)$, and $-\phi(a_1)$ are all in $J$ (using that $a_1,a_2\in \phi^{-1}(J)$ and $J$ is an ideal). You also need to show that $ra_1\in \phi^{-1}(J)$, and to do that, you need to show that  $\phi(ra_1)\in J$.
+\end{hint*}
+
+
 \begin{hint*}[Problem~\ref{prob.Sqrt2PlusIIsAlgebraic}]
 Notice that $\alpha^2 = 4 + 2\sqrt{2}i -1$, so $\alpha^2 -3 = 2\sqrt{2}i$. What happens if you square both sides?
 \end{hint*}
