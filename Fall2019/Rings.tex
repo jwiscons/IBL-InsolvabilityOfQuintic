@@ -968,8 +968,8 @@ Now, suppose we want to find all of the ideals of $\mathbb{Q}[x]$ that contain t
 Draw the the lattice of ideals of $\mathbb{Q}[x]$ that contain the ideal $(x^4 +x^2)$.
 \end{problem}
 
-\begin{theorem}
-An ideal $I$ of $\mathbb{F}[x]$ is maximal if and only if $I=(p(x))$ for some irreducible polynomial $p(x)\in \mathbb{F}[x]$.
+\begin{theorem}\label{thm.MaximalIFFIrreducibleinFx}
+Let $F$ be a field. An ideal $I$ of $F[x]$ is maximal if and only if $I=(p(x))$ for some irreducible polynomial $p(x)\in F[x]$.
 \end{theorem}
 
 
@@ -1145,7 +1145,7 @@ Use the First Isomorphism Theorem together Problem~\ref{prob.KernelImageConcrete
 We now work towards a very nice and useable criterion to determine when a quotient ring is actually a field. Our approach will rely on Theorem~\ref{thm.CharacterizeFieldWithIdeals}, so we need to be able determine the relationship between ideals of $R$ and ideals of the quotient $R/I$. We will investigate this via homomorphisms, which we can then apply to $R/I$ using Problem~\ref{prob.NaturalProjection}.
 
 \begin{theorem}\label{thm.Image}
-Let $\phi:R\to S$ be a surjective ring homomorphism. If $I$ is an ideal of $R$, then $\phi(R)=\{b\in S\mid b=\phi(a) \text{ for some $a\in I$}\}$ (called the \textbf{image} of $I$) is an ideal of $S$.
+Let $\phi:R\to S$ be a surjective ring homomorphism. If $I$ is an ideal of $R$, then $\phi(I)=\{b\in S\mid b=\phi(a) \text{ for some $a\in I$}\}$ (called the \textbf{image} of $I$) is an ideal of $S$.
 \end{theorem}
 
 \begin{theorem}\label{thm.InverseImage}

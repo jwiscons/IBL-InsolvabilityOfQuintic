@@ -36,7 +36,7 @@ Let $\alpha = \sqrt{2} + i$. Show that $\alpha$ is algebraic over $\mathbb{Q}$.
 
 Now, an algebraic element over $F$ is a root of \emph{some} nonzero polynomial over $F$, but such an element will be a root of lots of polynomials. For example, since $\sqrt{2}$ is a root of $p(x) = x^2 - 2$, we find that for \emph{every} $q(x)\in \mathbb{Q}[x]$, $\sqrt{2}$ is a root of $q(x)p(x)$ because $q(\sqrt{2})p(\sqrt{2}) =  q(\sqrt{2})p(0) =0$. The polynomial $x^2 - 2$ is special because it is a polynomial \emph{of smallest degree} for which $\sqrt{2}$ is a root. In order to formalize this observation, we need to weave together several results from the last chapter. 
 
-Let $F$ be a subfield of $E$, and suppose that $\alpha\in E$ is algebraic over $F$. Then $\alpha$ is the root of some nonzero $p(x)\in F[x]$.  Let's look at the set of all polynomials for which $\alpha$ is a root: $I = \{p(x)\in F[x]\mid p(\alpha) = 0\}$. By Theorem~\ref{thm.EvalHom}, ``evaluation at $\alpha$'' gives rise to a homomorphism $\mathcal{E}_\alpha: F[x] \to E[x]$, and notice that $I$ is precisely the kernel of $\mathcal{E}_\alpha$. Thus, by Theorem~\ref{thm.KernelIsIdealImageIsSubring}, $I$ is an ideal of $F[x]$, and since $F[x]$ is a PID, it must be that $I = (m(x))$ for some $m(x) \in F[x]$. 
+Let $F$ be a subfield of $E$, and suppose that $\alpha\in E$ is algebraic over $F$. Then $\alpha$ is the root of \emph{some} nonzero $p(x)\in F[x]$.  Let's look at the set of \emph{all} polynomials for which $\alpha$ is a root: $I = \{p(x)\in F[x]\mid p(\alpha) = 0\}$. By Theorem~\ref{thm.EvalHom}, ``evaluation at $\alpha$'' gives rise to a homomorphism $\mathcal{E}_\alpha: F[x] \to E[x]$, and notice that $I$ is precisely the kernel of $\mathcal{E}_\alpha$. Thus, by Theorem~\ref{thm.KernelIsIdealImageIsSubring}, $I$ is an ideal of $F[x]$, and since $F[x]$ is a PID, it must be that $I = (m(x))$ for some $m(x) \in F[x]$. 
 
 Now, $m(x)$ is nonzero since $I$ contains some nonzero polynomial, and this also implies that $m(x)$ is not a constant polynomial since the only constant polynomial that has roots is the zero polynomial. Moreover, if $m(x)$ is not monic, we can make it monic by multiplying by the inverse of the leading coefficient and the result will still generate $I$ by Theorem~\ref{thm.DifferByUnitSameIdeal}. So, we may assume that $I = (m(x))$ with $m(x)$ nonconstant and monic. 
 
@@ -51,11 +51,179 @@ Let $F$ be a subfield of $E$, and suppose that $\alpha\in E$ is algebraic over $
 Combining Lemma~\ref{lem.MinimalPolyIsIrreducible} with our previous discussion, we arrive at the following fact.
 
 \begin{fact}\label{fact.ExistsMinimalPoly}
-Let $F$ be a subfield of $E$, and suppose that $\alpha\in E$ is algebraic over $F$. Then there is a unique irreducible monic polynomial $m(x) \in F[x]$ such that $m(r) = 0$. Moreover, if $p(x) \in F[x]$ and $p(\alpha) = 0$, then $m(x)$ divides $p(x)$.
+Let $F$ be a subfield of $E$, and suppose that $\alpha\in E$ is algebraic over $F$. Then there is a unique irreducible monic polynomial $m(x) \in F[x]$ such that $m(\alpha) = 0$. Moreover, if $p(x) \in F[x]$ and $p(\alpha) = 0$, then $m(x)$ divides $p(x)$.
 \end{fact}
 
+The polynomial $m(x)$ from  Fact~\ref{fact.ExistsMinimalPoly} gets a special name.
+
+\begin{definition}
+Suppose that $\alpha\in E$ is algebraic over $F$. The unique irreducible monic polynomial $m(x) \in F[x]$ such that $m(\alpha) = 0$ is called the \textbf{minimal polynomial} of $\alpha$ over $F$. The \textbf{degree} of $\alpha$ over $F$ is defined to be the degree of the minimal polynomial of $\alpha$ over $F$. 
+\end{definition}
+
+\begin{theorem}
+Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $m(x)$ be the minimal polynomial of $\alpha$ over $F$. If $V = \{p(x)\in F[x]\mid p(\alpha) = 0\}$ (i.e~the set of all polynomials that vanish at $\alpha$), then $V = (m(x))$.
+\end{theorem}
 
 
-%\begin{problem}
-%Recall that $\mathbb{Q}\left(\sqrt{5}\right)$ can be written as $\mathbb{Q}\left(\sqrt{5}\right) = \left\{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\right\}$. Show that $\phi:\mathbb{Q}\left(\sqrt{5}\right) \rightarrow \mathbb{Q}\left(\sqrt{5}\right)$ defined by $\phi(a+b\sqrt{5}) = a-b\sqrt{5}$ is an isomorphism.
-%\end{problem}
+We will see shortly that the minimal polynomial of $\alpha$ over $F$ is key to understanding the field extension $F(\alpha)$. But how do we find the minimal polynomial of $\alpha$ over $F$? The first step is to find \emph{any} monic polynomial $p(x)\in F[x]$ for which $p(\alpha) = 0$ (which also verifies that $\alpha$ is algebraic over $F$). If we can show that $p(x)$ is irreducible, then $p(x)$ is the minimal polynomial, and we're done. Otherwise, we factor $p(x)$ into irreducible polynomials in $F[x]$, and  by Fact~\ref{fact.ExistsMinimalPoly}, the minimal polynomial will be whichever one of the factors has $\alpha$ as a root. Let's test this out with some examples. 
+
+\begin{problem}\label{prob.MinPolyZeta3}
+Explain why the minimal polynomial for $\zeta_3$ over $\mathbb{Q}$ is \textit{not} $x^3-1$. Find the minimal polynomial  $\zeta_3$ over $\mathbb{Q}$, and determine the degree of  $\zeta_3$ over $\mathbb{Q}$?
+\end{problem}
+
+\begin{problem}
+The polynomial $p(x) = x^3-11$ has three roots in $\mathbb{C}$. 
+\begin{enumerate}
+\item Find the degree over $\mathbb{Q}$ of each of the three roots.
+\item Find the degree over $\mathbb{R}$ of each of the three roots.
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+The polynomial $p(x) = x^5-2x^3-3x$ has five roots in $\mathbb{C}$. Find the minimal polynomial over $\mathbb{Q}$ of each of the five roots.
+\end{problem}
+
+\begin{problem}
+Let $z = a+bi$ with $a,b\in \mathbb{Q}$, and define $p(x) = (x-z)(x-\overline{z})$. Prove that $p(x)\in \mathbb{Q}[x]$, and then use this to find the minimal polynomial of $2+i$ over $\mathbb{Q}$.
+\end{problem}
+
+\begin{problem}
+Find the minimal polynomial of $3-\sqrt{5}$ over $\mathbb{Q}$.
+\end{problem}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Generating extensions with algebraic elements}
+
+In Chapter~\ref{chapter:Fields}, we explored extension fields of the form $F(r)$ where $r$ was chosen from some larger field $E$. However, the definition of $F(r)$ was abstract and ofter hard to work with. For example, $\mathbb{Q}(i)$ is defined to be the smallest subfield of $\mathbb{C}$ containing $\mathbb{Q}$ and $i$, but this doesn't tell us much about what the elements of $\mathbb{Q}(i)$ actually look like. Nevertheless, in Problem~\ref{prob.QAdjoinI}, we were able show that $\mathbb{Q}(i)$ is precisely the set of elements of the form $a+bi$ with $a,b\in \mathbb{Q}$, and we also succeeded in showing that $\mathbb{Q}(\sqrt{5}) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$. 
+
+However, we noticed that describing $\mathbb{Q}(r)$ is not always so easily since, for example, if $r = \sqrt{2} + i$, then $\mathbb{Q}(r) \neq \{a+br\mid a,b\in \mathbb{Q}\}$. That said, we've learned a lot since Chapter~\ref{chapter:Fields}, so let's take another go at trying to describe fields like $\mathbb{Q}(r)$. 
+
+Remember that (for $r = \sqrt{2} + i$) we were able to show that $\{a+br\mid a,b\in \mathbb{Q}\} \subseteq \mathbb{Q}(r)$, but the reverse containment did not hold. And, the reason the reverse containment didn't hold was because $\{a+br\mid a,b\in \mathbb{Q}\}$ is not a subfield, which can be seen fairly easily since $r^2 \notin \{a+br\mid a,b\in \mathbb{Q}\}$ (so it's not closed under multiplication). 
+
+So why not add in $r^2$ and consider something like  $\{a+br + cr^2\mid a,b,c\in \mathbb{Q}\}$? Remembering that $\mathbb{Q}(r)$ is a field containg $\mathbb{Q}$ and $r$ (and is closed under addition and multiplication), we see again that $\{a+br + cr^2\mid a,b,c\in \mathbb{Q}\} \subseteq \mathbb{Q}(r)$. So maybe $\{a+br + cr^2\mid a,b,c\in \mathbb{Q}\} = \mathbb{Q}(r)$. Or, maybe we need to look at $\{a+br + cr^2 + dr^3\mid a,b,c,d\in \mathbb{Q}\}$. These are all good ideas since $a_0+a_1r + a_2r^2 + a_3r^3 + \cdots + a_nr^n \in \mathbb{Q}(r)$ whenever $a_0,a_1,a_2,a_3,\ldots,a_n\in \mathbb{Q}$. Let's formalize this.
+
+
+\begin{theorem}
+Let $F$ be a subfield of $E$, and let $\alpha\in E$. If $p(x)\in F[x]$, then $p(\alpha) \in F(\alpha)$.
+\end{theorem}
+
+\begin{problem}
+Let $p(x) = 2x^3+7x^2-\frac{1}{2}$. We know that $\mathbb{Q}(\sqrt{5}) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$ by  Problem~\ref{prob.QAdjoinRoot5}. Verify directly that $p(\sqrt{5}) \in \mathbb{Q}(\sqrt{5})$ by writing $p(\sqrt{5})$ in the form $a+b\sqrt{5}$ for some $a,b\in \mathbb{Q}$.
+\end{problem}
+
+We are studying the elements we get when we plug $\alpha$ into polynomials. Let's frame this in terms of the evaluation homomorphism introduced in Theorem~\ref{thm.EvalHom}, like we did at the beginning of this chapter.
+
+\begin{theorem}
+Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $m(x)$ be the minimal polynomial of $\alpha$ over $F$. If $\mathcal{E}_\alpha:F[x] \rightarrow E$ is the homomorphism defined by $\mathcal{E}_\alpha(p(x)) = p(\alpha)$, then 
+\begin{enumerate}
+\item the image of $\mathcal{E}_\alpha$ is contained in $F(r)$, and
+\item the kernel of $\mathcal{E}_\alpha$ is $(m(x))$.
+\end{enumerate}
+\end{theorem}
+
+Using Theorems~\ref{thm.MaximalIFFIrreducibleinFx} and~\ref{thm.QuotientIsField} (and the First Isomorphism Theorem for Rings), we can deduce that the image of $\mathcal{E}_\alpha$ is a field. But then, if we can verify that the image of $\mathcal{E}_\alpha$ contains $F$ and $r$, we can conclude that the image of $\mathcal{E}_\alpha$ is actually equal to $F(r)$ (by the definition of $F(r)$). Let's put this together.
+
+\begin{theorem}
+Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $m(x)$ be the minimal polynomial of $\alpha$ over $F$. Then 
+$F(r) \cong F[x]/(m(x)).$
+\end{theorem}
+
+Notice that we still haven't succeeded in providing a nice description $F(r)$, but we will if we can find a nice description of $F[x]/(m(x))$.
+
+\begin{lemma}\label{lem.DescribeQuotientWithRemainders}
+Let $F$ be a subfield of $E$, and suppose that $\alpha\in E$ is algebraic over $F$. Let $m(x)$ be the minimal polynomial of $\alpha$ over $F$, and let $n$ be the degree of $\alpha$ over $F$.  If $a(x) + (m(x)) \in F[x]/(m(x))$, then $a(x) + (m(x)) =  r(x) + (m(x))$ where $r(x)$ is the remainder obtained when dividing $a(x)$ by $m(x)$. Consequently,
+\[F[x]/(m(x)) = \{r(x) +  (m(x)) \mid \deg r(x) < n \text{ or } r(x) = 0\}.\]
+\end{lemma}
+
+Tying together all of our work, we finally arrive at our desired description of $F(r)$.
+
+\begin{theorem}\label{thm.DescribeFAdjoinr}
+Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $n$ be the degree of $\alpha$ over $F$. Then \[F(r) = \{a_0 + a_1r+\cdots+a_{n-1}r^{n-1} \mid a_0,a_1,\ldots,a_{n-1} \in F\}.\]
+\end{theorem}
+
+We had to work hard for Theorem~\ref{thm.DescribeFAdjoinr}, but using it is easy. For example, suppose we want to describe $\mathbb{Q}(\sqrt[3]{2})$. We first need to know the degree of $\sqrt[3]{2}$ over $\mathbb{Q}$. Of course, $\sqrt[3]{2}$ is a root of $m(x) = x^3-2$, and $m(x)$ is irreducible by Theorems~\ref{thm.nthRoots} and~\ref{thm.ReducibilityTestDegree2or3}. Thus, $m(x) = x^3-2$ is the minimal polynomial of $\sqrt[3]{2}$ over $\mathbb{Q}$, so $\sqrt[3]{2}$ has degree $3$ over $\mathbb{Q}$. Now we  apply Theorem~\ref{thm.DescribeFAdjoinr} to find that $\mathbb{Q}(\sqrt[3]{2}) = \{a_0 + a_1\sqrt[3]{2}+a_{2}(\sqrt[3]{2})^{2} \mid a_0,a_1,a_2 \in \mathbb{Q}\}$.
+
+\begin{problem}
+Use  Theorem~\ref{thm.DescribeFAdjoinr} to describe $\mathbb{Q}(\zeta_3)$.
+\end{problem}
+
+\begin{problem} Let $p(x) = x^3-x+1 \in \mathbb{Z}_3[x]$, and let $r$ be a root of $p(x)$. 
+\begin{enumerate}
+\item Prove that $p(x)$ is irreducible in $\mathbb{Z}_3[x]$. 
+\item Use Theorem~\ref{thm.DescribeFAdjoinr} to describe $\mathbb{Z}_3(r)$.
+\item How many elements are in the field $\mathbb{Z}_3(r)$?
+\end{enumerate}
+\end{problem}
+
+The next problem highlights how we use the minimal polynomial for $\alpha$ to do (or rather, simplify) arithmetic in  $F(\alpha)$.
+
+\begin{problem}
+The polynomial $p(x) = x^5 + 2x + 2$ is irreducible in $\mathbb{Q}[x]$ (you do not need to prove this). Let $s$ be a root of $p(x)$. By Theorem~\ref{thm.DescribeFAdjoinr}, every element of $\mathbb{Q}(s)$ can be written in the form $a_0 + a_1s + a_2s^2 + a_3s^3 + a_4s^4$ for some $a_0,a_1,a_2,a_3,a_4 \in \mathbb{Q}$.
+\begin{enumerate}
+\item Use the fact that $p(s) = 0$ to write $s^5$ in the form  $a_0 + a_1s + a_2s^2 + a_3s^3 + a_4s^4$.
+\item Rewrite each of the following elements of $\mathbb{Q}(\alpha)$ in the form  $a_0 + a_1s + a_2s^2 + a_3s^3 + a_4s^4$.
+\begin{enumerate}
+\item $(s^3+2)(s^3+3s)$
+\item $3s^4(2+s^3)(5-s+s^2)$
+\end{enumerate}
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Let's try to describe $\mathbb{Q}(\sqrt{2},i)$. Notice that $\mathbb{Q}(\sqrt{2},i) = \left(\mathbb{Q}\left(\sqrt{2}\right)\right)(i)$; in words, the field obtained by adjoining $\sqrt{2} $ and $i$ at the same time is equal to the field obtained by first adjoining $\sqrt{2}$ and then adjoining $i$ to the result.
+\begin{enumerate}
+\item Use  Theorem~\ref{thm.DescribeFAdjoinr} to describe $\mathbb{Q}(\sqrt{2})$.
+\item Use Theorem~\ref{thm.ReducibilityTestDegree2or3} to explain why $x^2+1$ is the minimal polynomial of $i$ over $\mathbb{Q}(\sqrt{2})$.
+\item Use  Theorem~\ref{thm.DescribeFAdjoinr} to describe $\left(\mathbb{Q}\left(\sqrt{2}\right)\right)(i)$, which is equal to $\mathbb{Q}(\sqrt{2},i)$.
+\end{enumerate}
+\end{problem}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Eisenstein's irreducibility criterion}
+
+Theorem~\ref{thm.DescribeFAdjoinr} provides a nice description of $F(\alpha)$ when $\alpha$ is algebraic over $F$. However, the description rests on us knowing the minimal polynomial of $\alpha$ over $F$, which in turn rests on us being able to determine when polynomials are irreducible. We now introduce an irreducibility criterion for $\mathbb{Q}[x]$.
+
+\begin{fact}[Eisenstein's Irreducibility Criterion (EIC)]\label{fact.Eisenstein}
+Let $p(x) = a_0 + a_1x + \cdots + a_nx^n$ with all $a_0,a_1,\ldots,a_n \in \mathbb{Z}$. Suppose that there is some prime number $p \in \mathbb{Z}$ such that all of the following conditions are met:
+\begin{enumerate}
+\item $p$ does \emph{not} divide $a_n$,
+\item $p$ does divide $a_i$ for all $i<n$, and
+\item $p^2$ does \emph{not} divide $a_0$.
+\end{enumerate}
+Then $p(x)$ is irreducible in $\mathbb{Q}[x]$.
+\end{fact}
+
+The proof of the EIC is  interesting and not too difficult, but as it is more  number-theoretic than algebraic, we will leave it for another time. Details can be found in other books or on \href{https://en.wikipedia.org/wiki/Eisenstein\%27s_criterion}{Wikipedia}. The idea is to take the polynomial $p(x)$ whose coefficients are all integers and consider it as a polynomial in $\mathbb{Z}_p[x]$ by reducing all of the coefficients modulo $p$. 
+
+\begin{problem}
+Use the EIC to show that $x^{8}-15$ is irreducible in $\mathbb{Q}[x]$. What did you choose as your prime $p$? Were there other choices?
+\end{problem}
+
+\begin{problem}
+Consider the polynomial $ f(x) = x^7 - \frac{5}{2}$.
+\begin{enumerate}
+\item Explain why the EIC does \emph{not} apply to $f(x)$.
+\item Prove that if $f(x)$ is reducible in $\mathbb{Q}[x]$, then so is $g(x) = 2x^7 - 5$.
+\item Use the EIC to show that $g(x)$ is irreducible, and conclude that $f(x)$ is also irreducible.
+\end{enumerate}
+\end{problem}
+
+Let's try to determine the minimal polynomial of  $\zeta_5$. We know that $\zeta_5$ is algebraic over $\mathbb{Q}$ because it is a root of $x^5-1$. However, $x^5-1$ can not be the minimal polynomial since it has $x-1$ as a factor. 
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Minimal polynomial of roots of unity}
+
+Let's try to determine the minimal polynomial of the $\zeta_n$. We know that $\zeta_n$ is algebraic over $\mathbb{Q}$ because it is a root of $x^n-1$. However, $x^n-1$ can not be the minimal polynomial since it has $x-1$ as a factor. Dividing out 
+
+
+
+
