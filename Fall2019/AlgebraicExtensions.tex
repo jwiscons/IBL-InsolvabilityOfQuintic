@@ -95,13 +95,13 @@ Find the minimal polynomial of $3-\sqrt{5}$ over $\mathbb{Q}$.
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\subsection{Generating extensions with algebraic elements}
+\subsection{Describing $F(r)$ when $r$ is algebraic over $F$}
 
 In Chapter~\ref{chapter:Fields}, we explored extension fields of the form $F(r)$ where $r$ was chosen from some larger field $E$. However, the definition of $F(r)$ was abstract and ofter hard to work with. For example, $\mathbb{Q}(i)$ is defined to be the smallest subfield of $\mathbb{C}$ containing $\mathbb{Q}$ and $i$, but this doesn't tell us much about what the elements of $\mathbb{Q}(i)$ actually look like. Nevertheless, in Problem~\ref{prob.QAdjoinI}, we were able show that $\mathbb{Q}(i)$ is precisely the set of elements of the form $a+bi$ with $a,b\in \mathbb{Q}$, and we also succeeded in showing that $\mathbb{Q}(\sqrt{5}) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$. 
 
-However, we noticed that describing $\mathbb{Q}(r)$ is not always so easily since, for example, if $r = \sqrt{2} + i$, then $\mathbb{Q}(r) \neq \{a+br\mid a,b\in \mathbb{Q}\}$. That said, we've learned a lot since Chapter~\ref{chapter:Fields}, so let's take another go at trying to describe fields like $\mathbb{Q}(r)$. 
+However, we noticed that describing $\mathbb{Q}(r)$ is not always so easy since, for example, if $r = \sqrt{2} + i$, then $\mathbb{Q}(r) \neq \{a+br\mid a,b\in \mathbb{Q}\}$. That said, we've learned a lot since Chapter~\ref{chapter:Fields}, so let's take another go at trying to describe fields like $\mathbb{Q}(r)$. 
 
-Remember that (for $r = \sqrt{2} + i$) we were able to show that $\{a+br\mid a,b\in \mathbb{Q}\} \subseteq \mathbb{Q}(r)$, but the reverse containment did not hold. And, the reason the reverse containment didn't hold was because $\{a+br\mid a,b\in \mathbb{Q}\}$ is not a subfield, which can be seen fairly easily since $r^2 \notin \{a+br\mid a,b\in \mathbb{Q}\}$ (so it's not closed under multiplication). 
+Remember that (for $r = \sqrt{2} + i$) we were able to show that $\{a+br\mid a,b\in \mathbb{Q}\} \subseteq \mathbb{Q}(r)$, but the reverse containment did not hold. And, the reason the reverse containment didn't hold was because $\{a+br\mid a,b\in \mathbb{Q}\}$ is not a field, which can be seen fairly easily since $r^2 \notin \{a+br\mid a,b\in \mathbb{Q}\}$ (so it's not closed under multiplication). 
 
 So why not add in $r^2$ and consider something like  $\{a+br + cr^2\mid a,b,c\in \mathbb{Q}\}$? Remembering that $\mathbb{Q}(r)$ is a field containg $\mathbb{Q}$ and $r$ (and is closed under addition and multiplication), we see again that $\{a+br + cr^2\mid a,b,c\in \mathbb{Q}\} \subseteq \mathbb{Q}(r)$. So maybe $\{a+br + cr^2\mid a,b,c\in \mathbb{Q}\} = \mathbb{Q}(r)$. Or, maybe we need to look at $\{a+br + cr^2 + dr^3\mid a,b,c,d\in \mathbb{Q}\}$. These are all good ideas since $a_0+a_1r + a_2r^2 + a_3r^3 + \cdots + a_nr^n \in \mathbb{Q}(r)$ whenever $a_0,a_1,a_2,a_3,\ldots,a_n\in \mathbb{Q}$. Let's formalize this.
 
@@ -114,17 +114,17 @@ Let $F$ be a subfield of $E$, and let $\alpha\in E$. If $p(x)\in F[x]$, then $p(
 Let $p(x) = 2x^3+7x^2-\frac{1}{2}$. We know that $\mathbb{Q}(\sqrt{5}) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$ by  Problem~\ref{prob.QAdjoinRoot5}. Verify directly that $p(\sqrt{5}) \in \mathbb{Q}(\sqrt{5})$ by writing $p(\sqrt{5})$ in the form $a+b\sqrt{5}$ for some $a,b\in \mathbb{Q}$.
 \end{problem}
 
-We are studying the elements we get when we plug $\alpha$ into polynomials. Let's frame this in terms of the evaluation homomorphism introduced in Theorem~\ref{thm.EvalHom}, like we did at the beginning of this chapter.
+We are studying the elements we get when we plug $\alpha$ into polynomials. Let's frame this in terms of the evaluation homomorphism introduced in Theorem~\ref{thm.EvalHom}, like we did at the beginning of this chapter. The next theorem generalizes Problem~\ref{prob.EvalAtI}.
 
 \begin{theorem}
 Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $m(x)$ be the minimal polynomial of $\alpha$ over $F$. If $\mathcal{E}_\alpha:F[x] \rightarrow E$ is the homomorphism defined by $\mathcal{E}_\alpha(p(x)) = p(\alpha)$, then 
 \begin{enumerate}
-\item the image of $\mathcal{E}_\alpha$ is contained in $F(r)$, and
-\item the kernel of $\mathcal{E}_\alpha$ is $(m(x))$.
+\item the kernel of $\mathcal{E}_\alpha$ is $(m(x))$, and
+\item the image of $\mathcal{E}_\alpha$ is contained in $F(r)$.
 \end{enumerate}
 \end{theorem}
 
-Using Theorems~\ref{thm.MaximalIFFIrreducibleinFx} and~\ref{thm.QuotientIsField} (and the First Isomorphism Theorem for Rings), we can deduce that the image of $\mathcal{E}_\alpha$ is a field. But then, if we can verify that the image of $\mathcal{E}_\alpha$ contains $F$ and $r$, we can conclude that the image of $\mathcal{E}_\alpha$ is actually equal to $F(r)$ (by the definition of $F(r)$). Let's put this together.
+Using Theorems~\ref{thm.MaximalIFFIrreducibleinFx} and~\ref{thm.QuotientIsField} (and the First Isomorphism Theorem for Rings), we can deduce that the image of $\mathcal{E}_\alpha$ is a field. But then, if we can verify that the image of $\mathcal{E}_\alpha$ contains $F$ and $r$, we can conclude that the image of $\mathcal{E}_\alpha$ is actually \emph{equal} to $F(r)$ (by the definition of $F(r)$). Let's put this together.
 
 \begin{theorem}
 Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $m(x)$ be the minimal polynomial of $\alpha$ over $F$. Then 
@@ -144,7 +144,7 @@ Tying together all of our work, we finally arrive at our desired description of 
 Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $n$ be the degree of $\alpha$ over $F$. Then \[F(r) = \{a_0 + a_1r+\cdots+a_{n-1}r^{n-1} \mid a_0,a_1,\ldots,a_{n-1} \in F\}.\]
 \end{theorem}
 
-We had to work hard for Theorem~\ref{thm.DescribeFAdjoinr}, but using it is easy. For example, suppose we want to describe $\mathbb{Q}(\sqrt[3]{2})$. We first need to know the degree of $\sqrt[3]{2}$ over $\mathbb{Q}$. Of course, $\sqrt[3]{2}$ is a root of $m(x) = x^3-2$, and $m(x)$ is irreducible by Theorems~\ref{thm.nthRoots} and~\ref{thm.ReducibilityTestDegree2or3}. Thus, $m(x) = x^3-2$ is the minimal polynomial of $\sqrt[3]{2}$ over $\mathbb{Q}$, so $\sqrt[3]{2}$ has degree $3$ over $\mathbb{Q}$. Now we  apply Theorem~\ref{thm.DescribeFAdjoinr} to find that $\mathbb{Q}(\sqrt[3]{2}) = \{a_0 + a_1\sqrt[3]{2}+a_{2}(\sqrt[3]{2})^{2} \mid a_0,a_1,a_2 \in \mathbb{Q}\}$.
+We had to work hard for Theorem~\ref{thm.DescribeFAdjoinr}, but using it is fairly easy. For example, suppose we want to describe $\mathbb{Q}(\sqrt[3]{2})$. We first need to know the degree of $\sqrt[3]{2}$ over $\mathbb{Q}$. Of course, $\sqrt[3]{2}$ is a root of $m(x) = x^3-2$, and $m(x)$ is irreducible by Theorems~\ref{thm.nthRoots} and~\ref{thm.ReducibilityTestDegree2or3}. Thus, $m(x) = x^3-2$ is the minimal polynomial of $\sqrt[3]{2}$ over $\mathbb{Q}$, so $\sqrt[3]{2}$ has degree $3$ over $\mathbb{Q}$. Now we  apply Theorem~\ref{thm.DescribeFAdjoinr} to find that $\mathbb{Q}(\sqrt[3]{2}) = \{a_0 + a_1\sqrt[3]{2}+a_{2}(\sqrt[3]{2})^{2} \mid a_0,a_1,a_2 \in \mathbb{Q}\}$.
 
 \begin{problem}
 Use  Theorem~\ref{thm.DescribeFAdjoinr} to describe $\mathbb{Q}(\zeta_3)$.
@@ -158,7 +158,18 @@ Use  Theorem~\ref{thm.DescribeFAdjoinr} to describe $\mathbb{Q}(\zeta_3)$.
 \end{enumerate}
 \end{problem}
 
-The next problem highlights how we use the minimal polynomial for $\alpha$ to do (or rather, simplify) arithmetic in  $F(\alpha)$.
+\begin{problem}\label{prob.DescribeQAdjoinSqrt2PlusI}
+Let $\alpha = \sqrt{2} + i$. In Problem~\ref{prob.Sqrt2PlusIIsAlgebraic}, we saw that $\alpha$ is algebraic over $\mathbb{Q}$ since $\alpha$ is a root of  $x^4-2x^2+9\in \mathbb{Q}[x]$. Let $m(x)$ denote the minimal polynomial for $\alpha$ over $\mathbb{Q}$.
+\begin{enumerate}
+\item Use Theorem~\ref{thm.DescribeFAdjoinr} (and Problem~\ref{prob.QAdjoinI}) to explain why the degree of $m(x)$ isn't $1$ or $2$.
+\item Use Fact~\ref{fact.ExistsMinimalPoly} to explain why $m(x)$ is a factor of $x^4-2x^2+9$.
+\item Explain why the degree of $m(x)$ isn't $3$.
+\item Explain why  $m(x)=x^4-2x^2+9$.
+\item Use Theorem~\ref{thm.DescribeFAdjoinr} to describe $\mathbb{Q}(\sqrt{2} + i)$.
+\end{enumerate}
+\end{problem}
+
+The next problem highlights how we use the minimal polynomial for $\alpha$ to compute (or rather, to simplify) in  $F(\alpha)$.
 
 \begin{problem}
 The polynomial $p(x) = x^5 + 2x + 2$ is irreducible in $\mathbb{Q}[x]$ (you do not need to prove this). Let $s$ be a root of $p(x)$. By Theorem~\ref{thm.DescribeFAdjoinr}, every element of $\mathbb{Q}(s)$ can be written in the form $a_0 + a_1s + a_2s^2 + a_3s^3 + a_4s^4$ for some $a_0,a_1,a_2,a_3,a_4 \in \mathbb{Q}$.
@@ -173,11 +184,12 @@ The polynomial $p(x) = x^5 + 2x + 2$ is irreducible in $\mathbb{Q}[x]$ (you do n
 \end{problem}
 
 \begin{problem}
-Let's try to describe $\mathbb{Q}(\sqrt{2},i)$. Notice that $\mathbb{Q}(\sqrt{2},i) = \left(\mathbb{Q}\left(\sqrt{2}\right)\right)(i)$; in words, the field obtained by adjoining $\sqrt{2} $ and $i$ at the same time is equal to the field obtained by first adjoining $\sqrt{2}$ and then adjoining $i$ to the result.
+Let's try to describe $\mathbb{Q}(\sqrt{2},i)$. Notice that $\mathbb{Q}(\sqrt{2},i) = \left(\mathbb{Q}(\sqrt{2})\right)(i)$. In words, the field obtained by adjoining $\sqrt{2} $ and $i$ at the same time is equal to the field obtained by first adjoining $\sqrt{2}$ and then adjoining $i$ to the result.
 \begin{enumerate}
 \item Use  Theorem~\ref{thm.DescribeFAdjoinr} to describe $\mathbb{Q}(\sqrt{2})$.
 \item Use Theorem~\ref{thm.ReducibilityTestDegree2or3} to explain why $x^2+1$ is the minimal polynomial of $i$ over $\mathbb{Q}(\sqrt{2})$.
-\item Use  Theorem~\ref{thm.DescribeFAdjoinr} to describe $\left(\mathbb{Q}\left(\sqrt{2}\right)\right)(i)$, which is equal to $\mathbb{Q}(\sqrt{2},i)$.
+\item Use  Theorem~\ref{thm.DescribeFAdjoinr} to describe $\left(\mathbb{Q}(\sqrt{2})\right)(i)$, which is equal to $\mathbb{Q}(\sqrt{2},i)$.
+\item How does your description of $\mathbb{Q}(\sqrt{2},i)$ compare to that for $\mathbb{Q}(\sqrt{2} + i)$ in Problem~\ref{prob.DescribeQAdjoinSqrt2PlusI}?
 \end{enumerate}
 \end{problem}
 

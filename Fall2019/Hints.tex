@@ -169,16 +169,22 @@ We want to show that $\phi^{-1}(J)$ is an ideal of $R$. Let $a_1,a_2\in \phi^{-1
 
 
 \begin{hint*}[Problem~\ref{prob.Sqrt2PlusIIsAlgebraic}]
-Notice that $\alpha^2 = 4 + 2\sqrt{2}i -1$, so $\alpha^2 -3 = 2\sqrt{2}i$. What happens if you square both sides?
+Notice that $\alpha^2 = 2 + 2\sqrt{2}i -1$, so $\alpha^2 -1 = 2\sqrt{2}i$. What happens if you square both sides?
 \end{hint*}
 
 \begin{hint*}[Lemma~\ref{lem.MinimalPolyIsIrreducible}]
 Towards a contradiction, assume that $m(x)$ is reducible. By Theorem~\ref{thm.ReduciblePolynomials}, $m(x) = a(x)b(x)$ for some $a(x),b(x)\in F[x]$ with $\deg a(x)$ and $\deg b(x)$ both smaller than $\deg m(x)$. Now, $m(x)\in I$, so $0 = m(\alpha) = a(\alpha)b(\alpha)$. Explain why this implies that $a(x)$ or $b(x)$ is in $I$. But $I = (m(x))$, so by Theorem~\ref{thm.PrincipalIdeals}, $m(x)$ divides $a(x)$ or $b(x)$. What's the contradiction?
 \end{hint*}
 
-\begin{hint*}[Lemma~\ref{prob.MinPolyZeta3}]
+\begin{hint*}[Problem~\ref{prob.MinPolyZeta3}]
 Theorem~\ref{thm.SolvableByRadicalsNontrivialRootsOf1} might provide some inspiration.
 \end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.DescribeQAdjoinSqrt2PlusI}]
+To see why the degree of $m(x)$ can not be $3$, suppose it is. Then $x^4-2x^2+9 = m(x)q(x)$ for some $q(x)\in\mathbb{Q}[x]$ with $\deg q(x) = 1$. Explain why $q(x)$ has a root that lies in $\mathbb{Q}$. But the root of  $q(x)$ is a root of $x^4-2x^2+9$, so find the roots of $x^4-2x^2+9$ (and thus a contradiction).
+\end{hint*}
+
+
 
 
 
