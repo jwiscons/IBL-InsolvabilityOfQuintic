@@ -95,15 +95,15 @@ Find the minimal polynomial of $3-\sqrt{5}$ over $\mathbb{Q}$.
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\subsection{Describing $F(r)$ when $r$ is algebraic over $F$}
+\subsection{Describing $F(\alpha)$ when $\alpha$ is algebraic over $F$}
 
-In Chapter~\ref{chapter:Fields}, we explored extension fields of the form $F(r)$ where $r$ was chosen from some larger field $E$. However, the definition of $F(r)$ was abstract and ofter hard to work with. For example, $\mathbb{Q}(i)$ is defined to be the smallest subfield of $\mathbb{C}$ containing $\mathbb{Q}$ and $i$, but this doesn't tell us much about what the elements of $\mathbb{Q}(i)$ actually look like. Nevertheless, in Problem~\ref{prob.QAdjoinI}, we were able show that $\mathbb{Q}(i)$ is precisely the set of elements of the form $a+bi$ with $a,b\in \mathbb{Q}$, and we also succeeded in showing that $\mathbb{Q}(\sqrt{5}) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$. 
+In Chapter~\ref{chapter:Fields}, we explored extension fields of the form $F(\alpha)$ where $\alpha$ was chosen from some larger field $E$. However, the definition of $F(\alpha)$ was abstract and ofter hard to work with. For example, $\mathbb{Q}(i)$ is defined to be the smallest subfield of $\mathbb{C}$ containing $\mathbb{Q}$ and $i$, but this doesn't tell us much about what the elements of $\mathbb{Q}(i)$ actually look like. Nevertheless, in Problem~\ref{prob.QAdjoinI}, we were able show that $\mathbb{Q}(i)$ is precisely the set of elements of the form $a+bi$ with $a,b\in \mathbb{Q}$, and we also succeeded in showing that $\mathbb{Q}(\sqrt{5}) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$. 
 
-However, we noticed that describing $\mathbb{Q}(r)$ is not always so easy since, for example, if $r = \sqrt{2} + i$, then $\mathbb{Q}(r) \neq \{a+br\mid a,b\in \mathbb{Q}\}$. That said, we've learned a lot since Chapter~\ref{chapter:Fields}, so let's take another go at trying to describe fields like $\mathbb{Q}(r)$. 
+However, we noticed that describing $\mathbb{Q}(\alpha)$ is not always so easy since, for example, if $\alpha = \sqrt{2} + i$, then $\mathbb{Q}(\alpha) \neq \{a+b\alpha\mid a,b\in \mathbb{Q}\}$. That said, we've learned a lot since Chapter~\ref{chapter:Fields}, so let's take another go at trying to describe fields like $\mathbb{Q}(\alpha)$. 
 
-Remember that (for $r = \sqrt{2} + i$) we were able to show that $\{a+br\mid a,b\in \mathbb{Q}\} \subseteq \mathbb{Q}(r)$, but the reverse containment did not hold. And, the reason the reverse containment didn't hold was because $\{a+br\mid a,b\in \mathbb{Q}\}$ is not a field, which can be seen fairly easily since $r^2 \notin \{a+br\mid a,b\in \mathbb{Q}\}$ (so it's not closed under multiplication). 
+Remember that (for $\alpha = \sqrt{2} + i$) we were able to show that $\{a+b\alpha\mid a,b\in \mathbb{Q}\} \subseteq \mathbb{Q}(\alpha)$, but the reverse containment did not hold. And, the reason the reverse containment didn't hold was because $\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ is not a field, which can be seen fairly easily since $\alpha^2 \notin \{a+b\alpha\mid a,b\in \mathbb{Q}\}$ (so it's not closed under multiplication). 
 
-So why not add in $r^2$ and consider something like  $\{a+br + cr^2\mid a,b,c\in \mathbb{Q}\}$? Remembering that $\mathbb{Q}(r)$ is a field containg $\mathbb{Q}$ and $r$ (and is closed under addition and multiplication), we see again that $\{a+br + cr^2\mid a,b,c\in \mathbb{Q}\} \subseteq \mathbb{Q}(r)$. So maybe $\{a+br + cr^2\mid a,b,c\in \mathbb{Q}\} = \mathbb{Q}(r)$. Or, maybe we need to look at $\{a+br + cr^2 + dr^3\mid a,b,c,d\in \mathbb{Q}\}$. These are all good ideas since $a_0+a_1r + a_2r^2 + a_3r^3 + \cdots + a_nr^n \in \mathbb{Q}(r)$ whenever $a_0,a_1,a_2,a_3,\ldots,a_n\in \mathbb{Q}$. Let's formalize this.
+So why not add in $\alpha^2$ and consider something like  $\{a+b\alpha + c\alpha^2\mid a,b,c\in \mathbb{Q}\}$? Remembering that $\mathbb{Q}(\alpha)$ is a field containg $\mathbb{Q}$ and $\alpha$ (and is closed under addition and multiplication), we see again that $\{a+b\alpha + c\alpha^2\mid a,b,c\in \mathbb{Q}\} \subseteq \mathbb{Q}(\alpha)$. So maybe $\{a+b\alpha + c\alpha^2\mid a,b,c\in \mathbb{Q}\} = \mathbb{Q}(\alpha)$. Or, maybe we need to look at $\{a+b\alpha + c\alpha^2 + d\alpha^3\mid a,b,c,d\in \mathbb{Q}\}$. These are all good ideas since $a_0+a_1\alpha + a_2\alpha^2 + a_3\alpha^3 + \cdots + a_n\alpha^n \in \mathbb{Q}(\alpha)$ whenever $a_0,a_1,a_2,a_3,\ldots,a_n\in \mathbb{Q}$. Let's formalize this.
 
 
 \begin{theorem}
@@ -120,28 +120,28 @@ We are studying the elements we get when we plug $\alpha$ into polynomials. Let'
 Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $m(x)$ be the minimal polynomial of $\alpha$ over $F$. If $\mathcal{E}_\alpha:F[x] \rightarrow E$ is the homomorphism defined by $\mathcal{E}_\alpha(p(x)) = p(\alpha)$, then 
 \begin{enumerate}
 \item the kernel of $\mathcal{E}_\alpha$ is $(m(x))$, and
-\item the image of $\mathcal{E}_\alpha$ is contained in $F(r)$.
+\item the image of $\mathcal{E}_\alpha$ is contained in $F(\alpha)$.
 \end{enumerate}
 \end{theorem}
 
-Using Theorems~\ref{thm.MaximalIFFIrreducibleinFx} and~\ref{thm.QuotientIsField} (and the First Isomorphism Theorem for Rings), we can deduce that the image of $\mathcal{E}_\alpha$ is a field. But then, if we can verify that the image of $\mathcal{E}_\alpha$ contains $F$ and $r$, we can conclude that the image of $\mathcal{E}_\alpha$ is actually \emph{equal} to $F(r)$ (by the definition of $F(r)$). Let's put this together.
+Using Theorems~\ref{thm.MaximalIFFIrreducibleinFx} and~\ref{thm.QuotientIsField} (and the First Isomorphism Theorem for Rings), we can deduce that the image of $\mathcal{E}_\alpha$ is a field. But then, if we can verify that the image of $\mathcal{E}_\alpha$ contains $F$ and $\alpha$, we can conclude that the image of $\mathcal{E}_\alpha$ is actually \emph{equal} to $F(\alpha)$ (by the definition of $F(\alpha)$). Let's put this together.
 
 \begin{theorem}
 Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $m(x)$ be the minimal polynomial of $\alpha$ over $F$. Then 
-$F(r) \cong F[x]/(m(x)).$
+$F(\alpha) \cong F[x]/(m(x)).$
 \end{theorem}
 
-Notice that we still haven't succeeded in providing a nice description $F(r)$, but we will if we can find a nice description of $F[x]/(m(x))$.
+Notice that we still haven't succeeded in providing a nice description $F(\alpha)$, but we will if we can find a nice description of $F[x]/(m(x))$.
 
 \begin{lemma}\label{lem.DescribeQuotientWithRemainders}
 Let $F$ be a subfield of $E$, and suppose that $\alpha\in E$ is algebraic over $F$. Let $m(x)$ be the minimal polynomial of $\alpha$ over $F$, and let $n$ be the degree of $\alpha$ over $F$.  If $a(x) + (m(x)) \in F[x]/(m(x))$, then $a(x) + (m(x)) =  r(x) + (m(x))$ where $r(x)$ is the remainder obtained when dividing $a(x)$ by $m(x)$. Consequently,
 \[F[x]/(m(x)) = \{r(x) +  (m(x)) \mid \deg r(x) < n \text{ or } r(x) = 0\}.\]
 \end{lemma}
 
-Tying together all of our work, we finally arrive at our desired description of $F(r)$.
+Tying together all of our work, we finally arrive at our desired description of $F(\alpha)$.
 
 \begin{theorem}\label{thm.DescribeFAdjoinr}
-Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $n$ be the degree of $\alpha$ over $F$. Then \[F(r) = \{a_0 + a_1r+\cdots+a_{n-1}r^{n-1} \mid a_0,a_1,\ldots,a_{n-1} \in F\}.\]
+Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $n$ be the degree of $\alpha$ over $F$. Then \[F(\alpha) = \{a_0 + a_1\alpha+\cdots+a_{n-1}\alpha^{n-1} \mid a_0,a_1,\ldots,a_{n-1} \in F\}.\]
 \end{theorem}
 
 We had to work hard for Theorem~\ref{thm.DescribeFAdjoinr}, but using it is fairly easy. For example, suppose we want to describe $\mathbb{Q}(\sqrt[3]{2})$. We first need to know the degree of $\sqrt[3]{2}$ over $\mathbb{Q}$. Of course, $\sqrt[3]{2}$ is a root of $m(x) = x^3-2$, and $m(x)$ is irreducible by Theorems~\ref{thm.nthRoots} and~\ref{thm.ReducibilityTestDegree2or3}. Thus, $m(x) = x^3-2$ is the minimal polynomial of $\sqrt[3]{2}$ over $\mathbb{Q}$, so $\sqrt[3]{2}$ has degree $3$ over $\mathbb{Q}$. Now we  apply Theorem~\ref{thm.DescribeFAdjoinr} to find that $\mathbb{Q}(\sqrt[3]{2}) = \{a_0 + a_1\sqrt[3]{2}+a_{2}(\sqrt[3]{2})^{2} \mid a_0,a_1,a_2 \in \mathbb{Q}\}$.
