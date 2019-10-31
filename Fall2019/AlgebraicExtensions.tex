@@ -171,7 +171,7 @@ Let $\alpha = \sqrt{2} + i$. In Problem~\ref{prob.Sqrt2PlusIIsAlgebraic}, we saw
 
 The next problem highlights how we use the minimal polynomial for $\alpha$ to compute (or rather, to simplify) in  $F(\alpha)$.
 
-\begin{problem}
+\begin{problem}\label{prob.DescribeQRootx52x2}
 The polynomial $p(x) = x^5 + 2x + 2$ is irreducible in $\mathbb{Q}[x]$ (you do not need to prove this). Let $s$ be a root of $p(x)$. By Theorem~\ref{thm.DescribeFAdjoinr}, every element of $\mathbb{Q}(s)$ can be written in the form $a_0 + a_1s + a_2s^2 + a_3s^3 + a_4s^4$ for some $a_0,a_1,a_2,a_3,a_4 \in \mathbb{Q}$.
 \begin{enumerate}
 \item Use the fact that $p(s) = 0$ to write $s^5$ in the form  $a_0 + a_1s + a_2s^2 + a_3s^3 + a_4s^4$.
@@ -183,7 +183,7 @@ The polynomial $p(x) = x^5 + 2x + 2$ is irreducible in $\mathbb{Q}[x]$ (you do n
 \end{enumerate}
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob.DescribeQAdjoinRoot2Andi}
 Let's try to describe $\mathbb{Q}(\sqrt{2},i)$. Notice that $\mathbb{Q}(\sqrt{2},i) = \left(\mathbb{Q}(\sqrt{2})\right)(i)$. In words, the field obtained by adjoining $\sqrt{2} $ and $i$ at the same time is equal to the field obtained by first adjoining $\sqrt{2}$ and then adjoining $i$ to the result.
 \begin{enumerate}
 \item Use  Theorem~\ref{thm.DescribeFAdjoinr} to describe $\mathbb{Q}(\sqrt{2})$.
@@ -219,6 +219,14 @@ Use the EIC to show that each of the following polynomials are irreducible in $\
 \begin{enumerate}
 \item  $f(x) = 7x^{4}+6x^5 + 12x-30$
 \item  $g(x) = x^{8}-6x^5 -30x^3 + 12$
+\end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prob.DescribeQRootx55x45}
+Let $\alpha$ be a root of $p(x) = x^5 + 5x^4 - 5$. (You don't need to compute $\alpha$!)
+\begin{enumerate}
+\item Prove that $p(x)$ is irreducible over $\mathbb{Q}$.
+\item Use Theorem~\ref{thm.DescribeFAdjoinr} to describe $\mathbb{Q}(\alpha)$.
 \end{enumerate}
 \end{problem}
 
@@ -261,6 +269,51 @@ Make a conjecture as to when $\Psi_n(x) =  x^{n-1} + x^{n-2} + \cdots + x^2 + x 
 \end{problem}
 
 To learn more about the minimal polynomial for $\zeta_n$ (for any $n$), try looking up ``cyclotomic polynomials'' on \href{https://en.wikipedia.org/wiki/Cyclotomic_polynomial}{Wikipedia}.
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Extension fields as vector spaces}
+
+When we work with complex numbers, we often write them in the form $a+bi$ for $a,b\in \mathbb{R}$. So, every complex number can be described using two real numbers: $a$ and $b$. Moreover, each complex number is described by a \emph{unique} choice of $a$ and $b$. This allows us to associate a complex number $a+bi$ with a vector in $\mathbb{R}^2$ via
+\[ a+bi\mapsto \begin{bmatrix} a\\b\end{bmatrix}.\]
+Additionally, adding two complex numbers $a+bi$ and $c+di$ corresponds to adding the two associated vectors $\left[\begin{smallmatrix} a\\b\end{smallmatrix}\right]$ and $\left[\begin{smallmatrix} c\\d\end{smallmatrix}\right]$, and multiplying $a+bi$ by a \emph{real} number $r$ corresponds to multiplying the vector $\left[\begin{smallmatrix} a\\b\end{smallmatrix}\right]$ by the scalar $r$. But, we should be careful with multiplication because multiplying $a+bi$ and $c+di$ does not correspond to multiplying the entries in the corresponding vectors---do you see why? Nevertheless, we find that $\mathbb{C}$ is a vector space over $\mathbb{R}$, and the fact that every complex number can be described by a unique pair of real numbers is expressing that $\mathbb{C}$ is a $2$-dimensional vector space over $\mathbb{R}$. 
+
+These observations generalize to every extension field $E$ of a field $F$. Let's start by properly defining vector spaces. Note that, in the formal definition below, scalar multiplication by a number $c$ is being written as $\lambda_cv$, instead of just $cv$, but as we continue on, we will return to writing simply $cv$.
+
+\begin{definition}
+Let $F$ be a field. A \textbf{vector space over $F$} is a structure $(V,+,\{\lambda_c\mid c\in F\})$ consisting of a set $V$ together with a binary operation $+$ and a unary operation $\lambda_c$ for each $c\in F$ (which we call \emph{addition} and \emph{scalar multiplication by $c$}) such that for some element $0\in V$ the following axioms hold.
+\begin{itemize}
+\item \textbf{Addition Axioms:} Addition is associative and commutative; the element $0$ is an additive identity; every  $x\in F$ has an additive inverse with respect to $0$, denoted $-x$.
+\item \textbf{Distributivity Axioms:} For all $u,v \in V$ and all $c\in F$, $\lambda_c(u+v) = \lambda_cu+\lambda_cv$.
+\item \textbf{Compatibility Axioms:} For all $v \in V$ and all $c,d\in F$, 
+\begin{itemize}[label = $\circ$]
+\item $\lambda_{c+d}v = \lambda_cv + \lambda_dv$,
+\item $\lambda_c(\lambda_dv) = \lambda_{cd}v$, and
+\item $\lambda_1v = v$.
+\end{itemize}
+\end{itemize}
+\end{definition}
+
+Notice that the distributivity axiom can also be expressed by saying that each $\lambda_c$ is a homomorphism from $(V,+)$ to $(V,+)$. The compatability axioms can also be framed in terms of a homomorphism (from $F$ to $\operatorname{End(V)}$), but we will not explore that here.
+
+As mentioned above, we tend to omit writing the $\lambda$, so for example, the distributivity axiom will be often written as $c(u+v) = cu+cv$.
+
+\begin{theorem}
+Let $E$ be an extension field of $F$. Then $E$ is a vector space over $F$ where vector addition in $E$ is just field addition and scalar multiplication by an element of $F$ is just field multiplication.
+\end{theorem}
+
+We can now explore the core concepts of linear algebra like linear independence, spanning sets, bases, dimension, and linear transformations. The basic results from a first course on linear algebra (over $\mathbb{R}$) transfer to our more general setting, and you should feel free to use them here. 
+
+\begin{definition}
+Let $V$ be a vector space over a field $F$, and let $v_1, v_2, \ldots,v_n\in V$. Then
+\begin{itemize}
+\item $v_1, \ldots,v_n$ are \textbf{linearly independent} if for all $c_1, \ldots,c_n\in F$, $c_1v_1+ \cdots + c_nv_n = 0$ implies that $c_1  = \cdots c_n = 0$; and
+\item $v_1, \ldots,v_n$ \textbf{span} $V$ if for all $v\in V$, there exist $c_1,  \ldots,c_n\in F$ such that $c_1v_1+ \cdots + c_nv_n = v$.
+\end{itemize}
+\end{definition}
 
 
 
