@@ -95,9 +95,9 @@ Find the minimal polynomial of $3-\sqrt{5}$ over $\mathbb{Q}$.
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\subsection{Describing $F(\alpha)$ when $\alpha$ is algebraic over $F$}
+\subsection{Describing $F(\alpha)$}
 
-In Chapter~\ref{chapter:Fields}, we explored extension fields of the form $F(\alpha)$ where $\alpha$ was chosen from some larger field $E$. However, the definition of $F(\alpha)$ was abstract and ofter hard to work with. For example, $\mathbb{Q}(i)$ is defined to be the smallest subfield of $\mathbb{C}$ containing $\mathbb{Q}$ and $i$, but this doesn't tell us much about what the elements of $\mathbb{Q}(i)$ actually look like. Nevertheless, in Problem~\ref{prob.QAdjoinI}, we were able show that $\mathbb{Q}(i)$ is precisely the set of elements of the form $a+bi$ with $a,b\in \mathbb{Q}$, and we also succeeded in showing that $\mathbb{Q}(\sqrt{5}) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$. 
+In Chapter~\ref{chapter:Fields}, we explored extension fields of the form $F(\alpha)$ where $\alpha$ was chosen from some larger field $E$. However, the definition of $F(\alpha)$ was abstract and often hard to work with. For example, $\mathbb{Q}(i)$ is defined to be the smallest subfield of $\mathbb{C}$ containing $\mathbb{Q}$ and $i$, but this doesn't tell us much about what the elements of $\mathbb{Q}(i)$ actually look like. Nevertheless, in Problem~\ref{prob.QAdjoinI}, we were able show that $\mathbb{Q}(i)$ is precisely the set of elements of the form $a+bi$ with $a,b\in \mathbb{Q}$, and we also succeeded in showing that $\mathbb{Q}(\sqrt{5}) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$. 
 
 However, we noticed that describing $\mathbb{Q}(\alpha)$ is not always so easy since, for example, if $\alpha = \sqrt{2} + i$, then $\mathbb{Q}(\alpha) \neq \{a+b\alpha\mid a,b\in \mathbb{Q}\}$. That said, we've learned a lot since Chapter~\ref{chapter:Fields}, so let's take another go at trying to describe fields like $\mathbb{Q}(\alpha)$. 
 
@@ -199,10 +199,10 @@ Let's try to describe $\mathbb{Q}(\sqrt{2},i)$. Notice that $\mathbb{Q}(\sqrt{2}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Eisenstein's irreducibility criterion}
 
-Theorem~\ref{thm.DescribeFAdjoinr} provides a nice description of $F(\alpha)$ when $\alpha$ is algebraic over $F$. However, the description rests on us knowing the minimal polynomial of $\alpha$ over $F$, which in turn rests on us being able to determine when polynomials are irreducible. We now introduce an irreducibility criterion for $\mathbb{Q}[x]$.
+Theorem~\ref{thm.DescribeFAdjoinr} provides a nice description of $F(\alpha)$ when $\alpha$ is algebraic over $F$. However, the description rests on us knowing the minimal polynomial of $\alpha$ over $F$ (or at least its degree), which in turn rests on us being able to determine when polynomials are irreducible. We now introduce a useful irreducibility criterion for polynomials in $\mathbb{Q}[x]$.
 
 \begin{fact}[Eisenstein's Irreducibility Criterion (EIC)]\label{fact.Eisenstein}
-Let $p(x) = a_0 + a_1x + \cdots + a_nx^n$ with all $a_0,a_1,\ldots,a_n \in \mathbb{Z}$. Suppose that there is some prime number $p \in \mathbb{Z}$ such that all of the following conditions are met:
+Let $p(x) = a_0 + a_1x + \cdots + a_nx^n$ with all $a_0,a_1,\ldots,a_n \in \mathbb{Z}$. Suppose that there is some \emph{prime} number $p \in \mathbb{Z}$ such that all of the following conditions are met:
 \begin{enumerate}
 \item $p$ does \emph{not} divide $a_n$,
 \item $p$ does divide $a_i$ for all $i<n$, and
@@ -211,30 +211,58 @@ Let $p(x) = a_0 + a_1x + \cdots + a_nx^n$ with all $a_0,a_1,\ldots,a_n \in \math
 Then $p(x)$ is irreducible in $\mathbb{Q}[x]$.
 \end{fact}
 
-The proof of the EIC is  interesting and not too difficult, but as it is more  number-theoretic than algebraic, we will leave it for another time. Details can be found in other books or on \href{https://en.wikipedia.org/wiki/Eisenstein\%27s_criterion}{Wikipedia}. The idea is to take the polynomial $p(x)$ whose coefficients are all integers and consider it as a polynomial in $\mathbb{Z}_p[x]$ by reducing all of the coefficients modulo $p$. 
+The proof of the EIC is  interesting and not too difficult, but as it is more  number-theoretic than algebraic, we will leave it for another time.  The idea is to take the polynomial $p(x)$ whose coefficients are all integers and consider it as a polynomial in $\mathbb{Z}_p[x]$ by reducing all of the coefficients modulo $p$.
+Details can be found in other books or on \href{https://en.wikipedia.org/wiki/Eisenstein\%27s_criterion}{Wikipedia}. 
 
 \begin{problem}
-Use the EIC to show that $x^{8}-15$ is irreducible in $\mathbb{Q}[x]$. What did you choose as your prime $p$? Were there other choices?
-\end{problem}
-
-\begin{problem}
-Consider the polynomial $ f(x) = x^7 - \frac{5}{2}$.
+Use the EIC to show that each of the following polynomials are irreducible in $\mathbb{Q}[x]$. What did you choose as your prime $p$? Were there other choices?
 \begin{enumerate}
-\item Explain why the EIC does \emph{not} apply to $f(x)$.
-\item Prove that if $f(x)$ is reducible in $\mathbb{Q}[x]$, then so is $g(x) = 2x^7 - 5$.
-\item Use the EIC to show that $g(x)$ is irreducible, and conclude that $f(x)$ is also irreducible.
+\item  $f(x) = 7x^{4}+6x^5 + 12x-30$
+\item  $g(x) = x^{8}-6x^5 -30x^3 + 12$
 \end{enumerate}
 \end{problem}
 
-Let's try to determine the minimal polynomial of  $\zeta_5$. We know that $\zeta_5$ is algebraic over $\mathbb{Q}$ because it is a root of $x^5-1$. However, $x^5-1$ can not be the minimal polynomial since it has $x-1$ as a factor. 
+\begin{problem}
+Consider the polynomial $f(x) = x^7 - \frac{5}{2}$.
+\begin{enumerate}
+\item Explain why the EIC does \emph{not} apply to $f(x)$.
+\item Prove that if $f(x)$ is reducible in $\mathbb{Q}[x]$, then so is $g(x) = 2x^7 - 5$.
+\item Use the EIC to show that $g(x)$ is irreducible, and conclude that $f(x)$ is irreducible.
+\end{enumerate}
+\end{problem}
+
+Let's try to use the EIC to determine the minimal polynomial of some special elements, namely the $\zeta_n$. We know that $\zeta_n$ is algebraic over $\mathbb{Q}$ because it is a root of $x^n-1$. However, $x^n-1$ can not be the minimal polynomial since it has $x-1$ as a factor. But, we've observed a few times now that \[x^n-1 = (x-1)(x^{n-1} + x^{n-2} + \cdots + x^2 + x + 1).\]
+Set $\Psi_n(x) =  x^{n-1} + x^{n-2} + \cdots + x^2 + x + 1$. Since $(\zeta_n)^n-1 = 0$, it must be $\zeta_n-1 = 0$ or $\Psi_n(\zeta_n) = 0$. Of course, $\zeta_n-1 \neq 0$, so $\zeta_n$ is a root of $\Psi_n(x)$. Could $\Psi_n(x)$ be the minimal polynomial?
+
+\begin{problem}
+Show that $\Psi_4(x)=x^3+x^2+x+1$ is \emph{not} the minimal polynomial for $\zeta_4$ over $\mathbb{Q}$. What is the minimal polynomial? 
+\end{problem}
+
+So, we see that $\Psi_n(x)$ is not always the minimal polynomial for $\zeta_n$, as it fails for $n=4$. But what about for $n=5$? Could $\Psi_5(x) = x^4+x^3+x^2+x+1$ be the minimal polynomial for $\zeta_5$? We need to determine if $\Psi_5(x)$ is irreducible, but the EIC does not apply because there is no prime that divides the non-leading coefficients. Let's see if we can transform  $\Psi_5(x)$ into a related polynomial for which the EIC will apply.
+
+\begin{theorem}
+Let $F$ be a field, and let $p(x) \in F[x]$. If $p(x)$ is reducible in $F[x]$, then $p(x+1)$ is also reducible in $F[x]$.
+\end{theorem}
+
+\begin{problem}\label{prob.Cyclo5Irreducible}
+Consider the polynomial $\Psi_5(x) = x^4+x^3+x^2+x+1$.
+\begin{enumerate}
+\item Compute $\Psi_5(x+1)$, and write it in the form $a_4x^4+a_3x^3+a_2x^2+a_1x+a_0$. Consider using the fact that $x^5 - 1 = (x-1)\Psi_5(x)$ to help with the computation.
+\item Use the EIC to show that $\Psi_5(x+1)$ is irreducible. 
+\item Explain why $\Psi_5(x)$ is the minimal polynomial for $\zeta_5$ over $\mathbb{Q}$.
+\item Use Theorem~\ref{thm.DescribeFAdjoinr} to describe $\mathbb{Q}(\zeta_5)$.
+\end{enumerate}
+\end{problem}
+
+So, why was $\Psi_5(x)$ irreducible while $\Psi_4(x)$ was not? To address the general case, we could use a similar approach as in Problem~\ref{prob.Cyclo5Irreducible} to analyze $\Psi_n(x+1)$ (using the \href{https://en.wikipedia.org/wiki/Binomial_theorem}{Binomial Theorem} to simplify the expression). 
+
+\begin{problem}
+Make a conjecture as to when $\Psi_n(x) =  x^{n-1} + x^{n-2} + \cdots + x^2 + x + 1$ is the minimal polynomial for $\zeta_n$ over $\mathbb{Q}$. That is, try to fill in the blank: ``$\Psi_n(x)$ is the minimal polynomial for $\zeta_n$ over $\mathbb{Q}$ if and only if \fillInBlank{something about $n$}.'' If you have the time, try to prove your conjecture. 
+\end{problem}
+
+To learn more about the minimal polynomial for $\zeta_n$ (for any $n$), try looking up ``cyclotomic polynomials'' on \href{https://en.wikipedia.org/wiki/Cyclotomic_polynomial}{Wikipedia}.
 
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-% SUBSECTION
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\subsection{Minimal polynomial of roots of unity}
-
-Let's try to determine the minimal polynomial of the $\zeta_n$. We know that $\zeta_n$ is algebraic over $\mathbb{Q}$ because it is a root of $x^n-1$. However, $x^n-1$ can not be the minimal polynomial since it has $x-1$ as a factor. Dividing out 
 
 
 
