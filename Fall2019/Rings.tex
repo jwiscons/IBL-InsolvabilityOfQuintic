@@ -1041,8 +1041,8 @@ There are two  important sets attached to homomorphisms: the kernel and the imag
 \begin{definition}
 Let $\phi:R\to S$ be a ring homomorphism. 
 \begin{itemize}
-\item The \textbf{kernel} of $\phi$, denote $\ker \phi$, is defined to be $\ker \phi=\{a\in R\mid \phi(a)=0\}$. 
-\item The \textbf{image} of $\phi$, denoted  $\phi(R)$, is defined to be $\phi(R)=\{b\in S\mid b=\phi(a) \text{ for some $a\in R$}\}$.
+\item The \textbf{kernel} of $\phi$, denote $\ker \phi$, is $\ker \phi=\{a\in R\mid \phi(a)=0\}$. 
+\item The \textbf{image} of $\phi$, denoted  $\operatorname{im}\phi$ or  $\phi(R)$, is $\operatorname{im}\phi=\{b\in S\mid b=\phi(a) \text{ for some $a\in R$}\}$.
 \end{itemize}
 \end{definition}
 
@@ -1066,14 +1066,14 @@ Let $I$ be an ideal of a ring $R$. Define a function $\pi:R \rightarrow R/I$ by 
 As with groups, the kernel and image of a homomorphism have special properties and can be used to detect if a function is injective (one-to-one) or surjective (onto).
 
 \begin{theorem}\label{thm.KernelIsIdealImageIsSubring}
-Let $\phi:R\to S$ be a ring homomorphism. Then $\ker(\phi)$ is an ideal of $R$, and $\phi(R)$ is a subring of $S$.
+Let $\phi:R\to S$ be a ring homomorphism. Then $\ker(\phi)$ is an ideal of $R$, and $\operatorname{im}\phi$ is a subring of $S$.
 \end{theorem}
 
 \begin{theorem}\label{thm.HomInjectiveSurjective}
 Let $\phi:R\to S$ be a ring homomorphism. Then
 \begin{enumerate}
 \item $\phi$ is injective if and only if $\ker \phi = \{0\}$, and 
-\item $\phi$ is surjective if and only if $\phi(R) = S$.
+\item $\phi$ is surjective if and only if $\operatorname{im}\phi = S$.
 \end{enumerate}
 \end{theorem}
 
@@ -1095,7 +1095,7 @@ By Theorem~\ref{thm.EvalHom}, the ``evaluation at $i$'' function from $\mathbb{C
 
 The proof of the First Isomorphism Theorem for rings is essentially the same as for groups. Suppose we have a ring homomorphism $\phi:R\to S$. In order for $\phi$ to be an isomorphism, it must also be one-to-one and onto, but it may very well not be. However, with some slight adjustments, we can modify it to be both one-to-one and onto.
 
-First, to make $\phi$ surjective, we change the codomain from $S$ to $\phi(R)$. Technically, we have a different function now, but we will still call it $\phi$. Anyway, $\phi:R\to \phi(R)$ is now a surjective homomorphism (by the definition of the image). But how do we make it one-to-one? By Theorem~\ref{thm.HomInjectiveSurjective}, we need  the kernel to be trivial. To accomplish, we work with the quotient ring $R/ \ker \phi$. In this way, we  collapse all elements in the kernel to a single element (the  coset $\ker \phi$) that maps to $0$. Setting $K:= \ker \phi$, the picture is like this.
+First, to make $\phi$ surjective, we change the codomain from $S$ to $\phi(R)$, i.e.~the image of $\phi$. Technically, we have a different function now, but we will still call it $\phi$. Anyway, $\phi:R\to \phi(R)$ is now surjective (by the definition of the image). But how do we make it one-to-one? By Theorem~\ref{thm.HomInjectiveSurjective}, we need  the kernel to be trivial. To accomplish, we work in quotient ring $R/ \ker \phi$. This has the effect of  collapsing all elements in the kernel to a single element (the  coset $\ker \phi$) that maps to $0$. Setting $K:= \ker \phi$, the picture is like this.
 
 \begin{center}
 \begin{tikzpicture}[line width = 1, scale = 1.2]
@@ -1132,7 +1132,7 @@ First, to make $\phi$ surjective, we change the codomain from $S$ to $\phi(R)$. 
 \end{center}
 
 \begin{theorem}[First Isomorphism Theorem for Rings]\label{thm.FirstIsoRings}
-If $\phi:R\to S$ is a ring homomorphism, then  $R/\ker \phi\cong \phi(R)$.
+If $\phi:R\to S$ is a ring homomorphism, then  $R/\ker \phi\cong \operatorname{im} \phi$.
 \end{theorem}
 
 \begin{problem}
