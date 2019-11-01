@@ -169,7 +169,7 @@ Let $\alpha = \sqrt{2} + i$. In Problem~\ref{prob.Sqrt2PlusIIsAlgebraic}, we saw
 \end{enumerate}
 \end{problem}
 
-The next problem highlights how we use the minimal polynomial for $\alpha$ to compute (or rather, to simplify) in  $F(\alpha)$.
+The next problem highlights how we use the minimal polynomial for $\alpha$ to compute (or rather, simplify) in  $F(\alpha)$.
 
 \begin{problem}\label{prob.DescribeQRootx52x2}
 The polynomial $p(x) = x^5 + 2x + 2$ is irreducible in $\mathbb{Q}[x]$ (you do not need to prove this). Let $s$ be a root of $p(x)$. By Theorem~\ref{thm.DescribeFAdjoinr}, every element of $\mathbb{Q}(s)$ can be written in the form $a_0 + a_1s + a_2s^2 + a_3s^3 + a_4s^4$ for some $a_0,a_1,a_2,a_3,a_4 \in \mathbb{Q}$.
@@ -292,33 +292,53 @@ Let $F$ be a field. A \textbf{vector space over $F$} is a structure $(V,+,\{\lam
 \item \textbf{Addition Axioms:} Addition is associative and commutative; the element $0$ is an additive identity; every  $x\in F$ has an additive inverse with respect to $0$, denoted $-x$.
 \item \textbf{Distributivity Axioms:} For all $u,v \in V$ and all $c\in F$, $\lambda_c(u+v) = \lambda_cu+\lambda_cv$.
 \item \textbf{Compatibility Axioms:} For all $v \in V$ and all $c,d\in F$, 
-\begin{itemize}[label = $\circ$]
+\begin{enumerate}
 \item $\lambda_{c+d}v = \lambda_cv + \lambda_dv$,
 \item $\lambda_c(\lambda_dv) = \lambda_{cd}v$, and
 \item $\lambda_1v = v$.
-\end{itemize}
+\end{enumerate}
 \end{itemize}
 \end{definition}
 
-Notice that the distributivity axiom can also be expressed by saying that each $\lambda_c$ is a homomorphism from $(V,+)$ to $(V,+)$. The compatability axioms can also be framed in terms of a homomorphism (from $F$ to $\operatorname{End(V)}$), but we will not explore that here.
+Notice that the distributivity axiom can also be expressed by saying that each $\lambda_c$ is a homomorphism from $(V,+)$ to $(V,+)$. The compatibility axioms can also be framed in terms of a homomorphism (from $F$ to $\operatorname{End(V)}$), but we will not explore that here.
 
 As mentioned above, we tend to omit writing the $\lambda$, so for example, the distributivity axiom will be often written as $c(u+v) = cu+cv$.
 
-\begin{theorem}
+\begin{theorem}\label{thm.ExtensionFieldVectorSpace}
 Let $E$ be an extension field of $F$. Then $E$ is a vector space over $F$ where vector addition in $E$ is just field addition and scalar multiplication by an element of $F$ is just field multiplication.
 \end{theorem}
 
 We can now explore the core concepts of linear algebra like linear independence, spanning sets, bases, dimension, and linear transformations. The basic results from a first course on linear algebra (over $\mathbb{R}$) transfer to our more general setting, and you should feel free to use them here. 
 
 \begin{definition}
-Let $V$ be a vector space over a field $F$, and let $v_1, v_2, \ldots,v_n\in V$. Then
+Let $V$ be a vector space over a field $F$, and let $v_1, \ldots,v_n\in V$. Then
 \begin{itemize}
-\item $v_1, \ldots,v_n$ are \textbf{linearly independent} if for all $c_1, \ldots,c_n\in F$, $c_1v_1+ \cdots + c_nv_n = 0$ implies that $c_1  = \cdots c_n = 0$; and
-\item $v_1, \ldots,v_n$ \textbf{span} $V$ if for all $v\in V$, there exist $c_1,  \ldots,c_n\in F$ such that $c_1v_1+ \cdots + c_nv_n = v$.
+\item $v_1, \ldots,v_n$ are \textbf{linearly independent} if for all $c_1, \ldots,c_n\in F$, $c_1v_1+ \cdots + c_nv_n = 0$ implies that $c_1  = \cdots = c_n = 0$; 
+\item $v_1, \ldots,v_n$ \textbf{span} $V$ if for all $w\in V$, there exist $c_1,  \ldots,c_n\in F$ such that $c_1v_1+ \cdots + c_nv_n = w$;
+\item $v_1, \ldots,v_n$ form a \textbf{basis} for $V$ if they are linearly independent and span $V$.
 \end{itemize}
 \end{definition}
 
+Notice that we have defined linear independence and span only for finite sets of vectors, but the concepts can also be defined for infinite sets of vectors in a similar way. The importance of bases is more-or-less summarized in the following fact.
 
+\begin{fact}
+If $V$ is a vector space, then all bases have the same cardinality (``size''). If $\mathcal{B}$ is any basis for $V$, then every element of $V$ can be expressed as a linear combination of vectors in $\mathcal{B}$ in one and only one way.
+\end{fact}
+
+\begin{definition}
+The \textbf{dimension} of a vector space $V$ over a field $F$ is the cardinality of any basis for $V$.
+\end{definition}
+
+
+\begin{problem}
+Let $\alpha$ be a root of $p(x) = x^5 + 5x^4 - 5$. In Problem~\ref{prob.DescribeQRootx55x45}, we saw that $p(x)$ is the minimal polynomial for $\alpha$ over $\mathbb{Q}$ and that $\mathbb{Q}(\alpha)= \{a + b\alpha + c\alpha^2 + d\alpha^3 + e\alpha^4\mid a,b,c,d,e\in \mathbb{Q}\}$. By Theorem~\ref{thm.ExtensionFieldVectorSpace}, $\mathbb{Q}(\alpha)$ is a vector space over $\mathbb{Q}$.
+\begin{enumerate}
+\item Explain why the elements $1,\alpha,\alpha^2,\alpha^3,\alpha^4$ span $\mathbb{Q}(\alpha)$ as a vector space over $\mathbb{Q}$.
+\item Assume that $c_0+c_1\alpha+c_2\alpha^2+c_3\alpha^3+c_4\alpha^4 = 0$ for some $c_1,\ldots,c_4\in \mathbb{Q}$. Show that if at least one of  $c_1,\ldots,c_4$ is nonzero, then $\alpha$ is a root of a \emph{nonzero} polynomial of degree at most $4$.
+\item Explain why the elements $1,\alpha,\alpha^2,\alpha^3,\alpha^4$ are linearly independent as a vector space over $\mathbb{Q}$.
+\item What is the dimension of $\mathbb{Q}(\alpha)$ as a vector space over $\mathbb{Q}$.
+\end{enumerate}
+\end{problem}
 
 
 
