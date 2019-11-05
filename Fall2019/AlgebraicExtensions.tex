@@ -218,7 +218,7 @@ Details can be found in other books or on \href{https://en.wikipedia.org/wiki/Ei
 \begin{problem}
 Use the EIC to show that each of the following polynomials are irreducible in $\mathbb{Q}[x]$. What did you choose as your prime $p$? Were there other choices?
 \begin{enumerate}
-\item  $f(x) = 7x^{4}+6x^5 + 12x-30$
+\item  $f(x) = 7x^{4}+6x^3 + 12x-30$
 \item  $g(x) = x^{8}-6x^5 -30x^3 + 12$
 \end{enumerate}
 \end{problem}
@@ -301,15 +301,19 @@ Let $F$ be a field. A \textbf{vector space over $F$} is a structure $(V,+,\{\lam
 \end{itemize}
 \end{definition}
 
-Notice that the distributivity axiom can also be expressed by saying that each $\lambda_c$ is a homomorphism from $(V,+)$ to $(V,+)$. The compatibility axioms can also be framed in terms of a homomorphism (from $F$ to $\operatorname{End(V)}$), but we will not explore that here.
+Notice that the distributivity axiom can also be expressed by saying that each $\lambda_c$ is a homomorphism from $(V,+)$ to $(V,+)$. The compatibility axioms can also be framed in terms of a homomorphism, but we will not explore that here.
 
 As mentioned above, we tend to omit writing the $\lambda$, so for example, the distributivity axiom will be often written as $c(u+v) = cu+cv$.
 
 \begin{theorem}\label{thm.ExtensionFieldVectorSpace}
-Let $E$ be an extension field of $F$. Then $E$ is a vector space over $F$ where vector addition in $E$ is just field addition and scalar multiplication by an element of $F$ is just field multiplication.
+Let $E$ be an extension field of $F$. Then $E$ is a vector space over $F$ where vector addition for $E$ is  just the usual field addition for $E$ and scalar multiplication by an element $c\in F$ is just the usual field multiplication by $c$.
 \end{theorem}
 
-We can now explore the core concepts of linear algebra like linear independence, spanning sets, bases, dimension, and linear transformations. The basic results from a first course on linear algebra (over $\mathbb{R}$) transfer to our more general setting, and you should feel free to use them here. 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Degree of a field extension}
+We can now explore core concepts of linear algebra like linear independence, spanning sets, bases, dimension, and linear transformations. Basic results from a first course on linear algebra (over $\mathbb{R}$) transfer to our more general setting, and you should feel free to use them here. 
 
 \begin{definition}
 Let $V$ be a vector space over a field $F$, and let $v_1, \ldots,v_n\in V$. Then
@@ -329,7 +333,7 @@ If $V$ is a vector space, then all bases have the same cardinality (``size''). I
 This leads to the notion of dimension, which when considering field extensions (as in Theorem~\ref{thm.ExtensionFieldVectorSpace}) we will refer to as the degree of the extension.
 
 \begin{definition}
-The \textbf{dimension} of a vector space $V$ over a field $F$ is the cardinality of any basis for $V$. 
+The \textbf{dimension} of a vector space $V$ over a field $F$, denoted $\dim V$, is the cardinality of any basis for $V$. 
 \end{definition}
 
 \begin{definition}
@@ -340,13 +344,13 @@ If $E$ is an extension field of $F$, then the dimension of $E$ as a vector space
 Let $\alpha$ be a root of $p(x) = x^5 + 5x^4 - 5$. In Problem~\ref{prob.DescribeQRootx55x45}, we saw that $p(x)$ is the minimal polynomial for $\alpha$ over $\mathbb{Q}$ and that $\mathbb{Q}(\alpha)= \{a + b\alpha + c\alpha^2 + d\alpha^3 + e\alpha^4\mid a,b,c,d,e\in \mathbb{Q}\}$. By Theorem~\ref{thm.ExtensionFieldVectorSpace}, $\mathbb{Q}(\alpha)$ is a vector space over $\mathbb{Q}$.
 \begin{enumerate}
 \item Explain why the elements $1,\alpha,\alpha^2,\alpha^3,\alpha^4$ span $\mathbb{Q}(\alpha)$ as a vector space over $\mathbb{Q}$.
-\item Assume that $c_0+c_1\alpha+c_2\alpha^2+c_3\alpha^3+c_4\alpha^4 = 0$ for some $c_1,\ldots,c_4\in \mathbb{Q}$. Show that if at least one of  $c_1,\ldots,c_4$ is nonzero, then $\alpha$ is a root of some \emph{nonzero} polynomial that has degree at most $4$. 
-\item Explain why the elements $1,\alpha,\alpha^2,\alpha^3,\alpha^4$ are linearly independent as a vector space over $\mathbb{Q}$.
+\item Assume that $c_0+c_1\alpha+c_2\alpha^2+c_3\alpha^3+c_4\alpha^4 = 0$ for some $c_0,\ldots,c_4\in \mathbb{Q}$. Show that if at least one of  $c_0,\ldots,c_4$ is nonzero, then $\alpha$ is a root of some \emph{nonzero} polynomial that has degree at most $4$. 
+\item Explain why the elements $1,\alpha,\alpha^2,\alpha^3,\alpha^4$ are linearly independent over $\mathbb{Q}$.
 \item What is the degree of $\mathbb{Q}(\alpha)$ over $\mathbb{Q}$? That is, find $[\mathbb{Q}(\alpha):\mathbb{Q}]$.
 \end{enumerate}
 \end{problem}
 
-Generalizing our work in Problem~\ref{prob.BasisQRootx55x45}, we obtain a crutial theorem.
+Generalizing our work in Problem~\ref{prob.BasisQRootx55x45}, we obtain a crucial theorem.
 
 \begin{theorem}\label{thm.BasisExtensionField}
 Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $n$ be the degree of $\alpha$ over $F$. Then $\{1,\alpha,\alpha^2,\ldots,\alpha^{n-1}\}$ is a basis for $F(\alpha)$ over $F$, and $[F(\alpha):F] = n$. 
@@ -356,7 +360,7 @@ Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, 
 Use Theorem~\ref{thm.BasisExtensionField} and the results of Problem~\ref{prob.MinPolyCubeRoot11} to find a basis for $\mathbb{Q}(\sqrt[3]{11})$ over $\mathbb{Q}$ and compute $[\mathbb{Q}(\sqrt[3]{11}):\mathbb{Q}]$.
 \end{problem}
 
-\begin{problem} 
+\begin{problem}
 Use Theorem~\ref{thm.BasisExtensionField} and the results of Problem~\ref{prob.Degree3ExtOfF3} to find a basis for $\mathbb{Z}_3(r)$ over $\mathbb{Z}_3$ and compute $[\mathbb{Z}_3(r):\mathbb{Z}_3]$ where $r$ is a root of $p(x) = x^3-x+1 \in \mathbb{Z}_3[x]$.
 \end{problem}
 
@@ -371,11 +375,14 @@ Our approach to this will be as in Problem~\ref{prob.DescribeQAdjoinRoot2Andi}. 
 F(\alpha) &= \{a_0+a_1\alpha+\cdots+a_{m-1}\alpha^{m-1}\mid a_0,\ldots,a_{m-1} \in F\}\text{; and}\\
 F(\alpha,\beta) &= \{b_0+b_1\beta+\cdots+b_{n-1}\beta^{n-1}\mid b_0,\ldots,b_{n-1}\in F(\alpha)\}.
 \end{align*}
-But what we want is a basis for $F(\alpha,\beta)$ over $F$, so we want to express elements of $F(\alpha,\beta)$ using coefficients from $F$ (not $F(\alpha)$). However, notice that since each $b_i$ is in $F(\alpha)$, we can write each $b_i$ in terms of $1,\alpha,\ldots,\alpha^{m-1}$, using only coefficients from $F$. Doing this for each $b_i$ and simplifying, we see that every element of $F(\alpha,\beta)$ can be written as a linear combination of the vectors
-\[1,\alpha,\ldots, \alpha^{m-1}, 
-\beta,\alpha\beta,\ldots, \alpha^{m-1}\beta,\ldots,
-\beta^{n-1},\alpha\beta^{n-1},\ldots, \alpha^{m-1}\beta^{n-1}\]
-using only coefficients from $F$. And moreover, it can be shown that this set of vectors is linearly independent, so we found a basis for $F(\alpha,\beta)$ over $F$. The basis has size $mn$.
+But what we want is a basis for $F(\alpha,\beta)$ over $F$, so we want to express elements of $F(\alpha,\beta)$ using coefficients from $F$ (not $F(\alpha)$). However, notice that since each $b_i$ is in $F(\alpha)$, we can write each $b_i$ in terms of $1,\alpha,\ldots,\alpha^{m-1}$, using only coefficients from $F$. Doing this for each $b_i$ and simplifying, we see that every element of $F(\alpha,\beta)$ can be written as a linear combination of the elements
+\begin{align*}
+&1,\alpha,\ldots, \alpha^{m-1},\\ 
+&\beta,\alpha\beta,\ldots, \alpha^{m-1}\beta,\\
+&\;\vdots\\
+&\beta^{n-1},\alpha\beta^{n-1},\ldots, \alpha^{m-1}\beta^{n-1}
+\end{align*}
+using only coefficients from $F$. And moreover, it can be shown that these are linearly independent, so we found a basis for $F(\alpha,\beta)$ over $F$. The basis has size $mn$.
 
 In fact, this process generalizes in a straightforward way to any chain of field extensions $F\subseteq K \subseteq E$. In words, a basis for $E$ as a vector space over $F$ can be found by multiplying a basis for $K$ over $F$ by the elements of a basis for $E$ over $K$. This also yields an extremely useful multiplicative property for the degrees in a chain of field extensions, namely that $[E:F] = [E:K][K:F]$. The next fact summarizes our findings.
 
@@ -392,8 +399,24 @@ Let's find a basis for $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}$.
 \item Use Theorem~\ref{thm.BasisExtensionField} to find a basis for  $\mathbb{Q}(\sqrt[4]{2})$ over $\mathbb{Q}$.
 \item Use Theorem~\ref{thm.ReducibilityTestDegree2or3} to show $x^2+x+1$ is the minimal polynomial of $\zeta_3$ over $\mathbb{Q}(\sqrt[4]{2})$.
 \item Use Theorem~\ref{thm.BasisExtensionField} to find a basis for  $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}(\sqrt[4]{2})$.
-\item Use Theorem~\ref{thm.BasisChainExtensionField} to find a basis for $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}$.
-\item What is $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}]$?
+\item Use Theorem~\ref{thm.BasisChainExtensionField} to find a basis for $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}$ and determine $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}]$.
+
+\end{enumerate}
+\end{problem}
+
+When exploring degrees of extensions, the following fact from linear algebra often comes up: if $W$ is a subspace of $V$, then $\dim W = \dim V$ if and only if $W = V$. Applying this to field extensions yields the following.
+
+\begin{fact}
+Let $F\subseteq K \subseteq E$ be fields. Then $[K:F] = [E:F]$ if and only if $K = E$.
+\end{fact}
+
+\begin{problem}
+Let's revisit the fields $\mathbb{Q}(\sqrt{2}+i)$ and $\mathbb{Q}(\sqrt{2},i)$.
+\begin{enumerate}
+\item Explain why $\mathbb{Q}(\sqrt{2}+i)\subseteq \mathbb{Q}(\sqrt{2},i)$.
+\item Use Theorem~\ref{thm.BasisExtensionField} and Problem~\ref{prob.DescribeQAdjoinSqrt2PlusI} to determine $[\mathbb{Q}(\sqrt{2}+i):\mathbb{Q}]$.
+\item Use Theorem~\ref{thm.BasisChainExtensionField} and Problem~\ref{prob.DescribeQAdjoinRoot2Andi} to determine $[\mathbb{Q}(\sqrt{2},i):\mathbb{Q}]$.
+\item Use the previous parts to show that $\mathbb{Q}(\sqrt{2}+i)= \mathbb{Q}(\sqrt{2},i)$.
 \end{enumerate}
 \end{problem}
 
@@ -417,15 +440,15 @@ Let's show that $\sqrt[3]{2}\notin \mathbb{Q}(\sqrt{2})$.
 \end{enumerate}
 \end{problem}
 
-Let's generalize the last problem.
+%Let's generalize the last problem.
 
 \begin{theorem}
 Let $m,n\in \mathbb{Z}$ with $2\le m<n$. If $p,q\in \mathbb{Z}$ are prime, then $\sqrt[\overset{n}{}]{p} \notin \mathbb{Q}(\sqrt[\overset{m}{}]{q})$.
 \end{theorem}
 
-\begin{problem}
-Compute the degree of $\mathbb{Q}(\sqrt[3]{5},\sqrt{2},i)$ over $\mathbb{Q}$.
-\end{problem}
+%\begin{problem}
+%Compute the degree of $\mathbb{Q}(\sqrt[3]{5},\sqrt{2},i)$ over $\mathbb{Q}$.
+%\end{problem}
 
 \begin{problem}\label{prob.DegreeQFifthRoot3AndZeta5}
 Let's find the degree of $\mathbb{Q}(\sqrt[5]{3},\zeta_5)$ over $\mathbb{Q}$.
@@ -437,7 +460,7 @@ Let's find the degree of $\mathbb{Q}(\sqrt[5]{3},\zeta_5)$ over $\mathbb{Q}$.
 \end{enumerate}
 \end{problem}
 
-Let's wrap up this section with a couple of useful results. The first says that if $E$ is a \emph{finite dimensional} extension of $F$, then every element of $E$ is in fact algebraic over $F$. To prove this, we need to take an arbitrary $r\in E$, and show it is a root of some nonzero polynomial $F[x]$. But how do we find such a polynomial? To explore this, let's let $n= [E:F]$ (which we are assuming is finite). This means that every basis for $E$ over $F$ consists of $n$ elements. And by a result from  linear algebra, a set of $n+1$ vectors must be linearly dependent. If we apply this to the set $\{1,r,r^2,\ldots,r^n\}$, we see that there are elements $a_0,a_1,a_2,\ldots,a_n\in F$ that are \emph{not} all zero such that \[a_0+a_1r+a_2r^2+\cdots+a_nr^n = 0.\]
+Let's wrap up this section with a couple more results. The first says that if $E$ is a \emph{finite dimensional} extension of $F$, then every element of $E$ is in fact algebraic over $F$. To prove this, we need to take an arbitrary $r\in E$, and show it is a root of some nonzero polynomial $F[x]$. But how do we find such a polynomial? To explore this, let's let $n= [E:F]$ (which we are assuming is finite). This means that every basis for $E$ over $F$ consists of $n$ elements. And by a result from  linear algebra, a set of $n+1$ vectors must be linearly dependent. If we apply this to the set $\{1,r,r^2,\ldots,r^n\}$, we see that there are elements $a_0,a_1,a_2,\ldots,a_n\in F$ that are \emph{not} all zero such that \[a_0+a_1r+a_2r^2+\cdots+a_nr^n = 0.\]
 This implies that $r$ is a root of the \emph{nonzero} polynomial $p(x) = a_0+a_1x+a_2x^2+\cdots+a_nx^n$, so $r$ is indeed algebraic over $F$. Also, $r\in E$ implies that $F(r)\subseteq E$, so we now have that $[E:F] = [E:F(r)][F(r):F]$. Thus $[F(r):F]$ divides $[E:F]$, so as $[F(r):F]$ equals the degree of $r$ over $F$ (by Theorem~\ref{thm.BasisExtensionField}), we also get that the degree of $r$ over $F$ divides $[E:F]$. Here is the summary.
 
 \begin{fact}
@@ -451,11 +474,33 @@ Let $E$ be an extension field of $F$, and let $r\in E$. Then $r$ is algebraic ov
 \end{corollary}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-% SECTION
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\section{Field Automorphisms}
+\subsection{Linear transformations}
+Let's briefly explore linear transformations in the context of field extensions.
+
+\begin{definition}
+Let $V$ and $W$ be vector spaces over a field $F$. A map $\phi:V\to W$ is called an \textbf{$F$-linear transformation} (or \textbf{homomorphism of $F$-vector spaces}) if the following are true for all $u,v\in V$ and all $c\in F$:
+\begin{enumerate}
+\item $\phi(u+v)=\phi(u)+\phi(v)$;
+\item $\phi(cu)=c\phi(u)$.
+\end{enumerate}
+\end{definition}
+
+\begin{problem}
+Show that $\psi:\mathbb{Q}(\sqrt{2})\rightarrow\mathbb{Q}(\sqrt{2})$ defined via $\phi(a+b\sqrt{2}) = a-b\sqrt{2}$ is a $\mathbb{Q}$-linear transformation.
+\end{problem}
+
+\begin{problem}
+Show that $\phi:\mathbb{C}\rightarrow\mathbb{C}$ defined via $\phi(z) = \overline{z}$ is an $\mathbb{R}$-linear transformation.
+\end{problem}
+
+\begin{problem}
+The results of Problem~\ref{prob.DescribeQAdjoinRoot2Andi} show that 
+\[\mathbb{Q}(\sqrt{2},i) = \left\{a_0+a_1\sqrt{2} + a_2i + a_3i\sqrt{2}\mid a_0,a_1,a_2,a_3\in \mathbb{Q}\right\}.\]
+Consider $\phi:\mathbb{Q}(\sqrt{2},i)\rightarrow\mathbb{Q}(\sqrt{2},i)$ defined by $\phi(z) = \overline{z}$. 
+As $\mathbb{Q}(\sqrt{2},i)$ is an extension of $\mathbb{Q}(\sqrt{2})$, $\mathbb{Q}(\sqrt{2},i)$ is a vector space over $\mathbb{Q}(\sqrt{2})$. Show that $\phi$ is a $\mathbb{Q}(\sqrt{2})$-linear transformation.
+\end{problem}
 
 
 
