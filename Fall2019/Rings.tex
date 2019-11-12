@@ -1016,7 +1016,7 @@ Let $R$ be a ring, and let $c\in R$. Define a function $\mathcal{E}_c:R[x] \righ
 
 Let's prove some general properties about homomorphisms.
 
-\begin{theorem}
+\begin{theorem}\label{thm.HomPreservesAdditiveProperties}
 Let $\phi:R\to S$  be a ring homomorphism. Then 
 \begin{enumerate}
 \item $\phi(0) = 0$; and
@@ -1024,15 +1024,15 @@ Let $\phi:R\to S$  be a ring homomorphism. Then
 \end{enumerate}
 \end{theorem}
 
-\begin{theorem}
-Suppose that $R$ is a ring with unity. Let $\phi:R\to S$  be a ring homomorphism.  Then 
+\begin{theorem}\label{thm.HomPreservesMultiplicativeProperties}
+Suppose that $R$ is a ring with unity. Let $\phi:R\to S$  be a surjective ring homomorphism.  Then 
 \begin{enumerate}
 \item $\phi(1) = 1$; and
 \item for all $a\in U(R)$, $\phi(a^{-1}) = (\phi(a))^{-1}$.
 \end{enumerate}
 \end{theorem}
 
-\begin{theorem}[Composition of homomorphisms]
+\begin{theorem}[Composition of homomorphisms]\label{thm.CompositionHomomorphism}
 Let $\phi:R_1\to R_2$ and $\psi:R_2\to R_3$ be ring homomorphisms. Then $\psi\circ\phi:R_1 \to R_3$ is also a ring homomorphism.
 \end{theorem}
 

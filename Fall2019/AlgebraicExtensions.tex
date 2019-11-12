@@ -356,7 +356,7 @@ Generalizing our work in Problem~\ref{prob.BasisQRootx55x45}, we obtain a crucia
 Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $n$ be the degree of $\alpha$ over $F$. Then $\{1,\alpha,\alpha^2,\ldots,\alpha^{n-1}\}$ is a basis for $F(\alpha)$ over $F$, and $[F(\alpha):F] = n$. 
 \end{theorem}
 
-\begin{problem}
+\begin{problem}\label{prob.BasisForQAdjoinCubeRoot11}
 Use Theorem~\ref{thm.BasisExtensionField} and the results of Problem~\ref{prob.MinPolyCubeRoot11} to find a basis for $\mathbb{Q}(\sqrt[3]{11})$ over $\mathbb{Q}$ and compute $[\mathbb{Q}(\sqrt[3]{11}):\mathbb{Q}]$.
 \end{problem}
 
@@ -400,7 +400,6 @@ Let's find a basis for $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}$.
 \item Use Theorem~\ref{thm.ReducibilityTestDegree2or3} to show $x^2+x+1$ is the minimal polynomial of $\zeta_3$ over $\mathbb{Q}(\sqrt[4]{2})$.
 \item Use Theorem~\ref{thm.BasisExtensionField} to find a basis for  $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}(\sqrt[4]{2})$.
 \item Use Theorem~\ref{thm.BasisChainExtensionField} to find a basis for $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}$ and determine $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}]$.
-
 \end{enumerate}
 \end{problem}
 
@@ -439,8 +438,6 @@ Let's show that $\sqrt[3]{2}\notin \mathbb{Q}(\sqrt{2})$.
 \item What is $[\mathbb{Q}(\sqrt[3]{2}):\mathbb{Q}]$? What is $[\mathbb{Q}(\sqrt{2}):\mathbb{Q}]$? Prove that $\sqrt[3]{2}\notin \mathbb{Q}(\sqrt{2})$.
 \end{enumerate}
 \end{problem}
-
-%Let's generalize the last problem.
 
 \begin{theorem}
 Let $m,n\in \mathbb{Z}$ with $2\le m<n$. If $p,q\in \mathbb{Z}$ are prime, then $\sqrt[\overset{n}{}]{p} \notin \mathbb{Q}(\sqrt[\overset{m}{}]{q})$.
@@ -488,11 +485,11 @@ Let $V$ and $W$ be vector spaces over a field $F$. A map $\phi:V\to W$ is called
 \end{definition}
 
 \begin{problem}
-Show that $\psi:\mathbb{Q}(\sqrt{2})\rightarrow\mathbb{Q}(\sqrt{2})$ defined via $\phi(a+b\sqrt{2}) = a-b\sqrt{2}$ is a $\mathbb{Q}$-linear transformation.
+Show that $\phi:\mathbb{Q}(\sqrt{2})\rightarrow\mathbb{Q}(\sqrt{2})$ defined via $\phi(a+b\sqrt{2}) = a-b\sqrt{2}$ is a $\mathbb{Q}$-linear transformation.
 \end{problem}
 
 \begin{problem}
-Show that $\phi:\mathbb{C}\rightarrow\mathbb{C}$ defined via $\phi(z) = \overline{z}$ is an $\mathbb{R}$-linear transformation.
+Show that $\gamma:\mathbb{C}\rightarrow\mathbb{C}$ defined via $\gamma(z) = \overline{z}$ is an $\mathbb{R}$-linear transformation.
 \end{problem}
 
 \begin{problem}
@@ -503,7 +500,145 @@ As $\mathbb{Q}(\sqrt{2},i)$ is an extension of $\mathbb{Q}(\sqrt{2})$, $\mathbb{
 \end{problem}
 
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Isomorphisms of fields}
 
+We are closing in on our goal of understanding when a polynomial is solvable by radicals or not. Recall that $p(x)\in F[x]$ is solvable by radicals if all of the roots of $p(x)$ are contained in some radical extension of $F$. This implies that if $r_1,\ldots,r_n$ are the roots of $p(x)$, then  $F(r_1,\ldots,r_n)$ must also be contained in a radical extension. We've been working hard to understand fields like $F(r_1,\ldots,r_n)$, and with Theorem~\ref{thm.BasisChainExtensionField}, we are now able to explicitly describe the elements of $F(r_1,\ldots,r_n)$ as linear combinations of a particular basis, which involves certain powers of $r_1,\ldots,r_n$. But, we still need tools for analyzing $F(r_1,\ldots,r_n)$ in order to understand if it could be contained a radical extension or not. 
 
+It turns out that the key idea is to study certain functions from $F(r_1,\ldots,r_n)$ to itself. Remembering that $F(r_1,\ldots,r_n)$ is a field (hence a ring) and also a vector space over $F$, we look at functions that preserve both structures, namely ring homomorphism that are also $F$-linear transformations. The next theorem provides a convenient characterization of $F$-linear transformation for maps that are already known to be ring homomorphisms.  
+ 
+\begin{theorem}\label{thm.RingHomPlusLinearTrans}
+Let $K$ and $L$ be extension fields of $F$, and let $\phi:K\to L$ be a surjective ring homomorphism. Then $\phi$ is an $F$-linear transformation if and only if $\phi(c) = c$ for all $c\in F$.
+\end{theorem}
 
+In Theorem~\ref{thm.RingHomPlusLinearTrans}, the property that ``$\phi(c) = c$ for all $c\in F$'' will be written as \emph{$\phi$ fixes $F$} or \emph{$\phi$ leaves  $F$ fixed}.
+
+\begin{definition}
+Let $\phi:X\to Y$ be a function.  
+\begin{itemize}
+\item Let $A \subseteq X$. We say that \textbf{$\phi$ fixes $A$} if $\phi(a) = a$ for all $a\in A$. 
+\item Define $\Fix(\phi)$ to be the set of \emph{all} $x\in X$ such that $\phi(x) = x$.
+\end{itemize}
+\end{definition}
+
+In fact, we've already seen many examples of morphisms that fix a field; the next problem highlights two of them.
+
+\begin{problem}
+Let's explore a couple familiar maps and show that they fix certain fields.
+\begin{enumerate}
+\item Define $\phi:\mathbb{Q}(\sqrt{2})\rightarrow\mathbb{Q}(\sqrt{2})$ via $\phi(a+b\sqrt{2}) = a-b\sqrt{2}$. Show that $\phi$ fixes  $\mathbb{Q}$.
+\item Define $\gamma:\mathbb{C}\rightarrow\mathbb{C}$ via $\gamma(z) = \overline{z}$. Show that $\gamma$ fixes  $\mathbb{Q}$. What is $\Fix(\gamma)$?
+\end{enumerate}
+\end{problem}
+
+We now start to expose the implications of a morphism fixing a field. The next theorem is quite important.
+
+\begin{theorem}\label{thm.HomFixingFPermutesRootsOfPolysOverF}
+Let $K$ and $L$ be extension fields of $F$, and let $p(x)\in F[x]$. Suppose that $\phi:K\to L$ is a ring homomorphism that fixes $F$. If $\alpha\in K$ is a root of $p(x)$, then $\phi(\alpha)$ is also a root of $p(x)$. 
+\end{theorem}
+
+\begin{problem}\label{prob.ImageCubeRoot11UnderHomFixingQ}
+Suppose that $\phi:\mathbb{Q}(\sqrt[3]{7})\rightarrow\mathbb{C}$ is a ring homomorphism that fixes $\mathbb{Q}$. Use the fact that $\sqrt[3]{7}$ is a root of $x^3 - 7$ together with Theorems~\ref{thm.nthRoots} and~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} to list the possible values of $\phi(\sqrt[3]{7})$.
+\end{problem}	
+
+\begin{problem}
+Suppose that $\psi:\mathbb{C}\to \mathbb{C}$ is an isomorphism that fixes $\mathbb{Q}$. Use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} (and the idea of Problem~\ref{prob.ImageCubeRoot11UnderHomFixingQ}) to list the possible values of $\psi(\sqrt{5})$ and $\psi(\zeta_5)$. Try to make each list as short as possible, and explain your reasoning.
+\end{problem}
+
+\begin{problem}
+Use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} to explain why each map defined below is \emph{not} be a homomorphism.
+\begin{enumerate}
+\item $\delta:\mathbb{Q}(\sqrt{5})\rightarrow\mathbb{Q}(i)$ defined by $\delta(a+b\sqrt{5}) = a+ b i$
+\item $\sigma:\mathbb{Q}(\sqrt[3]{7})\rightarrow\mathbb{Q}(\sqrt[3]{7})$ defined by $\sigma(a+b\sqrt[3]{7} + c (\sqrt[3]{7})^2 = a-b\sqrt[3]{7} + c (\sqrt[3]{7})^2$
+\end{enumerate}
+\end{problem}
+
+Let's use what we've learned so far to explore which subfields of $\mathbb{C}$ could be isomorphic to $\mathbb{Q}(\sqrt[3]{11})$ (just as an example). Let $\phi:\mathbb{Q}(\sqrt[3]{11})\to \mathbb{Q}(\beta)$ be an isomorphism---we'll try to find the possible values of $\beta$. Notice that Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} may be helpful, but only if we know that $\phi$ fixes the coefficients of a polynomial that has $\sqrt[3]{11}$ as a root. Let's first show that $\phi$ must fix all of $\mathbb{Q}$. 
+
+\begin{problem}\label{prob.HomFixesQ}
+Let $K$ and $L$ be extension fields of $\mathbb{Q}$. Suppose that $\phi:K\to L$ is a surjective ring homomorphism. We'll show that $\phi$ fixes $\mathbb{Q}$.
+\begin{enumerate}
+\item Use Theorem~\ref{thm.HomPreservesMultiplicativeProperties} (and properties of homomorphisms) to show that $\phi$ fixes every positive integer $n$. Remember that $2=1+1$, $3 = 1+1+1$, etc.
+\item Use Theorem~\ref{thm.HomPreservesAdditiveProperties} to conclude that $\phi$ fixes all integers.
+\item Let $\frac{a}{b}\in \mathbb{Q}$ be any rational number (with $a,b\in \mathbb{Z}$). Use Theorem~\ref{thm.HomPreservesMultiplicativeProperties}, to show that $\phi$ fixes  $\frac{a}{b}$.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prob.SubfieldsIsoToQAdjoinCubeRoot11}
+Let $\beta\in \mathbb{C}$, and assume that $\phi:\mathbb{Q}(\sqrt[3]{11})\to \mathbb{Q}(\beta)$ is an isomorphism.
+Recall from Problem~\ref{prob.BasisForQAdjoinCubeRoot11} that $1,\sqrt[3]{11},(\sqrt[3]{11})^2$ is a basis for $\mathbb{Q}(\sqrt[3]{11})$, so 
+\[ \mathbb{Q}(\sqrt[3]{11})= \{a+b\sqrt[3]{11} + c (\sqrt[3]{11})^2\mid a,b,c\in \mathbb{Q}\}.\] 
+\begin{enumerate}
+\item Use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} and Problem~\ref{prob.HomFixesQ} to list the three possible values of $\phi(\sqrt[3]{11})$.
+\item Use Problem~\ref{prob.HomFixesQ} to describe the possible values of $\phi(a+b\sqrt[3]{11} + c (\sqrt[3]{11})^2)$.
+\item What does this imply are the possibilities for $\mathbb{Q}(\beta)$?
+\end{enumerate}
+\end{problem}
+
+Problem~\ref{prob.SubfieldsIsoToQAdjoinCubeRoot11} raises an important question: can we always create an isomorphism taking $\sqrt[3]{11}$ to $\beta$ whenever $\beta$ is a root of the same minimal polynomial as $\sqrt[3]{11}$? The next fact answers the quesion---it will be \emph{extremely important} for us. The proof is not too difficult, but we will take it as fact. The main ingredients are some of the linear algebra that we've developed and (perhaps not surprisingly) the division algorithm.
+
+\begin{fact}\label{fact.SameMinPolyIsomorphic}
+Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$. Let $m(x)$ be the minimal polynomial of $\alpha$ over $F$, and let $n$ be the degree of $\alpha$ over $F$. Suppose that $\beta$ is also a root of $m(x)$, and define $\phi:F(\alpha)\to F(\beta)$ by
+\[\phi(a_0 + a_1\alpha+\cdots+a_{n-1}\alpha^{n-1}) = a_0 + a_1\beta+\cdots+a_{n-1}\beta^{n-1}\]
+for all $a_0,a_1,\ldots,a_{n-1} \in F$. Then $\phi$ is an isomorphism, and $\phi$ fixes $F$.
+\end{fact}
+
+\begin{problem}
+Use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} (together with Problem~\ref{prob.HomFixesQ}) and Fact~\ref{fact.SameMinPolyIsomorphic} to determine if each pair of fields are isomorphic or not. If they are, write down a formula for an isomorphism; if they are not, explain why not.
+\begin{enumerate}
+\item $\mathbb{Q}(i)$ and $\mathbb{Q}(\sqrt{2})$
+\item $\mathbb{Q}(\sqrt[4]{11})$ and $\mathbb{Q}(i\sqrt[4]{11})$ 
+\end{enumerate}
+\end{problem}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Automorphisms}
+
+As mentioned earlier, we really want to studying maps from a field to itself. We now down define one of the keys ingredients to our eventual solution to the insolvability of the quintic.
+
+\begin{definition}
+Let $K$ be a field. An isomorphism from $K$ to $K$ is called an \textbf{automorphism} of $K$. 
+Define $\Aut(K)$ to be the set of all automorphisms of $K$, and if $F$ is a subfield of $K$, define $\Aut(K/F)$ to be the set of all automorphisms of $K$ that fix $F$.
+\end{definition}
+
+Unpacking the definition, we see that automorphisms of $K$ are  bijections from $K$ to $K$ (also called permutations of $K$) that are also homomorphisms. Since we know that the composition of two bijections is a bijections and the composition of two homomorphisms is a homomorphism (see Theorem~\ref{thm.CompositionHomomorphism}), we immediately arrive at the following fact.
+
+\begin{fact}
+Let $F$ be a subfield of $K$. Both of $\Aut(K)$ and $\Aut(K/F)$ are groups with respect to function composition. The identity is the identity function, which will be denoted id.
+\end{fact}
+
+\begin{example}\label{prob.AutQAdjoinRoot5OverQ}
+Let's try to compute $\Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$. Recall that we know $\mathbb{Q}(\sqrt{5}) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}.$
+Thus, every function $\phi\in \Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$ is determined by a formula of the form \[\phi(a+b\sqrt{5}) = \text{ ??? }\]
+Since $\phi\in \Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$, $\phi$ fixes $\mathbb{Q}$, so we can rewrite the above formula as 
+\[\phi(a+b\sqrt{5}) = \phi(a)+\phi(b\sqrt{5}) = \phi(a)+\phi(b)\phi(\sqrt{5}) = a + b\phi(\sqrt{5}).\]
+Thus, to find a formula for $\phi$ we just need to decide the value for $\phi(\sqrt{5})$. Now, we know that $\sqrt{5}$ is a root of $x^2-5$, so by Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF}, there are only two options: $\phi(\sqrt{5}) = \sqrt{5}$ or $\phi(\sqrt{5}) = -\sqrt{5}$. Let's name the possibilities: 
+\begin{itemize}
+\item $\phi_1$ sends $\sqrt{5}\mapsto \sqrt{5}$, so  $\phi_1(a + b\sqrt{5}) = a + b\sqrt{5}$;
+\item $\phi_2$ sends $\sqrt{5}\mapsto -\sqrt{5}$, so  $\phi_1(a + b\sqrt{5}) = a - b\sqrt{5}$.
+\end{itemize}
+ Of course, $\phi_1$ is just the identity, so $\phi_1 \in \Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$. To check the other possibility, we can use Fact~\ref{fact.SameMinPolyIsomorphic}, which says that $\phi_2$ is an isomorphism from $\mathbb{Q}(\sqrt{5})$ to $\mathbb{Q}(-\sqrt{5})$. Since $\mathbb{Q}(-\sqrt{5}) =\mathbb{Q}(\sqrt{5})$, $\phi_2$ is indeed an automorphism of $\mathbb{Q}(\sqrt{5})$ (that fixes $\mathbb{Q}$). Thus, $\phi_2 \in \Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$. These are the only possibilities, so 
+\[\Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q}) = \{\phi_1,\phi_2\} = \{\text{id},\phi_2\}.\]
+And, since there is only one group of order $2$ (up to isomorphism), $\Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q}) \cong \mathbb{Z}_2$.
+\end{example}
+
+\begin{problem}\label{prob.AutQAdjoinZeta5OverQ}
+Write down a formula for each function in $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$. Can you determine which familiar group $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ is isomorphic to?
+\end{problem}
+
+\begin{problem}\label{prob.AutQAdjoinZeta5OverQ}
+Use that $\mathbb{Q}(\sqrt[3]{11}) \subseteq \mathbb{R}$ while $\mathbb{Q}(\sqrt[3]{11}\zeta_3) \nsubseteq \mathbb{R}$ to show  $\Aut(\mathbb{Q}(\sqrt[3]{11})/\mathbb{Q}) = \{\text{id}\}$.
+\end{problem}
+
+We've seen that each element of $\Aut({F}(\alpha)/F)$ must take $\alpha$ to another root of the minimal polynomial for $\alpha$ over $F$. Moreover, for each each possible $\phi\in \Aut({F}(\alpha)/F)$, the value of $\phi(\alpha)$ can be use to completely describe $\phi$. Let's gather this up in a fact, together with a useful consequence.
+
+\begin{fact}
+Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $n$ be the degree of $\alpha$ over $F$. Then each $\phi\in \Aut({F}(\alpha)/F)$ is completely determined by the value $\phi(\alpha)$, and consequently  $|\Aut({F}(\alpha)/F|\le n = [F(\alpha):F]$.
+\end{fact}
 
