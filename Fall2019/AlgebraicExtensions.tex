@@ -95,7 +95,7 @@ Find the minimal polynomial of $3-\sqrt{5}$ over $\mathbb{Q}$.
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\subsection{Describing $F(\alpha)$}
+\subsection{Describing elements of $F(\alpha)$}
 
 In Chapter~\ref{chapter:Fields}, we explored extension fields of the form $F(\alpha)$ where $\alpha$ was chosen from some larger field $E$. However, the definition of $F(\alpha)$ was abstract and often hard to work with. For example, $\mathbb{Q}(i)$ is defined to be the smallest subfield of $\mathbb{C}$ containing $\mathbb{Q}$ and $i$, but this doesn't tell us much about what the elements of $\mathbb{Q}(i)$ actually look like. Nevertheless, in Problem~\ref{prob.QAdjoinI}, we were able show that $\mathbb{Q}(i)$ is precisely the set of elements of the form $a+bi$ with $a,b\in \mathbb{Q}$, and we also succeeded in showing that $\mathbb{Q}(\sqrt{5}) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}$. 
 
@@ -384,12 +384,12 @@ But what we want is a basis for $F(\alpha,\beta)$ over $F$, so we want to expres
 \end{align*}
 using only coefficients from $F$. And moreover, it can be shown that these are linearly independent, so we found a basis for $F(\alpha,\beta)$ over $F$. The basis has size $mn$.
 
-In fact, this process generalizes in a straightforward way to any chain of field extensions $F\subseteq K \subseteq E$. In words, a basis for $E$ as a vector space over $F$ can be found by multiplying a basis for $K$ over $F$ by the elements of a basis for $E$ over $K$. This also yields an extremely useful multiplicative property for the degrees in a chain of field extensions, namely that $[E:F] = [E:K][K:F]$. The next fact summarizes our findings.
+In fact, this process generalizes in a straightforward way to any chain of field extensions $F\subseteq K \subseteq L$. In words, a basis for $L$ as a vector space over $F$ can be found by multiplying a basis for $K$ over $F$ by the elements of a basis for $L$ over $K$. This also yields an extremely useful multiplicative property for the degrees in a chain of field extensions, namely that $[L:F] = [L:K][K:F]$. The next fact summarizes our findings.
 
 \begin{fact}\label{thm.BasisChainExtensionField}
-Let $F\subseteq K \subseteq E$ be fields. If $\{u_1,\ldots,u_m\}$ is basis for $K$ over $F$ and $\{w_1,\ldots,w_n\}$ is basis for $E$ over $K$, then 
+Let $F\subseteq K \subseteq L$ be fields. If $\{u_1,\ldots,u_m\}$ is basis for $K$ over $F$ and $\{w_1,\ldots,w_n\}$ is basis for $L$ over $K$, then 
 \[ \{u_1w_1,\ldots,u_mw_1,u_1w_2,\ldots,u_mw_2,\ldots,u_1w_n,\ldots,u_mw_n\}\]
-is a basis for $E$ over $F$. In particular, $[E:F] = [E:K][K:F]$.
+is a basis for $L$ over $F$. In particular, $[L:F] = [L:K][K:F]$.
 \end{fact}
 
 \begin{problem}\label{prob.BasisQFourthRoot2AndZeta3}
@@ -406,7 +406,7 @@ Let's find a basis for $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}$.
 When exploring degrees of extensions, the following fact from linear algebra often comes up: if $W$ is a subspace of $V$, then $\dim W = \dim V$ if and only if $W = V$. Applying this to field extensions yields the following.
 
 \begin{fact}
-Let $F\subseteq K \subseteq E$ be fields. Then $[K:F] = [E:F]$ if and only if $K = E$.
+Let $F\subseteq K \subseteq L$ be fields. Then $[K:F] = [L:F]$ if and only if $K = L$.
 \end{fact}
 
 \begin{problem}
@@ -421,12 +421,13 @@ Let's revisit the fields $\mathbb{Q}(\sqrt{2}+i)$ and $\mathbb{Q}(\sqrt{2},i)$.
 
 The next couple of problems illustrate the power of the multiplicative property of field degrees for a chain of fields. 
 
+% maybe remove - off topic%
 \begin{problem}
 Let's take a look at $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}(\zeta_3)$.
 \begin{enumerate}
-\item Explain why the EIC can \emph{not} be used to show that $x^4-2$ is irreducible over $\mathbb{Q}(\zeta_3)$.
+\item Explain why the EIC can \emph{not} be used to show that $x^4-2$ is irreducible in $\mathbb{Q}(\zeta_3)[x]$.
 \item Use  that $\mathbb{Q}\subset \mathbb{Q}(\zeta_3) \subset \mathbb{Q}(\sqrt[4]{2},\zeta_3)$  together with the multiplicative property of field degrees (from Theorem~\ref{thm.BasisChainExtensionField}) to determine  $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}(\zeta_3)]$. Remember that you computed $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}]$ in Problem~\ref{prob.BasisQFourthRoot2AndZeta3}.
-\item Use the fact that $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}(\zeta_3)]$ equals the degree of $\sqrt[4]{2}$ over $\mathbb{Q}(\zeta_3)$ (by Theorem~\ref{thm.BasisExtensionField}) to explain why $x^4-2$ is irreducible over $\mathbb{Q}(\zeta_3)$.
+\item Use the fact that $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}(\zeta_3)]$ equals the degree of $\sqrt[4]{2}$ over $\mathbb{Q}(\zeta_3)$ (by Theorem~\ref{thm.BasisExtensionField}) to explain why $x^4-2$ is irreducible in $\mathbb{Q}(\zeta_3)[x]$.
 \end{enumerate}
 \end{problem}
 
@@ -461,7 +462,7 @@ Let's wrap up this section with a couple more results. The first says that if $E
 This implies that $r$ is a root of the \emph{nonzero} polynomial $p(x) = a_0+a_1x+a_2x^2+\cdots+a_nx^n$, so $r$ is indeed algebraic over $F$. Also, $r\in E$ implies that $F(r)\subseteq E$, so we now have that $[E:F] = [E:F(r)][F(r):F]$. Thus $[F(r):F]$ divides $[E:F]$, so as $[F(r):F]$ equals the degree of $r$ over $F$ (by Theorem~\ref{thm.BasisExtensionField}), we also get that the degree of $r$ over $F$ divides $[E:F]$. Here is the summary.
 
 \begin{fact}
-Let $E$ be an extension field of $F$. Assume that $[E:F]$ is finite. If $r\in E$, then $r$ is algebraic over $E$, and the degree of $r$ over $F$ divides $[E:F]$.
+Let $E$ be an extension field of $F$. Assume that $[E:F]$ is finite. If $r\in E$, then $r$ is algebraic over $F$, and the degree of $r$ over $F$ divides $[E:F]$.
 \end{fact}
 
 Combining this with Theorem~\ref{thm.BasisExtensionField}, we obtain the following characterization of algebraic elements in terms of the fields they generate.
@@ -550,14 +551,14 @@ Suppose that $\psi:\mathbb{C}\to \mathbb{C}$ is an isomorphism that fixes $\math
 \end{problem}
 
 \begin{problem}
-Use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} to explain why each map defined below is \emph{not} be a homomorphism.
+Show that each map below fixes $\mathbb{Q}$, and then use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} to explain why neither map is a homomorphism.
 \begin{enumerate}
 \item $\delta:\mathbb{Q}(\sqrt{5})\rightarrow\mathbb{Q}(i)$ defined by $\delta(a+b\sqrt{5}) = a+ b i$
 \item $\sigma:\mathbb{Q}(\sqrt[3]{7})\rightarrow\mathbb{Q}(\sqrt[3]{7})$ defined by $\sigma(a+b\sqrt[3]{7} + c (\sqrt[3]{7})^2 = a-b\sqrt[3]{7} + c (\sqrt[3]{7})^2$
 \end{enumerate}
 \end{problem}
 
-Let's use what we've learned so far to explore which subfields of $\mathbb{C}$ could be isomorphic to $\mathbb{Q}(\sqrt[3]{11})$ (just as an example). Let $\phi:\mathbb{Q}(\sqrt[3]{11})\to \mathbb{Q}(\beta)$ be an isomorphism---we'll try to find the possible values of $\beta$. Notice that Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} may be helpful, but only if we know that $\phi$ fixes the coefficients of a polynomial that has $\sqrt[3]{11}$ as a root. Let's first show that $\phi$ must fix all of $\mathbb{Q}$. 
+Let's use what we've learned so far to explore which subfields $L$ of $\mathbb{C}$ could be isomorphic to $\mathbb{Q}(\sqrt[3]{11})$ (just as an example). Let $\phi:\mathbb{Q}(\sqrt[3]{11})\to L$ be an isomorphism---we'll try to determine the possibilities for $L$. Notice that Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} may be helpful, but only if we know that $\phi$ fixes the coefficients of a polynomial that has $\sqrt[3]{11}$ as a root. Let's first show that $\phi$ must fix all of $\mathbb{Q}$. 
 
 \begin{problem}\label{prob.HomFixesQ}
 Let $K$ and $L$ be extension fields of $\mathbb{Q}$. Suppose that $\phi:K\to L$ is a surjective ring homomorphism. We'll show that $\phi$ fixes $\mathbb{Q}$.
@@ -569,13 +570,13 @@ Let $K$ and $L$ be extension fields of $\mathbb{Q}$. Suppose that $\phi:K\to L$ 
 \end{problem}
 
 \begin{problem}\label{prob.SubfieldsIsoToQAdjoinCubeRoot11}
-Let $\beta\in \mathbb{C}$, and assume that $\phi:\mathbb{Q}(\sqrt[3]{11})\to \mathbb{Q}(\beta)$ is an isomorphism.
+Assume that $\phi:\mathbb{Q}(\sqrt[3]{11})\to L$ is an isomorphism for some subfield $L$ of $\mathbb{C}$.
 Recall from Problem~\ref{prob.BasisForQAdjoinCubeRoot11} that $1,\sqrt[3]{11},(\sqrt[3]{11})^2$ is a basis for $\mathbb{Q}(\sqrt[3]{11})$, so 
 \[ \mathbb{Q}(\sqrt[3]{11})= \{a+b\sqrt[3]{11} + c (\sqrt[3]{11})^2\mid a,b,c\in \mathbb{Q}\}.\] 
 \begin{enumerate}
 \item Use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} and Problem~\ref{prob.HomFixesQ} to list the three possible values of $\phi(\sqrt[3]{11})$.
 \item Use Problem~\ref{prob.HomFixesQ} to describe the possible values of $\phi(a+b\sqrt[3]{11} + c (\sqrt[3]{11})^2)$.
-\item What does this imply are the possibilities for $\mathbb{Q}(\beta)$?
+\item What does this imply are the possibilities for $L$?
 \end{enumerate}
 \end{problem}
 
@@ -600,45 +601,211 @@ Use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} (together with Problem
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Automorphisms}
 
-As mentioned earlier, we really want to studying maps from a field to itself. We now down define one of the keys ingredients to our eventual solution to the insolvability of the quintic.
+As mentioned earlier, we really want to study maps from a field to itself. We now  define one of the keys ingredients in our eventual solution to the insolvability of the quintic.
 
 \begin{definition}
 Let $K$ be a field. An isomorphism from $K$ to $K$ is called an \textbf{automorphism} of $K$. 
-Define $\Aut(K)$ to be the set of all automorphisms of $K$, and if $F$ is a subfield of $K$, define $\Aut(K/F)$ to be the set of all automorphisms of $K$ that fix $F$.
+We define $\Aut(K)$ to be the set of all automorphisms of $K$. If $F$ is a subfield of $K$, we define $\Aut(K/F)$ to be the set of all automorphisms of $K$ that fix $F$.
 \end{definition}
 
-Unpacking the definition, we see that automorphisms of $K$ are  bijections from $K$ to $K$ (also called permutations of $K$) that are also homomorphisms. Since we know that the composition of two bijections is a bijections and the composition of two homomorphisms is a homomorphism (see Theorem~\ref{thm.CompositionHomomorphism}), we immediately arrive at the following fact.
+Unpacking the definition, we see that automorphisms of $K$ are  bijections from $K$ to $K$ (i.e~permutations of $K$) that are also homomorphisms. Since we know that the composition of two bijections is a bijections and the composition of two homomorphisms is a homomorphism (see Theorem~\ref{thm.CompositionHomomorphism}), we see that $\Aut(K)$ is closed under function composition. Moreover, each element of $\Aut(K)$ is a bijection, hence has an inverse, and it is not too difficult to show that the inverse is also a homomorphism. Thus,  $\Aut(K)$ is  closed under taking inverses. Of course, $\Aut(K)$ contains the identity function from $K$ to $K$, so we conclude that $\Aut(K)$ is a group with respect to function composition.
 
-\begin{fact}
-Let $F$ be a subfield of $K$. Both of $\Aut(K)$ and $\Aut(K/F)$ are groups with respect to function composition. The identity is the identity function, which will be denoted id.
-\end{fact}
+\begin{theorem}\label{thm.AutKIsAGroup}
+Let $K$ be a field. Then $\Aut(K)$ is a group with respect to function composition. The identity is the identity function, which will be denoted id.
+\end{theorem}
 
-\begin{example}\label{prob.AutQAdjoinRoot5OverQ}
-Let's try to compute $\Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$. Recall that we know $\mathbb{Q}(\sqrt{5}) = \{a+b\sqrt{5}\mid a,b\in \mathbb{Q}\}.$
-Thus, every function $\phi\in \Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$ is determined by a formula of the form \[\phi(a+b\sqrt{5}) = \text{ ??? }\]
-Since $\phi\in \Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$, $\phi$ fixes $\mathbb{Q}$, so we can rewrite the above formula as 
-\[\phi(a+b\sqrt{5}) = \phi(a)+\phi(b\sqrt{5}) = \phi(a)+\phi(b)\phi(\sqrt{5}) = a + b\phi(\sqrt{5}).\]
-Thus, to find a formula for $\phi$ we just need to decide the value for $\phi(\sqrt{5})$. Now, we know that $\sqrt{5}$ is a root of $x^2-5$, so by Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF}, there are only two options: $\phi(\sqrt{5}) = \sqrt{5}$ or $\phi(\sqrt{5}) = -\sqrt{5}$. Let's name the possibilities: 
+Let's show that $\Aut(K/F)$ is also a group---to do that we  need to show that if two automorphisms of $K$ fix $F$, then their composition does too.
+
+\begin{theorem}\label{thm.AutKOverFSubgroupAutK}
+If $F$ is a subfield of $K$, then $\Aut(K/F)$ is a subgroup of $\Aut(K)$.
+\end{theorem}
+
+In light of Theorems~\ref{thm.AutKIsAGroup} and~\ref{thm.AutKOverFSubgroupAutK}, $\Aut(K)$ will be referred to as the \textbf{automorphism group} of $K$ and $\Aut(K/F)$ will be called the \textbf{automorphism group of $K$ over $F$}. While we're at it, let's extend Theorem~\ref{thm.AutKOverFSubgroupAutK} a bit.
+
+\begin{theorem}\label{thm.AutLOverKSubgroupAutLOverF}
+If $F\subseteq K \subseteq L$ is a chain of fields, then $\Aut(L/K)$ is a subgroup of $\Aut(L/F)$.
+\end{theorem}
+
+Theorem~\ref{thm.AutLOverKSubgroupAutLOverF} is starting to build a correspondence from subfields of $L$ to subgroups of $\Aut(L/F)$. However, notice that the correspondence  is inclusion reversing.
+
+\begin{center}
+\begin{tikzpicture}[line width = 0.6, scale = 1.5]
+\node (F2) at (0,2) {$L$}; 
+\node (F1) at (0,1) {$K$}; 
+\node (F) at (0,0) {$F$};
+\foreach \i in {0.5,1.5} {\node[rotate =90] at (0,\i) {$\subseteq$};}
+
+\node (H2) at (2,2) {$\Aut(L/L)$}; 
+\node (H1) at (2,1) {$\Aut(L/K)$};
+\node (H) at (2,0) {$\Aut(L/F)$};
+\foreach \i in {0.5,1.5} {\node[rotate =-90] at (2,\i) {$\subseteq$};}
+
+\foreach \i in {0,1,2} {\draw[->] (0.5,\i) -- (1.25,\i);}
+\end{tikzpicture}
+\end{center}
+
+In the picture above we listed the group $\Aut(L/L)$. These are the automorphism of $L$ that fix all of $L$---there is only one such automorphism: the identity. Thus, $\Aut(L/L) = \{\text{id}\}$. 
+
+Let's further explore these automorphism groups with some examples.
+
+\begin{example}\label{exam.AutQAdjoinZeta5OverQ}
+Let's try to compute $\Aut(\mathbb{Q}(\zeta_5/\mathbb{Q})$. First, we know that $x^4+x^3+x^2+x+1$ is the minimum polynomial for $\zeta_5$ over $\mathbb{Q}$, so by Theorem~\ref{thm.BasisExtensionField}  
 \begin{itemize}
-\item $\phi_1$ sends $\sqrt{5}\mapsto \sqrt{5}$, so  $\phi_1(a + b\sqrt{5}) = a + b\sqrt{5}$;
-\item $\phi_2$ sends $\sqrt{5}\mapsto -\sqrt{5}$, so  $\phi_1(a + b\sqrt{5}) = a - b\sqrt{5}$.
+\item $\{1,\zeta_5,\zeta_5^2,\zeta_5^3,\zeta_5^4\}$ is a basis for $\mathbb{Q}(\zeta_5)$ over $\mathbb{Q}$, and 
+\item  $\mathbb{Q}(\zeta_5) = \{a+b\zeta_5+c\zeta_5^2+d\zeta_5^3+e\zeta_5^4\mid a,b,c,d,e\in \mathbb{Q}\}.$
 \end{itemize}
- Of course, $\phi_1$ is just the identity, so $\phi_1 \in \Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$. To check the other possibility, we can use Fact~\ref{fact.SameMinPolyIsomorphic}, which says that $\phi_2$ is an isomorphism from $\mathbb{Q}(\sqrt{5})$ to $\mathbb{Q}(-\sqrt{5})$. Since $\mathbb{Q}(-\sqrt{5}) =\mathbb{Q}(\sqrt{5})$, $\phi_2$ is indeed an automorphism of $\mathbb{Q}(\sqrt{5})$ (that fixes $\mathbb{Q}$). Thus, $\phi_2 \in \Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$. These are the only possibilities, so 
-\[\Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q}) = \{\phi_1,\phi_2\} = \{\text{id},\phi_2\}.\]
-And, since there is only one group of order $2$ (up to isomorphism), $\Aut(\mathbb{Q}(\sqrt{5})/\mathbb{Q}) \cong \mathbb{Z}_2$.
+Thus, every function $\phi\in \Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ can be expressed by a formula of the form \[\phi(a+b\zeta_5+c\zeta_5^2+d\zeta_5^3+e\zeta_5^4) = \text{ ??? }\]
+Now, if $\phi\in \Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$, then $\phi$ fixes $\mathbb{Q}$. By Theorem~\ref{thm.RingHomPlusLinearTrans}, $\phi$ is a $\mathbb{Q}$-linear transformation from $\mathbb{Q}(\zeta_5)$ to itself, and by a result from linear algebra, $\phi$ is completely determined by its values on a basis. That is, once we determine the values of $\phi(1)$, $\phi(\zeta_5)$, $\phi(\zeta_5^2)$, $\phi(\zeta_5^3)$, and $\phi(\zeta_5^4)$ we will know a formula for $\phi$. In fact, this is easy to see directly: 
+\begin{align*}
+\phi(a+b\zeta_5+c\zeta_5^2+d\zeta_5^3+e\zeta_5^4) 
+&= \phi(a)+\phi(b\zeta_5)+\phi(c\zeta_5^2)+\phi(d\zeta_5^3)+\phi(e\zeta_5^4)\\
+&= \phi(a)+\phi(b)\phi(\zeta_5)+\phi(c)\phi(\zeta_5^2)+\phi(d)\phi(\zeta_5^3)+\phi(e)\phi(\zeta_5^4)\\
+&= a+b\phi(\zeta_5)+c\phi(\zeta_5^2)+d\phi(\zeta_5^3)+e\phi(\zeta_5^4).
+\end{align*}
+In fact, we can take this further:
+\begin{align*}
+\phi(a+b\zeta_5+c\zeta_5^2+d\zeta_5^3+e\zeta_5^4)
+&= a+b\phi(\zeta_5)+c\phi(\zeta_5^2)+d\phi(\zeta_5^3)+e\phi(\zeta_5^4)\\
+&= a+b\phi(\zeta_5)+c\phi(\zeta_5)^2+d\phi(\zeta_5)^3+e\phi(\zeta_5)^4.
+\end{align*}
+So, to find a formula for $\phi$ we just need to determine the value for $\phi(\zeta_5)$; it can then be plugged into the above formula to find the value of $\phi$ on an arbitrary element of  $\mathbb{Q}(\zeta_5)$.
+
+Now, since $\zeta_5$ is a root of $x^4+x^3+x^2+x+1$,  Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} says that $\phi(\zeta_5)$ must be one of the roots of $x^4+x^3+x^2+x+1$, which are $\zeta_5$, $\zeta_5^2$, $\zeta_5^3$, and $\zeta_5^4$. Let's name the possibilities---we will use repeatedly that $\zeta_5^5 = 1$.
+\begin{itemize}
+\item $\phi_1$ sends $\zeta_5\mapsto \zeta_5$, which implies  $\phi_1(a+b\zeta_5+c\zeta_5^2+d\zeta_5^3+e\zeta_5^4) = a+b\zeta_5+c\zeta_5^2+d\zeta_5^3+e\zeta_5^4$;
+\item $\phi_2$ sends $\zeta_5\mapsto \zeta_5^2$, which implies  $\phi_2(a+b\zeta_5+c\zeta_5^2+d\zeta_5^3+e\zeta_5^4) = a+b\zeta_5^2+c\zeta_5^4+d\zeta_5+e\zeta_5^3$;
+\item $\phi_3$ sends $\zeta_5\mapsto \zeta_5^3$, which implies  $\phi_3(a+b\zeta_5+c\zeta_5^2+d\zeta_5^3+e\zeta_5^4) = a+b\zeta_5^3+c\zeta_5+d\zeta_5^4+e\zeta_5^2$;
+\item $\phi_4$ sends $\zeta_5\mapsto \zeta_5^4$, which implies  $\phi_4(a+b\zeta_5+c\zeta_5^2+d\zeta_5^3+e\zeta_5^4) = a+b\zeta_5^4+c\zeta_5^3+d\zeta_5^2+e\zeta_5$.
+\end{itemize}
+Here's another way to organize the possibilities.
+\begin{center}
+\tabulinesep = 2mm
+\begin{tabu} spread 1in {X[$c,m]|[2pt]X[$c,m]|X[$c,m]|X[$c,m]|X[$c,m]}
+ & \phi_1 & \phi_2 & \phi_3 & \phi_4  \\ \tabucline[2pt]{-}
+\zeta_5 \; \mapsto  & \zeta_5 & \zeta_5^2  & \zeta_5^3  & \zeta_5^4  
+\end{tabu}
+\end{center}
+We now have to determine if each $\phi_i$ is in $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ or not. As $\phi_1$ is just the identity, $\phi_1 \in \Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$. To check the other possibilities, we can use Fact~\ref{fact.SameMinPolyIsomorphic}. For example, Fact~\ref{fact.SameMinPolyIsomorphic} says that $\phi_2$ is an isomorphism from $\mathbb{Q}(\zeta_5)$ to $\mathbb{Q}(\zeta_5^2)$. Since $\mathbb{Q}(\zeta_5^2) =\mathbb{Q}(\zeta_5)$ (because $\zeta_5^2\in \mathbb{Q}(\zeta_5)$ and $\zeta_5\in \mathbb{Q}(\zeta_5^2)$), $\phi_2$ is indeed an automorphism of $\mathbb{Q}(\zeta_5)$, so $\phi_2 \in \Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$. Similarly, $\phi_3,\phi_4 \in \Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$. These are the only possibilities, so 
+\[\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q}) = \{\phi_1,\phi_2,\phi_3,\phi_4\} = \{\text{id},\phi_2,\phi_3,\phi_4\}.\]
 \end{example}
 
-\begin{problem}\label{prob.AutQAdjoinZeta5OverQ}
-Write down a formula for each function in $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$. Can you determine which familiar group $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ is isomorphic to?
+In the Example~\ref{exam.AutQAdjoinZeta5OverQ}, we saw  $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ is a group of order $4$. What group is it? 
+
+\begin{problem}
+Let's determine what group $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ is isomorphic to. 
+\begin{enumerate}
+\item Which element of $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ is $(\phi_2)^2$ equal to? (Remember $(\phi_2)^2$ means $\phi_2\circ\phi_2$.)
+\item Do the same for $(\phi_2)^3$ and $(\phi_2)^4$. Are either $(\phi_2)^3$ or $(\phi_2)^4$ equal to $\text{id}$? What is the order of $\phi_2$? (The order of $\phi_2$ will be the smallest positive $k$ such that $(\phi_2)^k = \text{id}$.)
+\item What are the orders of $\phi_3$ and $\phi_4$?
+\item Is $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ cyclic or not? Is $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ isomorphic to $\mathbb{Z}_4$ or $V_4$?
+\end{enumerate}
 \end{problem}
 
-\begin{problem}\label{prob.AutQAdjoinZeta5OverQ}
-Use that $\mathbb{Q}(\sqrt[3]{11}) \subseteq \mathbb{R}$ while $\mathbb{Q}(\sqrt[3]{11}\zeta_3) \nsubseteq \mathbb{R}$ to show  $\Aut(\mathbb{Q}(\sqrt[3]{11})/\mathbb{Q}) = \{\text{id}\}$.
+An important observation in Example~\ref{exam.AutQAdjoinZeta5OverQ} was that the possibilities for $\phi$ are determined simply by the possible values of $\phi(\zeta_5)$. This is true in general.
+
+\begin{fact}\label{fact.AutDeterminedOnGenerator}
+Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $n$ be the degree of $\alpha$ over $F$. Then each $\phi\in \Aut({F}(\alpha)/F)$ is completely determined by the value $\phi(\alpha)$. Consequently,  $|\Aut({F}(\alpha)/F|\le n = [F(\alpha):F]$.
+\end{fact}
+
+\begin{problem}\label{prob.AutQAdjoinSqrt2OverQ}
+Follow Example~\ref{exam.AutQAdjoinZeta5OverQ} to determine $\Aut(\mathbb{Q}(\sqrt{2})/\mathbb{Q})$.
+What familiar group is  it isomorphic to?
 \end{problem}
 
-We've seen that each element of $\Aut({F}(\alpha)/F)$ must take $\alpha$ to another root of the minimal polynomial for $\alpha$ over $F$. Moreover, for each each possible $\phi\in \Aut({F}(\alpha)/F)$, the value of $\phi(\alpha)$ can be use to completely describe $\phi$. Let's gather this up in a fact, together with a useful consequence.
+\begin{problem}\label{prob.AutQAdjoinCubeRoot2OverQ}
+Let's determine $\Aut(\mathbb{Q}(\sqrt[3]{2})/\mathbb{Q})$.
+\begin{enumerate}
+\item First explain why  $\mathbb{Q}(\sqrt[3]{11})\neq \mathbb{Q}(\sqrt[3]{11}\zeta_3)$ and why $\mathbb{Q}(\sqrt[3]{11})\neq \mathbb{Q}(\sqrt[3]{11}\zeta_3^2)$.
+\item Follow Example~\ref{exam.AutQAdjoinZeta5OverQ} to show that $\Aut(\mathbb{Q}(\sqrt[3]{11})/\mathbb{Q}) = \{\text{id}\}$.
+\end{enumerate}
+\end{problem}
+
+So, what happens if we adjoin more than one element? Can we compute $\Aut(F(\alpha_1,\alpha_2)/F)$ in a similar way as to what we did for $\Aut(F(\alpha)/F)$? The answer is yes, and the starting point is the following analog of Fact~\ref{fact.AutDeterminedOnGenerator}.
 
 \begin{fact}
-Let $F$ be a subfield of $E$. Suppose that $\alpha\in E$ is algebraic over $F$, and let $n$ be the degree of $\alpha$ over $F$. Then each $\phi\in \Aut({F}(\alpha)/F)$ is completely determined by the value $\phi(\alpha)$, and consequently  $|\Aut({F}(\alpha)/F|\le n = [F(\alpha):F]$.
+Let $F$ be a subfield of $E$. Suppose that $\alpha_1,\ldots,\alpha_k\in E$ are algebraic over $F$. Then each $\phi\in \Aut({F}(\alpha_1,\ldots,\alpha_k)/F)$ is completely determined by the values of $\phi(\alpha_1),\ldots,\phi(\alpha_k)$. Consequently,  $|\Aut({F}(\alpha_1,\ldots,\alpha_k)/F|\le  [F(\alpha_1,\ldots,\alpha_k):F]$.
 \end{fact}
+
+\begin{problem}\label{prob.AutQAdjoinSqrt2AndiOverQ}
+Let's determine $\Aut(\mathbb{Q}(\sqrt{2},i)/\mathbb{Q})$.
+\begin{enumerate}
+\item Let $\phi\in  \Aut(\mathbb{Q}(\sqrt{2},i)/\mathbb{Q})$. Explain why there are only two choice for $\phi(\sqrt{2})$ and only two choice for $\phi(i)$. What are they?
+\item Combine the different possibilities for $\phi(\sqrt{2})$ and $\phi(i)$ to complete the table below.
+\begin{center}
+\tabulinesep = 2mm
+\begin{tabu} spread 1in {X[$c,m]|[2pt]X[$c,m]|X[$c,m]|X[$c,m]|X[$c,m]}
+ & \phi_1 & \phi_2 & \phi_3 & \phi_4  \\ \tabucline[2pt]{-}
+\sqrt{2} \; \mapsto  & \sqrt{2} &  &  & \\  
+i \; \mapsto  & i &  &  &   
+\end{tabu}
+\end{center}
+\item Follow Example~\ref{exam.AutQAdjoinZeta5OverQ} to determine $\Aut(\mathbb{Q}(\sqrt{2},i)/\mathbb{Q})$.
+\item What familiar group is  $\Aut(\mathbb{Q}(\sqrt{2},i)/\mathbb{Q})$ isomorphic to?
+\end{enumerate}
+\end{problem}
+
+\begin{problem}\label{prob.AutQAdjoinSqrt2AndiOverQLattices}
+Set $L = \mathbb{Q}(\sqrt{2},i)$. In Problem~\ref{prob.AutQAdjoinSqrt2AndiOverQ} we determined $\Aut(L/\mathbb{Q})$. Let's connect the subfields of $L$ with subgroups of $\Aut(L/\mathbb{Q})$ using Theorem~\ref{thm.AutLOverKSubgroupAutLOverF}. 
+\begin{enumerate}
+\item Let $K_1 = \mathbb{Q}(\sqrt{2})$. Find $\Aut(L/K_1)$ by determining which of  $\phi_1, \phi_2,\phi_3,\phi_4$ are in $\Aut(L/K_1)$.
+\item Repeat for $K_2 = \mathbb{Q}(i)$. Find $\Aut(L/K_2)$.
+\item Repeat for $K_3 = \mathbb{Q}(i\sqrt{2})$. Find $\Aut(L/K_3)$.
+\item Use Theorem~\ref{thm.AutLOverKSubgroupAutLOverF} to organize your findings by writing the appropriate elements in the boxes in the subgroup lattice of $\Aut(L/\mathbb{Q})$.
+\begin{center}
+\begin{tikzpicture}[line width = 1, yscale = 1, xscale = 1.2]
+\node (L) at (0,4) {$\mathbb{Q}(\sqrt{2},i)$}; 
+\node (K1) at (-2,2) {$\mathbb{Q}(\sqrt{2})$}; 
+\node (K2) at (0,2) {$\mathbb{Q}(i)$}; 
+\node (K3) at (2,2) {$\mathbb{Q}(i\sqrt{2})$}; 
+\node (F) at (0,0) {$\mathbb{Q}$};
+
+\foreach \i in {1,2,3} {\draw (F) -- (K\i);}
+\foreach \i in {1,2,3} {\draw (L) -- (K\i);}
+
+\draw[line width = 0.8, ->] (1.5,4) -- (5.5,4);
+\draw[line width = 0.8, ->] (3,2) -- (4,2);
+\draw[line width = 0.8, ->] (1.5,0) -- (5.5,0);
+
+\begin{scope}[shift = {(7.5,0)}]
+\node (L) at (0,4) {$\{\text{id}\}$}; 
+\node[draw] (K1) at (-2,2) {\textcolor{black!35}{$\Aut(L/K_1)$}}; 
+\node[draw] (K2) at (0,2) {\textcolor{black!35}{$\Aut(L/K_2)$}};
+\node[draw] (K3) at (2,2) {\textcolor{black!35}{$\Aut(L/K_3)$}};
+\node (F) at (0,0) {$\{\phi_1, \phi_2,\phi_3,\phi_4\}$};
+
+\foreach \i in {1,2,3} {\draw (F) -- (K\i);}
+\foreach \i in {1,2,3} {\draw (L) -- (K\i);}
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{problem}
+
+Problem~\ref{prob.AutQAdjoinSqrt2AndiOverQLattices} highlights quite well the tight connection between subfields of an extension field $L$ of $F$ and subgroups of $\Aut(L/F)$. So far, we've seen how each subfield $K$ gives rise to a subgroup $\Aut(L/K)$. The next theorem indicates how we might reverse this.
+
+\begin{theorem}\label{thm.SubgroupAutLOverKYieldsSubfield}
+Let $F$ be a subfield of $L$ and  $H$  a subgroup of $\Aut(L/F)$. Define \[\Fix_L(H) = \{k\in L \mid \text{$k$ is fixed by every $\phi \in H$}\}.\] Then $\Fix_L(H)$ is a subfield of $L$, and $F\subseteq \Fix_L(H) \subseteq L$.
+\end{theorem}
+
+The picture is as follows.
+\begin{center}
+\begin{tikzpicture}[line width = 0.6, scale = 1.5]
+\node (F2) at (0,2) {$L$}; 
+\node (F1) at (0,1) {$\Fix_L(H)$}; 
+\node (F) at (0,0) {$F$};
+\foreach \i in {0.5,1.5} {\node[rotate =90] at (0,\i) {$\subseteq$};}
+
+\node (H2) at (2,2) {$\{\text{id}\}$}; 
+\node (H1) at (2,1) {$H$};
+\node (H) at (2,0) {$\Aut(L/F)$};
+\foreach \i in {0.5,1.5} {\node[rotate =-90] at (2,\i) {$\subseteq$};}
+
+\foreach \i in {1} {\draw[<-] (0.75,\i) -- (1.5,\i);}
+\end{tikzpicture}
+\end{center}
+
+
+Taking a closer look at Problem~\ref{prob.AutQAdjoinSqrt2AndiOverQLattices}, we can see that the maps $K \mapsto \Aut(L/K)$ and $H \mapsto \Fix_L(H)$ are actually inverses of each other. For example, $\Fix_L(\Aut(L/K_1)) = K_1$, so the composition of the maps looks like $K_1 \mapsto \Aut(L/K_1) \mapsto \Fix_L(\Aut(L/K_1)) = K_1$. However, this is not true for all fields, and Problem~\ref{prob.AutQAdjoinCubeRoot2OverQ} gives an example. In the next chapter we'll study an important collection of fields (in fact, \emph{the} collection of fields) for which $K \mapsto \Aut(L/K)$ and $H \mapsto \Fix_L(H)$ are always inverses.
+
 
