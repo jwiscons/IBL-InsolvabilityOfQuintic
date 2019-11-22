@@ -620,10 +620,10 @@ Let's show that $\Aut(K/F)$ is also a group---to do that we  need to show that i
 If $F$ is a subfield of $K$, then $\Aut(K/F)$ is a subgroup of $\Aut(K)$.
 \end{theorem}
 
-In light of Theorems~\ref{thm.AutKIsAGroup} and~\ref{thm.AutKOverFSubgroupAutK}, $\Aut(K)$ will be referred to as the \textbf{automorphism group} of $K$ and $\Aut(K/F)$ will be called the \textbf{automorphism group of $K$ over $F$}. While we're at it, let's extend Theorem~\ref{thm.AutKOverFSubgroupAutK} a bit.
+In light of Theorems~\ref{thm.AutKIsAGroup} and~\ref{thm.AutKOverFSubgroupAutK}, $\Aut(K)$ will be referred to as the \textbf{automorphism group} of $K$ and $\Aut(K/F)$ will be called the \textbf{automorphism group of $K$ over $F$}. While we're at it, take Theorem~\ref{thm.AutKOverFSubgroupAutK} a bit further.
 
 \begin{theorem}\label{thm.AutLOverKSubgroupAutLOverF}
-If $F\subseteq K \subseteq L$ is a chain of fields, then $\Aut(L/K)$ is a subgroup of $\Aut(L/F)$.
+If $F\subseteq K \subseteq L$ is a chain of fields, then $\Aut(L/K)\subseteq \Aut(L/F)$.
 \end{theorem}
 
 Theorem~\ref{thm.AutLOverKSubgroupAutLOverF} is starting to build a correspondence from subfields of $L$ to subgroups of $\Aut(L/F)$. However, notice that the correspondence  is inclusion reversing.
@@ -729,7 +729,7 @@ Let $F$ be a subfield of $E$. Suppose that $\alpha_1,\ldots,\alpha_k\in E$ are a
 \begin{problem}\label{prob.AutQAdjoinSqrt2AndiOverQ}
 Let's determine $\Aut(\mathbb{Q}(\sqrt{2},i)/\mathbb{Q})$.
 \begin{enumerate}
-\item Let $\phi\in  \Aut(\mathbb{Q}(\sqrt{2},i)/\mathbb{Q})$. Explain why there are only two choice for $\phi(\sqrt{2})$ and only two choice for $\phi(i)$. What are they?
+\item Let $\phi\in  \Aut(\mathbb{Q}(\sqrt{2},i)/\mathbb{Q})$. Use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} to explain why there are only two choices for $\phi(\sqrt{2})$ and only two choices for $\phi(i)$. What are they?
 \item Combine the different possibilities for $\phi(\sqrt{2})$ and $\phi(i)$ to complete the table below.
 \begin{center}
 \tabulinesep = 2mm
