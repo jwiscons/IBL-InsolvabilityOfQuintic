@@ -188,8 +188,14 @@ To see why the degree of $m(x)$ can not be $3$, suppose it is. Then $x^4-2x^2+9 
 Consider using Theorem~\ref{thm.HomPreservesMultiplicativeProperties} and remember that $c = c\cdot1$.
 \end{hint*}
 
-\begin{hint*}[Theorem~\ref{QAdjoinRadicalIsGaloisOverFieldWithRootsUnity}]
+\begin{hint*}[Theorem~\ref{thm.QAdjoinRadicalIsGaloisOverFieldWithRootsUnity}]
 Let $p(x) = x^n-r^n$. Why is $p(x) \in F[x]$? Can you show that $F(r) = F^{p(x)}$?
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.ComplexConjIsAutomorphismOfGaloisSubfields}]
+First use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} to show that $\gamma$ maps $R$ to itself, then make use of the fact that $\gamma$ is an injective function. 
+
+Next, use results from Chapter~\ref{chapter:Rings} (including the First Isomorphism Theorem for rings) to show that $\gamma$ is an isomorphism from $\mathbb{Q}^{p(x)}$ to $\gamma(\mathbb{Q}^{p(x)})$ and that $\gamma$ fixes $\mathbb{Q}$. Then, to show that $\gamma \in \Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$, it only remains to show that $\mathbb{Q}^{p(x)} = \gamma(\mathbb{Q}^{p(x)})$. Let $r_1,\ldots,r_n$ be the roots of $p(x)$ so that $\mathbb{Q}^{p(x)} = \mathbb{Q}(r_1,\ldots,r_n)$. Using the definition of $\mathbb{Q}(r_1,\ldots,r_n)$, it is not to hard to see that $\gamma(\mathbb{Q}(r_1,\ldots,r_n)) = \gamma(\mathbb{Q})(\gamma(r_1),\ldots,\gamma(r_n))$. Now explain why  $\gamma(\mathbb{Q})(\gamma(r_1),\ldots,\gamma(r_n)) = \mathbb{Q}(r_1,\ldots,r_n)$.
 \end{hint*}
 
 
