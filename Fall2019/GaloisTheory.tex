@@ -205,19 +205,6 @@ Now let's expand the table to see how the automorphisms operate on all roots of 
 \end{center}
 Next, let's identify the roots with the numbers $1$ up to $4$ as follows.
 \[\zeta_5 \leftrightarrow 1\quad \zeta_5^2 \leftrightarrow 2 \quad \zeta_5^3 \leftrightarrow 3 \quad \zeta_5^4 \leftrightarrow 4.\]
-%\begin{center}
-%\begin{tikzpicture}[line width = 0.8, yscale = 0.8]
-%\foreach \i in {1,2} {
-%\node (z\i) at (0,{4-\i}) {$\zeta_5^{\i}$};
-%\node (\i) at (2,{4-\i}) {$\i$};
-%}
-%\foreach \i in {3,4} {
-%\node (z\i) at (4,{6-\i}) {$\zeta_5^{\i}$};
-%\node (\i) at (6,{6-\i}) {$\i$};
-%}
-%\foreach \i in {1,2,3,4} {\draw[<->] (z\i) -- (\i);}
-%\end{tikzpicture}
-%\end{center}
 Then the previous table becomes as follows.
 \begin{center}
 \tabulinesep = 2mm
@@ -271,7 +258,7 @@ Let's revisit Problem~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQ}. Set $L = \mat
 
 Let's apply the many things that we've learned to a very specific map: complex conjugation (which sends $z\mapsto \overline{z}$). Remember that we know a lot about this map. In Chapter~\ref{chapter:Rings}, we noted that complex conjugation yields an isomorphism from $\mathbb{C}$ to $\mathbb{C}$, and in Problem~\ref{prob.FixedFieldofIsos}, we saw that it fixes every real number. 
 
-We'll investigate complex conjugation when we restrict the domain to a subfield $K$ of $\mathbb{C}$. Let $\gamma$ denote complex conjugation. As $\gamma$ is a homomorphism and is injective (so $\ker \gamma = \{0\}$), the First Isomorphism Theorem tells us that $\gamma$ gives an isomorphism of $K$ with its image under $\gamma$ (so  $K\cong \gamma(K)$). Additionally, if $K= \gamma(K)$, then $\gamma$ will be an automorphism of $K$, and the next theorem identifies one situation where this always happens. 
+We'll investigate complex conjugation when we restrict the domain to a subfield $K$ of $\mathbb{C}$. Let $\gamma$ denote complex conjugation. As $\gamma$ is a homomorphism and is injective (so $\ker \gamma = \{0\}$), the First Isomorphism Theorem tells us that $\gamma$ gives an isomorphism of $K$ with its image under $\gamma$ (i.e.~$K\cong \gamma(K)$). Additionally, if $K= \gamma(K)$, then $\gamma$ will be an \emph{automorphism} of $K$, and the next theorem identifies one situation where this always happens. 
 
 
 \begin{theorem}\label{thm.ComplexConjIsAutomorphismOfGaloisSubfields}
@@ -283,7 +270,7 @@ Let $p(x) \in \mathbb{Q}[x]$, and let $R=\{r_1,\ldots,r_n\}$ be the set of all o
 \end{theorem}
 
 \begin{problem}\label{prob.ComplexConjInAutQAdjoinSqrt2AndiOverQ}
-Let $p(x) = (x^2-2)(x^2+1)$. Theorem~\ref{thm.ComplexConjIsAutomorphismOfGaloisSubfields} says that complex conjugation is contained in $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$. Look back at Problem~\ref{prob.AutQAdjoinSqrt2AndiOverQAsPerms} and determine which element of $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ corresponds to complex conjugation. Write your answer in cycle notation as in Problem~\ref{prob.AutQAdjoinSqrt2AndiOverQAsPerms}.
+Let $p(x) = (x^2-2)(x^2+1)$. Theorem~\ref{thm.ComplexConjIsAutomorphismOfGaloisSubfields} says that the complex conjugation map is in $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$. Look back at Problem~\ref{prob.AutQAdjoinSqrt2AndiOverQAsPerms} and determine which element of $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ corresponds to complex conjugation. Write your answer in cycle notation as in Problem~\ref{prob.AutQAdjoinSqrt2AndiOverQAsPerms}.
 \end{problem}
 
 \begin{problem}\label{prob.ComplexConjInAutQAdjoinCubeRoot2AndZeta3OverQ}
@@ -291,10 +278,10 @@ Repeat Problem~\ref{prob.ComplexConjInAutQAdjoinSqrt2AndiOverQ} for $p(x) = x^3-
 \end{problem}
 
 \begin{problem}\label{prob.ComplexConjInAutQAdjoinZeta5}
-Repeat Problem~\ref{prob.ComplexConjInAutQAdjoinSqrt2AndiOverQ} for $p(x) = x^4+x^3+x^2+x+1$. Use Problem~\ref{prob.AutQAdjoinSqrt2AndiOverQAsPerms} to determine which element of $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ corresponds to complex conjugation. Write your answer in cycle notation.
+Repeat Problem~\ref{prob.ComplexConjInAutQAdjoinSqrt2AndiOverQ} for $p(x) = x^4+x^3+x^2+x+1$. Use Example~\ref{exam.QAdjoinZeta5GaloisAsPerms} to determine which element of $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ corresponds to complex conjugation. Write your answer in cycle notation.
 \end{problem}
 
-The similarities and difference between our answers to Problems~\ref{prob.ComplexConjInAutQAdjoinSqrt2AndiOverQ}--\ref{prob.ComplexConjInAutQAdjoinZeta5}  hints at the following theorem.
+The similarities and difference between our answers to Problems~\ref{prob.ComplexConjInAutQAdjoinSqrt2AndiOverQ}--\ref{prob.ComplexConjInAutQAdjoinZeta5}  hint at the following theorem.
 
 \begin{theorem}\label{thm.PolyWithOnlyTwoComplexRootsYieldsTransposition}
 Let $p(x) \in \mathbb{Q}[x]$. If $p(x)$ has exactly two roots in $\mathbb{C}$ that are not in $\mathbb{R}$, then $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ contains a transposition.
@@ -311,7 +298,7 @@ Consider $p(x) = x^5 +5x^4-5 \in \mathbb{Q}[x]$. Graph $p(x)$ or use calculus to
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Fundamental theorem of Galois theory}
 
-We finally arrive at the main course. Looking back at Problems~\ref{prob.AutQAdjoinSqrt2AndiOverQLattices} and~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQLattices}, we see that there is a tight connection between subfields of an extension  field $L$ of $F$ to subgroups of $\Aut(L/F)$. However, the extensions we considered in those problems where not just any extensions of $\mathbb{Q}$, they were Galois extensions. And in fact, the connection broke down for $\mathbb{Q}(\sqrt[3]{2}$ in Problem~\ref{prob.AutQAdjoinCubeRoot2OverQ} where we saw that $\Aut(\mathbb{Q}(\sqrt[3]{2})/\mathbb{Q}) = \{\text{id}\}$, but as we saw in  Problem~\ref{prob.QAdjoinCubeRoot2OverQNotGalois}, this is \emph{not} a Galois extension of $\mathbb{Q}$. 
+We finally arrive at the main course. Looking back at Problems~\ref{prob.AutQAdjoinSqrt2AndiOverQLattices} and~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQLattices}, we see that there is a tight connection between subfields of an extension  field $L$ of $F$ to subgroups of $\Aut(L/F)$. However, the extensions we considered in those problems where not just any extensions of $\mathbb{Q}$, they were \emph{Galois extensions}. And in fact, the connection broke down for $\mathbb{Q}(\sqrt[3]{2}$ in Problem~\ref{prob.AutQAdjoinCubeRoot2OverQ} where we saw that $\Aut(\mathbb{Q}(\sqrt[3]{2})/\mathbb{Q}) = \{\text{id}\}$, but as noted in  Problem~\ref{prob.QAdjoinCubeRoot2OverQNotGalois}, this is \emph{not} a Galois extension of $\mathbb{Q}$. 
 
 As it turns out, the connection we observed between subfields and subgroups holds for all Galois extensions, and the Fundamental Theorem of Galois Theory makes this explicit. Let's quickly establish some notation.
 
@@ -323,24 +310,26 @@ Let $F$ be a subfield of $L$, and let $G$ be a group. Define
 \end{itemize}
 \end{notation}
 
-Recall that we have drawn the lattices associated to $\operatorname{\textsc{Sub}}(L/F)$ and $\operatorname{\textsc{Sub}}(\Aut(L/F))$ (the latter upside down) in several problems before. Anyway, here we go\ldots
+The set $\operatorname{\textsc{Sub}}(L/F)$ can be concisely read as ``the set of subfields of $L$ containing $F$''; for example, $\mathbb{Q}(\zeta_3) \in \operatorname{\textsc{Sub}}(\mathbb{Q}(\sqrt[3]{2},\zeta_3)/\mathbb{Q})$. Also, recall that we have drawn the lattices associated to $\operatorname{\textsc{Sub}}(L/F)$ and $\operatorname{\textsc{Sub}}(\Aut(L/F))$ (the latter upside down) in several problems before. 
+
+There is a lot it digest when reading the Fundamental Theorem of Galois Theory, but remember that we have observed almost all of it in previous problems. It may be valuable to look back at Problem~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQLattices} while reading the theorem. Anyway, here we go\ldots
 
 \begin{fact}[Fundamental Theorem of Galois Theory (for $\mathbb{C}$)]\label{fact.FTGT}
 Let $F\subseteq L$ be subfields of $\mathbb{C}$. Assume that $L$ is a Galois extension of $F$. \begin{enumerate}
-\item The following maps are both bijections and inverses of each other.
+\item The following maps are bijections and inverses of each other.
 \begin{itemize}
 \item $\operatorname{\textsc{Sub}}(L/F)\to \operatorname{\textsc{Sub}}(\Aut(L/F))$ defined by $K\mapsto \Aut(L/K)$,
 \item $\operatorname{\textsc{Sub}}(\Aut(L/F))\to \operatorname{\textsc{Sub}}(L/F)$ defined by $H\mapsto \Fix_L(H)$
 \end{itemize} 
-\item The map $K\mapsto \Aut(L/K)$ 
+\item\label{fact.FTGT.InclusionReverseAndGaloisToNormal} The map $K\mapsto \Aut(L/K)$ 
 \begin{itemize}
-\item is inclusion reversing: $K_1\subseteq K_2$ implies $\Aut(L/K_2) \subseteq \Aut(L/K_1)$, and
-\item sends Galois extensions of $F$ to normal subgroups of $\Aut(L/F)$.
+\item reverses inclusions: $K_1\subseteq K_2$ if and only if $\Aut(L/K_2) \subseteq \Aut(L/K_1)$ and
+\item sends Galois extensions to normal subgroups: $K$ is a Galois extensions of $F$ if and only if $\Aut(L/K)\trianglelefteq \Aut(L/F)$.
 \end{itemize}
 \item For all $K\in \operatorname{\textsc{Sub}}(L/F)$, 
 \begin{itemize}
 \item $[L:K] = |\Aut(L/K)|$,
-\item  $[K:F] = |\Aut(L/F):\Aut(L/K)|$, and 
+\item $[K:F] = |\Aut(L/F):\Aut(L/K)|$, and 
 \item if $K$ is a Galois extension of $F$, then $\Aut(K/F)\cong \Aut(L/F)/\Aut(L/K)$.
 \end{itemize}
 \end{enumerate}
@@ -348,5 +337,31 @@ Let $F\subseteq L$ be subfields of $\mathbb{C}$. Assume that $L$ is a Galois ext
 
 Note that since $H\mapsto \Fix_L(H)$ is the inverse of $K\mapsto \Aut(L/K)$, $H\mapsto \Fix_L(H)$ is also inclusion reversing and it sends normal subgroups to Galois extensions. 
 
-There's a lot packed into the theorem, but we've seen much of it before. In fact, Problem~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQLattices} highlighted every aspect except the final one, which we'll 
+Let's revisit Problems~\ref{prob.AutQAdjoinSqrt2AndiOverQLattices} and~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQLattices} yet again and highlight the connection between Galois extensions and normal subgroups  in part~\ref{fact.FTGT.InclusionReverseAndGaloisToNormal} of Fact~\ref{fact.FTGT}. 
+
+\begin{problem}\label{prob.AutQAdjoinSqrt2AndiOverQNormalSubs}
+Look back at Problem~\ref{prob.AutQAdjoinSqrt2AndiOverQLattices}. Use what you learned in group theory to determine which subgroups of $\Aut(\mathbb{Q}(\sqrt{2},i)/\mathbb{Q})$ are normal subgroups. Then use Fact~\ref{fact.FTGT}\ref{fact.FTGT.InclusionReverseAndGaloisToNormal} to determine which subfields of $\mathbb{Q}(\sqrt{2},i)$ are Galois extensions of $\mathbb{Q}$. You can check you answers by directly verifying which extensions are Galois using the definition.
+\end{problem}
+
+\begin{problem}
+Repeat Problem~\ref{prob.AutQAdjoinSqrt2AndiOverQNormalSubs} for $\mathbb{Q}(\sqrt[3]{2},\zeta_3)/\mathbb{Q}$. Look  at Problem~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQLattices}, and determine which subgroups of $\Aut(\mathbb{Q}(\sqrt[3]{2},\zeta_3)/\mathbb{Q})$ are normal subgroups. Then use Fact~\ref{fact.FTGT}\ref{fact.FTGT.InclusionReverseAndGaloisToNormal} to determine which subfields of $\mathbb{Q}(\sqrt[3]{2},\zeta_3)$ are Galois extensions of $\mathbb{Q}$.
+\end{problem}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{An application to solvability by radicals}
+
+Let's apply Galois theory to the problem of determining if a polynomial is solvable by radicals or not. Recall that $p(x)\in \mathbb{Q}[x]$ is \emph{solvable by radicals} over $\mathbb{Q}$ if all of the roots of $p(x)$ are contained in some radical extension of $\mathbb{Q}$, and notice that this is the same as requiring that $\mathbb{Q}^{p(x)}$ is contained in some radical extension of $\mathbb{Q}$. Let's first take a closer look at radical extensions of $\mathbb{Q}$ and then we'll investigate the implications for $\mathbb{Q}^{p(x)}$. We're looking for a criterion that we can use to show that some $p(x)$ is \emph{not} solvable by radicals.
+
+Recall that $E$ is a \emph{radical extension} of $\mathbb{Q}$ if there exist nonzero elements $r_1,r_2,\ldots,r_m\in E$ and positive integers $n_1,n_2\ldots,n_m$ such that $E = \mathbb{Q}(r_1,r_2,\ldots,r_m)$, and 
+\begin{align*}
+ r_1^{n_1} &\in \mathbb{Q},\\
+ r_2^{n_2} &\in \mathbb{Q}(r_1),\\
+ r_3^{n_3} &\in \mathbb{Q}(r_1,r_2),\\
+ \vdots & \\
+ r_k^{n_k} &\in \mathbb{Q}(r_1,\ldots,r_{k-1}).
+\end{align*}
+To  analyze radical extensions using Galois theory it will be useful to ensure that the sequence of  extensions we are looking at are actually Galois extensions of each other. This may not be true initially, but 
+
 
