@@ -680,18 +680,18 @@ Suppose that $F_1$ and $F_2$ are subfields of $E$. Theorem~\ref{thm.IntersectFie
 \end{tikzpicture}
 \end{center}
 
-For a concrete example, let's draw the portion of the subfield lattice of $\mathbb{C}$ containing $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{Q}(i)$, and $\mathbb{Q}\left(\sqrt{2},i\right)$; this uses some of what you discovered in Problem~\ref{prob.DiagramSubfieldsRoot2andi}.
+For a concrete example, let's draw the portion of the subfield lattice of $\mathbb{C}$ containing $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{Q}(\sqrt{2})$, and $\mathbb{Q}\left(\sqrt{2},i\right)$; this uses some of what you discovered in Problem~\ref{prob.DiagramSubfieldsRoot2andi}.
 
 \begin{center}
 \begin{tikzpicture}[line width = 1, scale = 1.5]
 \node (C) at (0,0) {$\mathbb{C}$};
-\node (R) at (-1,-1.4)  {$\mathbb{R}$};
-\node (Qi2) at (1,-0.8) {$\mathbb{Q}(\sqrt{2},i)$};
-\node (Qi) at (1,-2) {$\mathbb{Q}(i)$};
-\node (Q) at (0,-2.8) {$\,\mathbb{Q}$};
+\node (R) at (-1,-1)  {$\mathbb{R}$};
+\node (Qi2) at (1,-1) {$\mathbb{Q}(\sqrt{2},i)$};
+\node (Q2) at (0,-2) {$\mathbb{Q}(\sqrt{2})$};
+\node (Q) at (0,-3) {$\,\mathbb{Q}$};
 \draw (C) -- (R);\draw (C) -- (Qi2);
-\draw (Qi2) -- (Qi);
-\draw (Q) -- (R);\draw (Q) -- (Qi);
+\draw (Qi2) -- (Q2);\draw (R) -- (Q2);
+\draw (Q) -- (Q2);
 \end{tikzpicture}
 \end{center}
 
