@@ -386,7 +386,7 @@ using only coefficients from $F$. And moreover, it can be shown that these are l
 
 In fact, this process generalizes in a straightforward way to any chain of field extensions $F\subseteq K \subseteq L$. In words, a basis for $L$ as a vector space over $F$ can be found by multiplying a basis for $K$ over $F$ by the elements of a basis for $L$ over $K$. This also yields an extremely useful multiplicative property for the degrees in a chain of field extensions, namely that $[L:F] = [L:K][K:F]$. The next fact summarizes our findings.
 
-\begin{fact}\label{thm.BasisChainExtensionField}
+\begin{fact}\label{fact.BasisChainExtensionField}
 Let $F\subseteq K \subseteq L$ be fields. If $\{u_1,\ldots,u_m\}$ is basis for $K$ over $F$ and $\{w_1,\ldots,w_n\}$ is basis for $L$ over $K$, then 
 \[ \{u_1w_1,\ldots,u_mw_1,u_1w_2,\ldots,u_mw_2,\ldots,u_1w_n,\ldots,u_mw_n\}\]
 is a basis for $L$ over $F$. In particular, $[L:F] = [L:K][K:F]$.
@@ -399,7 +399,7 @@ Let's find a basis for $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}$.
 \item Use Theorem~\ref{thm.BasisExtensionField} to find a basis for  $\mathbb{Q}(\sqrt[4]{2})$ over $\mathbb{Q}$.
 \item Use Theorem~\ref{thm.ReducibilityTestDegree2or3} to show $x^2+x+1$ is the minimal polynomial of $\zeta_3$ over $\mathbb{Q}(\sqrt[4]{2})$.
 \item Use Theorem~\ref{thm.BasisExtensionField} to find a basis for  $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}(\sqrt[4]{2})$.
-\item Use Theorem~\ref{thm.BasisChainExtensionField} to find a basis for $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}$ and determine $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}]$.
+\item Use Fact~\ref{fact.BasisChainExtensionField} to find a basis for $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}$ and determine $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}]$.
 \end{enumerate}
 \end{problem}
 
@@ -414,7 +414,7 @@ Let's revisit the fields $\mathbb{Q}(\sqrt{2}+i)$ and $\mathbb{Q}(\sqrt{2},i)$.
 \begin{enumerate}
 \item Explain why $\mathbb{Q}(\sqrt{2}+i)\subseteq \mathbb{Q}(\sqrt{2},i)$.
 \item Use Theorem~\ref{thm.BasisExtensionField} and Problem~\ref{prob.DescribeQAdjoinSqrt2PlusI} to determine $[\mathbb{Q}(\sqrt{2}+i):\mathbb{Q}]$.
-\item Use Theorem~\ref{thm.BasisChainExtensionField} and Problem~\ref{prob.DescribeQAdjoinRoot2Andi} to determine $[\mathbb{Q}(\sqrt{2},i):\mathbb{Q}]$.
+\item Use Fact~\ref{fact.BasisChainExtensionField} and Problem~\ref{prob.DescribeQAdjoinRoot2Andi} to determine $[\mathbb{Q}(\sqrt{2},i):\mathbb{Q}]$.
 \item Use the previous parts to show that $\mathbb{Q}(\sqrt{2}+i)= \mathbb{Q}(\sqrt{2},i)$.
 \end{enumerate}
 \end{problem}
@@ -426,7 +426,7 @@ The next couple of problems illustrate the power of the multiplicative property 
 Let's take a look at $\mathbb{Q}(\sqrt[4]{2},\zeta_3)$ over $\mathbb{Q}(\zeta_3)$.
 \begin{enumerate}
 \item Explain why the EIC can \emph{not} be used to show that $x^4-2$ is irreducible in $\mathbb{Q}(\zeta_3)[x]$.
-\item Use  that $\mathbb{Q}\subset \mathbb{Q}(\zeta_3) \subset \mathbb{Q}(\sqrt[4]{2},\zeta_3)$  together with the multiplicative property of field degrees (from Theorem~\ref{thm.BasisChainExtensionField}) to determine  $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}(\zeta_3)]$. Remember that you computed $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}]$ in Problem~\ref{prob.BasisQFourthRoot2AndZeta3}.
+\item Use  that $\mathbb{Q}\subset \mathbb{Q}(\zeta_3) \subset \mathbb{Q}(\sqrt[4]{2},\zeta_3)$  together with the multiplicative property of field degrees (from Fact~\ref{fact.BasisChainExtensionField}) to determine  $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}(\zeta_3)]$. Remember that you computed $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}]$ in Problem~\ref{prob.BasisQFourthRoot2AndZeta3}.
 \item Use the fact that $[\mathbb{Q}(\sqrt[4]{2},\zeta_3):\mathbb{Q}(\zeta_3)]$ equals the degree of $\sqrt[4]{2}$ over $\mathbb{Q}(\zeta_3)$ (by Theorem~\ref{thm.BasisExtensionField}) to explain why $x^4-2$ is irreducible in $\mathbb{Q}(\zeta_3)[x]$.
 \end{enumerate}
 \end{problem}
@@ -452,8 +452,8 @@ Let $m,n\in \mathbb{Z}$ with $2\le m<n$. If $p,q\in \mathbb{Z}$ are prime, then 
 Let's find the degree of $\mathbb{Q}(\sqrt[5]{3},\zeta_5)$ over $\mathbb{Q}$.
 \begin{enumerate}
 \item Show that $[\mathbb{Q}(\sqrt[5]{3}):\mathbb{Q}] = 5$.
-\item Use that $\zeta_5$ is a root of $x^4+x^3+x^2+x+1$ to explain why $[\mathbb{Q}(\sqrt[5]{3},\zeta_5):\mathbb{Q}(\sqrt[5]{3})] \le 4$. Then Use Theorem~\ref{thm.BasisChainExtensionField} to show that $[\mathbb{Q}(\sqrt[5]{3},\zeta_5):\mathbb{Q}]\le 20$.
-\item Use Problem~\ref{prob.Cyclo5Irreducible} and Theorem~\ref{thm.BasisChainExtensionField}  to show $[\mathbb{Q}(\sqrt[5]{3},\zeta_5):\mathbb{Q}]$ is divisible by $4$.
+\item Use that $\zeta_5$ is a root of $x^4+x^3+x^2+x+1$ to explain why $[\mathbb{Q}(\sqrt[5]{3},\zeta_5):\mathbb{Q}(\sqrt[5]{3})] \le 4$. Then Use Fact~\ref{fact.BasisChainExtensionField} to show that $[\mathbb{Q}(\sqrt[5]{3},\zeta_5):\mathbb{Q}]\le 20$.
+\item Use Problem~\ref{prob.Cyclo5Irreducible} and Fact~\ref{fact.BasisChainExtensionField}  to show $[\mathbb{Q}(\sqrt[5]{3},\zeta_5):\mathbb{Q}]$ is divisible by $4$.
 \item Explain why $[\mathbb{Q}(\sqrt[5]{3},\zeta_5):\mathbb{Q}]= 20.$
 \end{enumerate}
 \end{problem}
@@ -508,7 +508,7 @@ As $\mathbb{Q}(\sqrt{2},i)$ is an extension of $\mathbb{Q}(\sqrt{2})$, $\mathbb{
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Isomorphisms of fields}
 
-We are closing in on our goal of understanding when a polynomial is solvable by radicals or not. Recall that $p(x)\in F[x]$ is solvable by radicals if all of the roots of $p(x)$ are contained in some radical extension of $F$. This implies that if $r_1,\ldots,r_n$ are the roots of $p(x)$, then  $F(r_1,\ldots,r_n)$ must also be contained in a radical extension. We've been working hard to understand fields like $F(r_1,\ldots,r_n)$, and with Theorem~\ref{thm.BasisChainExtensionField}, we are now able to explicitly describe the elements of $F(r_1,\ldots,r_n)$ as linear combinations of a particular basis, which involves certain powers of $r_1,\ldots,r_n$. But, we still need tools for analyzing $F(r_1,\ldots,r_n)$ in order to understand if it could be contained a radical extension or not. 
+We are closing in on our goal of understanding when a polynomial is solvable by radicals or not. Recall that $p(x)\in F[x]$ is solvable by radicals if all of the roots of $p(x)$ are contained in some radical extension of $F$. This implies that if $r_1,\ldots,r_n$ are the roots of $p(x)$, then  $F(r_1,\ldots,r_n)$ must also be contained in a radical extension. We've been working hard to understand fields like $F(r_1,\ldots,r_n)$, and with Fact~\ref{fact.BasisChainExtensionField}, we are now able to explicitly describe the elements of $F(r_1,\ldots,r_n)$ as linear combinations of a particular basis, which involves certain powers of $r_1,\ldots,r_n$. But, we still need tools for analyzing $F(r_1,\ldots,r_n)$ in order to understand if it could be contained a radical extension or not. 
 
 It turns out that the key idea is to study certain functions from $F(r_1,\ldots,r_n)$ to itself. Remembering that $F(r_1,\ldots,r_n)$ is a field (hence a ring) and also a vector space over $F$, we look at functions that preserve both structures, namely ring homomorphism that are also $F$-linear transformations. The next theorem provides a convenient characterization of $F$-linear transformation for maps that are already known to be ring homomorphisms.  
  
@@ -691,7 +691,7 @@ We now have to determine if each $\phi_i$ is in $\Aut(\mathbb{Q}(\zeta_5)/\mathb
 
 We now know that $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ is a group of order $4$. What group is it? 
 
-\begin{problem}
+\begin{problem}\label{prob.AutQAdjoinZeta5OverQIsZ4}
 Let's determine what group $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ is isomorphic to. 
 \begin{enumerate}
 \item Which element of $\Aut(\mathbb{Q}(\zeta_5)/\mathbb{Q})$ is $(\phi_2)^2$ equal to? (Remember $(\phi_2)^2$ means $\phi_2\circ\phi_2$.)

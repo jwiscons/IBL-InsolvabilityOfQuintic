@@ -83,7 +83,7 @@ Let $L = \mathbb{Q}(\sqrt[3]{2},\zeta_3)$. Let's determine $\Aut(L/\mathbb{Q})$.
 \begin{enumerate}
 \item What is minimal polynomial for $\sqrt[3]{2}$ over $\mathbb{Q}$? Why?
 \item What is minimal polynomial for $\zeta_3$ over $\mathbb{Q}(\sqrt[3]{2})$? Why?
-\item Use Theorem~\ref{thm.BasisChainExtensionField} to explain why $[L : \mathbb{Q}] = 6$.
+\item Use Fact~\ref{fact.BasisChainExtensionField} to explain why $[L : \mathbb{Q}] = 6$.
 \item Let $\phi\in  \Aut(\mathbb{Q}(\sqrt[3]{2},\zeta_3)/\mathbb{Q})$. Use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} to explain why there are only 3 choices for $\phi(\sqrt[3]{2})$ and only two choices for $\zeta_3$. What are they?
 \item Complete the table of possible elements of $\Aut(L/\mathbb{Q})$.
 \begin{center}
@@ -105,14 +105,14 @@ Let's revisit $L = \mathbb{Q}(\sqrt[3]{2},\zeta_3)$ from Problem~\ref{prob.AutQA
 \item Compute $\Aut(L/K_0)$, $\Aut(L/K_1)$, $\Aut(L/K_2)$, and $\Aut(L/K_3)$ by determining which of  $\phi_1,\ldots,\phi_6$ are in each one.
 \item Use Theorem~\ref{thm.AutLOverKSubgroupAutLOverF} to organize your findings by writing the appropriate elements in the boxes in the subgroup lattice of $\Aut(L/\mathbb{Q})$. 
 \begin{itemize}
-\item Label the degree of each field extension on the lines of the lattice on the left. Theorem~\ref{thm.BasisChainExtensionField} should help. A couple have been done for you.
+\item Label the degree of each field extension on the lines of the lattice on the left. Fact~\ref{fact.BasisChainExtensionField} should help. A couple have been done for you.
 \item Label the order and index of each subgroup on the lines of the lattice on the right.   
 \end{itemize} 
 \end{enumerate}
 \begin{center}
 \begin{tikzpicture}[line width = 1, xscale = 1.11]
 \begin{scope}[xscale = 0.9]
-\node (L) at (0,4) {$\mathbb{Q}(\sqrt[3]{2},i)$}; 
+\node (L) at (0,4) {$\mathbb{Q}(\sqrt[3]{2},\zeta_3)$}; 
 \node (K1) at (-5,2) {$\mathbb{Q}(\sqrt[3]{2})$}; 
 \node (K2) at (-3,2) {$\mathbb{Q}(\sqrt[3]{2}\zeta_3)$}; 
 \node (K3) at (-1,2) {$\mathbb{Q}(\sqrt[3]{2}\zeta_3^2)$}; 
@@ -239,7 +239,7 @@ i \; \mapsto \; & i & -i & i&    -i\\  \hline
 \end{problem}
 
 \begin{problem}\label{prob.AutQAdjoinCubeRoot2AndZeta3OverQAsPerms}
-Let's revisit Problem~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQ}. Set $L = \mathbb{Q}(\sqrt[3]{2},\zeta_3)$. We've seen that $L = \mathbb{Q}^{p(x)}$ for $p(x) = x^3-1$,  and the set of roots of $p(x)$ are $R=\{\sqrt[3]{2},\sqrt[3]{2}\zeta_3,\sqrt[3]{2}\zeta_3^2\}$. 
+Let's revisit Problem~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQ}. Set $L = \mathbb{Q}(\sqrt[3]{2},\zeta_3)$. We've seen that $L = \mathbb{Q}^{p(x)}$ for $p(x) = x^3-2$,  and the set of roots of $p(x)$ are $R=\{\sqrt[3]{2},\sqrt[3]{2}\zeta_3,\sqrt[3]{2}\zeta_3^2\}$. 
 \begin{enumerate}
 \item Fill in the extended table below to list how the elements of $\Aut(L/\mathbb{Q})$ operate on the elements of $R$. For the first two lines, use what you wrote in Problem~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQ}.
 \begin{center}
@@ -274,21 +274,21 @@ Let $p(x) = (x^2-2)(x^2+1)$. Theorem~\ref{thm.ComplexConjIsAutomorphismOfGaloisS
 \end{problem}
 
 \begin{problem}\label{prob.ComplexConjInAutQAdjoinCubeRoot2AndZeta3OverQ}
-Repeat Problem~\ref{prob.ComplexConjInAutQAdjoinSqrt2AndiOverQ} for $p(x) = x^3-1$. Use Problem~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQAsPerms} to determine which element of $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ corresponds to complex conjugation.  Write your answer in cycle notation.
+Repeat Problem~\ref{prob.ComplexConjInAutQAdjoinSqrt2AndiOverQ} for $p(x) = x^3-2$. Use Problem~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQAsPerms} to determine which element of $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ corresponds to complex conjugation.  Write your answer in cycle notation as in Problem~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQAsPerms}.
 \end{problem}
 
 \begin{problem}\label{prob.ComplexConjInAutQAdjoinZeta5}
-Repeat Problem~\ref{prob.ComplexConjInAutQAdjoinSqrt2AndiOverQ} for $p(x) = x^4+x^3+x^2+x+1$. Use Example~\ref{exam.QAdjoinZeta5GaloisAsPerms} to determine which element of $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ corresponds to complex conjugation. Write your answer in cycle notation.
+Repeat Problem~\ref{prob.ComplexConjInAutQAdjoinSqrt2AndiOverQ} for $p(x) = x^4+x^3+x^2+x+1$. Use Example~\ref{exam.QAdjoinZeta5GaloisAsPerms} to determine which element of $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ corresponds to complex conjugation. Write your answer in cycle notation as in Example~\ref{exam.QAdjoinZeta5GaloisAsPerms}.
 \end{problem}
 
 The similarities and difference between our answers to Problems~\ref{prob.ComplexConjInAutQAdjoinSqrt2AndiOverQ}--\ref{prob.ComplexConjInAutQAdjoinZeta5}  hint at the following theorem.
 
 \begin{theorem}\label{thm.PolyWithOnlyTwoComplexRootsYieldsTransposition}
-Let $p(x) \in \mathbb{Q}[x]$. If $p(x)$ has exactly two roots in $\mathbb{C}$ that are not in $\mathbb{R}$, then $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ contains a transposition.
+Let $p(x) \in \mathbb{Q}[x]$, and suppose that $p(x)$ has exactly two roots in $\mathbb{C}$ that are not in $\mathbb{R}$. Then when viewing $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ as permutations of the roots of $p(x)$, $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ contains a transposition.
 \end{theorem}
 
-\begin{problem}
-Consider $p(x) = x^5 +5x^4-5 \in \mathbb{Q}[x]$. Graph $p(x)$ or use calculus to show that $p(x)$ has exactly $3$ roots  in $\mathbb{R}$, and use Theorem~\ref{thm.PolyWithOnlyTwoComplexRootsYieldsTransposition} to conclude that $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ contains a transposition.
+\begin{problem}\label{prob.AutSplittingFieldx55x45ContainsTransposition}
+Consider $p(x) = x^5 +5x^4-5 \in \mathbb{Q}[x]$. Graph $p(x)$ or use calculus to show that $p(x)$ has exactly $3$ roots  in $\mathbb{R}$, and use Theorem~\ref{thm.PolyWithOnlyTwoComplexRootsYieldsTransposition} to conclude that when $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ is viewed as permutations of the $5$ roots of $p(x)$, $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ contains a transposition.
 \end{problem}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -352,7 +352,7 @@ Repeat Problem~\ref{prob.AutQAdjoinSqrt2AndiOverQNormalSubs} for $\mathbb{Q}(\sq
 % SECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\section{An application to solvability by radicals}
+\section{A criterion for solvability by radicals}
 
 Let's try to apply Galois theory to the problem of determining if a polynomial is solvable by radicals or not. Recall that $p(x)\in \mathbb{Q}[x]$ is \emph{solvable by radicals} over $\mathbb{Q}$ if all of the roots of $p(x)$ are contained in some radical extension of $\mathbb{Q}$; notice that this is the same as requiring that $\mathbb{Q}^{p(x)}$ is contained in some radical extension of $\mathbb{Q}$. 
 
@@ -468,7 +468,7 @@ The group $\Aut(F_i/L_{i-1})$ is abelian.
 
 We've learned a lot about $L$, or, more specifically, about $\Aut(L\mathbb{Q})$. We see now that $\Aut(L/\mathbb{Q})$ has a chain of subgroups, each normal in the next, such that the corresponding quotient groups are abelian. Let's name this property.
 
-\begin{definition}
+\begin{definition}\label{def.SolvableGroup}
 Let $G$ be a group with identity $1$. We say that $G$ is a \textbf{solvable} group if there exists a chain of subgroups 
 \[ \{1\} = H_0 \trianglelefteq H_1 \trianglelefteq H_2 \trianglelefteq \cdots \trianglelefteq H_k = G \]
 such that for all $1\le i \le k$, the quotient group $H_i/H_{i-1}$ is abelian.
@@ -483,6 +483,11 @@ If $p(x)\in \mathbb{Q}[x]$ is solvable by radicals over $\mathbb{Q}$, then $\mat
 \item $\Aut(L/\mathbb{Q})$ a solvable group.
 \end{enumerate} 
 \end{fact}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SUBSECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{The criterion}
 
 Notice that Fact~\ref{fact.RadExtensionForSolvablePoly} tells us a lot about $L$, but on the surface, it doesn't seem to address $\mathbb{Q}^{p(x)}$. However, by the definition of $\mathbb{Q}^{p(x)}$, we know that $\mathbb{Q}^{p(x)}$ is a Galois extension of $\mathbb{Q}$. 
 
@@ -501,13 +506,8 @@ If $p(x)\in \mathbb{Q}[x]$ is solvable by radicals over $\mathbb{Q}$, then $\Aut
 So, if we can find some $p(x)\in \mathbb{Q}[x]$ for which $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ is \emph{not} a solvable group, then we will be able to conclude that 
 $p(x)$ is \emph{not} solvable by radicals over $\mathbb{Q}$.
 
-Incidentally, the converse of Fact~\ref{fact.SolvabilityCriterion} is also true! This means that $p(x)\in \mathbb{Q}[x]$ is solvable by radicals over $\mathbb{Q}$ if and only if $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ a solvable group.
+Incidentally, the converse of Fact~\ref{fact.SolvabilityCriterion} is also true! This means that $p(x)\in \mathbb{Q}[x]$ is solvable by radicals over $\mathbb{Q}$ \emph{if and only if} $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ a solvable group.
 
-
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-% SUBSECTION
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-%\subsection{Some group theory}
 
 
 
