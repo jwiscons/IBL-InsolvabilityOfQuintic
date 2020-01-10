@@ -195,7 +195,7 @@ Let $p(x) = x^n-r^n$. Why is $p(x) \in F[x]$? Can you show that $F(r) = F^{p(x)}
 \begin{hint*}[Theorem~\ref{thm.ComplexConjIsAutomorphismOfGaloisSubfields}]
 First use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} to show that $\gamma$ maps $R$ to itself, then make use of the fact that $\gamma$ is an injective function. 
 
-Next, use results from Chapter~\ref{chapter:Rings} (including the First Isomorphism Theorem for rings) to show that $\gamma$ is an isomorphism from $\mathbb{Q}^{p(x)}$ to $\gamma(\mathbb{Q}^{p(x)})$ and that $\gamma$ fixes $\mathbb{Q}$. Then, to show that $\gamma \in \Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$, it only remains to show that $\mathbb{Q}^{p(x)} = \gamma(\mathbb{Q}^{p(x)})$. Let $r_1,\ldots,r_n$ be the roots of $p(x)$ so that $\mathbb{Q}^{p(x)} = \mathbb{Q}(r_1,\ldots,r_n)$. Using the definition of $\mathbb{Q}(r_1,\ldots,r_n)$, it is not to hard to see that $\gamma(\mathbb{Q}(r_1,\ldots,r_n)) = \gamma(\mathbb{Q})(\gamma(r_1),\ldots,\gamma(r_n))$. Now explain why  $\gamma(\mathbb{Q})(\gamma(r_1),\ldots,\gamma(r_n)) = \mathbb{Q}(r_1,\ldots,r_n)$.
+Next, use results from Chapter~\ref{chapter:Rings} (including the First Isomorphism Theorem for rings) to show that $\gamma$ is an isomorphism from $\mathbb{Q}^{p(x)}$ to $\gamma(\mathbb{Q}^{p(x)})$ and that $\gamma$ fixes $\mathbb{Q}$. Then, to show that $\gamma \in \Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$, it only remains to show that $\mathbb{Q}^{p(x)} = \gamma(\mathbb{Q}^{p(x)})$. Let $r_1,\ldots,r_n$ be the roots of $p(x)$, so $\mathbb{Q}^{p(x)} = \mathbb{Q}(r_1,\ldots,r_n)$. Use the definition of $\mathbb{Q}(r_1,\ldots,r_n)$ to show that $\gamma(\mathbb{Q}(r_1,\ldots,r_n)) = \gamma(\mathbb{Q})(\gamma(r_1),\ldots,\gamma(r_n))$ then explain why  $\gamma(\mathbb{Q})(\gamma(r_1),\ldots,\gamma(r_n)) = \mathbb{Q}(r_1,\ldots,r_n)$.
 \end{hint*}
 
 \begin{hint*}[Theorem~\ref{thm.PolyWithOnlyTwoComplexRootsYieldsTransposition}]
@@ -203,7 +203,7 @@ Next, use results from Chapter~\ref{chapter:Rings} (including the First Isomorph
 \end{hint*}
 
 \begin{hint*}[Lemma~\ref{lem.CommutatorsTrivialInAbelianGroup}]
-You want to show that $x^{-1}y^{-1}xy \in N$, which is the same as $(x^{-1}y^{-1}xy)N = N$ in the quotient group $H/N$. Work in $H/N$, and compute $(x^{-1}N)(y^{-1}N)(xN)(yN)$. Don't forget that $H/N$ is abelian.
+You want to show that $x^{-1}y^{-1}xy \in N$. Look back at properties of cosets to see that this is equivalent to showing that  $(x^{-1}y^{-1}xy)N = N$ in the quotient group $H/N$. Work in $H/N$, and compute $(x^{-1}N)(y^{-1}N)(xN)(yN)$. Don't forget that $H/N$ is abelian.
 \end{hint*}
 
 \begin{hint*}[Theorem~\ref{thm.TranspositionAndOrder5GenerateS5}]
