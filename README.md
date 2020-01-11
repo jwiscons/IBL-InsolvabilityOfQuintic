@@ -7,7 +7,7 @@ This is a free, open-source textbook designed to guide students towards a proof 
 At present, the main contributor is me ([Joshua Wiscons](http://webpages.csus.edu/wiscons/)).
 
 ## Editions
-###Fall 2019.
+### Fall 2019.
 It's complete and was used in Fall 2019 as it ws being written. (Let me ([Joshua Wiscons](mailto:joshua.wiscons@csus.edu)) know if you have implementation specific questions, or try visiting the [course website](http://webpages.csus.edu/wiscons/teaching/math110B_f19.html).)
 * In my opinion, the notes are a bit too full, especially in the chapter on Rings. Regardless, to make the notes work, I didn't ask my students to prove all theorems (but they were responsible for reading and being able to use everything). 
 * My implemention saw much of the final chapter woven in to a final project.
