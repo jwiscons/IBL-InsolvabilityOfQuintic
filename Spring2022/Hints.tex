@@ -1,0 +1,218 @@
+% !TEX root = IBL-InsolvabilityOfQuintic.tex
+\chapter{Hints}
+\label{chapter:Hints}
+\thispagestyle{empty}
+
+Below are some hints, which should be interpreted as possible (but not the only!) ways to get started.
+
+\begin{hint*}[Theorem~\ref{thm.MonicQuadratic}]
+You are solving $x^2+bx+c = 0$. Try ``completing the square'' first; then solve for $x$.
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.ComplexCheckin}]
+Multiplying a fraction by the complex conjugate of the denominator can be an effective way to simplify an expression.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.PolarToRectangular}]
+Think back to changing from polar to rectangular coordinates (or parametrizing circles or solving triangles).
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.MultiplyComplex}]
+Try using Theorem~\ref{thm.PolarToRectangular} $+$ trigonometric identities. 
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.nthRoots}]
+You want to find a $z$ such that $z^4 = \zeta_3$. You are working with powers (hence multiplication), so try writing $z$ in the form $z = r\cos\theta + ir\sin\theta$. Now you can use Corollary~\ref{cor.DeMoivre} to simplify $z^4$ and compare with $\zeta_3$. What can you deduce about $r$ and $\theta$?
+\end{hint*}
+
+\begin{hint*}[Lemma~\ref{lem.nthRoot1IsPowerOfZeta}]
+Similar to Problem~\ref{prob.nthRoots}, try writing $z$ in the form $z = r\cos\theta + ir\sin\theta$. Now, what does $z^n = 1$ imply about $r$ and $\theta$?
+\end{hint*}
+
+\begin{hint*}[Lemma~\ref{lem.ReducePowerOfZeta}]
+It may be helpful to draw some pictures first. Try plotting $\zeta_8$, $(\zeta_8)^2$, $(\zeta_8)^3$, \ldots, $(\zeta_8)^8$, $(\zeta_8)^{14}$, $(\zeta_8)^{85}$. Now, you know by a previous problem that $(\zeta_n)^n = 1$, so also $(\zeta_n)^{2n} = 1$ and so on. Try (using the division algorithm) to write $k = qn +r$ for some $q,r\in \mathbb{Z}$ with $0\le r \le n-1$ and plug that into $(\zeta_n)^{k}$.
+\end{hint*}
+
+
+\begin{hint*}[Theorem~\ref{thm.nthRoots1}]
+You may want to view this as the following ``if and only if'' statement: $z$ is an $n^\text{th}$ root of $1$ $\iff$ $z = (\zeta_n)^k$ for some $0\le k\le n-1$. Now make use of the previous lemma and theorems you proved. Don't forget to explain why each of $1, \zeta_n, (\zeta_n)^2, \ldots, (\zeta_n)^{n-1}$ are all different.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.RootsRealCoeff}]
+Suppose that $z$ is a root of $p(x)$. Then $p(z) = 0$, so  $a_nz^n + a_{n-1}z^{n-1} +\cdots+a_2z^2+a_1z+a_0 = 0$. This last equation is is just comparing two complex numbers---try taking the conjugate of both sides. Fact~\ref{fact.ComplexLaws} is helpful.
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.QAdjoinRoot5Inverse}]
+You are trying to find $(a+b\sqrt{5})^{-1} = \frac{1}{a+b\sqrt{5}}$. Try multiplying top and bottom by the conjugate: $a-b\sqrt{5}$.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.BasicFieldProps}]
+For the first part, notice that $x\cdot0 = x(0+0)$. For the last part, remember that the definition of a field ensures that $F$ has at least two elements, so there is some $a\in F$ with $a\neq 0$. Now, what happens if $0=1$?
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.ZpField}]
+The crux is to show that every nonzero element has a multiplicative inverse when $n$ is prime. Let $a\in (\mathbb{Z}_n)^*$. You need to find some integer $b$ such that $ab=1$ modulo $n$. Now, since $a\in (\mathbb{Z}_n)^*$ and  $n$ is prime, $\gcd(a,n) = 1$. By B\'ezout's Lemma, there exist $k,l\in \mathbb{Z}$ such that $1 = ka+ln$. What happens when you consider the equation $1 = ka+lp$ modulo $n$?
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.SubfieldRoot2PlusI}]
+If $T_3$ is a subfield, then, in particular, it is closed under multiplication, so it must be that $\alpha^2\in T_3$. That means that $\alpha^2 = a+b\alpha$ for some $a,b\in \mathbb{Q}$. What does this imply?
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.QAdjoinI}]
+Try following the approach in Example~\ref{exam.GenerateField}. First show  $\{a+bi\mid a,b\in \mathbb{Q}\} \subseteq \mathbb{Q}(i)$ by showing that every subfield that contains $\mathbb{Q}$ and $i$ must also contain $\{a+bi\mid a,b\in \mathbb{Q}\}$. To show the reverse containment, use the fact that $\{a+bi\mid a,b\in \mathbb{Q}\}$ is a subfield, by a previous problem.
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.QAdjoinRoot2PlusI}]
+Remember, in Problem~\ref{prob.SubfieldRoot2PlusI}\ref{prob.SubfieldRoot2PlusI.QAdjoinRoot2PlusI}, we saw that $\{a+b\alpha\mid a,b\in \mathbb{Q}\}$ is \emph{not} a subfield of $\mathbb{C}$.
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.QAdjoinRoot27Root7}]
+Use the previous theorem. To show  $\mathbb{Q}\left(3-\sqrt{2},5+i\right) \subseteq \mathbb{Q}\left(\sqrt{2},i\right)$, you need to show that $\mathbb{Q}\subset \mathbb{Q}\left(\sqrt{2},i\right)$ and that $3-\sqrt{2},5+i\in \mathbb{Q}\left(\sqrt{2},i\right)$. Then show the reverse containment in a similar way.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.SolvableByRadicalsNontrivialRootsOf1}]
+Note that $x^n - 1 = (x-1)(x^{n-1} + x^{n-2} + \cdots + x^2 + x + 1)$. Now use Theorem~\ref{thm.nthRoots1}; note that $x^{n-1} + x^{n-2} + \cdots + x^2 + x + 1$ should only have  $n-1$ roots.
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.SolvableByRadicalsHard}]
+First find the roots of $z^2 - 3z - 1$. Then, for each of those roots, use Theorem~\ref{thm.nthRoots} to solve for $z$. You should have 6 different roots in the end.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.UnitIsNotZeroDivisor}]
+Try a proof by contradiction. Assume that $u$ is a unit and that $u$ is a zero divisor. Now, what does the definition of being a zero divisor tell you about $u$?
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.DegreePolySum}]
+To get started, let $n = \deg p(x)$ and $m = \deg q(x)$, and then write $p(x) = a_0 + a_1x + \cdots + a_nx^n$ with $a_n\neq 0$ and $q(x) = b_0 + b_1x + \cdots + b_mx^m$ with $b_m\neq 0$. You want to understand the degree of $p(x) + q(x)$, so you need to determine the largest power of $x$ in the sum $p(x) + q(x)$.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.DegreePolyProduct}]
+As with the previous theorem, let $n = \deg p(x)$ and $m = \deg q(x)$, and then write $p(x) = a_0 + a_1x + \cdots + a_nx^n$ with $a_n\neq 0$ and $q(x) = b_0 + b_1x + \cdots + b_mx^m$ with $b_m\neq 0$. You need to determine the largest power of $x$ in the product $p(x)q(x)$. What do you think is the largest power of $x$ in the product $p(x)q(x)$? What is its coefficient, and how do you know it's not zero?
+\end{hint*}
+
+\begin{hint*}[Corollary~\ref{cor.PolysOverIntegralDomains}]
+There are several things to verify to ensure that $D[x]$ is an integral domain, but we've talked about most of them already. The main thing that remains is to prove that $D[x]$ has no zero divisors---try a proof by contradiction. This is a corollary of Theorem~\ref{thm.DegreePolyProduct}, which means that it should be ``not too hard'' to prove using Theorem~\ref{thm.DegreePolyProduct}. 
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.DivisionAlgorithm}]
+One approach is to polish up and fill in the gaps of the outline presented in the notes right before the statement of Theorem~\ref{thm.DivisionAlgorithm}. A related, but slightly different, approach is to try using induction on the degree of $a(x)$.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.RootImpliesLinearFactorOfPoly}]
+Try  using the division algorithm to write $a(x) = (x-c)q(x) + r(x)$ for some $q(x),r(x)\in F[x]$ with $\deg r(x) < \deg (x-c)$ or $r(x) = 0$. Now show that $r(x)$ must be the zero polynomial.
+\end{hint*}
+
+\begin{hint*}[Lemma~\ref{lem.GCDUnique}]
+First, explain why $d_1(x)$ must divide $d_2(x)$ and why $d_2(x)$ must divide $d_1(x)$. Now return to the definition of ``to divide'' and see what you can write down.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.HalfOfGCDProof}]
+Follow the definitions. Since $c(x)\in I$, it can be written a particular way. Then write down what it means for $h(x)$ to divide both $a(x)$ and $b(x)$. Combine.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.UnitsFAdjoinx}]
+For the forward direction, start with the definition of a unit and apply the degree function. For the reverse direction, what does $\deg p(x) = 0$ imply about $p(x)$? Can you explicitly write down the a multiplicative inverse for $p(x)$?
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.ReducibilityTestDegree2or3}]
+Consider using Theorem~\ref{thm.LinearFactorOfPolyImpliesRoot}.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.FactorIrreducibles}]
+Consider using using strong induction on the degree of the polynomial. Let $\varphi(n)$ be the statement ``every polynomial in $F[x]$ of degree $n$ can be written as a product of polynomials that are irreducible in $F[x]$.'' 
+
+For the base case, you want to show that $\varphi(1)$ is true. Assume that $p(x)\in F[x]$ has degree $1$. Then what? 
+
+Next, assume that $\varphi(k)$ is true for all $1\le k \le n$. We need to show that $\varphi(n+1)$ is true. Assume that $p(x)\in F[x]$ has degree $n+1$. There are two cases to consider: $p(x)$ is irreducible or $p(x)$ is reducible. Keep going\ldots
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.RepresentPolyIdealsWithSmallDegree}]
+Use the division algorithm to write $a(x) = (x^2+1)q(x) + r(x)$. What does this tell you?
+\end{hint*}
+
+
+\begin{hint*}[Theorem~\ref{thm.CommutativityPassestoQuotients}]
+Using Fact~\ref{fact.QuotientRing}, you know that $R/I$ is ring. So, for the first part, assume $R$ is commutative, and use this to show $R/I$ is commutative. The starting point is to choose two arbitrary elements of $R/I$, which would be something like $a+I$ and $b+I$ for $a,b\in R$. Now show that $(a+I)(b+I) = (b+I)(a+I)$ using the definition of multiplication in Fact~\ref{fact.QuotientRing}. 
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.RepresentIntegerIdealsWithSmallNumber}]
+For the second part, remember that $a\equiv_6 b \iff a-b$ is a multiple of $6$. For the last, use the division algorithm to write $a = 6q + r$. What does this imply? 
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.IdealContainingUnitsEqualsR}]
+By definition of an ideal, $I \subseteq R$, so what we really need to show is that $R \subseteq I$. Remember that $I$ is closed under multiplication by elements of $R$. So, if $a\in I$, then $ra\in R$. Try to first show that $1\in R$. 
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.CharacterizeFieldWithIdeals}]
+Theorem~\ref{thm.IdealContainingUnitsEqualsR} should help with the forward direction. For the backward direction, let $a\in R^*$; you need to show $a$ has an inverse. Try using Theorem~\ref{thm.MultiplesFormIdeal}: the set $I = \{ar\mid r\in R\}$ is an ideal. By assumption, $I = \{0\}$ or $I=R$. Which is it? Notice that if $I=R$, then $1\in I$.
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.ShowIdealIsPrincipalQx}]
+Use Theorem~\ref{thm.TwoGeneratedIsPrincipalFx}. Theorem~\ref{thm.IdealContainingUnitsEqualsR} may also be helpful.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.IdealContainment}]
+Try using Theorem~\ref{thm.PrincipalIdeals}.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.FirstIsoRings}]
+Assume $\phi:R\to S$ is a ring homomorphism. We need to define a suitable homomorphism from $R/\ker\phi$ to  $\phi(R)$, and then check that it is bijective. Let's let $K:= \ker\phi$. Try defining $\hat{\phi}:R/K\to\phi(R)$ via $\hat{\phi}(a+K) = \phi(a)$. A very important point, is that we don't actually know that $\hat{\phi}$ is a well-defined function. We know that a coset $a+K$ might be equal to $a'+K$, so we'd better make sure that if $a+K=a'+K$ then $\hat{\phi}(a+K) = \hat{\phi}(a'+K)$. Do that first. Then, verify that $\hat{\phi}$ is a homomorphism that is also surjective and injective. For injectivity, it may be useful to use Theorem~\ref{thm.HomInjectiveSurjective} and instead show that $\ker \hat{\phi} = \{0+K\}$.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.Image}]
+We want to show that $\phi(I)$ is an ideal of $S$. Elements of $\phi(I)$ look like $\phi(a)$ for some $a\in I$. To show that $\phi(I)$ is a subring of $S$, let  $\phi(a_1), \phi(a_2) \in \phi(I)$ for some $a_1,a_2\in I$. Now explain why $\phi(a_1)+\phi(a_2)$, $\phi(a_1)\phi(a_2)$, and $-\phi(a_1)$ are all in $\phi(I)$. You also should say why  $\phi(I)$ is nonempty. Finally, you also need to show that for all $s\in S$, $s\phi(a_1)$ is in $\phi(I)$. Remember that $\phi$ maps \emph{onto} $S$, so $s = \phi(r)$ for some $r\in R$. Now keep going.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.InverseImage}]
+We want to show that $\phi^{-1}(J)$ is an ideal of $R$. Let $a_1,a_2\in \phi^{-1}(J)$. This means that $\phi(a_1),\phi(a_2)\in J$. To show that $a_1+a_2$, $a_1a_2$, and $-a_1$ are in $\phi^{-1}(J)$, you just need to show that $\phi(a_1)+\phi(a_2)$, $\phi(a_1)\phi(a_2)$, and $-\phi(a_1)$ are all in $J$ (using that $a_1,a_2\in \phi^{-1}(J)$ and $J$ is an ideal). You also need to show that $ra_1\in \phi^{-1}(J)$, and to do that, you need to show that  $\phi(ra_1)\in J$.
+\end{hint*}
+
+
+\begin{hint*}[Problem~\ref{prob.Sqrt2PlusIIsAlgebraic}]
+Notice that $\alpha^2 = 2 + 2\sqrt{2}i -1$, so $\alpha^2 -1 = 2\sqrt{2}i$. What happens if you square both sides?
+\end{hint*}
+
+\begin{hint*}[Lemma~\ref{lem.MinimalPolyIsIrreducible}]
+Towards a contradiction, assume that $m(x)$ is reducible. By Theorem~\ref{thm.ReduciblePolynomials}, $m(x) = a(x)b(x)$ for some $a(x),b(x)\in F[x]$ with $\deg a(x)$ and $\deg b(x)$ both smaller than $\deg m(x)$. Now, $m(x)\in I$, so $0 = m(\alpha) = a(\alpha)b(\alpha)$. Explain why this implies that $a(x)$ or $b(x)$ is in $I$. But $I = (m(x))$, so by Theorem~\ref{thm.PrincipalIdeals}, $m(x)$ divides $a(x)$ or $b(x)$. What's the contradiction?
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.MinPolyZeta3}]
+Theorem~\ref{thm.SolvableByRadicalsNontrivialRootsOf1} might provide some inspiration.
+\end{hint*}
+
+\begin{hint*}[Problem~\ref{prob.DescribeQAdjoinSqrt2PlusI}]
+To see why the degree of $m(x)$ can not be $3$, suppose it is. Then $x^4-2x^2+9 = m(x)q(x)$ for some $q(x)\in\mathbb{Q}[x]$ with $\deg q(x) = 1$. Explain why $q(x)$ has a root that lies in $\mathbb{Q}$. But the root of  $q(x)$ is a root of $x^4-2x^2+9$, so find the roots of $x^4-2x^2+9$ (and thus a contradiction).
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.RingHomPlusLinearTrans}]
+Consider using Theorem~\ref{thm.HomPreservesMultiplicativeProperties} and remember that $c = c\cdot1$.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.QAdjoinRadicalIsGaloisOverFieldWithRootsUnity}]
+Let $p(x) = x^n-r^n$. Why is $p(x) \in F[x]$? Can you show that $F(r) = F^{p(x)}$?
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.ComplexConjIsAutomorphismOfGaloisSubfields}]
+First use Theorem~\ref{thm.HomFixingFPermutesRootsOfPolysOverF} to show that $\gamma$ maps $R$ to itself, then make use of the fact that $\gamma$ is an injective function. 
+
+Next, use results from Chapter~\ref{chapter:Rings} (including the First Isomorphism Theorem for rings) to show that $\gamma$ is an isomorphism from $\mathbb{Q}^{p(x)}$ to $\gamma(\mathbb{Q}^{p(x)})$ and that $\gamma$ fixes $\mathbb{Q}$. Then, to show that $\gamma \in \Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$, it only remains to show that $\mathbb{Q}^{p(x)} = \gamma(\mathbb{Q}^{p(x)})$. Let $r_1,\ldots,r_n$ be the roots of $p(x)$, so $\mathbb{Q}^{p(x)} = \mathbb{Q}(r_1,\ldots,r_n)$. Use the definition of $\mathbb{Q}(r_1,\ldots,r_n)$ to show that $\gamma(\mathbb{Q}(r_1,\ldots,r_n)) = \gamma(\mathbb{Q})(\gamma(r_1),\ldots,\gamma(r_n))$ then explain why  $\gamma(\mathbb{Q})(\gamma(r_1),\ldots,\gamma(r_n)) = \mathbb{Q}(r_1,\ldots,r_n)$.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.PolyWithOnlyTwoComplexRootsYieldsTransposition}]
+ Let $\gamma$ be complex conjugation. By Theorem~\ref{thm.ComplexConjIsAutomorphismOfGaloisSubfields}, $\gamma\in \Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$. What does $\gamma$ do to the real roots of $p(x)$? What about to those that are not real?
+\end{hint*}
+
+\begin{hint*}[Lemma~\ref{lem.CommutatorsTrivialInAbelianGroup}]
+You want to show that $x^{-1}y^{-1}xy \in N$. Look back at properties of cosets to see that this is equivalent to showing that  $(x^{-1}y^{-1}xy)N = N$ in the quotient group $H/N$. Work in $H/N$, and compute $(x^{-1}N)(y^{-1}N)(xN)(yN)$. Don't forget that $H/N$ is abelian.
+\end{hint*}
+
+\begin{hint*}[Theorem~\ref{thm.TranspositionAndOrder5GenerateS5}]
+Let $\sigma$ be an element of order 5 and $\tau$ a transposition. First explain why $\sigma$ must be a $5$-cycle. Then notice that we can write $\sigma = (a,b,c,d,e)$ and $\tau = (a,x)$ where $x\in \{b,c,d,e\}$. Try to use Fact~\ref{fact.NCycleAndSpecificTranspositionGenerateSn}. If $x=b$, you can directly apply 
+Fact~\ref{fact.NCycleAndSpecificTranspositionGenerateSn}; if not, consider $\sigma^2$, $\sigma^3$,\ldots
+\end{hint*}
+
+
+
+
+
+

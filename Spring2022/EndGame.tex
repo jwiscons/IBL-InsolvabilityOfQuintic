@@ -1,0 +1,155 @@
+% !TEX root = IBL-InsolvabilityOfQuintic.tex
+\chapter{End game}
+\label{chapter:EndGame}
+\thispagestyle{empty}
+
+Chapter~\ref{chapter:GaloisTheory} finished with a criterion, given as Fact~\ref{fact.SolvabilityCriterion}, that can be used to show that a polynomial $p(x)$ is not solvable by radicals over $\mathbb{Q}$.  It says that if $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ is \emph{not} a solvable group, then $p(x)$ is not solvable by radicals over $\mathbb{Q}$. We are extremely close to our goal. Here begins the end game.
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Solvable groups}
+To better understand how we might apply Fact~\ref{fact.SolvabilityCriterion}, let's try to collect some examples of solvable groups as well as some examples of groups that are not solvable. 
+
+We'll initially focus on  groups that have arisen as we studied $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ for various polynomials $p(x)$; here are the groups that we encountered.
+\begin{itemize}
+\item If $p(x) = (x^2-2)(x^2+1)$, then $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})\cong V_4$. See Problems~\ref{prob.AutQAdjoinSqrt2AndiOverQ} and~\ref{prob.AutQAdjoinSqrt2AndiOverQAsPerms}.
+\item If $p(x) = x^4+x^3+x^2+x+1$, then $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})\cong \mathbb{Z}_4$. See Examples~\ref{exam.AutQAdjoinZeta5OverQ} and~\ref{exam.QAdjoinZeta5GaloisAsPerms} and Problem~\ref{prob.AutQAdjoinZeta5OverQIsZ4}.
+\item If $p(x) = x^3-2$, then $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})\cong S_3$. See Problems~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQ} and~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQAsPerms}.
+\end{itemize}
+
+We know that each of the polynomials listed above are solvable by radicals, so by Fact~\ref{fact.SolvabilityCriterion}, each of the associated automorphism groups must be solvable. However, let's see this directly from the definition of a solvable group (Definition~\ref{def.SolvableGroup}). Since $V_4$ and $\mathbb{Z}_4$ are both abelian groups, the next theorem confirms that both groups are solvable. 
+
+\begin{theorem}
+Every abelian group is a solvable group.
+\end{theorem}
+
+Let's address $S_3$ next. In showing $S_3$ is solvable, there are various theorems from group theory that are helpful. The next fact highlights one of them. Recall that $[G:H]$ denotes the \emph{index} of $H$ in $G$, which is the number of left cosets of $H$ in $G$. In practice, $[G:H]$ is often computed using Lagrange's Theorem, which is also given below. 
+
+\begin{fact}\label{fact.SubgroupIndex2IsNormal}
+Suppose that $G$ is a group, and $H\le G$. If $[G:H]=2$, then then $H\trianglelefteq G$.
+\end{fact}
+
+\begin{fact}[Lagrange's Theorem]\label{thm.Lagrange}
+If $G$ is a finite group and $H\le G$, then $|G| = [G:H]\cdot|H|$.
+\end{fact}
+
+\begin{problem}
+Let's show that $S_3$ is a solvable group. Recall that $R = \{\text{id},(123),(132)\}$ is a subgroup of $S_3$. Consider the chain of subgroups \[\{\text{id}\} \le R \le S_3.\]
+\begin{enumerate}
+\item Briefly explain why $\{\text{id}\} \trianglelefteq R$.
+\item Use Fact~\ref{fact.SubgroupIndex2IsNormal} to explain why $R\trianglelefteq S_3$.
+\item Prove that $R$ is abelian.
+\item Compute $|S_3/R|$. What familiar group is  $S_3/R$ isomorphic to? Conclude that $S_3/R$ is abelian.
+\item Use Definition~\ref{def.SolvableGroup} (and the previous parts) to show that $S_3$ is a solvable group.
+\end{enumerate}
+\end{problem}
+
+Let's continue looking at the symmetric groups. Is $S_4$ solvable? What about $S_5$? Note that these  questions are highly relevant to determining if a polynomial is solvable by radicals since Corollary~\ref{cor.GaloisGroupIsPermGroup} tells us that $\Aut(\mathbb{Q}^{p(x)}/\mathbb{Q})$ is isomorphic to a subgroup of $S_n$  where $n = \deg p(x)$.
+
+\begin{problem}
+Let's now show that $S_4$ is a solvable group. We'll focus on two special subgroups: the alternating group $A_4$, and the group $V = \{id,(12)(34),(13)(24),(14)(23)\}$. Recall that $A_4$ consists of those permutations that can be written as a product of an \emph{even} number of transpositions. In particular, $V\le A_4$. Also, exactly half of the elements of $S_4$ lie in $A_4$, so $|A_4| = 12$. Consider the chain of subgroups \[\{\text{id}\} \le V \le A_4 \le S_4.\]
+\begin{enumerate}
+\item Prove that $V\trianglelefteq A_4$. (In fact, something stronger holds: $V\trianglelefteq S_4$.)
+\item Use Fact~\ref{fact.SubgroupIndex2IsNormal} to explain why $A_4\trianglelefteq S_4$.
+\item Prove that $V$ is abelian.
+\item Compute $|A_4/V|$. What familiar group is $A_4/V$ isomorphic to? Conclude that $A_4/V$ is abelian.
+\item Compute $|S_4/A_4|$. What familiar group is $S_4/A_4$ isomorphic to? Conclude that $S_4/A_4$ is abelian.
+\item Use Definition~\ref{def.SolvableGroup} (and the previous parts) to show that $S_4$ is a solvable group.
+\end{enumerate}
+\end{problem}
+
+Okay, so what about $S_5$? As we'll see, $S_n$ is not solvable when $n\ge 5$, and this is \emph{precisely} why there are degree 5 polynomials that are not solvable by radicals. Whoa. Let's start with a couple of lemmas.
+
+\begin{lemma}\label{lem.CommutatorsTrivialInAbelianGroup}
+Let $H$ be a group, and let $N\trianglelefteq H$. Suppose that $H/N$ is abelian. Then for all $x,y\in H$, we have that $x^{-1}y^{-1}xy \in N$.
+\end{lemma}
+
+\begin{lemma}\label{lem.ThreeCyclesAreCommutators}
+Let $n\ge 5$. Let $(a,b,c) \in S_n$ be any $3$-cycle. If $d$ and $e$ are such that $1\le d,e \le n$ and $a,b,c,d,e$ are all distinct, then 
+ $(a,b,c) = x^{-1}y^{-1}xy$ for $x = (a,d,b)$ and $y=(a,e,c)$.
+\end{lemma}
+
+We're now ready to show that $S_n$ is not solvable when $n\ge 5$. The strategy is to argue by contradiction. If $S_n$ is solvable, then there is a chain of subgroups $\{\text{id}\} = H_0 \trianglelefteq H_1 \trianglelefteq H_2 \trianglelefteq \cdots \trianglelefteq H_{k-1} \trianglelefteq H_k = S_n$ with each successive quotient an abelian group. 
+
+Working with the group $S_n/ H_{k-1} = H_k/ H_{k-1}$ and using Lemmas~\ref{lem.CommutatorsTrivialInAbelianGroup} and~\ref{lem.ThreeCyclesAreCommutators}, we can try to show that all of the $3$-cycles must be contained in $H_{k-1}$. Then, if $H_{k-1}$ contains all of the $3$-cycles, we can repeat the argument in the group $H_{k-1}/ H_{k-2}$ to show that all of the $3$-cycles must be contained in $H_{k-2}$. Continuing on, we'll eventually arrive at a contradiction.
+
+\begin{theorem}\label{thm.SnNotSolvableIfNGreaterThan4}
+If $n\ge 5$, then $S_n$ is not a solvable group.
+\end{theorem}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Checkmate}
+
+Let's take another look at a polynomial that's come up several times before: \[s(x) = x^5 +5x^4-5.\] We know a little about $\Aut(\mathbb{Q}^{s(x)}/\mathbb{Q})$, but seemingly not so much. Let's set $A = \Aut(\mathbb{Q}^{s(x)}/\mathbb{Q})$, and review what we know about $A$.
+
+\begin{enumerate}[label = \textbf{\Roman*.}]
+\item By Corollary~\ref{cor.GaloisGroupIsPermGroup}, $A$ can be viewed as a subgroup of $S_5$.
+\item By Problem~\ref{prob.AutSplittingFieldx55x45ContainsTransposition} (which relied on Theorem~\ref{thm.PolyWithOnlyTwoComplexRootsYieldsTransposition}), $A$ contains a transposition.
+\end{enumerate}
+
+But in fact, we know a bit more. 
+
+\begin{problem}\label{prob.EndGameOrderGDivisibleBy5}
+Let $\alpha$ be a root of $s(x)$. Recall that $s(x)$ is irreducible by EIC, so $[\mathbb{Q}(\alpha):\mathbb{Q}] = 5$ by Theorem~\ref{thm.BasisExtensionField}.
+\begin{enumerate}
+\item Use Fact~\ref{fact.BasisChainExtensionField} to explain why $[\mathbb{Q}^{s(x)}:\mathbb{Q}]$ is divisible by $5$.
+\item Use Fact~\ref{fact.SizeGaloisGroup} to explain why $|A|$ is divisible by $5$.
+\end{enumerate}
+\end{problem}
+
+We'll now invoke an important result from group theory: Cauchy's Theorem. Note that Lagrange's Theorem (Fact~\ref{thm.Lagrange}) implies that the order of any element of a finite group  divides the order of the group---Cauchy's Theorem can be viewed as a partial converse.
+
+\begin{fact}[Cauchy's Theorem]
+Let $p$ be a prime. If $G$ is any finite group such that $|G|$ is divisible by $p$, then  $G$ contains an element of order $p$.
+\end{fact}
+
+Applying Cauchy's Theorem to $A$ (in light of Problem~\ref{prob.EndGameOrderGDivisibleBy5}), we see that $A$ has an element of order $5$. Let's add this to our list of observations from above.
+
+\begin{enumerate}[start = 3, label = \textbf{\Roman*.}]
+\item $A$ has an element of order $5$.
+\end{enumerate}
+
+It turns out that our list is quite restrictive. We know that $A$ contains a transposition and an element of order $5$, but then $A$ also contains everything that those two elements generate. To explore what these elements generate, let's start by recalling  a basic fact from group theory. 
+
+\begin{fact}\label{fact.TranspositionsGenerateSn}
+The set of transpositions is a generating set for $S_n$. 
+\end{fact}
+
+Fact~\ref{fact.TranspositionsGenerateSn} is a launching point for finding other generating sets for $S_n$. Here's another.
+
+\begin{fact}\label{fact.NCycleAndSpecificTranspositionGenerateSn}
+If $(a_1,a_2,\ldots,a_n)$ is any $n$-cycle in $S_n$, then $(a_1,a_2,\ldots,a_n)$ together with the transposition $(a_1,a_2)$ generate $S_n$.
+\end{fact}
+
+Fact~\ref{fact.NCycleAndSpecificTranspositionGenerateSn} has an extremely important implication for us.
+
+\begin{theorem}\label{thm.TranspositionAndOrder5GenerateS5}
+The group $S_5$ is generated by any element of order 5 together with any transposition. Consequently, if a subgroup of $S_5$ contains both an element of order 5 and a transposition, then the subgroup is all of $S_5$.
+\end{theorem}
+
+So here we are. It's time to tie everything together to prove the Main Theorem. Combining  our three observations above with Theorem~\ref{thm.TranspositionAndOrder5GenerateS5}, we see that $A$ is isomorphic to $S_5$. Then Theorem~\ref{thm.SnNotSolvableIfNGreaterThan4} applies, and we find that $A$ is \emph{not} a solvable group. Finally, we invoke Fact~\ref{fact.SolvabilityCriterion}. 
+
+\begin{theorem}
+The polynomial $s(x) = x^5 +5x^4-5$ is \emph{not} solvable by radicals over $\mathbb{Q}$.
+\end{theorem}
+
+\begin{center}
+\textsc{The End}
+\end{center}
+
+
+
+
+
+
+
+
+

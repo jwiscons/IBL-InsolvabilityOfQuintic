@@ -1,0 +1,121 @@
+% !TEX root = IBL-InsolvabilityOfQuintic.tex
+\chapter{Solving polynomial equations}
+\label{chapter:PolyEquations}
+\thispagestyle{empty}
+
+The story begins. Can you count all of the times in your career that you've had to find the zeros of a quadratic polynomial? What about a cubic polynomial? A quartic? Likely your answers are decreasing rapidly, and it's also likely that you have only solved cubic and quartic equations in very special situations. Why? Is it just that cubic and quartic equations are difficult to solve or could it be that some are impossible to ``solve.'' 
+
+People have been investigating how to solve polynomial equations for about 4000 years. Let's get started.
+
+\begin{problem}\label{prob.IntroFindZeros}
+Determine the roots (i.e.~zeros) of each polynomial. Try to use tools you've accumulated over the years, but you will need a computer  (e.g.~\href{https://www.wolframalpha.com}{WolframAlpha}) for some of them. For each problem, make a note about \emph{how} you found the roots. If you used a computation tool, did you get exact answers or only approximate?
+\begin{multicols}{2}
+\begin{enumerate}
+\item $p(x) = x^2 - 5x + 6$
+\item $q(x) = (x-3)^2 - 2$
+\item $a(x) = x^2 + x + 1$
+\item $b(x) = x^3-3x-2$ %rational root theorem
+\item $f(x) = x^3 - 5$
+\item $g(x) = x^4 - 1$
+\item $r(x) = x^5 - 1$
+\item $s(x) = x^5 +5 x^4-5$
+\end{enumerate}
+\end{multicols}
+\end{problem}
+
+\begin{problem}\label{prob.IntroFindZerosWhere}
+For each part of Problem~\ref{prob.IntroFindZeros}, write down the ``smallest'' number system needed to express the roots of the given polynomial. Possible answers might be $\mathbb{Z}$ (integers), $\mathbb{Q}$ (rational numbers), $\mathbb{Z}$ together with $\sqrt{3}$, $\mathbb{Q}$ together with $\sqrt{-1}$ and $\sqrt[3]{5}$, etc.
+\end{problem}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Solving polynomial equations with formulas}
+Though you may have solved the first three parts of Problem~\ref{prob.IntroFindZeros} different ways, there was one tool that would have solved them all: the quadratic formula. It will be valuable to (re)discover why it's true. 
+
+First, let's slightly simplify things. Notice that $\alpha$ is a root of $ax^2 + bx + c$ if and only if $\alpha$ is a root of $x^2 + \frac{b}{a}x + \frac{c}{a}$ (assuming $a\neq 0$). This means that an arbitrary quadratic polynomial can always be converted to a quadratic polynomial whose leading coefficient is $1$ and in such a way that they have the same roots. Thus, if we have a formula that finds the roots of so-called \emph{monic} quadratic polynomials, we can actually use it to find the roots of \emph{all} quadratic polynomials.
+
+\begin{definition}
+A polynomial whose leading coefficient is $1$ is called a $\textbf{monic}$ polynomial.
+\end{definition}
+
+Now, let's (re)derive the quadratic formula for monic polynomials. Remember, we are \emph{(re)deriving} it, so \emph{please don't use the quadratic formula in your proof of the next theorem.}
+
+\begin{theorem}\label{thm.MonicQuadratic}
+The roots of $p(x) = x^2 + bx + c$ are \[\frac{-b\pm\sqrt{b^2 - 4c}}{2}.\]
+\end{theorem}
+
+\begin{problem}
+Describe a number system, as small as possible, that is capable of expressing the roots of \emph{any} quadratic polynomial whose coefficients are all rational numbers.
+\end{problem}
+
+Well, that takes care of quadratic polynomials. What about finding the roots of cubic polynomials? Well, it turns out that there is indeed a cubic formula, though it's decidedly more complicated than the quadratic formula. 
+
+A method for deriving a cubic formula, due to \href{https://en.wikipedia.org/wiki/Scipione_del_Ferro}{Scipione del Ferro} and \href{https://en.wikipedia.org/wiki/Niccolo_Fontana_Tartaglia}{Tartaglia}, was published in a book by \href{https://en.wikipedia.org/wiki/Gerolamo_Cardano}{Cardano} in 1545. The starting point is to take a general cubic polynomial and first convert it to a monic polynomial (as we did above) and then convert it to a cubic of the form $x^3 + px +q$, always with the same roots as the original. Then, with work, one arrives at the following formula. 
+
+\begin{fact}\label{fact:Cardano}
+The roots of $p(x) = x^3 + px + q$ are \[\alpha + \beta, \left(-\frac{1}{2} + \frac{\sqrt{-3}}{2}\right)\alpha + \left(-\frac{1}{2} - \frac{\sqrt{-3}}{2}\right)\beta, \left(-\frac{1}{2} - \frac{\sqrt{-3}}{2}\right)\alpha + \left(-\frac{1}{2} + \frac{\sqrt{-3}}{2}\right)\beta\]
+where $\alpha = \sqrt[3]{-\frac{q}{2} + \sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}$ and $\beta = \sqrt[3]{-\frac{q}{2} - \sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}$
+\end{fact}
+
+\begin{problem}
+Describe a number system, as small as possible, that is capable of expressing the roots of \emph{any} cubic polynomial of the form $x^3 + px + q$ where $p,q\in \mathbb{Q}$.
+\end{problem}
+
+\begin{problem}
+Use Fact~\ref{fact:Cardano} to write out the roots of $p(x) = x^3-2x-4$. Are any of the roots integers? Check your answer with \href{https://www.wolframalpha.com}{WolframAlpha}. Does this expose any issues with using the formula?
+\end{problem}
+
+For more details on solving cubic equations, you can use start with the \href{https://en.wikipedia.org/wiki/Cubic_function#Derivation_of_the_roots}{Wikipedia page about cubic functions}. But now, on to quartic functions\ldots perhaps you have a guess\ldots
+
+\begin{problem}
+Use the internet and/or library to determine if there is a quartic formula, i.e.~a formula that gives the roots of a fourth-degree polynomial in terms of its coefficients. If there is a quartic formula, who are some people that discovered methods to derive it and when did they discover their method?
+\end{problem}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% SECTION
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\section{The main question(s)}
+We now turn our attention to finding the roots of polynomials of degree five and higher. Well, what do you think: is there a quintic formula? Actually, there are two questions here: (1) what do we mean by ``formula'' (e.g.~what symbols/functions can we use), and (2) whatever we mean by formula, is there one that works for \emph{all} quintic polynomials?
+
+You investigated two particular quintics in Problem~\ref{prob.IntroFindZeros}---what did you find? Did you find exact expressions for the roots? If so, \emph{how} were the roots expressed; that is, what symbols/functions were needed to write out the roots? 
+
+Let's first try to tackle the ``what do we mean by formula'' question. Guided by the quadratic and cubic formulas, let's agree that we are looking for a formula that expresses the roots of an arbitrary quintic polynomial in terms of the coefficients of the polynomial using just the operations of addition, subtraction, multiplication, division, and the extraction of roots (square roots, cube roots,\ldots). This leads to the following intuitive definition, that we will work to sharpen later.
+
+\begin{intuitivedef}
+A polynomial is said to be \textbf{solvable by radicals} if every root of the polynomial can be expressed in terms of the coefficients of the polynomial using the operations of addition, subtraction, multiplication, division, and $\sqrt[n]{\phantom{x}}$ for any positive integer $n$.
+\end{intuitivedef}
+
+\begin{problem}
+Find the roots of $p(x) = x^4 - 2x^2 -1$. Explain why $p(x)$ is solvable by radicals according to our intuitive definition.
+\end{problem}
+
+\begin{problem}
+Explain why every quadratic polynomial is solvable by radicals.
+\end{problem}
+
+Returning to quintic polynomials, our main question is as follows.
+
+\begin{mainquestion} 
+Does there exist a ``quintic formula'' that expresses the roots of an arbitrary quintic polynomial, in terms of the coefficients of the polynomial, using just the operations of addition, subtraction, multiplication, division, and the extraction of roots?
+\end{mainquestion}
+
+Well, if the answer is yes, then it must be that every quintic polynomial is solvable by radicals. \textit{Spoiler Alert!}  Our goal (for the rest of the book) is to prove the following theorem, in a rather elegant way. 
+
+\begin{maintheorem}\label{thm.MainTheorem}
+Not every quintic polynomial is solvable by radicals.
+\end{maintheorem}
+
+\begin{maincorollary}
+There is \textbf{no} ``quintic formula'' that expresses the roots of an arbitrary quintic polynomial in terms of the coefficients of the polynomial using just the operations of addition, subtraction, multiplication, division, and the extraction of roots.
+\end{maincorollary}
+
+\vfill
+
+\begin{flushright}
+Let's get to work\dots
+\end{flushright}
