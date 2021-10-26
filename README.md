@@ -8,11 +8,14 @@ At present, the main contributor is me ([Joshua Wiscons](http://webpages.csus.ed
 
 ## Editions
 ### Fall 2019.
-It's complete and was used in Fall 2019 as it was being written. 
+This is the current, stable version of the book. It was finalized in January 2020. 
 * The notes are a bit full, especially in the chapter on Rings, and to keep an appropriate pace, I didn't ask my students to prove all theorems (but they were responsible for reading and being able to use everything). 
 * My implemention saw much of the final chapter woven in to a final project.
 * I think it went very well, but there are many things to improve. I'd love to have others join the project.
 * Let me (Joshua Wiscons) know if you have implementation specific questions, or try visiting the [course website](http://webpages.csus.edu/wiscons/teaching/math110B_f19.html).
+
+### Spring 2022 (under development).
+This version will be under development from now through Spring 2022. No large changes are currently planned---just polishing. 
 
 ## License Information
 In many ways, this work builds off of [An Inquiry-Based Approach to Abstract Algebra](https://github.com/dcernst/IBL-AbstractAlgebra), so we adopt the same liscense. 
