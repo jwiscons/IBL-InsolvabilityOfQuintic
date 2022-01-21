@@ -1,3 +1,4 @@
+% !TEX root = IBL-InsolvabilityOfQuintic.tex
 \chapter{Introduction}
 
 This course is a story. A repackaging of a famous story, spanning more-or-less 4000 years, about solving polynomial equations. I hope you like it. I also hope enjoy the beautiful sights along the way, many of which were a long time in the making and most of which are still being heavily researched to this day.
@@ -8,10 +9,10 @@ This course is a story. A repackaging of a famous story, spanning more-or-less 4
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Prerequisites}
-A first course in abstract algebra, focusing on the basics of group theory, together with exposure to foundational topics like primes and divisibility, functions and relations, differential calculus, and linear algebra form the core prerequisites. Comfort with basic proof techniques, including induction, is also more-or-less required. The following two free and open-source books developed by \href{https://danaernst.com}{Dana C.~Ernst} will serve you well if you need to review.
+A first course in abstract algebra, focusing on the basics of group theory, together with exposure to foundational topics like primes and divisibility, functions and relations, differential calculus, and linear algebra form the core prerequisites. Comfort with basic proof techniques, including induction, is also more-or-less required. The following two free and open-source books  by \href{https://danaernst.com}{Dana C.~Ernst} will serve you well if you need to review.
 \begin{itemize}
-\item \href{https://github.com/dcernst/IBL-AbstractAlgebra/blob/master/Spring2018/IBL-AbstractAlgebra.pdf}{An Inquiry-Based Approach to Abstract Algebra}
-\item \href{https://github.com/dcernst/IBL-IntroToProof/blob/master/IntroToProof.pdf}{An Introduction to Proof via Inquiry-Based Learning}
+\item \href{https://github.com/dcernst/IBL-AbstractAlgebra/blob/master/Fall2021/IBL-AbstractAlgebra.pdf}{An Inquiry-Based Approach to Abstract Algebra}
+\item \href{https://github.com/dcernst/IBL-IntroToProof/blob/master/Fall2021/IntroToProof.pdf}{An Introduction to Proof via Inquiry-Based Learning}
 \end{itemize}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -22,44 +23,28 @@ A first course in abstract algebra, focusing on the basics of group theory, toge
 \section{An Inquiry-Based Approach}
 This section of the introduction as well as those that follow are (only slightly) modified from the introduction of  \href{https://github.com/dcernst/IBL-AbstractAlgebra/blob/master/Spring2018/IBL-AbstractAlgebra.pdf}{An Inquiry-Based Approach to Abstract Algebra}. The use of ``I'' below, does indeed refer to me, but mainly just because I also believe the words that \href{https://danaernst.com}{Dana} originally wrote.
 
-In many courses, math or otherwise, you sit and listen to a lecture. These lectures may be polished and well-delivered. You may have often been lured into believing that the instructor has opened up your head and is pouring knowledge into it. I  love lecturing, and I do believe there is value in it, but I also believe that in reality most students do not learn by simply listening. You must be active in the learning process. Likely, each of you have said to yourselves, ``Hmmm, I understood this concept when the professor was going over it, but now that I am alone, I am lost." In order to promote a more active participation in your learning, we will incorporate ideas from an educational philosophy called inquiry-based learning (IBL).
+In many courses, math or otherwise, you sit and listen to a lecture. These lectures may be polished and well-delivered. I love lecturing, and I do believe there is value in it. But, I also believe that in reality most students do not learn by simply listening. You must be active in the learning process. Likely, each of you have said to yourselves, ``Hmmm, I understood this concept when the professor was going over it, but now that I am alone, I am lost." To promote a more active participation in your learning, we will incorporate ideas from an educational philosophy called inquiry-based learning (IBL)\footnote{For more about IBL, check out \href{https://danaernst.com}{Dana's} blog post, \href{http://maamathedmatters.blogspot.com/2013/05/what-heck-is-ibl.html}{What the Heck is IBL?}}.
 
-Loosely speaking, IBL is a student-centered method of teaching mathematics that engages students in sense-making activities.  Students are given tasks requiring them to solve problems, conjecture, experiment, explore, create, communicate.  Rather than showing just facts or a clear, smooth path to a solution, the instructor guides and mentors students via well-crafted problems through an adventure in mathematical discovery.  Effective IBL courses encourage deep engagement in rich mathematical activities and provide opportunities to collaborate with peers (either through class presentations or group-oriented work).
-
-Perhaps this is sufficiently vague, but I believe that there are two essential elements to IBL.  Students should as much as possible be responsible for:
+Loosely speaking, IBL is a student-centered method of teaching mathematics that engages students in sense-making activities.  Students are given tasks requiring them to solve problems, conjecture, experiment, explore, create, communicate.  Rather than showing just facts or a clear, smooth path to a solution, the instructor guides and mentors students via well-crafted problems through an adventure in mathematical discovery.  Effective IBL courses encourage deep engagement in rich mathematical activities and provide opportunities to collaborate with peers (either through class presentations or group-oriented work). I believe that there are two essential elements to IBL: students should as much as possible be responsible for
 \begin{enumerate}
-\item Guiding the acquisition of knowledge, and
-\item Validating the ideas presented.  That is, students should not be looking to the instructor as the sole authority.
+\item guiding the acquisition of knowledge;
+\item validating the ideas presented (so students should not be looking to the instructor as the sole authority).
 \end{enumerate}
-\noindent For additional information, check out \href{https://danaernst.com}{Dana's} blog post, \href{http://maamathedmatters.blogspot.com/2013/05/what-heck-is-ibl.html}{What the Heck is IBL?}
 
-Much of the course will be devoted to students proving theorems on the board and a significant portion of your grade will be determined by the  mathematics you produce. I use the word ``produce'' because I believe that the best way to learn mathematics is by doing mathematics. Someone cannot master a musical instrument or a martial art by simply watching, and in a similar fashion, you cannot master mathematics by simply watching; you must do mathematics!
 
-Furthermore, it is important to understand that proving theorems is difficult and takes time. You should not expect to complete a single proof in 10 minutes. Sometimes, you might have to stare at the statement for an hour before even understanding how to get started. 
-
-In this course, everyone will be required to
+Much of this course will be devoted to students discussing and proving theorems at the board because I believe that the best way to learn mathematics is by doing mathematics. Someone cannot master a musical instrument or a martial art by simply watching, and in a similar fashion, you cannot master mathematics by simply watching; you must do mathematics! In this class, students will regularly 
 \begin{itemize}
-\item read and interact with course notes on your own;
-\item write up quality proofs to assigned problems;
-\item present proofs on the board to the rest of the class;
+\item read and interact with course notes on their own and with classmates;
+\item write up their proofs to assigned problems;
+\item discuss their proofs on the board to the rest of the class;
 \item participate in discussions centered around a student's presented proof;
-\item call upon your own prodigious mental faculties to respond in flexible, thoughtful, and creative ways to problems that may seem unfamiliar on first glance.
+\item work to respond in flexible, thoughtful, and creative ways to problems that may seem unfamiliar on first glance.
 \end{itemize}
-\noindent As the semester progresses, it should become clear to you what the expectations are. This may be new to you and there may be some growing pains associated with it.
+
+It is important to understand that proving theorems is difficult and takes time. You should not expect to complete a proof in 10 minutes. Sometimes, you might have to stare at the statement for an hour before even understanding how to get started. However, there do exist some hints, collected in Appendix~\ref{chapter:Hints}. If you use the hints, please keep in mind that (1) your own learning will significantly benefit from cognitive struggles (independently and with your peers), so don't turn to the hints too early; and (2) the hints are really just some possible ways to get started. A hint might very well not be the way that makes the most sense to you, so I encourage you to follow you own path. 
+
 
 Lastly, it is highly important to respect learning and to respect other people's ideas.  Whether you disagree or agree, please praise and encourage your fellow classmates.  Use ideas from others as a starting point rather than something to be judgmental about.  Judgement is not the same as being judgmental.  Helpfulness, encouragement, and compassion are highly valued.
-
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-% SECTION
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\section{Rules of the Game}
-You should \emph{not} look to resources outside the context of this course for help. That is, you should not be consulting the Internet, other texts, other faculty, or students outside of our course. On the other hand, you may use each other, the course notes, me, and your own intuition.  
-
-However, there do exist some hints, collected in Appendix~\ref{chapter:Hints}. Everyone may use the hints, but they were included mostly to support those who need to miss a class and are not able to find a time to meet with their classmates (or me). If you use the hints, please keep in mind that (1) your own learning will significantly benefit from cognitive struggles (independently and with your peers), so don't turn to the hints too early; and (2) the hints are really just some possible ways to get started---they may very well not be the way that makes the most sense to you, so I encourage you to follow you own paths. 
-
-In this class, earnest failure outweighs counterfeit success; you need not feel pressure to hunt for solutions outside your own creative and intellectual reserves.  
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -71,6 +56,5 @@ As you read the notes, you will be required to digest the material in a meaningf
 
 The items labeled as \textbf{Definition}, \textbf{Example}, or \textbf{Fact} are meant to be read and digested.  However, the items labeled as \textbf{Problem}, \textbf{Lemma}, \textbf{Theorem}, and \textbf{Corollary} require action on your part.  Items labeled as \textbf{Problem} are sort of a mixed bag. Some Problems are computational in nature and aimed at improving your understanding of a particular concept while others ask you to provide a counterexample for a statement if it is false or to provide a proof if the statement is true. Items with the \textbf{Lemma}, \textbf{Theorem}, and \textbf{Corollary} designation are mathematical facts, and the intention is for you to produce a valid proof of the given statement.  \textbf{Lemma's} are usually stepping stones to the next theorem, though they are often  interesting in their own right. \textbf{Corollaries}  are typically statements that follow quickly from a previous theorem. In general, you should expect corollaries to have very short proofs.  However, that doesn't mean that you can't produce a more lengthy yet valid proof of a corollary. 
 
-It is important to point out that there are very few examples in the notes.  This is intentional.  One of the goals of the items labeled as \textbf{Problem} is for you to produce the examples.
-
-Lastly, there are many situations where you will want to refer to an earlier definition, fact, problem, lemma, theorem, or corollary.  In this case, you should reference the statement by number (or by name if it has one).  
+It is important to point out that there are very few examples in the notes.  This is intentional.  One of the goals of the items labeled as \textbf{Problem} is for \emph{you} to produce the examples.
+ 
