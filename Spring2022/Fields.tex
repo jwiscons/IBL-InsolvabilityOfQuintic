@@ -4,7 +4,7 @@
 \thispagestyle{empty}
 
 
-In Chapter~\ref{chapter:PolyEquations}, we explored problems about finding and expressing roots of polynomials, finally arriving at the goal of the course: proving that there are quintic polynomials that are \emph{not} solvable by radicals. This chapter serves two main purposes. First, as we look at roots of polynomials and how they can be expressed, it will be convenient to have a common world (i.e.~number system) in which they live. For us, this will be the complex numbers, denoted $\mathbb{C}$, which will be reviewed below. Our work with complex numbers will also supply the necessary language to properly talk about $n^{\text{th}}$-roots. Second, we are still in need of a proper definition of what it means for a polynomial to be ``solvable by radicals''; this is where the chapter will finish. But the middle of the chapter is perhaps the most interesting. There, on the way to defining ``solvable by radicals'', we will be led to abstract the structure of $\mathbb{C}$ (and of $\mathbb{Q}$ and $\mathbb{R}$), arriving at the definition of a \emph{field}. 
+In Chapter~\ref{chapter:PolyEquations}, we explored problems about finding and expressing roots of polynomials, finally arriving at the goal of the course: proving that there are quintic polynomials that are \emph{not} solvable by radicals. This chapter serves two main purposes. First, as we look at roots of polynomials and how they can be expressed, it will be convenient to have a common world (i.e.~number system) in which they live. For us, this will be the complex numbers, denoted $\mathbb{C}$, which will be reviewed below. Our work with complex numbers will also supply the necessary language to properly talk about $n^{\text{th}}$-roots. Second, we are still in need of a proper definition of what it means for a polynomial to be ``solvable by radicals'', and this chapter lays the essential groundwork (to be completed in the next chapter). On the way to defining ``solvable by radicals'', we will be led to study the abstract the structure of $\mathbb{C}$ (and of $\mathbb{Q}$ and $\mathbb{R}$), arriving at the definition of a \emph{field}. 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -12,15 +12,15 @@ In Chapter~\ref{chapter:PolyEquations}, we explored problems about finding and e
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Complex Numbers}
-As mentioned above, we want to work in a world that contains all of the roots of all of the polynomials that we will be studying. Considering the roots of polynomials such as $x^2 +1$, $x^2-2$, $x^2-3$, etc., we see that we need to include numbers like $\sqrt{-1}$, $\sqrt{2}$, $\sqrt{3}$, etc., so although there are smaller worlds one could choose, we will opt for the world containing both $\sqrt{-1}$ and $\mathbb{R}$, namely $\mathbb{C}$.
+As mentioned above, it will be convenient to work in a world that contains all of the roots of all of the polynomials that we will be studying. Considering the roots of polynomials such as $x^2 +1$, $x^2-2$, $x^2-3$, etc., we see that we need to include numbers like $\sqrt{-1}$, $\sqrt{2}$, $\sqrt{3}$, etc., so although there are smaller worlds one could choose, we will opt for the world containing both $\sqrt{-1}$ and $\mathbb{R}$, namely $\mathbb{C}$.
 
 But before we proceed, note that $\sqrt{-1}$ is not really well defined. There are \emph{two} solutions to $x^2 +1$, so when we write $\sqrt{-1}$, we are all agreeing that we mean the same one. 
 
 \begin{definition}
-Let $i$ (or alternatively $\sqrt{-1}$) denote one particular solution to $x^2 +1$. 
+Let $i$ (or alternatively $\sqrt{-1}$) denote one particular solution to $x^2 +1 = 0$. 
 \end{definition}
 
-Of course, the previous definition implies that $i^2 = -1$. Using $i$ and $\mathbb{R}$, we now build the complex numbers.
+ Using $i$ and $\mathbb{R}$, we now build the complex numbers.
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % SUBSECTION
@@ -42,11 +42,11 @@ We graph $-2 + 2i$ and  $1 - 3i$ below.
 \foreach \i in {1,2,3} {
 \draw (-\i,-0.1) -- (-\i,0.1);
 \draw (\i,-0.1) -- (\i,0.1);
-\node[anchor = 90] at (-\i,0) {\small $\i$};
+\node[anchor = 90] at (-\i,0) {\small $-\i$};
 \node[anchor = 90] at (\i,0) {\small $\i$};
 \draw (-0.1,-\i) -- (0.1,-\i);
 \draw (-0.1,\i) -- (0.1,\i);
-\node[anchor = 0] at (0,-\i) {\small $\i$};
+\node[anchor = 0] at (0,-\i) {\small $-\i$};
 \node[anchor = 0] at (0,\i) {\small $\i$};
 }
 \node (w) at (-2,2) {};
@@ -105,13 +105,13 @@ We have that $|-2 + 2i| = \sqrt{(-2)^2+2^2} = 2\sqrt{2}$ and $\Arg(-2 + 2i) = \f
 \foreach \i in {1,2,3} {
 \draw (-\i,-0.1) -- (-\i,0.1);
 \draw (\i,-0.1) -- (\i,0.1);
-\node[anchor = 90] at (-\i,0) { $\i$};
+\node[anchor = 90] at (-\i,0) { $-\i$};
 \node[anchor = 90] at (\i,0) { $\i$};
 }
 \foreach \i in {1,2} {
 \draw (-0.1,-\i) -- (0.1,-\i);
 \draw (-0.1,\i) -- (0.1,\i);
-\node[anchor = 0] at (0,-\i) { $\i$};
+\node[anchor = 0] at (0,-\i) { $-\i$};
 \node[anchor = 0] at (0,\i) { $\i$};
 }
 \node (w) at (-2,2) {};
