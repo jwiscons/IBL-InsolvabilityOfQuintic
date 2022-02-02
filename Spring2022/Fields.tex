@@ -462,12 +462,20 @@ We often refer to the entire structure $(\mathbb{Z}_n,+_n,\cdot_n)$ as simply $\
 
 So, in $\mathbb{Z}_5$, we write equations like $3+6 = 4$, since $3+6 = 9$ and $9$ is congruent to $4$ when working modulo $5$. If needed, we can highlight that we are working modulo $5$ by writing  $3+6 \equiv_5 4$. And with respect to multiplication in $\mathbb{Z}_5$, we have equations like $2\cdot3 = 1$, which implies that $3$ is a multiplicative inverse of $2$ (and vice versa) in $\mathbb{Z}_5$.
 
+\begin{fact}\label{fact.IntegersModnLaws} The following are true for $\mathbb{Z}_n$.
+\begin{itemize}
+\item \textbf{Addition Laws:} Addition is associative and commutative. There is a unique additive identity, namely $0$; each $x\in\mathbb{Z}_n$ has a unique additive inverse, denoted $-x$.
+\item \textbf{Multiplication Laws:} Multiplication is associative and commutative. There is a unique multiplicative identity, namely $1$.
+\item \textbf{Distributivity Laws:} For all $x,y,z \in \mathbb{Z}_n$, $x(y+z) = xy+xz$ and $(y+z)x = yx+zx$.
+\end{itemize}
+\end{fact}
+
 \begin{problem}
 Show that $\mathbb{Z}_5$ is a field but $\mathbb{Z}_6$ is not.
 \end{problem}
 
 \begin{problem}\label{prob.ConjectureZn}
-Make a conjecture as to when $\mathbb{Z}_n$ is a field and when it is not. That is, try to fill in the blank: ``$\mathbb{Z}_n$ is a field provided \fillInBlank{something about $n$}.'' What evidence do you have to support this?
+Make a conjecture as to when $\mathbb{Z}_n$ is a field. That is, try to fill in the blank: ``$\mathbb{Z}_n$ is a field provided \fillInBlank{something about $n$}.'' What evidence do you have?
 \end{problem}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
