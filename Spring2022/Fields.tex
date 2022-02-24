@@ -174,7 +174,7 @@ For each positive $n\in \mathbb{Z}$, \[\left(r\cos(\theta) + ir\sin(\theta)\righ
 % SUBSECTION
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Roots of unity}
-We now arrive at an extremely important definition.
+We arrive at an extremely important definition.
 
 \begin{definition}
 For each positive $n\in \mathbb{Z}$, define \[\zeta_n := \cos\left(\frac{2\pi}{n}\right) + i\sin\left(\frac{2\pi}{n}\right).\]
@@ -182,22 +182,24 @@ Thus, $\zeta_n$ (read as ``zeta n'') is the unique  number with magnitude $1$ an
 \end{definition}
 
 \begin{problem}
-Plot each of the following in the same complex plane: $\zeta_2$, $\zeta_3$, $\zeta_4$, $\zeta_5$.
+Plot each number in the same complex plane: $\zeta_2$, $\zeta_3$, $\zeta_4$, $\zeta_5$, $\zeta_6$.
 \end{problem}
 
 \begin{problem}
-Plot each of the following in the same complex plane: $\zeta_6$, $(\zeta_6)^2$, $(\zeta_6)^3$, $(\zeta_6)^4$, $(\zeta_6)^5$, $(\zeta_6)^6$.
+Plot each number in the same complex plane: $\zeta_6$, $(\zeta_6)^2$, $(\zeta_6)^3$, $(\zeta_6)^4$, $(\zeta_6)^5$, $(\zeta_6)^6$.
 \end{problem}
 
 \begin{problem}
 Write $\overline{\zeta_8}$ as a power of $\zeta_8$. Conjecture a value for $\ell$ (in terms of $k$) such that $\overline{(\zeta_n)^k}=(\zeta_n)^\ell$; then prove that it works. Try starting with $k= 1$.
 \end{problem}
 
-We now turn our attention back to solving polynomial equations, focusing on those of the form $x^n - a$.
+%We now turn our attention back to solving polynomial equations, focusing on those of the form $x^n - a$.
 
 \begin{definition}\label{def.nthRoot}
 Let $a\in \mathbb{C}$, and let $n\in \mathbb{Z}$ be positive. Then $z\in \mathbb{C}$ is called an \textbf{$n^\text{th}$ root of $a$} if $z^n = a$. In other words, the  $n^\text{th}$ roots of $a$ are the roots of the polynomial $x^n-a$. The  $n^\text{th}$ roots of $1$ are also called \textbf{$n^\text{th}$ roots of unity}.
 \end{definition}
+
+Notice that this definition refers to ``\emph{an} $n^\text{th}$ root of $a$'' as opposed to ``\emph{the} $n^\text{th}$ root of $a$''. We will see, for example, that although there is only one cube root of $8$ in $\mathbb{R}$, there are three cube roots of $8$ in $\mathbb{C}$.
 
 \begin{problem}\label{prob.nthRoots}
 Let $w = -1 + i\sqrt{3}$. Write $w$ in polar form; then find a $4^\text{th}$ root of $w$.
