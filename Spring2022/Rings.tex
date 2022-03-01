@@ -14,9 +14,9 @@ Our overarching goal, laid out in Chapter~\ref{chapter:PolyEquations}, is to sho
 As we investigate polynomials, it will be useful to harness (and abstract) the algebraic properties that they possesses. For example, if we add two polynomials in $\mathbb{Q}[x]$, we obtain a polynomial that is again in $\mathbb{Q}[x]$, and similarly for multiplication. Let's explore the structure of $F[x]$ (which was introduced in Definition~\ref{def.Fx}) in general, for $F$  any field.
 
 \begin{definition}
-Let $F$ be a field. The structure $(F[x],+,\cdot)$ consists of the set $F[x]$ together with the operations $+$ and $\cdot$ defined as follows. Let $p(x) = a_0 + a_1x + \cdots + a_mx^m$ and $q(x) = b_0 + b_1x + \cdots + b_nx^n$ with $m\le n$.
+Let $F$ be a field. The structure $(F[x],+,\cdot)$ consists of the set $F[x]$ together with the operations $+$ and $\cdot$ defined as follows. Let $p(x) = a_0 + a_1x + \cdots + a_mx^m$ and $q(x) = b_0 + b_1x + \cdots + b_nx^n$. Adopt the convention that $a_i = 0$ for $i>m$ and $b_i = 0$ for $i>n$.
 \begin{itemize}
-\item \textbf{Addition:} $p(x) + q(x) =  (a_0 + b_0) + (a_1 + b_1)x + \cdots + (a_n + b_n)x^n$ (where $a_k = 0$ when $k> m$).
+\item \textbf{Addition:} $p(x) + q(x) =  \displaystyle\sum_{k=0}^{\max(m,n)}(a_k + b_k)x^k$.
 \item \textbf{Multiplication:} $p(x)\cdot q(x) = \displaystyle\sum_{k=0}^{m+n}c_kx^k$ where $c_k = a_0b_k + a_1b_{k-1} + \cdots + a_{k-1}b_1 + a_kb_0$.
 \end{itemize}
 We often refer to the entire structure $(F[x],+,\cdot)$ as simply $F[x]$.
