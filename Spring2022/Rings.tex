@@ -309,7 +309,7 @@ Determine the degree of each of the following polynomials.
 The degree function is very useful when working with polynomials---let's prove a couple of properties about it. 
 
 \begin{theorem}\label{thm.DegreePolySum}
-Let $R$ be a ring. Suppose $p(x), q(x)\in R[x]$. If all of $\deg p(x)$, $\deg q(x)$, and $\deg(p(x) + q(x))$ are defined, then $\deg(p(x) + q(x)) \le \max(\deg p(x),\deg q(x))$.
+Let $R$ be a ring. Suppose $p(x), q(x)\in R[x]$. If $p(x)$, $q(x)$, and $p(x) + q(x)$ are all nonzero, then $\deg(p(x) + q(x)) \le \max(\deg p(x),\deg q(x))$.
 \end{theorem}
 
 \begin{problem}
@@ -317,7 +317,7 @@ Give an example of polynomials $p(x),q(x)\in \mathbb{Q}[x]$ such that $\deg(p(x)
 \end{problem}
 
 \begin{theorem}\label{thm.DegreePolyProduct}
-Let $D$ be an integral domain. If $p(x),q(x) \in D[x]$ are nonzero polynomials, then $\deg(p(x)q(x)) = \deg p(x) + \deg q(x)$.
+Let $D$ be an integral domain. Suppose $p(x),q(x) \in D[x]$. If $p(x)$ and $q(x)$ are nonzero, then $\deg(p(x)q(x)) = \deg p(x) + \deg q(x)$.
 \end{theorem}
 
 \begin{problem}
