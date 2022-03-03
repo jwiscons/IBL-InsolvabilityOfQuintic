@@ -302,11 +302,11 @@ Determine the degree of each of the following polynomials.
 \item $q(x) = 4x^5 + 2x^2 + 5 -8x^2 +2x^5$ in the ring $\mathbb{Z}[x]$
 \item $r(x) = 4x^5 + 2x^2 + 5 -14x^2 +2x^5$ in the ring $\mathbb{Z}_6[x]$
 \item $p(t) = (3t^2-\sqrt{2})(-1 + 2t -t^3)$ in the ring $\mathbb{R}[t]$
-\item $s(x) = (5-i)^5 - (5-s)^3$ in the ring $\mathbb{C}[s]$
+\item $f(s) = (5-i)^5 - (5-s)^3$ in the ring $\mathbb{C}[s]$
 \end{enumerate}
 \end{problem}
 
-The degree function is incredibly useful when working with polynomials---let's prove a couple of properties about it. 
+The degree function is very useful when working with polynomials---let's prove a couple of properties about it. 
 
 \begin{theorem}\label{thm.DegreePolySum}
 Let $R$ be a ring. Suppose $p(x), q(x)\in R[x]$. If all of $\deg p(x)$, $\deg q(x)$, and $\deg(p(x) + q(x))$ are defined, then $\deg(p(x) + q(x)) \le \max(\deg p(x),\deg q(x))$.
@@ -317,7 +317,7 @@ Give an example of polynomials $p(x),q(x)\in \mathbb{Q}[x]$ such that $\deg(p(x)
 \end{problem}
 
 \begin{theorem}\label{thm.DegreePolyProduct}
-Let $D$ be an integral domain. If $p(x)$ and $q(x)$ are nonzero polynomials $D[x]$, then $\deg(p(x)q(x)) = \deg p(x) + \deg q(x)$.
+Let $D$ be an integral domain. If $p(x),q(x) \in D[x]$ are nonzero polynomials, then $\deg(p(x)q(x)) = \deg p(x) + \deg q(x)$.
 \end{theorem}
 
 \begin{problem}
