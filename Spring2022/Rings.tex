@@ -419,7 +419,7 @@ Which one, if any, would be a good choice as the ``greatest common divisor''?
 The previous problem highlights that there are several (actually, infinitely many) choices for the ``greatest common divisor'' of two polynomials. Our choice for which one we call the greatest common divisor is, in some sense, the simplest one.
 
 \begin{definition}
-A polynomial $p(x)$ of degree $n$ is called \textbf{monic} if the coefficient of $x^n$ (i.e.~the leading coefficient) is $1$.
+A polynomial $p(x)$ of degree $n$ is called \textbf{monic} if the coefficient of $x^n$ is $1$ (i.e.~if the leading coefficient is $1$).
 \end{definition}
 
 For example, $7-2x+x^2$ is monic, since the coefficient of $x^2$ is $1$. However, neither $7-2x+3x^2$ nor $7-2x-x^2$ are monic.
@@ -446,7 +446,7 @@ We now work towards the existence of a greatest common divisor for arbitrary pol
 Consider the polynomials $a(x) = 2x^2-2$ and $b(x) = 2x^2+2x-4$ in $\mathbb{Q}[x]$.  Define \[I = \{f(x)a(x) + g(x)b(x)\mid f(x),g(x)\in \mathbb{Q}[x]\}.\]
 \begin{enumerate}
 \item Write down 5 different polynomials that are in the set $I$. 
-\item Show that $x-1$ divides an arbitrary polynomial in $I$.
+\item Show that $x-1$ divides $p(x)$ for all  $p(x) \in I$.
 \end{enumerate}
 \end{problem}
 
@@ -620,7 +620,7 @@ Let $R$ be a ring, and let $S\subseteq R$. Then $S$ is a subring of $R$ if and o
 \end{theorem}
 
 \begin{problem}
-Determine if each of the following subsets of $\mathbb{Q}[x]$ are actually subrings.
+Determine if each of the following is a subring of $\mathbb{Q}[x]$ or not.
 \begin{enumerate}
 \item $A = \{p(x) \mid p(x) = c \text{ for some $c\in \mathbb{Q}$}\}$ (i.e. the set of constant polynomials)
 \item $B = \{p(x)\mid p(x) = 0 \text{ or } \deg p(x) \le 1\}$ (i.e. the set of linear polynomials)
