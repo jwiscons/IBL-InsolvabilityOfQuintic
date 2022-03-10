@@ -507,12 +507,12 @@ We now develop the analogous notion of a prime number for polynomials, which wil
 To motivate the definition, think about how prime integers are defined: $p\in \mathbb{Z}$ is prime if (1) $p>1$ and (2) $p=ab$ implies that $a=\pm 1$ or $b=\pm1$. Since the  units of $\mathbb{Z}$ are precisely $\pm1$, the second condition could be rewritten as ``$p=ab$ implies that $a$ or $b$ is a unit.'' Also, since we don't  want $1$ (or $-1$) to be considered prime, the first condition is mostly captured by ensuring that ``$p$ is not zero and not a unit.'' 
 
 \begin{definition}\label{def.reducible}
-Let $D$ be an integral domain. An element $p\in D$ is \textbf{irreducible} if 
+Let $D$ be an integral domain. Suppose $p\in D$ with $p\neq 0$ and $p\notin U(D)$. 
 \begin{itemize}
-\item $p\neq 0$ and $p\notin U(D)$, and
-\item for all $a,b\in D$, $p = ab$ implies $a\in U(D)$ or $b\in U(D)$.
+\item We say $p$ is \textbf{irreducible} if for all $a,b\in D$, $p = ab$ implies $a\in U(D)$ or $b\in U(D)$.
+\item We say $p$ is \textbf{reducible} if there exist $a,b\in D$ such that $p = ab$ and $a,b\notin U(D)$.
 \end{itemize} 
-The element $p$ is \textbf{reducible} if it is not irreducible; that is if $p=0$, $p\in U(D)$, or there exist $a,b\in D$ such that $p = ab$ and $a,b\notin U(D)$. 
+Thus, each element of $D$ is either $0$, a unit, irreducible, or reducible.
 \end{definition}
 
 \begin{problem}
@@ -622,9 +622,9 @@ Let $R$ be a ring, and let $S\subseteq R$. Then $S$ is a subring of $R$ if and o
 \begin{problem}
 Determine if each of the following is a subring of $\mathbb{Q}[x]$ or not.
 \begin{enumerate}
-\item $A = \{p(x) \mid p(x) = c \text{ for some $c\in \mathbb{Q}$}\}$ (i.e. the set of constant polynomials)
-\item $B = \{p(x)\mid p(x) = 0 \text{ or } \deg p(x) \le 1\}$ (i.e. the set of linear polynomials)
 \item $\mathbb{Z}[x]$
+%\item $A = \{p(x) \mid p(x) = c \text{ for some $c\in \mathbb{Q}$}\}$ (i.e. the set of constant polynomials)
+\item $B = \{p(x)\mid p(x) = 0 \text{ or } \deg p(x) \le 1\}$ (i.e. the set of linear polynomials)
 \item $I = \{f(x)x^2 + g(x)(1+x^5)\mid f(x),g(x)\in \mathbb{Q}[x]\}$
 \end{enumerate} 
 \end{problem}
@@ -656,19 +656,24 @@ Let's explore the extra properties that a subring might need to ensure that the 
 Now, let's consider the set of cosets of $I$ in $R$, which we write as $R/I$. Recall that $R/I = \{a + I\mid a\in R\}$ where $a+I = \{a+y\mid y\in I\}$. Remember, that the set of cosets will partition $R$. One way to picture this is given below---it's followed by a couple of important properties about $R/I$ from group theory.
 
 \begin{center}
-\begin{tikzpicture}[line width = 1,scale = 1.2]
+\begin{tikzpicture}[line width = 1, scale = 1.1]
 \footnotesize
-\draw[dashed, black!70] (0,0.75) -- (5,0.75);
-\draw[dashed, black!70] (0,1.5) -- (5,1.5);
-\draw[dashed, black!70] (0,2.25) -- (5,2.25);
+\draw[dashed, black!70] (0,0.75) -- (6,0.75);
+\draw[dashed, black!70] (0,1.5) -- (6,1.5);
+\draw[dashed, black!70] (0,2.25) -- (6,2.25);
+\draw[dashed, black!70] (0,3) -- (6,3);
+\draw[dashed, black!70] (0,3.75) -- (6,3.75);
 \node[black] at (0.65,0.75/2) {$I$};
 \node[black] at (0.65,{0.75+0.75/2}) {${a_1 + I}$};
 \node[black] at (0.65,{1.5+0.75/2}) {${a_2 + I}$};
-\node[black] at (0.65,{3}) {$\vdots$};
-\node[anchor = west] at (5,3.5) {$R$};
-\draw (0,0)--(5,0)--(5,3.5)--(0,3.5)--cycle;
+\node[black] at (0.65,{2.25+0.75/2+.1}) {$\vdots$};
+\node[black] at (0.65,{3+0.75/2}) {${a_n+I}$};
+\node[black!70] at (0.65,{3.75 + 0.75/2+.1}) {$\vdots$};
+\node[anchor = west] at (6,4.5) {$R$};
+\draw (0,0)--(6,0)--(6,4.5)--(0,4.5)--cycle;
 \end{tikzpicture}
 \end{center}
+
 
 \begin{fact}\label{fact.AdditiveSubgroupRingQuotientProperties}
 Let $I$ be an additive subgroup of a ring $R$. Then for all $a,b\in R$
@@ -685,7 +690,7 @@ Fix two arbitrary cosets $a + I$ and $b+I$. Then, for all $x,y\in I$, $a + I = (
 Thus, in order for coset multiplication to be well-defined, we need to ensure that \[ab + I = (a+x)(b+y)+I \text{ for all $a,b\in R$ and all $x,y\in I$}.\]
 The desired picture is as follows.
 \begin{center}
-\begin{tikzpicture}[line width = 1, scale = 1.2]
+\begin{tikzpicture}[line width = 1, scale = 1.1]
 \footnotesize
 \draw[dashed, black!70] (0,0.75) -- (6,0.75);
 \draw[dashed, black!70] (0,1.5) -- (6,1.5);
@@ -695,7 +700,7 @@ The desired picture is as follows.
 \node[black] at (0.65,0.75/2) {$I$};
 \node[black] at (0.65,{0.75+0.75/2}) {${a + I}$};
 \node[black] at (0.65,{1.5+0.75/2}) {${b + I}$};
-%\node[black!70] at (0.5,{2.25+0.75/2}) {\footnotesize$g_3N$};
+\node[black] at (0.65,{2.25+0.75/2+.1}) {$\vdots$};
 \node[black] at (0.65,{3+0.75/2}) {${(ab)+I}$};
 \node[black!70,anchor = -10] at (2,{0.75+0.75/2}) {$a$};\fill[blue!70] (2,{0.75+0.75/2}) circle (2pt);
 \node[black!70,anchor = -20] at (2.2,{1.5+0.75/2}) {$b$};\fill[blue!70] (2.2,{1.5+0.75/2}) circle (2pt);
@@ -715,9 +720,9 @@ The desired picture is as follows.
 \draw[black, line width = 1.2] (-0.2,{0.75+0.75/2}) -- (-0.65,{1.12+0.75/2});
 \draw[black, line width = 1.2] (-0.2,{1.5+0.75/2}) -- (-0.65,{1.12+0.75/2});
 \draw[black, line width = 1.2,->] (-0.65,{1.12+0.75/2}) .. controls (-1.8,{1.65+0.75/2-0.1}) and  (-1.8,{2.75+0.75/2-0.1}) .. (-0.2,{3+0.75/2-0.1});
-\node[black!70] at (0.65,{4.5}) {$\vdots$};
-\node[anchor = west] at (6,5) {$R$};
-\draw (0,0)--(6,0)--(6,5)--(0,5)--cycle;
+\node[black!70] at (0.65,{3.75 + 0.75/2+.1}) {$\vdots$};
+\node[anchor = west] at (6,4.5) {$R$};
+\draw (0,0)--(6,0)--(6,4.5)--(0,4.5)--cycle;
 \end{tikzpicture}
 \end{center} 
 After distributing, we have $ab + I = ab + ay + xb + xy +I$, which simplifies to $I = ay + xb + xy +I$. By Fact~\ref{fact.AdditiveSubgroupRingQuotientProperties}, we see that what we really need to ensure is that 
@@ -742,8 +747,10 @@ Let's also summarize our work above about defining operations on the quotient $R
 Let $R$ be a ring and let $I$ be an ideal of $R$.  Then $R/I$ is a ring under the binary operations defined as follows. For all $a,b\in R$, 
 \begin{itemize}
 \item $(a+I)+(b+I)  =  (a+b)+I$;
-\item $(a+I)(b+I)  = (ab)+I.$
+\item $(a+I)(b+I)  = (ab)+I;$
 \end{itemize}
+The additive identity is $I$, and $-(a+I)  =  -a + I$.
+
 \end{fact}
 
 \begin{problem} For each subset of the given ring, determine if the subset is an ideal, a subring, or neither.
