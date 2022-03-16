@@ -949,7 +949,11 @@ Draw the the lattice of ideals of $\mathbb{Z}$ that contain the ideal $(60)$.
 Let's focus on the ideals of $\mathbb{Z}$ that are at the top of the lattice but below $\mathbb{Z}$.
 
 \begin{definition}
-An ideal $M$ of a ring $R$ is called a \textbf{maximal ideal} if $M\neq R$ and the only ideals containing $M$ are $M$ and $R$.
+An ideal $M$ of a ring $R$ is called a \textbf{maximal ideal} if 
+\begin{itemize}
+\item $M\neq R$, and 
+\item for all ideals $I$ of $R$, if $I$ contains $M$, then either $I=M$ or $I =R$.
+\end{itemize}
 \end{definition}
 
 \begin{theorem}
