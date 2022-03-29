@@ -1026,7 +1026,7 @@ Which of the homomorphisms in Problem~\ref{prob.HomomorphismCheckin} were isomor
 In Problem~\ref{prob.HomomorphismCheckin}\ref{prob.HomomorphismCheckin.EvaluatePoly}, we saw that ``evaluating at zero'' was a homomorphism from $\mathbb{Q}[x]$ to  $\mathbb{C}$. At its core, this fact simply rests on how we add and multiply polynomials and does not require us to evaluate specifically at zero. For example, if $f(x),g(x)\in R[x]$ (for a ring $R$) and $c\in R$, then writing out $f(x)=a_0+\cdots+a_mx^m$ and $g(x)=b_0+\cdots+b_mx^m$ (with some $a_i$ and $b_j$ possible zero), we can show that $(f+g)(c) = f(c) + g(c)$. The analogous statement holds for multiplication too. We'll add in the details in the next theorem to see that ``evaluating at $c$'' is a homomorphism (whether or not $c = 0$).
 
 \begin{theorem}[Evaluation homomorphism]\label{thm.EvalHom}
-Let $R$ be a ring, and let $c\in R$. Define a function $\mathcal{E}_c:R[x] \rightarrow R$ by the rule $\mathcal{E}_c(p(x)) = p(c)$. Then $\mathcal{E}_c$ is a homomorphism.
+Let $R$ be a ring, and let $S\subseteq R$ be a subring. For $c\in R$, define  $\mathcal{E}_c:S[x] \rightarrow R$ by the rule $\mathcal{E}_c(p(x)) = p(c)$. Then $\mathcal{E}_c$ is a homomorphism.
 \end{theorem}
 
 Let's prove some general properties about homomorphisms.
@@ -1093,7 +1093,7 @@ Let $\phi:R\to S$ be a ring homomorphism. Then
 \end{theorem}
 
 \begin{problem}\label{prob.EvalAtI}
-By Theorem~\ref{thm.EvalHom}, the ``evaluation at $i$'' function from $\mathbb{C}[x]$ to  $\mathbb{C}$ is a homomorphism.  We can restrict the domain to $\mathbb{Q}[x]$ to obtain a homomorphism from $\mathcal{E}_{i}:\mathbb{Q}[x]\rightarrow\mathbb{C}$ defined by $\mathcal{E}_{i}(p(x)) = p(i)$, where $i$ denotes the usual complex number.
+By Theorem~\ref{thm.EvalHom}, the ``evaluation at $i$'' function $\mathcal{E}_{i}:\mathbb{Q}[x]\rightarrow\mathbb{C}$ defined by $\mathcal{E}_{i}(p(x)) = p(i)$ is a homomorphism (where $i$ is the usual complex number with $i^2 = -1$).
 \begin{enumerate}
 \item Show that $x^2+1$ is in $\ker \mathcal{E}_{i}$.
 \item By Fact~\ref{fact.FxPID}, $\ker \mathcal{E}_{i} = (m(x))$ for some $m(x)\in \mathbb{Q}[x]$. Use the fact that $x^2+1$ is irreducible in $\mathbb{Q}[x]$, to show that $m(x) = a(x^2+1)$ for some nonzero constant $a\in \mathbb{Q}$.
