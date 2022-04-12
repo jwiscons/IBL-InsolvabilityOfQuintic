@@ -184,6 +184,14 @@ Theorem~\ref{thm.SolvableByRadicalsNontrivialRootsOf1} might provide some inspir
 To see why the degree of $m(x)$ can not be $3$, suppose it is. Then $x^4-2x^2+9 = m(x)q(x)$ for some $q(x)\in\mathbb{Q}[x]$ with $\deg q(x) = 1$. Explain why $q(x)$ has a root that lies in $\mathbb{Q}$. But the root of  $q(x)$ is a root of $x^4-2x^2+9$, so find the roots of $x^4-2x^2+9$ (and thus a contradiction).
 \end{hint*}
 
+\begin{hint*}[Problem~\ref{prob.BasisQRootx55x45}]
+In this problem, we are viewing the elements of $\mathbb{Q}(\alpha)$ as vectors, and we are allowed to scalar multiply by elements of $\mathbb{Q}$. It may help to rewrite the elements $1,\alpha,\alpha^2,\alpha^3,\alpha^4$ as $v_1, v_2, v_3, v_4, v_5$ when thinking about the definitions of span and linear independence. 
+
+For example, to show $v_1, v_2, v_3, v_4, v_5$ span $\mathbb{Q}(\alpha)$, you need to show that for all $w\in \mathbb{Q}(\alpha)$ there exist $c_1,  \ldots,c_5\in \mathbb{Q}$ such that $c_1v_1+ c_2v_2 + \cdots + c_5v_5 = w$. Returning to the powers of $\alpha$, this means we need to show there exist $c_1,  \ldots,c_5\in \mathbb{Q}$ such that $c_1+ c_2\alpha + \cdots + c_5\alpha^4 = w$. Your proof of this might be very short using what we learned in Problem~\ref{prob.DescribeQRootx55x45}.
+\end{hint*}
+
+
+
 \begin{hint*}[Theorem~\ref{thm.RingHomPlusLinearTrans}]
 Consider using Theorem~\ref{thm.HomPreservesMultiplicativeProperties} and remember that $c = c\cdot1$.
 \end{hint*}
