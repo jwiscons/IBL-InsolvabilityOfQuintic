@@ -430,12 +430,12 @@ We now apply the Fundamental Theorem of Galois Theory to our chain of extensions
 We'll now investigate the structure of each of the corresponding Galois groups, starting with $\Aut(L_i/F_i)$.
 
 \begin{lemma}
-Consider the field $L_i = F_i(r_i)$. The minimal polynomial of $r_i$ over $F_i$ is a factor of $x^{n_i}-r^{n_i}$, so the possible elements of $\Aut(L_i/F_i)$ are described by the following table.
+Let $L$ be a subfield of $\mathbb{C}$. Suppose $L = F(r)$ for some $r\in \mathbb{C}$, and assume that $r^n \in F$. Then the minimal polynomial of $r$ over $F$ divides $x^{n}-r^{n}$, and the possible elements of $\Aut(L/F)$ are described by the following table.
 \begin{center}
 \tabulinesep = 2mm
 \begin{tabu} {X[$r,m]|[2pt]X[$c,m]|X[$c,m]|X[$c,m]|X[$c,m]|X[$c,m]|X[$c,m]}
  & \text{id} & \phi_1 & \phi_2 & \phi_3  & \cdots & \phi_{m-1}\\ \tabucline[2pt]{-}
-r_i \; \mapsto\;  & r_i & r_i\zeta_{n_i} & r_i\zeta_{n_i}^2 & r_i\zeta_{n_i}^3  & \cdots & r_i\zeta_{n_i}^{m-1}
+r \; \mapsto\;  & r & r\zeta_{n} & r\zeta_{n}^2 & r\zeta_{n}^3  & \cdots & r\zeta_{n}^{m-1}
 \end{tabu}
 \end{center}
 \end{lemma}
