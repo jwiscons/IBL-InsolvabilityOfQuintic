@@ -430,7 +430,7 @@ We now apply the Fundamental Theorem of Galois Theory to our chain of extensions
 We'll now investigate the structure of each of the corresponding Galois groups, starting with $\Aut(L_i/F_i)$.
 
 \begin{lemma}
-Let $L$ be a subfield of $\mathbb{C}$. Suppose $L = F(r)$ for some $r\in \mathbb{C}$, and assume that $r^n \in F$. Then the minimal polynomial of $r$ over $F$ divides $x^{n}-r^{n}$, and the possible elements of $\Aut(L/F)$ are described by the following table.
+Let $F$ be a subfield of $\mathbb{C}$. Suppose $L = F(r)$ for some $r\in \mathbb{C}$, and assume that $r^n \in F$. Then the minimal polynomial of $r$ over $F$ divides $x^{n}-r^{n}$, the possible elements of $\Aut(L/F)$ are described by the following table, and $\Aut(L/F)$ is abelian.
 \begin{center}
 \tabulinesep = 2mm
 \begin{tabu} {X[$r,m]|[2pt]X[$c,m]|X[$c,m]|X[$c,m]|X[$c,m]|X[$c,m]|X[$c,m]}
@@ -447,12 +447,12 @@ The group $\Aut(L_i/F_i)$ is abelian.
 We now investigate $\Aut(F_i/L_{i-1})$ and obtain a similar result.
 
 \begin{lemma}
-Consider the field $F_i = L_{i-1}(\zeta_{n_i})$. The minimal polynomial of $\zeta_{n_i}$ over $L_{i-1}$ is a factor of $x^{n_i}-1$, and the possible elements of $\Aut(F_i/L_{i-1})$ are described by the following table.
+Let $L$ be a subfield of $\mathbb{C}$. Suppose that $F = L(\zeta_{n})$. Then the minimal polynomial of $\zeta_{n}$ over $L$ divides $x^{n-1} + x^{n-2} + \cdots + x +1$, the possible elements of $\Aut(F/L)$ are described by the following table, and $\Aut(F/L)$ is abelian.
 \begin{center}
 \tabulinesep = 2mm
 \begin{tabu}  {X[$r,m]|[2pt]X[$c,m]|X[$c,m]|X[$c,m]|X[$c,m]|X[$c,m]}
  & \text{id} & \phi_2 & \phi_3  & \cdots & \phi_{n_i-1}\\ \tabucline[2pt]{-}
-\zeta_{n_i} \; \mapsto\;  & \zeta_{n_i} & \zeta_{n_i}^2 & \zeta_{n_i}^3  & \cdots & \zeta_{n_i}^{n_i-1}
+\zeta_{n} \; \mapsto\;  & \zeta_{n} & \zeta_{n}^2 & \zeta_{n}^3  & \cdots & \zeta_{n}^{n-1}
 \end{tabu}
 \end{center}
 \end{lemma}
