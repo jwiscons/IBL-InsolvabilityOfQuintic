@@ -167,9 +167,9 @@ The set of all permutations of $\{1,\ldots,n\}$ is usually denoted by $S_n$ (ins
 Recall that, for any set $X$, $\operatorname{Sym}(X)$ is a group with respect to function composition. The identity is the identity function, denoted id.
 
 \begin{theorem}\label{thm.GaloisGroupIsPermGroup}
-Let $F$ be a subfield of $\mathbb{C}$. Let $p(x)\in F(x)$, and let $R$ be the set of all of roots of $p(x)$ in $\mathbb{C}$.  For any $\phi :F^{p(x)} \rightarrow F^{p(x)}$, let $\phi^R: R\rightarrow F^{p(x)}$ denote the restriction of $\phi$ to $R$.
+Let $F$ be a subfield of $\mathbb{C}$. Let $p(x)\in F(x)$, and let $R$ be the set of all of roots of $p(x)$ in $\mathbb{C}$.  
 \begin{enumerate} 
-\item If $\phi \in \Aut(F^{p(x)}/F)$, then $\phi^R\in \operatorname{Sym}(R)$, i.e.~$\phi^R$ is a bijection from $R$ to $R$.
+\item If $\phi \in \Aut(F^{p(x)}/F)$, then $\phi(R) = R$. Thus, if $\phi^R: R\rightarrow R$ is the restriction of $\phi$ to $R$, then  $\phi^R\in \operatorname{Sym}(R)$.
 \item The map $f: \Aut(F^{p(x)}/F)\to \operatorname{Sym}(R)$ where $f(\phi)=\phi^R$  is an injective homomorphism. 
 \end{enumerate}
 Consequently, $\Aut(F^{p(x)}/F)$ is isomorphic to a subgroup of $\operatorname{Sym}(R)$.
