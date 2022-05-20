@@ -8,16 +8,20 @@ At present, the main contributor is me ([Joshua Wiscons](http://webpages.csus.ed
 
 ## Editions
 ### Fall 2019.
-This is the current, stable version of the book. It was finalized in January 2020. 
+This was the first version of the book. It was finalized in January 2020. 
 - [Click here to go directly to this version of the book](https://github.com/jwiscons/IBL-InsolvabilityOfQuintic/blob/master/Fall2019/IBL-InsolvabilityOfQuintic.pdf).
 - The notes are a bit full, especially in the chapter on Rings, and to keep an appropriate pace, I didn't ask my students to prove all theorems (but they were responsible for reading and being able to use everything). 
 - My implemention saw much of the final chapter woven in to a final project.
 - I think it went very well, but there are many things to improve. I'd love to have others join the project.
 - Let me (Joshua Wiscons) know if you have implementation specific questions, or try visiting the [course website](http://webpages.csus.edu/wiscons/teaching/math110B_f19.html).
 
-### Spring 2022 (under development).
-This version will be under development from now through Spring 2022. No large changes are currently planned---just polishing. 
+### Spring 2022.
+This is the most up to date (and mostly stable) version version of the book. 
 - [Click here to go directly to this version of the book](https://github.com/jwiscons/IBL-InsolvabilityOfQuintic/blob/master/Spring2022/IBL-InsolvabilityOfQuintic.pdf).
+- This update to the Fall 2019 version saw essentially no major changes.
+- As with the previous version, the notes remain a bit full, and I did not ask my students to prove all theorems. The first four chapters seem fairly focused, but starting with Chapter 5 on rings, the text wanders a bit and would benefit from being streamlined (or at leat reformated to indicate what is essential to the story and what is tangential).
+- This time, my course was taught entirely via Zoom, using Miro as a board to share work. This approach did have some advantages, but there were many drawbacks, especially in the challenges to create community. 
+- My website for the [Spring 2022 implementation](http://webpages.csus.edu/wiscons/teaching/math110B-s22.html) contains all daily homework assignments as well and the final project, which indicate a possible path throught the book. 
 
 ## License Information
 In many ways, this work builds off of [An Inquiry-Based Approach to Abstract Algebra](https://github.com/dcernst/IBL-AbstractAlgebra), so we adopt the same liscense. 
