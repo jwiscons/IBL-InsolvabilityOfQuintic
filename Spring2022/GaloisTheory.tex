@@ -294,7 +294,7 @@ Consider $p(x) = x^5 +5x^4-5 \in \mathbb{Q}[x]$. Graph $p(x)$ or use calculus to
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Fundamental theorem of Galois theory}
 
-We finally arrive at the main course. Looking back at Problems~\ref{prob.AutQAdjoinSqrt2AndiOverQLattices} and~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQLattices}, we see that there is a tight connection between subfields of an extension  field $L$ of $F$ to subgroups of $\Aut(L/F)$. However, the extensions we considered in those problems where not just any extensions of $\mathbb{Q}$, they were \emph{Galois extensions}. And in fact, the connection broke down for $\mathbb{Q}(\sqrt[3]{2}$ in Problem~\ref{prob.AutQAdjoinCubeRoot2OverQ} where we saw that $\Aut(\mathbb{Q}(\sqrt[3]{2})/\mathbb{Q}) = \{\text{id}\}$, but as noted in  Problem~\ref{prob.QAdjoinCubeRoot2OverQNotGalois}, this is \emph{not} a Galois extension of $\mathbb{Q}$. 
+We finally arrive at the main course. Looking back at Problems~\ref{prob.AutQAdjoinSqrt2AndiOverQLattices} and~\ref{prob.AutQAdjoinCubeRoot2AndZeta3OverQLattices}, we see that there is a tight connection between subfields of an extension  field $L$ of $F$ to subgroups of $\Aut(L/F)$. However, the extensions we considered in those problems where not just any extensions of $\mathbb{Q}$, they were \emph{Galois extensions}. And in fact, the connection broke down for $\mathbb{Q}(\sqrt[3]{2})$ in Problem~\ref{prob.AutQAdjoinCubeRoot2OverQ} where we saw that $\Aut(\mathbb{Q}(\sqrt[3]{2})/\mathbb{Q}) = \{\text{id}\}$, but as noted in  Problem~\ref{prob.QAdjoinCubeRoot2OverQNotGalois}, this is \emph{not} a Galois extension of $\mathbb{Q}$. 
 
 As it turns out, the connection we observed between subfields and subgroups holds for all Galois extensions, and the Fundamental Theorem of Galois Theory makes this explicit. Let's quickly establish some notation.
 
@@ -320,7 +320,7 @@ Let $F\subseteq L$ be subfields of $\mathbb{C}$. Assume that $L$ is a Galois ext
 \item\label{fact.FTGT.InclusionReverseAndGaloisToNormal} The map $K\mapsto \Aut(L/K)$ 
 \begin{itemize}
 \item reverses inclusions: $K_1\subseteq K_2$ if and only if $\Aut(L/K_2) \subseteq \Aut(L/K_1)$ and
-\item sends Galois extensions to normal subgroups: $K$ is a Galois extensions of $F$ if and only if $\Aut(L/K)\trianglelefteq \Aut(L/F)$.
+\item sends Galois extensions to normal subgroups: $K$ is a Galois extension of $F$ if and only if $\Aut(L/K)\trianglelefteq \Aut(L/F)$.
 \end{itemize}
 Moreover, if $K$ is a Galois extension of $F$, then $\Aut(K/F)\cong \Aut(L/F)/\Aut(L/K)$.
 \item For all $K\in \operatorname{\textsc{Sub}}(L/F)$, 
