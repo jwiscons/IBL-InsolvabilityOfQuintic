@@ -16,7 +16,7 @@ This was the first version of the book. It was finalized in January 2020.
 - Let me (Joshua Wiscons) know if you have implementation specific questions, or try visiting the [course website](http://webpages.csus.edu/wiscons/teaching/math110B_f19.html).
 
 ### Spring 2022.
-This is the most up to date (and mostly stable) version version of the book. 
+This is the most recent version of the book. 
 - [Click here to go directly to this version of the book](https://github.com/jwiscons/IBL-InsolvabilityOfQuintic/blob/master/Spring2022/IBL-InsolvabilityOfQuintic.pdf).
 - This update to the Fall 2019 version saw essentially no major changes.
 - As with the previous version, the notes remain a bit full, and I did not ask my students to prove all theorems. The first four chapters seem fairly focused, but starting with Chapter 5 on rings, the text wanders a bit and would benefit from being streamlined (or at leat reformated to indicate what is essential to the story and what is tangential).
